@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Euro from './HomeCopy';
+import Mad from './Home';
+import Order from './Orders';
+import Home from './welcome'; // Replace with your desired default component
+import WelcomeAdmin from './welcomeAdmin'; // Replace with your desired default component
+import AddOrder from './addOrder';
+import Bugs from './Bugs';
+import UpdateOrder from './UpdateOrder';
+import UpdateSelectedOrder from './UpdateSelectedOrder';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/mad" element={<Mad />} />
+        <Route path="/euro" element={<Euro />} />
+        <Route path="/orders" element={<Order />} />
+        <Route path="/addOrder" element={<AddOrder />} />
+        <Route path="/updateOrder" element={<UpdateOrder />} />
+        <Route path="/bugList" element={<Bugs />} />
+        <Route path="/updateSelectedOrder" element={<UpdateSelectedOrder />} />
+        <Route path="/*" element={<Home />} />
+        <Route path="/welcomeAdmin" element={<WelcomeAdmin />} />
+      </Routes>
+    </BrowserRouter>
   );
-}
+};
 
 export default App;
