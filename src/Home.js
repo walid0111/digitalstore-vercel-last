@@ -6,6 +6,7 @@ import $ from 'jquery';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import LoadingScreen from './LoadingScreen';
 
 
 
@@ -20,7 +21,14 @@ class Table extends Component {
         $('.navigation-menu2').toggleClass('active-2');
     }
     //-----------------Change dark/light Mode /// Alert promo tel ---------------------
-
+      //end loading screen
+    componentDidMount() {
+        // Simule un délai de chargement de 2 secondes
+        setTimeout(() => {
+          this.setState({ isLoading: false });
+        }, 12000);
+      }
+            //end loading screen
 
     constructor(props) {
         super(props);
@@ -29,6 +37,9 @@ class Table extends Component {
             showAlert: true,//show alert promotion du tel
 
         };
+        this.state = {
+            isLoading: true
+          };
         this.changeMode = this.changeMode.bind(this);
 
 
@@ -867,6 +878,8 @@ class Table extends Component {
 
 
     render() {
+        const { isLoading } = this.state;
+
         //alert promotion tel
         const { showAlert } = this.state;
         //fin alert
@@ -940,6 +953,8 @@ class Table extends Component {
                         </nav>
                     </div>
                 </header>
+                {isLoading ? <LoadingScreen /> : <>
+
                 {/*-------------------------Mad------------------------*/}
                 <div id="madDisplay" style={{ display: 'block' }}>
                     {/*Body slide show*/}
@@ -3158,7 +3173,7 @@ class Table extends Component {
                 </div>
                 <Footer/>
 
-
+                </>}
             </div >
 
         )

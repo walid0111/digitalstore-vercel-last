@@ -36,7 +36,10 @@ const RegionSelector = () => {
         ) : (
           <p style={{fontWeight:'bold', color:'#008507'}}>CHOOSE YOUR COUNTRY TO GET STARTED :)</p>
         )}
+
+
       </div>
+      
     </div>
   );
 };

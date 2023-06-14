@@ -8,6 +8,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
+import LoadingScreen from './LoadingScreen';
+
 
 
 
@@ -22,7 +24,12 @@ class Table extends Component {
         $('#navigation-menu-1').toggleClass('active-1');
     }
     //-----------------Change dark/light Mode /// Alert promo tel ---------------------
-
+    componentDidMount() {
+        // Simule un délai de chargement de 2 secondes
+        setTimeout(() => {
+          this.setState({ isLoading: false });
+        }, 12000);
+      }
 
     constructor(props) {
         super(props);
@@ -31,6 +38,9 @@ class Table extends Component {
             showAlert: true,//show alert promotion du tel
 
         };
+        this.state = {
+            isLoading: true
+          };
         this.changeMode = this.changeMode.bind(this);
 
 
@@ -869,6 +879,8 @@ class Table extends Component {
 
 
     render() {
+        const { isLoading } = this.state;
+
         //alert promotion tel
         const { showAlert } = this.state;
         //fin alert
@@ -942,6 +954,8 @@ class Table extends Component {
                         </nav>
                     </div>
                 </header>
+                {isLoading ? <LoadingScreen /> : <>  
+
                 {/*-------------------------EUR------------------------*/}
                 <div id="EURDisplay" style={{ display: 'block' }}>
                     {/*Body slide show*/}
@@ -1645,6 +1659,7 @@ class Table extends Component {
                                 </div>
                             </div>
                         </div>
+                        
                         <div className="wrapper">
                             <img src="snapchat.png" alt="" />
                             <div className="content">
@@ -3154,14 +3169,16 @@ class Table extends Component {
                             </p>
                         </div>
                     </div>
-                    {/*reviews*/}
-                    <h3 style={{ textAlign: 'center', color: 'rgb(212, 3, 3)' }}>OUR REVIEWS</h3>
+                     {/*reviews*/}
+                     <h3 style={{ textAlign: 'center', color: 'rgb(212, 3, 3)' }}>OUR REVIEWS</h3>
                     <h1 style={{ textAlign: 'center', color: 'rgb(139, 8, 8)' }}>TrustPilote</h1>
                 </div>
-                
                 <Footer/>
 
-            </div >
+                </>}
+            </div > 
+            
+            
         )
     }
 }
