@@ -14,33 +14,34 @@ import LoadingScreen from './LoadingScreen';
 
 
 class Table extends Component {
+    
     componentDidMount() {
-        // menu qui apparait
-        setupMenu();
-    }
+        // Utiliser requestAnimationFrame pour retarder l'exécution de setTimeout
+        requestAnimationFrame(() => {
+          // Simuler un délai de chargement de 2 secondes
+          setTimeout(() => {
+            this.setState({ isLoading: false });
+            setupMenu(); // Appeler setupMenu() après le délai
+          }, 12000);
+        });
+      }
     //---------------the button that show the navbar in phone----------------------
     toggleMenu() {
         $('#menu-toggle-btn-1').toggleClass('open-1');
         $('#navigation-menu-1').toggleClass('active-1');
     }
     //-----------------Change dark/light Mode /// Alert promo tel ---------------------
-    componentDidMount() {
-        // Simule un délai de chargement de 2 secondes
-        setTimeout(() => {
-          this.setState({ isLoading: false });
-        }, 12000);
-      }
+   
 
     constructor(props) {
         super(props);
         this.state = {
             lightMode: false,
             showAlert: true,//show alert promotion du tel
+            isLoading: true
 
         };
-        this.state = {
-            isLoading: true
-          };
+        
         this.changeMode = this.changeMode.bind(this);
 
 

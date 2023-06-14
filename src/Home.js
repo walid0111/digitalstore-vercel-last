@@ -11,10 +11,7 @@ import LoadingScreen from './LoadingScreen';
 
 
 class Table extends Component {
-    componentDidMount() {
-        // menu qui apparait
-        setupMenu();
-    }
+    
     //---------------the button that show the navbar in phone----------------------
     toggleMenu2() {
         $('.menu-toggle-btn2').toggleClass('open-2');
@@ -22,29 +19,33 @@ class Table extends Component {
     }
     //-----------------Change dark/light Mode /// Alert promo tel ---------------------
       //end loading screen
-    componentDidMount() {
-        // Simule un délai de chargement de 2 secondes
-        setTimeout(() => {
-          this.setState({ isLoading: false });
-        }, 12000);
-      }
+    
             //end loading screen
 
     constructor(props) {
-        super(props);
-        this.state = {
-            lightMode: false,
-            showAlert: true,//show alert promotion du tel
+  super(props);
+  this.state = {
+    lightMode: false,
+    showAlert: true, // montrer l'alerte de promotion du téléphone
+    isLoading: true
+  };
+  
+  this.changeMode = this.changeMode.bind(this);
+  this.closeAlert = this.closeAlert.bind(this); // fermer l'alerte de promotion du téléphone
+}
+componentDidMount() {
+    // Utiliser requestAnimationFrame pour retarder l'exécution de setTimeout
+    requestAnimationFrame(() => {
+      // Simuler un délai de chargement de 2 secondes
+      setTimeout(() => {
+        this.setState({ isLoading: false });
+        setupMenu(); // Appeler setupMenu() après le délai
+      }, 12000);
+    });
+  }
+  
+  
 
-        };
-        this.state = {
-            isLoading: true
-          };
-        this.changeMode = this.changeMode.bind(this);
-
-
-        this.closeAlert = this.closeAlert.bind(this);//close alert promotion tel
-    }
     //close alert promotion tel
     closeAlert() {
         this.setState({ showAlert: false });
