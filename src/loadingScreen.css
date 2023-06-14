@@ -31,14 +31,14 @@
   }
   
   .preloader__msg {
-    animation: msg 0.3s 5.7s linear forwards;
+    animation: msg 0.3s 4.7s linear forwards;
     position: absolute;
     width: 100%;
   }
   
   .preloader__msg--last {
     animation-direction: reverse;
-    animation-delay: 7s;
+    animation-delay: 6s;
     visibility: hidden;
   }
   

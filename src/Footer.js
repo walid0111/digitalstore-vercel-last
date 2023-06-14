@@ -47,7 +47,7 @@ const ReportForm = () => {
                     Swal.fire({
                         icon: 'error',
                         title: 'Bug is not reported',
-                        text: 'Check the input',
+                        text: 'Try Again',
                         confirmButtonColor: '#3085d6',
                         confirmButtonText: 'OK',
                     });
@@ -68,7 +68,7 @@ const ReportForm = () => {
                             <h1 className="logo" style={{ fontFamily: 'fantasy' }}><span style={{ color: '#008507' }}>D</span>igital <span style={{ color: '#008507' }}>S</span>tore</h1>
                         </div>
                         <div className="media-icons">
-                            <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
+                            <a href><FontAwesomeIcon icon={faFacebookF} /></a>
                             <a href="https://www.instagram.com/digitalstore_v2/"><FontAwesomeIcon icon={faInstagram} /></a>
                             <a href="https://www.instagram.com/digitalstore_v1/"><FontAwesomeIcon icon={faInstagram} /></a>
                             <a href="https://wa.me/+212637976257"><FontAwesomeIcon icon={faWhatsapp} /></a>
@@ -77,13 +77,13 @@ const ReportForm = () => {
                     <div className="link-boxes">
                         <ul className="box">
                             <li className="link_name">Company</li>
-                            <li><a href="#">Home</a></li>
-                            <li><a href="#">Contact us</a></li>
+                            <li><a href>Home</a></li>
+                            <li><a href>Contact us</a></li>
                         </ul>
                         <ul className="box">
                             <li className="link_name">Services</li>
-                            <li><a href="#">Shopping</a></li>
-                            <li><a href="#">CV design</a></li>
+                            <li><a href>Shopping</a></li>
+                            <li><a href>CV design</a></li>
                         </ul>
                         <ul className="box">
                             <li className="link_name">How to order ?</li>

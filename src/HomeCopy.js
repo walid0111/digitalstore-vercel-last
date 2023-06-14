@@ -22,7 +22,7 @@ class Table extends Component {
           setTimeout(() => {
             this.setState({ isLoading: false });
             setupMenu(); // Appeler setupMenu() après le délai
-          }, 12000);
+          }, 10000);
         });
       }
     //---------------the button that show the navbar in phone----------------------
@@ -1151,7 +1151,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( ACC UPGRADE AVAILABLE )</h6>
                                 <p>
                                     <select name id="SpotifyMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 EUR">---NEW ACCOUNT---</option>
                                         <option value="2 EUR">1 Months </option>
                                         <option value="3 EUR">2 Months </option>
@@ -1193,7 +1193,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="iptvMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="15 EUR">6 Months</option>
                                         <option value="25 EUR">12 Months</option>
                                     </select>
@@ -1250,18 +1250,18 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="type" onChange={this.calculateNetflixPrice}>
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={1}>PREMIUM</option>
                                         <option value={0}>STANDARD</option>
                                     </select>
                                     <select name id="standard" className="select-style" onChange={this.calculateNetflixPrice}>
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={3}>1 Months </option>
                                         <option value={5}>2 Months</option>
                                         <option value={8}>3 Months</option>
                                     </select>
                                     <select name id="profile" className="select-style" onChange={this.calculateNetflixPrice}>
-                                        <option value="-"> Select</option>
+                                        <option value="-"> Choose</option>
                                         <option value={0}>1 Profile</option>
                                         <option value={1}>2 Profiles</option>
                                         <option value={2}>3 Profiles</option>
@@ -1300,18 +1300,18 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="nitro" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={0}>1 Months </option>
                                         <option value={6}>2 Months</option>
                                         <option value={8}>3 Months</option>
                                     </select>
                                     <select name id="typeNitro" className="select-style">
-                                        <option value="-"> Select</option>
+                                        <option value="-"> Choose</option>
                                         <option value={6}>Classic</option>
                                         <option value={8}>Nitro</option>
                                     </select>
                                     <select name id="accountType" className="select-style">
-                                        <option value="-"> Select</option>
+                                        <option value="-"> Choose</option>
                                         <option value={0}>Your account</option>
                                         <option value={0}>New account</option>
                                     </select>
@@ -1342,12 +1342,12 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="ShahidProfile">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={3}>VIP</option>
                                         <option value={7}>VIP SPORT</option>
                                     </select>
                                     <select name id="shahidType">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={0}>1 MONTHS</option>
                                         <option value={2}>2 MONTHS</option>
                                         <option value={5}>3 MONTHS</option>
@@ -1378,7 +1378,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="canvaMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={4}> 1 MONTHS</option>
                                         <option value={5}> 6 MONTHS</option>
                                         <option value={8}>12 MONTHS</option>
@@ -1414,7 +1414,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="AppleMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 EUR">---NEW ACCOUNT---</option>
                                         <option value="25 EUR">1 Months </option>
                                     </select>
@@ -1448,7 +1448,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="DeezerMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 EUR">---NEW ACCOUNT---</option>
                                         <option value="25 EUR">1 Months </option>
                                         <option value="50 EUR">3 Months </option>
@@ -1483,7 +1483,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="PrimeMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 EUR">---NEW ACCOUNT---</option>
                                         <option value="40 EUR">1 Months </option>
                                     </select>
@@ -1515,7 +1515,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="DisneyProfile">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={0}>2 PROFILE</option>
                                         <option value={1}>3 PROFILE</option>
                                         <option value={2}>4 PROFILE</option>
@@ -1523,7 +1523,7 @@ class Table extends Component {
                                         <option value={4}>6 PROFILE</option>
                                     </select>
                                     <select name id="DisneyMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={4}>1 MONTHS</option>
                                     </select>
                                 </p>
@@ -1551,7 +1551,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="CrunchyMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">--MEGA FUN--</option>
                                         <option value="5 EUR">1 MONTHS</option>
                                         <option value="6 EUR">1 MONTHS PV</option>
@@ -1585,7 +1585,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="HboMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">Not Available</option>
                                     </select>
                                 </p>
@@ -1618,23 +1618,23 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="youtubeService">
-                                        <option value="-">Select</option>
-                                        <option disabled value="50 EUR">---PREMIUM PRIVATE---</option>
+                                        <option value="-">Choose</option>
+                                        <option disabled value="50 EUR">--PRIVATE ACC--</option>
                                         <option value="11 EUR">3 MONTHS PREMIUM </option>
-                                        <option value="30 EUR">1 YEAR PREMIUM + MUSIC</option>
+                                        <option value="30 EUR">1 YEAR PREM+MUSIC</option>
                                         <option disabled value="50 EUR">---LIKES---</option>
                                         <option value="5 EUR">1K LIKES</option>
                                         <option value="9 EUR">2K LIKES</option>
                                         <option value="13 EUR">3K LIKES</option>
-                                        <option disabled value="50 EUR">---VIEWS---</option>
+                                        <option disabled value="50 EUR">--VIEWS--</option>
                                         <option value="5 EUR">1K [HQ] VIEWS</option>
                                         <option value="7 EUR">1K [HQ] REAL VIEWS</option>
                                         <option value="9 EUR">2K [HQ] VIEWS</option>
                                         <option value="12 EUR">2K [HQ] REAL VIEWS</option>
-                                        <option disabled value="50 EUR">---FOLLOWERS---</option>
+                                        <option disabled value="50 EUR">--FOLLOWERS--</option>
                                         <option value="19 EUR">500 [HQ] FOLLOWERS</option>
                                         <option value="35 EUR">1K [HQ] FOLLOWERS</option>
-                                        <option disabled value="50 EUR">---WATCHTIME---</option>
+                                        <option disabled value="50 EUR">--WATCHTIME--</option>
                                         <option value="12 EUR">500 [HQ] WATCHTIME</option>
                                         <option value="23 EUR">1K [HQ] WATCHTIME</option>
                                         <option value="45 EUR">2K [HQ] WATCHTIME</option>
@@ -1668,10 +1668,10 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="snapchatService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="50 EUR">---FOLLOWERS---</option>
-                                        <option value="19 EUR">100 [HQ] REAL </option>
-                                        <option value="59 EUR">500 [HQ] REAL </option>
+                                        <option value="19 EUR">100 [Hight Quality] REAL </option>
+                                        <option value="59 EUR">500 [Hight Quality] REAL </option>
                                         <option disabled value="50 EUR">--SNAPCHAT + --</option>
                                         <option value="2 EUR">1 MONTH SNAP+</option>
                                         <option value="3 EUR">2 MONTHS SNAP+</option>
@@ -1705,7 +1705,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="tiktokService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="12 EUR">1K FOLLOWERS</option>
                                         <option value="8 EUR">1K LIKES</option>
                                         <option value="6 EUR">10K VIEWS</option>
@@ -1734,15 +1734,15 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="instagramService">
-                                        <option value="-">Select</option>
-                                        <option disabled value="-">-FOLLOWERS HQ-</option>
+                                        <option value="-">Choose</option>
+                                        <option disabled value="-">-FOLLOWERS Hight Quality-</option>
                                         <option value="3 EUR">1K FOLLOWERS </option>
                                         <option value="10 EUR">5K FOLLOWERS </option>
                                         <option value="18 EUR">10K FOLLOWERS </option>
                                         <option disabled value="-">-FOLLOWERS NO DROP-</option>
-                                        <option value="4 EUR">1K FOLLOWERS[ND]</option>
-                                        <option value="11 EUR">5K FOLLOWERS[ND]</option>
-                                        <option value="19 EUR">10K FOLLOWERS[ND]</option>
+                                        <option value="4 EUR">1K FOLLOWERS</option>
+                                        <option value="11 EUR">5K FOLLOWERS</option>
+                                        <option value="19 EUR">10K FOLLOWERS</option>
                                         <option disabled value="-">-LIKES NO DROP-</option>
                                         <option value="2 EUR">1K LIKE </option>
                                         <option value="3 EUR">5K LIKES </option>
@@ -1777,7 +1777,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="facebookService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="9 EUR">1K FOLLOWERS</option>
                                         <option value="9 EUR">1K LIKES</option>
                                     </select>
@@ -1805,7 +1805,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="twitchService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="6 EUR">1K FOLLOWERS</option>
                                         <option disabled value="25 EUR">--TIER 1--</option>
                                         <option value="3 EUR">1 MONTHS</option>
@@ -1841,7 +1841,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="nbaLeagueService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="5 EUR">1 MONTH</option>
                                         <option value="11 EUR">3 MONTHS</option>
 
@@ -1870,7 +1870,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="huluService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="4 EUR">1 MONTH</option>
                                         <option value="10 EUR">3 MONTHS NO ADS</option>
                                     </select>
@@ -1901,7 +1901,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="ufcFightService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="9 EUR">3 MONTHS</option>
                                         <option value="17 EUR">6 MONTHS</option>
                                     </select>
@@ -1936,7 +1936,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="firstUsaService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="6 EUR">100M COIN+ALL TABLES </option>
                                         <option value="6 EUR">DIAMOND CUE</option>
                                         <option value="16 EUR">1B💸 +💎CUE+OUTBREAK </option>
@@ -1971,7 +1971,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( TOP UP IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="secondUsaService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="6 EUR">ON MY ACCOUNT</option>
                                     </select>
                                 </p>
@@ -1994,11 +1994,11 @@ class Table extends Component {
                         <div className="wrapper">
                             <img src="harley.jpeg" />
                             <div className="content">
-                                <span>HARLEY QUINN <span style={{ fontSize: '14px' }}> [RARE]</span> </span> <br />
+                                <span>HARLEY QUINN </span> <br />
                                 <h6 className="SocialInfos">( GIFT CARD [KEY] )</h6>
                                 <p>
                                     <select name id="thirdUsaService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="13 EUR">ON MY ACCOUNT</option>
                                     </select>
                                 </p>
@@ -2029,7 +2029,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( GIFT CARD [KEY] )</h6>
                                 <p>
                                     <select name id="GrapplingClaw1">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="11 EUR">ON MY ACCOUNT</option>
                                     </select>
                                 </p>
@@ -2058,7 +2058,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
                                 <p>
                                     <select name id="GrapplingClaw2">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="16 EUR">20 + SKINS</option>
                                         <option value="33 EUR">70 + SKINS</option>
                                     </select>
@@ -2103,7 +2103,7 @@ class Table extends Component {
                                 <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
                                 <p>
                                     <select name id="GrapplingClaw3">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="35 EUR">NEW ACCOUNT</option>
                                     </select>
                                 </p>
@@ -2364,13 +2364,13 @@ class Table extends Component {
                     <p className="titleProduct">OUR PS PLUS <span>SERVICES</span></p>
                     <div className="container10">
                         <div className="wrapper">
-                            <img src="moroccoAccount.jpg" alt="" />
+                            <img src="1monthsPsPlus.jpeg" alt="" />
                             <div className="content">
                                 <span>1 MONTHS PS+ ACCOUNT</span>
-                                <h6 className="SocialInfos">( IN YOUR ACCOUNT ))</h6>
+                                <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="firstMoroccoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="6 EUR">ESSENTIALS</option>
                                         <option value="8 EUR">EXTRA</option>
                                         <option value="10 EUR">DELUXE</option>
@@ -2393,13 +2393,13 @@ class Table extends Component {
                             </div>
                         </div>
                         <div className="wrapper">
-                            <img src="moroccoAccount2.jpg" alt="" />
+                            <img src="3monthsPsPlus.jpeg" alt="" />
                             <div className="content">
                                 <span>3 MONTHS PS+ ACCOUNT</span>
-                                <h6 className="SocialInfos">( IN YOUR ACCOUNT ))</h6>
+                                <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="secondMoroccoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="12 EUR">ESSENTIALS</option>
                                         <option value="19 EUR">EXTRA</option>
                                         <option value="21 EUR">DELUXE</option>
@@ -2422,13 +2422,13 @@ class Table extends Component {
                             </div>
                         </div>
                         <div className="wrapper">
-                            <img src="moroccoAccount3.jpg" alt="" />
+                            <img src="12monthsPsPlus.jpeg" alt="" />
                             <div className="content">
                                 <span>12 MONTHS PS+ ACCOUNT</span>
-                                <h6 className="SocialInfos">( IN YOUR ACCOUNT ))</h6>
+                                <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="thirdMoroccoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="25 EUR">ESSENTIALS</option>
                                         <option value="38 EUR">EXTRA</option>
                                         <option value="42 EUR">DELUXE</option>
@@ -2460,7 +2460,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="fifa23Plateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="23 EUR ">PS4 Primary</option>
                                     <option value="21 EUR">PS4 Secondary</option>
                                     <option value="29 EUR ">PS5 Primary</option>
@@ -2489,7 +2489,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select name id="bo3Plateforme" style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }}>
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="25 EUR ">PS4 Primary</option>
                                     <option value="18 EUR ">PS4 Secondary</option>
                                 </select>
@@ -2516,7 +2516,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select name id="assetoPlateforme" style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }}>
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="13 EUR ">PS4 Primary</option>
                                     <option value="9 EUR">PS4 Secondary</option>
                                 </select>
@@ -2556,7 +2556,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="f1Plateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="29 EUR ">PS4 Primary</option>
                                     <option value="24 EUR ">PS4 Secondary</option>
                                     <option value="30 EUR ">PS5 Primary</option>
@@ -2585,7 +2585,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="gtaPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="20 EUR ">PS4 Primary</option>
                                     <option value="15 EUR ">PS4 Secondary</option>
                                     <option value="35 EUR ">PS5 Primary</option>
@@ -2614,7 +2614,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="ragnarokPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="46 EUR ">PS4 Primary</option>
                                     <option value="32 EUR ">PS4 Secondary</option>
                                     <option value="46 EUR ">PS5 Primary</option>
@@ -2654,7 +2654,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="spidermanPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="25 EUR ">PS4 Primary</option>
                                     <option value="21 EUR ">PS4 Secondary</option>
                                     <option value="26 EUR ">PS5 Primary</option>
@@ -2683,7 +2683,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="rdrPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="36 EUR ">PS4 Primary</option>
                                     <option value="27 EUR ">PS4 Secondary</option>
                                 </select>
@@ -2710,7 +2710,7 @@ class Table extends Component {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="fifa22Plateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="17 EUR ">PS4 Primary</option>
                                     <option value="14 EUR ">PS4 Secondary</option>
                                     <option value="18 EUR ">PS5 Primary</option>
@@ -2827,7 +2827,7 @@ class Table extends Component {
                                 <span>PSN ACCOUNT </span>
                                 <p>
                                     <select name id="psnAccountService">
-                                        <option value="-" >Select</option>
+                                        <option value="-" >Choose</option>
                                         <option disabled value={34}>Not available</option>
 
                                     </select>
@@ -2853,7 +2853,7 @@ class Table extends Component {
                                 <span>PSN GIFT CARD</span>
                                 <p>
                                     <select name id="psnService">
-                                        <option value="-" >Select</option>
+                                        <option value="-" >Choose</option>
                                         <option value={4} disabled>Not available</option>
                                     </select>
                                 </p>
@@ -2883,7 +2883,7 @@ class Table extends Component {
                                 <span>VALORANT </span>
                                 <p>
                                     <select name id="valoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={16}>1000 PTS</option>
                                     </select>
                                 </p>
@@ -2928,7 +2928,7 @@ class Table extends Component {
                                 <span>XBOX LIVE GOLD</span>
                                 <p>
                                     <select name id="goldService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={34} disabled>1 MONTHS</option>
                                         <option value={25}>3 MONTHS</option>
                                         <option value={60}>12 MONTHS</option>
@@ -2965,7 +2965,7 @@ class Table extends Component {
                                 <span>ITUNES</span>
                                 <p>
                                     <select name id="itunesService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
 
 
                                     </select>
@@ -2991,7 +2991,7 @@ class Table extends Component {
                                 <span>XBOX GAME PASS </span>
                                 <p>
                                     <select name id="gamepassService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">--Xbox & Pc--</option>
                                         <option value={8}>2 Months</option>
                                         <option value={15}>4 Months</option>
@@ -3047,7 +3047,7 @@ class Table extends Component {
                                 <span>STEAM CARDS</span>
                                 <p>
                                     <select name id="steamService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={17}>10 Euro</option>
                                         <option value={29}>20 Euro</option>
                                     </select>
@@ -3081,7 +3081,7 @@ class Table extends Component {
                                 <span>ROBLOX</span>
                                 <p>
                                     <select name id="robloxService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">-ROBUX + PREMIUM-</option>
                                         <option value="12 EUR">1k RBX + 1MONTHS </option>
                                         <option value="20 EUR">2k RBX + 1MONTHS </option>
@@ -3121,7 +3121,7 @@ class Table extends Component {
                                 <span>LIFETIME KEY </span>
                                 <p>
                                     <select name id="officeService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">--LIFETIME KEY--</option>
                                         <option value="9 EUR">WINDOWS 10 PRO</option>
                                         <option value="10 EUR">WINDOWS 11 PRO</option>

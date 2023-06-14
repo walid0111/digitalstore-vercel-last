@@ -40,7 +40,7 @@ componentDidMount() {
       setTimeout(() => {
         this.setState({ isLoading: false });
         setupMenu(); // Appeler setupMenu() après le délai
-      }, 12000);
+      }, 10000);
     });
   }
   
@@ -1150,7 +1150,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( ACC UPGRADE AVAILABLE )</h6>
                                 <p>
                                     <select name id="SpotifyMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 MAD">---NEW ACCOUNT---</option>
                                         <option value="20 MAD">1 Months </option>
                                         <option value="30 MAD">2 Months </option>
@@ -1192,7 +1192,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="iptvMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="150 MAD">6 Months</option>
                                         <option value="250 MAD">12 Months</option>
                                     </select>
@@ -1249,18 +1249,18 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="type" onChange={this.calculateNetflixPrice}>
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={10}>PREMIUM</option>
                                         <option value={0}>STANDARD</option>
                                     </select>
                                     <select name id="standard" className="select-style" onChange={this.calculateNetflixPrice}>
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={25}>1 Months </option>
                                         <option value={50}>2 Months</option>
                                         <option value={75}>3 Months</option>
                                     </select>
                                     <select name id="profile" className="select-style" onChange={this.calculateNetflixPrice}>
-                                        <option value="-"> Select</option>
+                                        <option value="-"> Choose</option>
                                         <option value={0}>1 Profile</option>
                                         <option value={10}>2 Profiles</option>
                                         <option value={20}>3 Profiles</option>
@@ -1299,18 +1299,18 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="nitro" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={0}>1 Months </option>
                                         <option value={60}>2 Months</option>
                                         <option value={75}>3 Months</option>
                                     </select>
                                     <select name id="typeNitro" className="select-style">
-                                        <option value="-"> Select</option>
+                                        <option value="-"> Choose</option>
                                         <option value={60}>Classic</option>
                                         <option value={80}>Nitro</option>
                                     </select>
                                     <select name id="accountType" className="select-style">
-                                        <option value="-"> Select</option>
+                                        <option value="-"> Choose</option>
                                         <option value={0}>Your account</option>
                                         <option value={0}>New account</option>
                                     </select>
@@ -1341,12 +1341,12 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="ShahidProfile">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={30}>VIP</option>
                                         <option value={70}>VIP SPORT</option>
                                     </select>
                                     <select name id="shahidType">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={0}>1 MONTHS</option>
                                         <option value={20}>2 MONTHS</option>
                                         <option value={50}>3 MONTHS</option>
@@ -1377,7 +1377,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="canvaMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={35}> 1 MONTHS</option>
                                         <option value={50}> 6 MONTHS</option>
                                         <option value={75}>12 MONTHS</option>
@@ -1413,7 +1413,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="AppleMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 MAD">---NEW ACCOUNT---</option>
                                         <option value="25 MAD">1 Months </option>
                                     </select>
@@ -1447,7 +1447,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="DeezerMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 MAD">---NEW ACCOUNT---</option>
                                         <option value="25 MAD">1 Months </option>
                                         <option value="50 MAD">3 Months </option>
@@ -1482,7 +1482,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                 <p>
                                     <select name id="PrimeMonths" className="select-style">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="0 MAD">---NEW ACCOUNT---</option>
                                         <option value="40 MAD">1 Months </option>
                                     </select>
@@ -1514,7 +1514,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="DisneyProfile">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={0}>2 PROFILE</option>
                                         <option value={10}>3 PROFILE</option>
                                         <option value={15}>4 PROFILE</option>
@@ -1522,7 +1522,7 @@ componentDidMount() {
                                         <option value={25}>6 PROFILE</option>
                                     </select>
                                     <select name id="DisneyMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={50}>1 MONTHS</option>
                                     </select>
                                 </p>
@@ -1550,7 +1550,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="CrunchyMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">--MEGA FUN--</option>
                                         <option value="45 MAD">1 MONTHS</option>
                                         <option value="55 MAD">1 MONTHS PV</option>
@@ -1584,7 +1584,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="HboMonths">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">Not Available</option>
                                     </select>
                                 </p>
@@ -1617,23 +1617,23 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="youtubeService">
-                                        <option value="-">Select</option>
-                                        <option disabled value="50 MAD">---PREMIUM PRIVATE---</option>
+                                    <option value="-">Choose</option>
+                                        <option disabled value="50 MAD">--PRIVATE ACC--</option>
                                         <option value="105 MAD">3 MONTHS PREMIUM </option>
-                                        <option value="300 MAD">1 YEAR PREMIUM + MUSIC</option>
+                                        <option value="300 MAD">1 YEAR PREM+MUSIC </option>
                                         <option disabled value="50 MAD">---LIKES---</option>
                                         <option value="50 MAD">1K LIKES</option>
                                         <option value="90 MAD">2K LIKES</option>
                                         <option value="130 MAD">3K LIKES</option>
-                                        <option disabled value="50 MAD">---VIEWS---</option>
+                                        <option disabled value="50 MAD">--VIEWS--</option>
                                         <option value="50 MAD">1K [HQ] VIEWS</option>
                                         <option value="65 MAD">1K [HQ] REAL VIEWS</option>
                                         <option value="90 MAD">2K [HQ] VIEWS</option>
                                         <option value="120 MAD">2K [HQ] REAL VIEWS</option>
-                                        <option disabled value="50 MAD">---FOLLOWERS---</option>
+                                        <option disabled value="50 MAD">--FOLLOWERS--</option>
                                         <option value="190 MAD">500 [HQ] FOLLOWERS</option>
                                         <option value="350 MAD">1K [HQ] FOLLOWERS</option>
-                                        <option disabled value="50 MAD">---WATCHTIME---</option>
+                                        <option disabled value="50 MAD">--WATCHTIME--</option>
                                         <option value="120 MAD">500 [HQ] WATCHTIME</option>
                                         <option value="230 MAD">1K [HQ] WATCHTIME</option>
                                         <option value="450 MAD">2K [HQ] WATCHTIME</option>
@@ -1666,10 +1666,10 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="snapchatService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="50 MAD">---FOLLOWERS---</option>
-                                        <option value="190 MAD">100 [HQ] REAL </option>
-                                        <option value="590 MAD">500 [HQ] REAL </option>
+                                        <option value="190 MAD">100 [Hight Quality] REAL </option>
+                                        <option value="590 MAD">500 [Hight Quality] REAL </option>
                                         <option disabled value="50 MAD">--SNAPCHAT + --</option>
                                         <option value="15 MAD">1 MONTH SNAP+</option>
                                         <option value="30 MAD">2 MONTHS SNAP+</option>
@@ -1703,7 +1703,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="tiktokService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="120 MAD">1K FOLLOWERS</option>
                                         <option value="75 MAD">1K LIKES</option>
                                         <option value="55 MAD">10K VIEWS</option>
@@ -1732,15 +1732,15 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="instagramService">
-                                        <option value="-">Select</option>
-                                        <option disabled value="-">-FOLLOWERS HQ-</option>
+                                        <option value="-">Choose</option>
+                                        <option disabled value="-">-FOLLOWERS Hight Quality-</option>
                                         <option value="30 MAD">1K FOLLOWERS </option>
                                         <option value="100 MAD">5K FOLLOWERS </option>
                                         <option value="180 MAD">10K FOLLOWERS </option>
                                         <option disabled value="-">-FOLLOWERS NO DROP-</option>
-                                        <option value="35 MAD">1K FOLLOWERS[ND]</option>
-                                        <option value="110 MAD">5K FOLLOWERS[ND]</option>
-                                        <option value="190 MAD">10K FOLLOWERS[ND]</option>
+                                        <option value="35 MAD">1K FOLLOWERS</option>
+                                        <option value="110 MAD">5K FOLLOWERS</option>
+                                        <option value="190 MAD">10K FOLLOWERS</option>
                                         <option disabled value="-">-LIKES NO DROP-</option>
                                         <option value="15 MAD">1K LIKE </option>
                                         <option value="30 MAD">5K LIKES </option>
@@ -1775,7 +1775,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="facebookService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="90 MAD">1K FOLLOWERS</option>
                                         <option value="85 MAD">1K LIKES</option>
                                     </select>
@@ -1803,7 +1803,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                 <p>
                                     <select name id="twitchService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="60 MAD">1K FOLLOWERS</option>
                                         <option disabled value="25 MAD">--TIER 1--</option>
                                         <option value="25 MAD">1 MONTHS</option>
@@ -1839,7 +1839,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="nbaLeagueService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="45 MAD">1 MONTH</option>
                                         <option value="110 MAD">3 MONTHS</option>
 
@@ -1868,7 +1868,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="huluService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="35 MAD">1 MONTH</option>
                                         <option value="95 MAD">3 MONTHS NO ADS</option>
                                     </select>
@@ -1899,7 +1899,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( + WARRANTY )</h6>
                                 <p>
                                     <select name id="ufcFightService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="90 MAD">3 MONTHS</option>
                                         <option value="170 MAD">6 MONTHS</option>
                                     </select>
@@ -1933,11 +1933,11 @@ componentDidMount() {
                                 <span>8 BALL POOL</span>
                                 <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
                                 <p>
-                                    <select name id="firstUsaService">
-                                        <option value="-">Select</option>
-                                        <option value="55 MAD">100M COIN+ALL TABLES </option>
+                                    <select  name id="firstUsaService">
+                                        <option value="-">Choose</option>
+                                        <option value="55 MAD">100M +ALL TABLES </option>
                                         <option value="55 MAD">DIAMOND CUE</option>
-                                        <option value="155 MAD">1B💸 +💎CUE+OUTBREAK </option>
+                                        <option value="155 MAD">1B💸 + diamond CUE💎 + OUTBREAK </option>
                                     </select>
                                 </p>
                             </div>
@@ -1969,7 +1969,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( TOP UP IN YOUR ACCOUNT )</h6>
                                 <p>
                                     <select name id="secondUsaService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="60 MAD">ON MY ACCOUNT</option>
                                     </select>
                                 </p>
@@ -1992,11 +1992,11 @@ componentDidMount() {
                         <div className="wrapper">
                             <img src="harley.jpeg" />
                             <div className="content">
-                                <span>HARLEY QUINN <span style={{ fontSize: '14px' }}> [RARE]</span> </span> <br />
+                                <span>HARLEY QUINN </span> <br />
                                 <h6 className="SocialInfos">( GIFT CARD [KEY] )</h6>
                                 <p>
                                     <select name id="thirdUsaService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="130 MAD">ON MY ACCOUNT</option>
                                     </select>
                                 </p>
@@ -2027,7 +2027,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( GIFT CARD [KEY] )</h6>
                                 <p>
                                     <select name id="GrapplingClaw1">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="100 MAD">ON MY ACCOUNT</option>
                                     </select>
                                 </p>
@@ -2056,7 +2056,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
                                 <p>
                                     <select name id="GrapplingClaw2">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="150 MAD">20 + SKINS</option>
                                         <option value="320 MAD">70 + SKINS</option>
                                     </select>
@@ -2101,7 +2101,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
                                 <p>
                                     <select name id="GrapplingClaw3">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="340 MAD">NEW ACCOUNT</option>
                                     </select>
                                 </p>
@@ -2368,7 +2368,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT ))</h6>
                                 <p>
                                     <select name id="firstMoroccoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="60 MAD">ESSENTIALS</option>
                                         <option value="80 MAD">EXTRA</option>
                                         <option value="100 MAD">DELUXE</option>
@@ -2397,7 +2397,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT ))</h6>
                                 <p>
                                     <select name id="secondMoroccoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="120 MAD">ESSENTIALS</option>
                                         <option value="190 MAD">EXTRA</option>
                                         <option value="210 MAD">DELUXE</option>
@@ -2426,7 +2426,7 @@ componentDidMount() {
                                 <h6 className="SocialInfos">( IN YOUR ACCOUNT ))</h6>
                                 <p>
                                     <select name id="thirdMoroccoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value="250 MAD">ESSENTIALS</option>
                                         <option value="380 MAD">EXTRA</option>
                                         <option value="420 MAD">DELUXE</option>
@@ -2458,7 +2458,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="fifa23Plateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="230 MAD ">PS4 Primary</option>
                                     <option value="210 MAD">PS4 Secondary</option>
                                     <option value="285 MAD ">PS5 Primary</option>
@@ -2487,7 +2487,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select name id="bo3Plateforme" style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }}>
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="245 MAD ">PS4 Primary</option>
                                     <option value="180 MAD ">PS4 Secondary</option>
                                 </select>
@@ -2514,7 +2514,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select name id="assetoPlateforme" style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }}>
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="125 MAD ">PS4 Primary</option>
                                     <option value="90 MAD">PS4 Secondary</option>
                                 </select>
@@ -2554,7 +2554,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="f1Plateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="290 MAD ">PS4 Primary</option>
                                     <option value="235 MAD ">PS4 Secondary</option>
                                     <option value="300 MAD ">PS5 Primary</option>
@@ -2583,7 +2583,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="gtaPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="200 MAD ">PS4 Primary</option>
                                     <option value="150 MAD ">PS4 Secondary</option>
                                     <option value="345 MAD ">PS5 Primary</option>
@@ -2612,7 +2612,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="ragnarokPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="455 MAD ">PS4 Primary</option>
                                     <option value="320 MAD ">PS4 Secondary</option>
                                     <option value="455 MAD ">PS5 Primary</option>
@@ -2652,7 +2652,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="spidermanPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="245 MAD ">PS4 Primary</option>
                                     <option value="210 MAD ">PS4 Secondary</option>
                                     <option value="255 MAD ">PS5 Primary</option>
@@ -2681,7 +2681,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="rdrPlateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="355 MAD ">PS4 Primary</option>
                                     <option value="265 MAD ">PS4 Secondary</option>
                                 </select>
@@ -2708,7 +2708,7 @@ componentDidMount() {
                             </div>
                             <div className="row">
                                 <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} name id="fifa22Plateforme">
-                                    <option value="-">Select</option>
+                                    <option value="-">Choose</option>
                                     <option value="170 MAD ">PS4 Primary</option>
                                     <option value="135 MAD ">PS4 Secondary</option>
                                     <option value="180 MAD ">PS5 Primary</option>
@@ -2825,7 +2825,7 @@ componentDidMount() {
                                 <span>PSN ACCOUNT </span>
                                 <p>
                                     <select name id="psnAccountService">
-                                        <option value="-" >Select</option>
+                                        <option value="-" >Choose</option>
                                         <option disabled value={34}>Not available</option>
 
                                     </select>
@@ -2851,7 +2851,7 @@ componentDidMount() {
                                 <span>PSN GIFT CARD</span>
                                 <p>
                                     <select name id="psnService">
-                                        <option value="-" >Select</option>
+                                        <option value="-" >Choose</option>
                                         <option value={4} disabled>Not available</option>
                                     </select>
                                 </p>
@@ -2881,7 +2881,7 @@ componentDidMount() {
                                 <span>VALORANT </span>
                                 <p>
                                     <select name id="valoService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={160}>1000 PTS</option>
                                     </select>
                                 </p>
@@ -2926,7 +2926,7 @@ componentDidMount() {
                                 <span>XBOX LIVE GOLD</span>
                                 <p>
                                     <select name id="goldService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={34} disabled>1 MONTHS</option>
                                         <option value={250}>3 MONTHS</option>
                                         <option value={600}>12 MONTHS</option>
@@ -2963,7 +2963,7 @@ componentDidMount() {
                                 <span>ITUNES</span>
                                 <p>
                                     <select name id="itunesService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
 
 
                                     </select>
@@ -2989,7 +2989,7 @@ componentDidMount() {
                                 <span>XBOX GAME PASS </span>
                                 <p>
                                     <select name id="gamepassService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">--Xbox & Pc--</option>
                                         <option value={80}>2 Months</option>
                                         <option value={150}>4 Months</option>
@@ -3045,7 +3045,7 @@ componentDidMount() {
                                 <span>STEAM CARDS</span>
                                 <p>
                                     <select name id="steamService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option value={170}>10 Euro</option>
                                         <option value={290}>20 Euro</option>
                                     </select>
@@ -3079,7 +3079,7 @@ componentDidMount() {
                                 <span>ROBLOX</span>
                                 <p>
                                     <select name id="robloxService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">-ROBUX + PREMIUM-</option>
                                         <option value="115 MAD">1k RBX + 1MONTHS </option>
                                         <option value="20 MAD">2k RBX + 1MONTHS </option>
@@ -3119,7 +3119,7 @@ componentDidMount() {
                                 <span>LIFETIME KEY </span>
                                 <p>
                                     <select name id="officeService">
-                                        <option value="-">Select</option>
+                                        <option value="-">Choose</option>
                                         <option disabled value="-">--LIFETIME KEY--</option>
                                         <option value="90 MAD">WINDOWS 10 PRO</option>
                                         <option value="100 MAD">WINDOWS 11 PRO</option>

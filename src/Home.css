@@ -1,5 +1,9 @@
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 
+        select {
+            width: 50%;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -39,6 +43,7 @@
             margin-top: 10px;
             font-size: 28px;
         }
+
         .navigation-menu a:not(:nth-child(4)):hover {
             background: #008507;
             color: #fff;
@@ -1690,18 +1695,18 @@
                 align-items: center;
             }
 
-        .container7 .wrapper img {
-            padding-top: 3px;
-            width: 98%;
-            height: 128px;
-            border-radius: 25px 25px 0 0;
+            .container7 .wrapper img {
+                padding-top: 3px;
+                width: 98%;
+                height: 128px;
+                border-radius: 25px 25px 0 0;
 
-            margin-left: auto;
-            margin-right: auto;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+                margin-left: auto;
+                margin-right: auto;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
 
         }
 
@@ -1920,7 +1925,7 @@
 
         @media (max-width: 680px) {
             .SocialInfos {
-                font-size: 10px;
+                font-size: 8px;
                 margin-top: 5px;
             }
         }
@@ -2337,12 +2342,14 @@
                 display: none;
             }
         }
-        marquee{
-            animation: blink 1s linear infinite; 
-        
+
+        marquee {
+            animation: blink 1s linear infinite;
+
         }
+
         @keyframes blink {
             50% {
-              opacity: 0.8;
+                opacity: 0.8;
             }
-          }
+        }
