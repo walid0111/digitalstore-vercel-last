@@ -89,7 +89,7 @@ const ReportForm = () => {
                             <li className="link_name">How to order ?</li>
                             <li><a href>1. Choose your product</a></li>
                             <li><a href>2. Click Buy</a></li>
-                            <li><a href>3. Send us the WhatsApp message </a></li>
+                            <li><a href>3. Send us the WhatsApp / E-mail Message </a></li>
                             <li><a href>4. Wait for our confirmation </a></li>
                         </ul>
                         <ul className="box input-box">

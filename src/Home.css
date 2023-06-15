@@ -1,8 +1,12 @@
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 
-        select {
+  
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
+        select:not(.notThisSelect) {
             width: 50%;
-        }
+          }
+          /* search bar */
+
+          /* end search */
 
         * {
             margin: 0;
@@ -2184,7 +2188,7 @@
         }
 
         .benefitQuestion span {
-            color: #03a60b;
+            color: #05a50d;
         }
 
         /*     <!--benefits-->
@@ -2353,3 +2357,6 @@
                 opacity: 0.8;
             }
         }
+
+    /* trustpilot */
+    

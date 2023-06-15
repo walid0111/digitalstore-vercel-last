@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import LoadingScreen from './LoadingScreen';
+import Trustpilot from './Trustilot';
 
 
 
@@ -50,7 +51,7 @@ class Table extends Component {
             }, 10000);
         });
 
-
+    
     }
 
 
@@ -884,7 +885,7 @@ class Table extends Component {
             window.location.href = url;
         }
     }
-
+       
 
 
 
@@ -899,15 +900,17 @@ class Table extends Component {
             <div>
 
                 <script src="./homeScript"></script>
+                <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
 
                 <head>
                     <meta charSet="UTF-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                    <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210"/>
+                    <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210" />
                     <title>Document</title>
                     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
                 </head>
@@ -967,9 +970,10 @@ class Table extends Component {
                     </div>
                 </header>
                 {isLoading ? <LoadingScreen /> : <>
-
+                
                     {/*-------------------------Mad------------------------*/}
                     <div id="madDisplay" style={{ display: 'block' }}>
+                        
                         {/*Body slide show*/}
                         <div className="slideAlign">
                             <div className="slideshow-container">
@@ -1016,6 +1020,8 @@ class Table extends Component {
                         <marquee scrollamount={3} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
                             LIMITED TIME DISCOUNT <span style={{ color: 'black' }}>/</span> PROMOTION A DURÉE LIMITÉE </marquee>
                         {/*top up product*/}
+
+                        
                         <p className="titleProduct">OUR <span>TOP UP</span></p><br /> <br />
                         <section className="boxes">
                             <div className="boxShow">
@@ -1152,6 +1158,7 @@ class Table extends Component {
             </div>
         */}
                         </section>
+                        
                         {/*Body product*/}
                         <p className="titleProduct">OUR <span> BEST </span> SELLING</p>
                         <div className="container">
@@ -1260,18 +1267,18 @@ class Table extends Component {
                                     <span>NETFLIX</span>
                                     <h6 className="SocialInfos">( + WARRANTY )</h6>
                                     <p>
-                                        <select name id="type" onChange={this.calculateNetflixPrice}>
+                                        <select name id="type" className='notThisSelect' onChange={this.calculateNetflixPrice}>
                                             <option value="-">Choose</option>
                                             <option value={10}>PREMIUM</option>
                                             <option value={0}>STANDARD</option>
                                         </select>
-                                        <select name id="standard" className="select-style" onChange={this.calculateNetflixPrice}>
+                                        <select name id="standard"   className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
                                             <option value="-">Choose</option>
                                             <option value={25}>1 Months </option>
                                             <option value={50}>2 Months</option>
                                             <option value={75}>3 Months</option>
                                         </select>
-                                        <select name id="profile" className="select-style" onChange={this.calculateNetflixPrice}>
+                                        <select name id="profile"  className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
                                             <option value="-"> Choose</option>
                                             <option value={0}>1 Profile</option>
                                             <option value={10}>2 Profiles</option>
@@ -1310,18 +1317,18 @@ class Table extends Component {
                                     <span>DISCORD</span>
                                     <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
                                     <p>
-                                        <select name id="nitro" className="select-style">
+                                        <select name id="nitro" className="select-style notThisSelect">
                                             <option value="-">Choose</option>
                                             <option value={0}>1 Months </option>
                                             <option value={60}>2 Months</option>
                                             <option value={75}>3 Months</option>
                                         </select>
-                                        <select name id="typeNitro" className="select-style">
+                                        <select name id="typeNitro" className="select-style notThisSelect">
                                             <option value="-"> Choose</option>
                                             <option value={60}>Classic</option>
                                             <option value={80}>Nitro</option>
                                         </select>
-                                        <select name id="accountType" className="select-style">
+                                        <select name id="accountType" className="select-style notThisSelect">
                                             <option value="-"> Choose</option>
                                             <option value={0}>Your account</option>
                                             <option value={0}>New account</option>
@@ -1352,12 +1359,12 @@ class Table extends Component {
                                     <span>SHAHID</span>
                                     <h6 className="SocialInfos">( + WARRANTY )</h6>
                                     <p>
-                                        <select name id="ShahidProfile">
+                                        <select name className='notThisSelect' id="ShahidProfile">
                                             <option value="-">Choose</option>
                                             <option value={30}>VIP</option>
                                             <option value={70}>VIP SPORT</option>
                                         </select>
-                                        <select name id="shahidType">
+                                        <select name className='notThisSelect' id="shahidType">
                                             <option value="-">Choose</option>
                                             <option value={0}>1 MONTHS</option>
                                             <option value={20}>2 MONTHS</option>
@@ -1525,7 +1532,7 @@ class Table extends Component {
                                     <span>DISNEY</span>
                                     <h6 className="SocialInfos">( + WARRANTY )</h6>
                                     <p>
-                                        <select name id="DisneyProfile">
+                                        <select className='notThisSelect' id="DisneyProfile">
                                             <option value="-">Choose</option>
                                             <option value={0}>2 PROFILE</option>
                                             <option value={10}>3 PROFILE</option>
@@ -1533,7 +1540,7 @@ class Table extends Component {
                                             <option value={20}>5 PROFILE</option>
                                             <option value={25}>6 PROFILE</option>
                                         </select>
-                                        <select name id="DisneyMonths">
+                                        <select className='notThisSelect' id="DisneyMonths">
                                             <option value="-">Choose</option>
                                             <option value={50}>1 MONTHS</option>
                                         </select>
@@ -2853,7 +2860,7 @@ class Table extends Component {
                                 <div className="modal">
                                     <div className="modal-content">
                                         <span className="close-btn">×</span>
-                                        <p>Information about netflix product goes here...</p>
+                                        <p>...</p>
                                     </div>
                                 </div>
                             </div>
@@ -3181,11 +3188,13 @@ class Table extends Component {
                             </div>
                         </div>
                         {/*reviews*/}
-                        <div class="trustpilot-widget" data-locale="en-US" data-template-id="5419b6a8b0d04a076446a9ad" data-businessunit-id="642c43682f70969ad1528054" data-style-height="24px" data-style-width="100%" data-theme="dark" data-min-review-count="0" data-without-reviews-preferred-string-id="1" data-style-alignment="center">
-                            <a href="https://www.trustpilot.com/review/digitalstorema.000webhostapp.com" target="_blank" rel="noopener">Trustpilot</a>
-                        </div>
+                        <p className="benefitQuestion">OUR <span> SATISFIED</span> CUSTOMERS </p><br/>
+
+                        <p style={{backgroundColor:'black'}}> < Trustpilot/></p>
+
                     </div>
                     <Footer />
+
 
                 </>}
             </div >
