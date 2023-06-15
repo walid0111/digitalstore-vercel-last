@@ -22,9 +22,19 @@ class Table extends Component {
           setTimeout(() => {
             this.setState({ isLoading: false });
             setupMenu(); // Appeler setupMenu() après le délai
+            const script = document.createElement("script");
+            script.async = true;
+            script.type = "text/javascript";
+            script.src = "https://embed.tawk.to/648a2360cc26a871b02293eb/1h2tpkdrr";
+            script.charset = "UTF-8";
+            script.setAttribute("crossorigin", "*");
+            document.getElementsByTagName("head")[0].appendChild(script);
           }, 10000);
         });
       }
+
+
+      
     //---------------the button that show the navbar in phone----------------------
     toggleMenu() {
         $('#menu-toggle-btn-1').toggleClass('open-1');
@@ -895,6 +905,7 @@ class Table extends Component {
                     <meta charSet="UTF-8" />
                     <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+                    <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210"/>
                     <title>Document</title>
                     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
@@ -1145,7 +1156,7 @@ class Table extends Component {
                     <p className="titleProduct">OUR <span> BEST </span> SELLING</p>
                     <div className="container">
                         <div className="wrapper">
-                            <img src="spotify.png" alt="" />
+                        <img src="SPOTIFY.PNG" alt="" />
                             <div className="content">
                                 <span>SPOTIFY Private</span>
                                 <h6 className="SocialInfos">( ACC UPGRADE AVAILABLE )</h6>

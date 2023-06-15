@@ -12,6 +12,9 @@ const RegionSelector = () => {
 
   return (
     <div className="region-selector">
+      <head>
+      <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210"/>
+      </head>
       <h2>WELCOME TO <span style={{color:'#008507'}}>DIGITAL STORE..</span> </h2>
       <h3>THE CHEAPEST WEBSITE IN MOROCCO </h3>
       <div className="region-options">

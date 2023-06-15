@@ -20,7 +20,17 @@ class Table extends Component {
   componentDidMount() {
     this.fetchData();
     setInterval(this.fetchData, 5000); // fetch data every 5 seconds
+
+
+    const script = document.createElement("script");
+    script.async = true;
+    script.type = "text/javascript";
+    script.src = "https://embed.tawk.to/648a2360cc26a871b02293eb/1h2tpkdrr";
+    script.charset = "UTF-8";
+    script.setAttribute("crossorigin", "*");
+    document.getElementsByTagName("head")[0].appendChild(script);
   }
+  
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.data !== this.state.data) {
@@ -78,6 +88,7 @@ class Table extends Component {
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210"/>
           <title>Document</title>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
