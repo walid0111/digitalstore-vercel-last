@@ -178,7 +178,7 @@ export default function setupMenu() {
 
         if (shahidProfileSelect.value != '-' && shahidType.value != '-') {
             const totalShahidPrice = shahidProfileValue + shahidTypeValue;
-            shahidPriceSpan.innerHTML = "PRICE : " + totalShahidPrice;
+            shahidPriceSpan.innerHTML = "PRICE : " + totalShahidPrice + " EUR";
         }
     }
 
@@ -190,7 +190,7 @@ export default function setupMenu() {
     const selectCanva = document.getElementById("canvaMonths");
     const spanCanva = document.getElementById("canva");
     selectCanva.addEventListener("change", function () {
-        spanCanva.innerText = "PRICE : " + selectCanva.value;
+        spanCanva.innerText = "PRICE : " + selectCanva.value + " EUR";
     });
 
 

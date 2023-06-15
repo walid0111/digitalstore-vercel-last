@@ -1534,15 +1534,15 @@ class Table extends Component {
                                     <p>
                                         <select className='notThisSelect' id="DisneyProfile">
                                             <option value="-">Choose</option>
-                                            <option value={0}>2 PROFILE</option>
+                                            <option value={0}>1 PROFILE</option>
+                                            <option value={5}>2 PROFILE</option>
                                             <option value={10}>3 PROFILE</option>
                                             <option value={15}>4 PROFILE</option>
-                                            <option value={20}>5 PROFILE</option>
-                                            <option value={25}>6 PROFILE</option>
+                                            <option value={25}>5 PROFILE</option>
                                         </select>
                                         <select className='notThisSelect' id="DisneyMonths">
                                             <option value="-">Choose</option>
-                                            <option value={50}>1 MONTHS</option>
+                                            <option value={30}>1 MONTHS</option>
                                         </select>
                                     </p>
                                 </div>

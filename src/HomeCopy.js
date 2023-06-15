@@ -1428,7 +1428,7 @@ class Table extends Component {
                                         <select name id="AppleMonths" className="select-style">
                                             <option value="-">Choose</option>
                                             <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                            <option value="25 EUR">1 Months </option>
+                                            <option value="3 EUR">1 Months </option>
                                         </select>
                                     </p>
                                 </div>
@@ -1462,8 +1462,8 @@ class Table extends Component {
                                         <select name id="DeezerMonths" className="select-style">
                                             <option value="-">Choose</option>
                                             <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                            <option value="25 EUR">1 Months </option>
-                                            <option value="50 EUR">3 Months </option>
+                                            <option value="3 EUR">1 Months </option>
+                                            <option value="6 EUR">3 Months </option>
                                             <option disabled value="0 EUR">---UPGRADE---</option>
                                         </select>
                                     </p>
@@ -1497,7 +1497,7 @@ class Table extends Component {
                                         <select name id="PrimeMonths" className="select-style">
                                             <option value="-">Choose</option>
                                             <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                            <option value="40 EUR">1 Months </option>
+                                            <option value="4 EUR">1 Months </option>
                                         </select>
                                     </p>
                                 </div>
@@ -1528,15 +1528,12 @@ class Table extends Component {
                                     <p>
                                         <select className='notThisSelect' id="DisneyProfile">
                                             <option value="-">Choose</option>
-                                            <option value={0}>2 PROFILE</option>
-                                            <option value={1}>3 PROFILE</option>
-                                            <option value={2}>4 PROFILE</option>
-                                            <option value={3}>5 PROFILE</option>
-                                            <option value={4}>6 PROFILE</option>
+                                            <option value={0}>1 PROFILE</option>
+                                            
                                         </select>
                                         <select className='notThisSelect' id="DisneyMonths">
                                             <option value="-">Choose</option>
-                                            <option value={4}>1 MONTHS</option>
+                                            <option value={3}>1 MONTHS</option>
                                         </select>
                                     </p>
                                 </div>
@@ -1682,8 +1679,8 @@ class Table extends Component {
                                         <select name id="snapchatService">
                                             <option value="-">Choose</option>
                                             <option disabled value="50 EUR">---FOLLOWERS---</option>
-                                            <option value="19 EUR">100 [Hight Quality] REAL </option>
-                                            <option value="59 EUR">500 [Hight Quality] REAL </option>
+                                            <option value="20 EUR">100 [Hight Quality] REAL </option>
+                                            <option value="60 EUR">500 [Hight Quality] REAL </option>
                                             <option disabled value="50 EUR">--SNAPCHAT + --</option>
                                             <option value="2 EUR">1 MONTH SNAP+</option>
                                             <option value="3 EUR">2 MONTHS SNAP+</option>

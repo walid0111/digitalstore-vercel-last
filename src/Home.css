@@ -901,13 +901,27 @@
             .prev,
             .next,
             .text {
-                font-size: 11px
+                font-size: 11px;
             }
 
             .slideAlign {
                 position: relative;
-                bottom: -200px;
+                margin-top: 0;
+                border-radius: 2px;
+                bottom: -90px;
+
+
+            }
+            .dot{
                 display: none;
+            }
+            .imgSlide {
+                vertical-align: middle;
+                border-radius: 0;
+                height: 100%;
+    
+    
+    
             }
         }
 
