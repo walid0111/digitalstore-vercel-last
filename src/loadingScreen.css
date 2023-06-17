@@ -34,6 +34,7 @@
     animation: msg 0.3s 4.7s linear forwards;
     position: absolute;
     width: 100%;
+    
   }
   
   .preloader__msg--last {

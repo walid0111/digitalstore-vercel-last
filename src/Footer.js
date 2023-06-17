@@ -107,16 +107,11 @@ const ReportForm = () => {
                 <div className="bottom-details">
                     <div className="bottom_text">
                         <span className="copyright_text">Copyright © 2023. All rights reserved </span>
-                        <span className="copyright_text">
-                            <img src="orange.png" style={{ height: '25px', paddingLeft: '8px' }} />
-                            <img src="cashplus.png" style={{ height: '25px', paddingLeft: '8px' }} />
-                            <img src="cih.png" style={{ height: '25px', paddingLeft: '8px' }} />
-                            <img src="paypal.png" style={{ height: '25px', paddingLeft: '8px' }} /></span>
+                        <span class="policy_terms">
+                            <a href>Privacy policy</a>
+                        </span>
                         <span style={{ fontSize: '12px' }}>Powered By Digital Store</span>
-                        {/*<span class="policy_terms">
-                <a href="#">Privacy policy</a>
-                <a href="#">Terms & condition</a>
-            </span>*/}
+                        
                     </div>
                 </div>
             </footer>

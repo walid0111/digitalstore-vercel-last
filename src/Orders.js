@@ -1,5 +1,6 @@
 import './Order.css';
 import axios from 'axios';
+import Footer from './Footer';
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -30,7 +31,7 @@ class Table extends Component {
     script.setAttribute("crossorigin", "*");
     document.getElementsByTagName("head")[0].appendChild(script);
   }
-  
+
 
   componentDidUpdate(prevProps, prevState) {
     if (prevState.data !== this.state.data) {
@@ -53,15 +54,16 @@ class Table extends Component {
     const { data } = this.state;
     const filteredData = data.filter(item => item.id == inputId);
     if (filteredData.length > 0) {
-      this.setState({ dataFiltred: filteredData, message: ' Check for the Order details bellow' ,  messageScroll: (
-        <div className='jump'>
-          <i className="fas fa-arrow-down jump"></i> Scroll Down <i className="fas fa-arrow-down jump"></i>
-        </div>
-      )
-    });
+      this.setState({
+        dataFiltred: filteredData, message: ' Check for the Order details bellow', messageScroll: (
+          <div className='jump'>
+            <i className="fas fa-arrow-down jump"></i> Scroll Down <i className="fas fa-arrow-down jump"></i>
+          </div>
+        )
+      });
 
       // Scroll to the element with ID "here" after the state has been updated
-     
+
     } else {
 
       this.setState({ messageScroll: null, message: 'There is no order with this ID', dataFiltred: [] });
@@ -88,7 +90,7 @@ class Table extends Component {
           <meta charset="UTF-8" />
           <meta http-equiv="X-UA-Compatible" content="IE=edge" />
           <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-          <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210"/>
+          <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210" />
           <title>Document</title>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
@@ -134,7 +136,7 @@ class Table extends Component {
               </div>{console.log(this.state.inputId)}
             </div>
             <div style={{ textAlign: 'center', color: 'red', fontWeight: 'bold', marginTop: '12px' }}> {this.state.messageScroll}</div>
-      
+
             <div style={{ textAlign: 'center', padding: '20px', marginTop: '70px' }}>
               <i className="fa fa-question-circle"></i>
               <span style={{ fontWeight: 'bold', marginLeft: '10px' }}>HOW IT WORKS ?</span>
@@ -163,7 +165,14 @@ class Table extends Component {
               </div>
             </div>
             <div className="titleOrders">
-              <h4>PLEASE, AFTER RECEIVING YOUR ORDER DON'T FORGET TO GIVE US A <span>TRUSTPILOTE REVIEW </span> </h4> <br />
+              <h4>PLEASE, AFTER RECEIVING YOUR ORDER DON'T FORGET TO GIVE US A <span>TRUSTPILOTE REVIEW </span>BELLOW :) </h4> <br />
+              <div class="flex items-center justify-center" style={{margin:'20px'}}>
+                <a href="https://www.trustpilot.com/evaluate/digitalstore.ma" class="flex items-center justify-center bg-green-700 hover:bg-green-600 hover:no-underline text-white font-bold py-2 px-4 rounded">
+                  <i class="fas fa-star fa-lg mr-2"></i>
+                  Leave a Review
+                </a>
+              </div>
+
             </div>
             {/*order details*/}
 
@@ -176,8 +185,8 @@ class Table extends Component {
                 <article className="card">
                   <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '20px', fontSize: '22px' }}>THANK YOU FOR YOU ORDER :)
                   </p>
-                  <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '10px', fontSize: '18px', color:'#008507' }}>
-                    <span style={{ fontWeight: 'bold' }}>Order Number : #</span>{record.id} 
+                  <p style={{ textAlign: 'center', fontWeight: 'bold', marginTop: '10px', fontSize: '18px', color: '#008507' }}>
+                    <span style={{ fontWeight: 'bold' }}>Order Number : #</span>{record.id}
 
                   </p>
 
@@ -242,64 +251,8 @@ class Table extends Component {
           </form>
         </body>
 
+        <Footer />
 
-
-
-        <footer>
-          <div className="content">
-            <div className="top">
-              <div className="logo-details">
-                <h1 className="logo" style={{ fontFamily: 'fantasy' }}><span style={{ color: '#008507' }}>D</span>igital <span style={{ color: '#008507' }}>S</span>tore</h1>
-              </div>
-              <div className="media-icons">
-                <a href="#"><i className="fab fa-facebook-f" /></a>
-                <a href="https://www.instagram.com/digitalstore_v2/"><i className="fab fa-instagram" /></a>
-                <a href="https://www.instagram.com/digitalstore_v1/"><i className="fab fa-instagram" /></a>
-                <a href="https://wa.me/+212637976257"><i className="fab fa-whatsapp" /></a>
-              </div>
-            </div>
-            <div className="link-boxes">
-              <ul className="box">
-                <li className="link_name">Company</li>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Contact us</a></li>
-              </ul>
-              <ul className="box">
-                <li className="link_name">Services</li>
-                <li><a href="#">Shopping</a></li>
-                <li><a href="#">CV design</a></li>
-              </ul>
-              <ul className="box">
-                <li className="link_name">How to order ?</li>
-                <li><a href>1. Choose your product</a></li>
-                <li><a href>2. Click Buy</a></li>
-                <li><a href>3. Send us the WhatsApp message </a></li>
-                <li><a href>4. Wait for our confirmation </a></li>
-              </ul>
-              <ul className="box input-box">
-                <li className="link_name">Report a bugs</li>
-                <li><input type="text" placeholder="Your E-mail" /></li>
-                <li><input type="text" placeholder=" Problem details.." /></li>
-                <li><input type="button" defaultValue="Send" /></li>
-              </ul>
-            </div>
-          </div>
-          <div className="bottom-details">
-            <div className="bottom_text">
-              <span className="copyright_text">Copyright © 2023. All rights reserved </span>
-              <span className="copyright_text">
-                <img src="orange.png" style={{ height: '25px', paddingLeft: '8px' }} />
-                <img src="cashplus.png" style={{ height: '25px', paddingLeft: '8px' }} />
-                <img src="cih.png" style={{ height: '25px', paddingLeft: '8px' }} />
-                <img src="paypal.png" style={{ height: '25px', paddingLeft: '8px' }} /></span>
-              <span style={{ fontSize: '12px' }}>Powered By Digital Store</span>
-              {/*<span class="policy_terms">
-                <a href="#">Privacy policy</a>
-                <a href="#">Terms & condition</a>
-            </span>*/}
-            </div>
-          </div>
-        </footer>
 
       </div>
     )
