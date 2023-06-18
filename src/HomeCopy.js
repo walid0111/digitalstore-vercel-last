@@ -2556,7 +2556,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="firstMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="6 EUR">ESSENTIALS</option>
+                                                <option value="7 EUR">ESSENTIALS</option>
                                                 <option value="8 EUR">EXTRA</option>
                                                 <option value="10 EUR">DELUXE</option>
                                             </select>
@@ -2586,8 +2586,8 @@ class Table extends Component {
                                             <select name id="secondMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="12 EUR">ESSENTIALS</option>
-                                                <option value="19 EUR">EXTRA</option>
-                                                <option value="21 EUR">DELUXE</option>
+                                                <option value="20 EUR">EXTRA</option>
+                                                <option value="22 EUR">DELUXE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2615,7 +2615,7 @@ class Table extends Component {
                                             <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="25 EUR">ESSENTIALS</option>
-                                                <option value="38 EUR">EXTRA</option>
+                                                <option value="35 EUR">EXTRA</option>
                                                 <option value="42 EUR">DELUXE</option>
                                             </select>
                                         </p>
