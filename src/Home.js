@@ -121,7 +121,7 @@ class Table extends Component {
                 othersDropdownOpen: false,
                 xboxDropdownOpen: false
             });
-    
+
         }
     }
 
@@ -1006,11 +1006,17 @@ class Table extends Component {
                         <nav id='navigation-menu-2' className="navigation-menu">
                             {/*<a href="#"><i class="fas fa-home home"></i> Home</a>*/}
                             <div className="dropdown">
-                                <a className="info-btn" style={{cursor:'pointer'}}><i className="fas fa-gift" /> GIVEAWAY</a>
+                                <a className="info-btn" style={{ cursor: 'pointer' }}><i className="fas fa-gift" /> GIVEAWAY</a>
                                 <div className="modal">
-                                    <div className="modal-content">
+                                    <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
-                                        <p>THERE IS NO GIVEAWAY.. PLEASE COME BACK SOON :)</p>
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 25/06/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>18 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
+                                        <p>EMAIL : digitalstorev002@gmail.com <br />
+                                            PASS : digitalstore2022
+                                        </p>
+                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p>
+
                                     </div>
                                 </div>
                                 {/*<div class="dropdown-menu">
@@ -1075,7 +1081,7 @@ class Table extends Component {
                                 <a className="prev" onClick={() => this.plusSlides(-1)}>❮</a>
                                 <a className="next" onClick={() => this.plusSlides(1)}>❯</a>
                             </div>
-                            
+
                             <div style={{ textAlign: 'center', display: 'none' }}>
                                 <span className="dot" onClick={() => this.currentSlide(1)}></span>
                                 <span className="dot" onClick={() => this.currentSlide(2)}></span>
@@ -1088,19 +1094,19 @@ class Table extends Component {
                         <div id="madDisplay">
 
 
-                        {/*PROMOTION*/}
-                        {showAlert && (
-                            <div className="alert" onClick={this.closeAlert}>
-                                <span className="closebtnAlert" >×</span>
-                                <strong>PROMOTION ALERT !!</strong> <br /> LIMITED TIME DISCOUNT
-                            </div>
-                        )}
-                        {/*PROMOTION MARQUEE*/}
-                        <marquee scrollamount={3} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
-                            LIMITED TIME DISCOUNT <span style={{ color: 'black' }}>/</span> PROMOTION A DURÉE LIMITÉE </marquee>
-                        {/*top up product*/}
+                            {/*PROMOTION*/}
+                            {showAlert && (
+                                <div className="alert" onClick={this.closeAlert}>
+                                    <span className="closebtnAlert" >×</span>
+                                    <strong>PROMOTION ALERT !!</strong> <br /> LIMITED TIME DISCOUNT
+                                </div>
+                            )}
+                            {/*PROMOTION MARQUEE*/}
+                            <marquee scrollamount={3} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
+                                LIMITED TIME DISCOUNT <span style={{ color: 'black' }}>/</span> PROMOTION A DURÉE LIMITÉE </marquee>
+                            {/*top up product*/}
 
-                        <p className="titleProduct bestSellings" >FIND YOUR<span> ITEM </span> EASILY </p>
+                            <p className="titleProduct bestSellings" >FIND YOUR<span> ITEM </span> EASILY </p>
                             <div className="flex justify-center">
                                 <div className="relative group">
                                     <button
@@ -1225,13 +1231,13 @@ class Table extends Component {
                                                 Money will be boosted as CASH+Deluxe CARS that you can sell and get full amount. Only CASH possible too but it will be longer delivery and more expensive service!<br />
                                                 If you need LVL boost , just message us on chat G2G.<br /><br />
                                                 <select className="select-style" id='gtaTopup'>
-                                                    <option value="-">YOUR PLATFORM</option>
-                                                    <option value={"0"}>PLAY STATION 4</option>
-                                                    <option value={"0"}>PLAY STATION 5</option>
-                                                    <option value={"0"}>XBOX ONE</option>
-                                                    <option value={"0"}>XBOX SERIES</option>
+                                                    <option disabled value="-">YOUR PLATFORM</option>
+                                                    <option disabled value={"0"}>PLAY STATION 4</option>
+                                                    <option disabled value={"0"}>PLAY STATION 5</option>
+                                                    <option disabled value={"0"}>XBOX ONE</option>
+                                                    <option disabled value={"0"}>XBOX SERIES</option>
                                                 </select> <br /><br />
-                                                <div id="gtaTopupPrice" className="price">PRICE :</div><br />
+                                                <div id="gtaTopupPrice" className="price">PRICE : (service not available)</div><br />
 
 
                                                 <button className='btn btn-primary' style={{ cursor: 'pointer', color: 'white' }} onClick={this.buyGtaTopup} >BUY NOW</button><br /><br />
@@ -1259,9 +1265,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1274,9 +1280,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1289,9 +1295,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1304,9 +1310,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1319,9 +1325,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1355,7 +1361,7 @@ class Table extends Component {
                                     <img src="SPOTIFY.PNG" alt="" />
                                     <div className="content">
                                         <span>SPOTIFY Private</span>
-                                        <h6 className="SocialInfos">( ACC UPGRADE AVAILABLE )</h6>
+                                        <h6 className="SocialInfos">( UPGRADE F COMPTE DIALK DISPO )</h6>
                                         <p>
                                             <select name id="SpotifyMonths" className="select-style">
                                                 <option value="-">Choose</option>
@@ -1363,10 +1369,10 @@ class Table extends Component {
                                                 <option value="20 MAD">1 Months </option>
                                                 <option value="30 MAD">2 Months </option>
                                                 <option value="40 MAD">3 Months </option>
-                                                <option disabled value="0 MAD">---UPGRADE[UG]---</option>
-                                                <option value="30 MAD">1 Months UG </option>
-                                                <option value="40 MAD">2 Months UG</option>
-                                                <option value="50 MAD">3 Months UG</option>
+                                                <option disabled value="0 MAD">---UPGRADE---</option>
+                                                <option value="30 MAD">1 Months UPGRADE </option>
+                                                <option value="40 MAD">2 Months UPGRADE</option>
+                                                <option value="50 MAD">3 Months UPGRADE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2743,7 +2749,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}}
+                            <h4 style={{ fontWeight: 'bold' }}
                                 className="containerText"
                                 onClick={() => {
                                     document.querySelector('.container2').style.display = 'flex';
@@ -2843,7 +2849,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} className="containerText2" onClick={() => {
+                            <h4 style={{ fontWeight: 'bold' }} className="containerText2" onClick={() => {
                                 document.querySelector('.container2').style.display = 'flex';
                                 document.querySelector('.container3').style.display = 'flex';
                                 document.querySelector('.containerText').style.display = 'none';
@@ -3017,7 +3023,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} className="containerText3" onClick={() => { // Use onClick instead of onclick
+                            <h4 style={{ fontWeight: 'bold' }} className="containerText3" onClick={() => { // Use onClick instead of onclick
                                 document.querySelector('.container5').style.display = 'flex';
                                 document.querySelector('.containerText2').style.display = 'none';
                                 document.querySelector('.containerText3').style.display = 'none';
@@ -3117,7 +3123,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} className="containerText4" onClick={() => {
+                            <h4 style={{ fontWeight: 'bold' }} className="containerText4" onClick={() => {
                                 document.querySelector('.container6').style.display = 'flex';
                                 document.querySelector('.containerText2').style.display = 'none';
                                 document.querySelector('.containerText3').style.display = 'block';
@@ -3236,7 +3242,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} class="containerText5" onClick={() => {
+                            <h4 style={{ fontWeight: 'bold' }} class="containerText5" onClick={() => {
                                 document.querySelector('.container7').style.display = 'flex';
                                 document.querySelector('.containerText2').style.display = 'none';
                                 document.querySelector('.containerText3').style.display = 'none';
@@ -3379,17 +3385,17 @@ class Table extends Component {
                             {/*reviews*/}
                             <p className="benefitQuestion">OUR <span> SATISFIED</span> CUSTOMERS </p><br />
 
-                            <p style={{ backgroundColor: 'black', paddingTop:'20px' }}> < Trustpilot /></p>
+                            <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
 
                         </div>
                         <Footer />
 
-                        </div>
-                    </>}
-                </div >
+                    </div>
+                </>}
+            </div >
 
         )
     }
 }
 
-                export default Table;
+export default Table;

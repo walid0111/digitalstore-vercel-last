@@ -31,7 +31,7 @@
   }
   
   .preloader__msg {
-    animation: msg 0.3s 4.7s linear forwards;
+    animation: msg 0.3s 2.7s linear forwards;
     position: absolute;
     width: 100%;
     
@@ -39,7 +39,7 @@
   
   .preloader__msg--last {
     animation-direction: reverse;
-    animation-delay: 6s;
+    animation-delay: 4s;
     visibility: hidden;
   }
   

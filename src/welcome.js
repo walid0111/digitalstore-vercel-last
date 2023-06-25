@@ -48,7 +48,7 @@ const RegionSelector = () => {
           <>
             {showPaymentAccepted ? (
               <>
-                <p style={{ fontWeight: "bold" }}>
+                <p style={{ fontWeight: "bold", textAlign:'center' }}>
                   Payment accepted in {selectedRegion} is :
                 </p>
                 <p style={{ fontWeight: "bold", color: "green", textAlign:'center', padding:'10px' }}>

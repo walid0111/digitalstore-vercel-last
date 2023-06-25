@@ -1001,9 +1001,15 @@ class Table extends Component {
                             <div className="dropdown">
                                 <a className="info-btn" style={{cursor:'pointer'}}><i className="fas fa-gift" /> GIVEAWAY</a>
                                 <div className="modal">
-                                    <div className="modal-content">
+                                <div className="modal-content" style={{textAlign:'center'}}>
                                         <span className="close-btn">×</span>
-                                        <p>THERE IS NO GIVEAWAY.. PLEASE COME BACK SOON :)</p>
+                                        <p style={{color:'green', margin:'4px'}}>AT : 25/06/2023</p>
+                                        <p style={{color:'red', margin:'4px'}}>18 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
+                                        <p>EMAIL : digitalstorev002@gmail.com <br/>
+                                        PASS : digitalstore2022
+                                        </p>
+                                        <p style={{color:'red', margin:'12px'}}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p>
+
                                     </div>
                                 </div>
                                 {/*<div class="dropdown-menu">
@@ -1209,13 +1215,13 @@ class Table extends Component {
                                                 Money will be boosted as CASH+Deluxe CARS that you can sell and get full amount. Only CASH possible too but it will be longer delivery and more expensive service!<br />
                                                 If you need LVL boost , just message us on chat G2G.<br /><br />
                                                 <select className="select-style" id='gtaTopup'>
-                                                    <option value="-">YOUR PLATFORM</option>
-                                                    <option value={"0"}>PLAY STATION 4</option>
-                                                    <option value={"0"}>PLAY STATION 5</option>
-                                                    <option value={"0"}>XBOX ONE</option>
-                                                    <option value={"0"}>XBOX SERIES</option>
+                                                    <option disabled value="-">YOUR PLATFORM</option>
+                                                    <option disabled value={"0"}>PLAY STATION 4</option>
+                                                    <option disabled value={"0"}>PLAY STATION 5</option>
+                                                    <option disabled value={"0"}>XBOX ONE</option>
+                                                    <option disabled value={"0"}>XBOX SERIES</option>
                                                 </select> <br /><br />
-                                                <div id="gtaTopupPrice" className="price">PRICE :</div><br />
+                                                <div id="gtaTopupPrice" className="price">PRICE : (service not available)</div><br />
 
 
                                                 <button className='btn btn-primary' style={{ cursor: 'pointer', color: 'white' }} onClick={this.buyGtaTopup} >BUY NOW</button><br /><br />
@@ -1243,9 +1249,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1258,9 +1264,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1273,9 +1279,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1288,9 +1294,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1303,9 +1309,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select name id>
-                                                    <option value>1</option>
-                                                    <option value>2</option>
+                                                <select >
+                                                    <option disabled value></option>
+
                                                 </select>
                                             </p>
                                         </div>
@@ -1344,10 +1350,10 @@ class Table extends Component {
                                                 <option value="2 EUR">1 Months </option>
                                                 <option value="3 EUR">2 Months </option>
                                                 <option value="4 EUR">3 Months </option>
-                                                <option disabled value="0 EUR">---UPGRADE[UG]---</option>
-                                                <option value="3 EUR">1 Months UG </option>
-                                                <option value="4 EUR">2 Months UG</option>
-                                                <option value="5 EUR">3 Months UG</option>
+                                                <option disabled value="0 EUR">---UPGRADE---</option>
+                                                <option value="3 EUR">1 Months UPGRADE </option>
+                                                <option value="4 EUR">2 Months UPGRADE</option>
+                                                <option value="5 EUR">3 Months UPGRADE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2607,7 +2613,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="12monthsPsPlus.jpeg" alt="" />
+                                    <img src="" alt="Image will be uploaded soon" /> {/* image name : 12monthsPsPlus.jpeg */}
                                     <div className="content">
                                         <span>12 MONTHS PS+ ACCOUNT</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
@@ -2615,8 +2621,8 @@ class Table extends Component {
                                             <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="25 EUR">ESSENTIALS</option>
-                                                <option value="35 EUR">EXTRA</option>
-                                                <option value="42 EUR">DELUXE</option>
+                                                <option value="31 EUR">EXTRA</option>
+                                                <option value="37 EUR">DELUXE</option>
                                             </select>
                                         </p>
                                     </div>
