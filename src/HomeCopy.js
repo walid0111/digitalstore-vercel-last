@@ -1347,11 +1347,11 @@ class Table extends Component {
                                             <select name id="SpotifyMonths" className="select-style">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                                <option value="2 EUR">1 Months </option>
+                                                <option value="1.3 EUR">1 Months </option>
                                                 <option value="3 EUR">2 Months </option>
                                                 <option value="4 EUR">3 Months </option>
                                                 <option disabled value="0 EUR">---UPGRADE---</option>
-                                                <option value="3 EUR">1 Months UPGRADE </option>
+                                                <option value="2 EUR">1 Months UPGRADE </option>
                                                 <option value="4 EUR">2 Months UPGRADE</option>
                                                 <option value="5 EUR">3 Months UPGRADE</option>
                                             </select>
