@@ -494,7 +494,27 @@ export default function setupMenu() {
         spanClaw3.innerText = "PRICE : " + GrapplingClaw3.value;
     });
 
+    // freefire script
 
+    const freefire = document.getElementById("freefireSelect");
+    const spanFreefire = document.getElementById("freefireprice");
+    freefire.addEventListener("change", function () {
+        spanFreefire.innerText = "PRICE : " + freefire.value;
+    });
+    // brawlstar script
+
+    const brawlstar = document.getElementById("brawlstarselect");
+    const spanBrawlStar = document.getElementById("brawlstarprice");
+    brawlstar.addEventListener("change", function () {
+        spanBrawlStar.innerText = "PRICE : " + brawlstar.value;
+    });
+    // efootball script
+
+    const efootball = document.getElementById("efootballSelect");
+    const spanEfootball = document.getElementById("efootballprice");
+    efootball.addEventListener("change", function () {
+        spanEfootball.innerText = "PRICE : " + efootball.value;
+    });
     /* menu qui apparait script
      */
 

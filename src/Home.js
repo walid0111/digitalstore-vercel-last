@@ -953,6 +953,45 @@ class Table extends Component {
             window.location.href = url;
         }
     }
+    //buy free fire
+    buyfreefire() {
+        if (document.querySelector('#freefireSelect').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#freefireSelect').value;
+            const months = document.querySelector('#freefireSelect option:checked').text;
+            const message = `Salam *Digital Store* bghit \n *--- FREE FIRE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy brawlstar
+    buyBrawlstar() {
+        if (document.querySelector('#brawlstarselect').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#brawlstarselect').value;
+            const months = document.querySelector('#brawlstarselect option:checked').text;
+            const message = `Salam *Digital Store* bghit \n *--- BRAWL STAR ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy EFOOTBALL
+    buyEfootball() {
+        if (document.querySelector('#efootballSelect').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#efootballSelect').value;
+            const months = document.querySelector('#efootballSelect option:checked').text;
+            const message = `Salam *Digital Store* bghit \n *--- E-FOOTBALL ACCOUNT LI FL SITE + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
 
     //dropdown search items
     toggleDropdown = (dropdownName) => {
@@ -2337,6 +2376,97 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="wrapper">
+                                    <img src="freefire.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>FREE FIRE</span>
+                                        <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
+                                        <p>
+                                            <select name id="freefireSelect">
+                                                <option value="-">Budget </option>
+                                                <option value="65 MAD">65 DH</option>
+                                                <option value="80 MAD">80 DH</option>
+                                                <option value="95 MAD">95 DH</option>
+                                                <option value="110 MAD">110 DH</option>
+                                                <option value="125 MAD">125 DH</option>
+                                                <option value="140 MAD">140 DH</option>
+                                                <option value="155 MAD">155 DH</option>
+                                                <option value="170 MAD">170 DH</option>
+                                                <option value="185 MAD">185 DH</option>
+                                                <option value="200 MAD">200 DH</option>                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="freefireprice" className="price">PRICE : </div>
+                                        <div className="buttons">
+                                            <button onClick={this.buy13kVnucks}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>Click buy for more infos</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="efootaball.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>E-FOOTBALL 2023</span>
+                                        <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
+                                        <p>
+                                            <select name id="efootballSelect">
+                                                <option value="-">Choose</option>
+                                                <option value="90 MAD">THIS ACCOUNT</option>
+                                                <option value="A Discuter">Other ACCOUNT</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="efootballprice" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyEfootball}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>Click buy for more infos</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="brawlstar19k.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>BRAWL STARS</span>
+                                        <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
+                                        <p>
+                                            <select name id="brawlstarselect">
+                                                <option value="-">Choose</option>
+                                                <option value="90 MAD">THIS ACCOUNT</option>
+                                                <option value="A Discuter">Other ACCOUNT</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="brawlstarprice" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buy13kVnucks}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p> photos are available,  there are 10000 gold in the account and 1000 jewels</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             {/*STEAM services*/}
                             <p className="titleProduct steam">OUR STEAM <span>SERVICES</span></p>
@@ -2690,7 +2820,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2717,7 +2847,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2744,7 +2874,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about discord product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2786,7 +2916,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2815,7 +2945,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2844,7 +2974,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about discord product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2884,7 +3014,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2911,7 +3041,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2940,7 +3070,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about discord product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -3193,7 +3323,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>

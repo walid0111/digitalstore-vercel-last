@@ -2555,7 +2555,7 @@ class Table extends Component {
                             <p className="titleProduct psPlusSlide">OUR PS PLUS <span>SERVICES</span></p>
                             <div className="container10">
                                 <div className="wrapper">
-                                    <img src="1monthsPsPlus.jpeg" alt="" />
+                                    <img src="psplusSlide.png" alt="" />
                                     <div className="content">
                                         <span>1 MONTHS PS+ ACCOUNT</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
@@ -2584,7 +2584,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="3monthsPsPlus.jpeg" alt="" />
+                                    <img src="psplusSlide.png" alt="" />
                                     <div className="content">
                                         <span>3 MONTHS PS+ ACCOUNT</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
@@ -2613,7 +2613,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="" alt="Image will be uploaded soon" /> {/* image name : 12monthsPsPlus.jpeg */}
+                                    <img src="psplusSlide.png" alt="" /> {/* image name : 12monthsPsPlus.jpeg */}
                                     <div className="content">
                                         <span>12 MONTHS PS+ ACCOUNT</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
@@ -2669,7 +2669,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2696,7 +2696,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2723,7 +2723,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about discord product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2765,7 +2765,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2794,7 +2794,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2823,7 +2823,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about discord product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2863,7 +2863,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2890,7 +2890,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -2919,7 +2919,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about discord product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -3034,7 +3034,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about netflix product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
@@ -3172,7 +3172,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Information about spotify product goes here...</p>
+                                            <p></p>
                                         </div>
                                     </div>
                                 </div>
