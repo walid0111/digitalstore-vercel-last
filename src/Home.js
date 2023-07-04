@@ -908,7 +908,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#robloxService').value;
             const months = document.querySelector('#robloxService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- ROBLOX SERVICE ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} MAD   `;
+            const message = `Salam *Digital Store* khasni \n *--- ROBLOX SERVICE ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}    `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -1049,12 +1049,14 @@ class Table extends Component {
                                 <div className="modal">
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
-                                        <p style={{ color: 'green', margin: '4px' }}>AT : 25/06/2023</p>
-                                        <p style={{ color: 'red', margin: '4px' }}>18 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
-                                        <p>EMAIL : digitalstorev002@gmail.com <br />
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 04/07/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>22 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
+                                        <p>EMAIL : digitalstorev003@gmail.com <br />
                                             PASS : digitalstore2022
                                         </p>
-                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p>
+                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
+                                        <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR A NETFLIX STANDARD 7 DAYS GIVEAWAY ------</p>
+
 
                                     </div>
                                 </div>
@@ -1516,9 +1518,7 @@ class Table extends Component {
                                                 <option value="-"> Choose</option>
                                                 <option value={0}>1 Profile</option>
                                                 <option value={10}>2 Profiles</option>
-                                                <option value={20}>3 Profiles</option>
-                                                <option value={30}>4 Profiles</option>
-                                                <option value={40}>5 Profiles</option>
+
                                             </select>
                                         </p>
                                     </div>
@@ -1540,7 +1540,7 @@ class Table extends Component {
                                                 ✅ Contact us for any issue<br />
                                                 ✅Safety Account Warranty 100%<br />
                                                 🟥 No guarantee will be given if you change any information in the accounts.<br />
-                                        --> WANNA MORE MONTHS ? CONTACT US VIA WHATSAPP 0637976257
+                                        --> NEED MORE MONTHS OR PROFILES ? CONTACT US VIA WHATSAPP 0637976257
                                             </p>
                                         </div>
                                     </div>
@@ -3108,7 +3108,7 @@ class Table extends Component {
                                         <span>PSN 10€ - France</span>
                                     </div>
                                     <div className="row">
-                                        <div className="price">PRICE : 130 MAD</div>
+                                        <div className="price">PRICE : 150 MAD</div>
                                         <div className="buttons">
                                             <button onClick={this.buyPsn10euro}>BUY</button>
                                             {/*PSN10EU  */}
@@ -3133,7 +3133,7 @@ class Table extends Component {
                                         <span>PSN 20€ - France</span>
                                     </div>
                                     <div className="row">
-                                        <div className="price">PRICE : 250 MAD</div>
+                                        <div className="price">PRICE : 260 MAD</div>
                                         <div className="buttons">
                                             <button onClick={this.buyPsn20euro}>BUY</button>
                                             {/*PSN20EU  */}
@@ -3426,7 +3426,7 @@ class Table extends Component {
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">-ROBUX + PREMIUM-</option>
                                                 <option value="115 MAD">1k RBX + 1MONTHS </option>
-                                                <option value="20 MAD">2k RBX + 1MONTHS </option>
+                                                <option value="210 MAD">2k RBX + 1MONTHS </option>
                                                 <option disabled value="-">--ONLY ROBUX--</option>
                                                 <option value="120 MAD">800 RBX </option>
                                                 <option value="160 MAD">1200 RBX </option>
@@ -3514,6 +3514,8 @@ class Table extends Component {
                             </div>
                             {/*reviews*/}
                             <p className="benefitQuestion">OUR <span> SATISFIED</span> CUSTOMERS </p><br />
+
+                            order by numType DSC limits 1
 
                             <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
 

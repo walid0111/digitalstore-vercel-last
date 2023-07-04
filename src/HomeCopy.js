@@ -94,7 +94,7 @@ class Table extends Component {
                 othersDropdownOpen: false,
                 xboxDropdownOpen: false
             });
-    
+
         }
     }
 
@@ -999,16 +999,18 @@ class Table extends Component {
                         <nav id='navigation-menu-1' className="navigation-menu">
                             {/*<a href="#"><i class="fas fa-home home"></i> Home</a>*/}
                             <div className="dropdown">
-                                <a className="info-btn" style={{cursor:'pointer'}}><i className="fas fa-gift" /> GIVEAWAY</a>
+                                <a className="info-btn" style={{ cursor: 'pointer' }}><i className="fas fa-gift" /> GIVEAWAY</a>
                                 <div className="modal">
-                                <div className="modal-content" style={{textAlign:'center'}}>
+                                    <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
-                                        <p style={{color:'green', margin:'4px'}}>AT : 25/06/2023</p>
-                                        <p style={{color:'red', margin:'4px'}}>18 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
-                                        <p>EMAIL : digitalstorev002@gmail.com <br/>
-                                        PASS : digitalstore2022
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 04/07/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>22 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
+                                        <p>EMAIL : digitalstorev003@gmail.com <br />
+                                            PASS : digitalstore2022
                                         </p>
-                                        <p style={{color:'red', margin:'12px'}}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p>
+                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
+                                        <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR A NETFLIX STANDARD 7 DAYS GIVEAWAY ------</p>
+
 
                                     </div>
                                 </div>
@@ -1073,7 +1075,7 @@ class Table extends Component {
                                 <a className="prev" onClick={() => this.plusSlides(-1)}>❮</a>
                                 <a className="next" onClick={() => this.plusSlides(1)}>❯</a>
                             </div>
-                            
+
                             <div style={{ textAlign: 'center', display: 'none' }}>
                                 <span className="dot" onClick={() => this.currentSlide(1)}></span>
                                 <span className="dot" onClick={() => this.currentSlide(2)}></span>
@@ -2728,7 +2730,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}}
+                            <h4 style={{ fontWeight: 'bold' }}
                                 className="containerText"
                                 onClick={() => {
                                     document.querySelector('.container2').style.display = 'flex';
@@ -2828,7 +2830,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} className="containerText2" onClick={() => {
+                            <h4 style={{ fontWeight: 'bold' }} className="containerText2" onClick={() => {
                                 document.querySelector('.container2').style.display = 'flex';
                                 document.querySelector('.container3').style.display = 'flex';
                                 document.querySelector('.containerText').style.display = 'none';
@@ -3002,7 +3004,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} className="containerText3" onClick={() => { // Use onClick instead of onclick
+                            <h4 style={{ fontWeight: 'bold' }} className="containerText3" onClick={() => { // Use onClick instead of onclick
                                 document.querySelector('.container5').style.display = 'flex';
                                 document.querySelector('.containerText2').style.display = 'none';
                                 document.querySelector('.containerText3').style.display = 'none';
@@ -3102,7 +3104,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} className="containerText4" onClick={() => {
+                            <h4 style={{ fontWeight: 'bold' }} className="containerText4" onClick={() => {
                                 document.querySelector('.container6').style.display = 'flex';
                                 document.querySelector('.containerText2').style.display = 'none';
                                 document.querySelector('.containerText3').style.display = 'block';
@@ -3221,7 +3223,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                           <h4 style={{fontWeight:'bold'}} class="containerText5" onClick={() => {
+                            <h4 style={{ fontWeight: 'bold' }} class="containerText5" onClick={() => {
                                 document.querySelector('.container7').style.display = 'flex';
                                 document.querySelector('.containerText2').style.display = 'none';
                                 document.querySelector('.containerText3').style.display = 'none';
@@ -3364,7 +3366,7 @@ class Table extends Component {
                             {/*reviews*/}
                             <p className="benefitQuestion">OUR <span> SATISFIED</span> CUSTOMERS </p><br />
 
-                            <p style={{ backgroundColor: 'black', paddingTop:'20px' }}> < Trustpilot /></p>
+                            <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
                         </div>
                         <Footer />
                     </div>
