@@ -97,13 +97,28 @@ export default function setupMenu() {
     selectCrunchy.addEventListener("change", function () {
         spanCrunchy.innerText = "PRICE : " + selectCrunchy.value;
     });
-    // hbo script
+    // netflix private
 
-    const selectHbo = document.getElementById("HboMonths");
-    const spanHbo = document.getElementById("hbo");
-    selectHbo.addEventListener("change", function () {
-        spanHbo.innerText = "PRICE : " + selectHbo.value;
-    });
+    const standardPrivateSelect = document.getElementById('standardPrivate');
+    const profilePrivateSelect = document.getElementById('profilePrivate');
+    const accountPrivateTypSelect = document.getElementById('typePrivate');
+
+    const netflixPrivatePriceSpan = document.getElementById('NetflixPrivatePrice');
+
+    function calculateNetflixPrivatePrice() {
+        const standardPrivateValue = parseInt(standardPrivateSelect.value);
+        const profilePrivateValue = parseInt(profilePrivateSelect.value);
+        const typePrivateValue = parseInt(accountPrivateTypSelect.value);
+
+        if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
+            const totalPrivatePrice = standardPrivateValue + profilePrivateValue + typePrivateValue;
+            netflixPrivatePriceSpan.innerHTML = "PRICE : " + totalPrivatePrice + ' MAD';
+        }
+    }
+
+    profilePrivateSelect.addEventListener('change', calculateNetflixPrivatePrice);
+    standardPrivateSelect.addEventListener('change', calculateNetflixPrivatePrice);
+    accountPrivateTypSelect.addEventListener('change', calculateNetflixPrivatePrice);
 
 
 

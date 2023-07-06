@@ -271,6 +271,27 @@ class Table extends Component {
 
         }
     }
+ //NETFLIX private
+
+ buyPrivateNetflix() {
+
+    const standardPrivateSelect = document.getElementById('standardPrivate');
+    const profilePrivateSelect = document.getElementById('profilePrivate');
+    const accountPrivateTypSelect = document.getElementById('typePrivate');
+    const totalPrivatePrice = document.getElementById('NetflixPrivatePrice').textContent;
+    if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
+
+        const message = `Salam *Digital Store* bghit \n *---NETFLIX PRIVATE---* \n\n *⇾ SUBSCRIPTION :* ${accountPrivateTypSelect.options[accountPrivateTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardPrivateSelect.options[standardPrivateSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profilePrivateSelect.options[profilePrivateSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrivatePrice}`;
+
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
+    else {
+        alert('Error : Please select an option before clicking buy..');
+
+    }
+}
 
     //Iptv
     buyIPTV() {
@@ -1440,24 +1461,41 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="wrapper">
-                                    <img src="iptv.png" alt="" />
+                                    <img src="netflixprivate.webp" alt="" />
                                     <div className="content">
-                                        <span>IPTV</span>
-                                        <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
+                                        <span> NETFLIX PRIVATE</span>
+                                        <h6 className="SocialInfos">( + GARANTIE / PRICE 55DH )</h6>
                                         <p>
-                                            <select name id="iptvMonths" className="select-style">
+                                            
+                                            <select name id="typePrivate" className='notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
                                                 <option value="-">Choose</option>
-                                                <option value="150 MAD">6 Months</option>
-                                                <option value="250 MAD">12 Months</option>
+                                                <option value={55}>PREMIUM</option>
+                                                <option disabled value={0}>STANDARD</option>
+                                            </select>
+                                            <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                <option value="-">Choose</option>
+                                                <option value={0}>1 Months </option>
+                                                <option disabled value={0}>2 Months </option>
+                                                <option disabled value={0}>3 Months </option>
+                                           
+                                            </select>
+                                            <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                <option value="-"> Choose</option>
+                                                <option value={0}>1 Profile</option>
+                                                <option value={20}>2 Profiles</option>
+                                                <option disabled value={0}>3 Profiles</option>
+                                                <option disabled value={0}>4 Profiles</option>
+                                                <option disabled value={0}>5 Profiles</option>
+
                                             </select>
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="iptvPrice" className="price">PRICE :</div>
+                                        <div id="NetflixPrivatePrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyIPTV}>BUY</button>
-                                            {/*iptv*/}
+                                            <button onClick={this.buyPrivateNetflix} >BUY</button>
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
@@ -1465,43 +1503,23 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                - 16000+ Live TV CHANNELS <br />
-
-                                                - 60,000 VODs (Movies, Series, Anime, Shows) in all languages and from all around the world<br />
-
-                                                - PPV Events<br />
-                                                - Warranty <br />
-
-                                                - LAG-FREE and Anti freeze system.<br />
-
-                                                - Up to 4k Ultra HD quality<br />
-
-                                                - All devices are supported </p><br />
-                                            <span style={{ fontWeight: 'bold' }}>HOW TO USE ?</span><br />
-                                            <span style={{ fontWeight: 'bold' }}>On TV Download :</span><br />
-                                            - Iptv smarters pro Windows IPTV Player<br />
-                                            <span style={{ fontWeight: 'bold' }}>On Apple Tv / iphone :</span><br />
-                                            - iptv smarters pro<br />
-                                            - Xtream iptv<br />
-                                            - Leez tv<br />
-                                            <span style={{ fontWeight: 'bold' }}>Android / Receiver Android :</span><br />
-                                            - iptv smarters pro<br />
-                                            <span style={{ fontWeight: 'bold' }}>Pc</span><br />
-                                            - iptv smarters pro, you can download it from the website <br />
-                                            https://www.iptvsmarters.com<br />
-                                            Windows IPTV Player<br />
-                                            <span style={{ fontWeight: 'bold' }}>--- More info, contact Us ---</span><br />
-
-
-
+                                                🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
+                                                ✅ Works on any device. <br />
+                                                ✅ You can Download and Add to My List. <br />
+                                                ✅ You can change profile Name / Language / PIN. <br />
+                                                ✅ You can change profiles name. <br />
+                                                ✅ Contact us for any issue<br />
+                                                ✅ Safety Account Warranty 100%<br />
+                                            </p>
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div className="wrapper">
                                     <img src="netflix.png" alt="" />
                                     <div className="content">
-                                        <span>NETFLIX</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
+                                        <span>NETFLIX SHARED</span>
+                                        <h6 className="SocialInfos">( + GARANTIE / PRICE 25DH)</h6>
                                         <p>
                                             <select name id="type" className='notThisSelect' onChange={this.calculateNetflixPrice}>
                                                 <option value="-">Choose</option>
@@ -1518,6 +1536,9 @@ class Table extends Component {
                                                 <option value="-"> Choose</option>
                                                 <option value={0}>1 Profile</option>
                                                 <option value={10}>2 Profiles</option>
+                                                <option disabled value={0}>3 Profiles</option>
+                                                <option disabled value={0}>4 Profiles</option>
+                                                <option disabled value={0}>5 Profiles</option>
 
                                             </select>
                                         </p>
@@ -1535,10 +1556,10 @@ class Table extends Component {
                                             <span className="close-btn">×</span>
                                             <p>
                                                 🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
-                                                🟥  STANDARD SUBSCRIPTION HAS A FULL HD Resolution<br />
+                                                🟥 STANDARD SUBSCRIPTION HAS A FULL HD Resolution<br />
                                                 ✅ Works on any device. <br />
                                                 ✅ Contact us for any issue<br />
-                                                ✅Safety Account Warranty 100%<br />
+                                                ✅ Safety Account Warranty 100%<br />
                                                 🟥 No guarantee will be given if you change any information in the accounts.<br />
                                         --> NEED MORE MONTHS OR PROFILES ? CONTACT US VIA WHATSAPP 0637976257
                                             </p>
@@ -1830,22 +1851,25 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="wrapper">
-                                    <img src="hbo.jpeg" alt="" />
+                                    <img src="iptv.png" alt="" />
                                     <div className="content">
-                                        <span> HBO MAX</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
+                                        <span>IPTV</span>
+                                        <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
                                         <p>
-                                            <select name id="HboMonths">
+                                            <select name id="iptvMonths" className="select-style">
                                                 <option value="-">Choose</option>
-                                                <option disabled value="-">Not Available</option>
+                                                <option value="150 MAD">6 Months</option>
+                                                <option value="250 MAD">12 Months</option>
                                             </select>
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="hbo" className="price">PRICE :</div>
+                                        <div id="iptvPrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button style={{ cursor: 'not-allowed' }}>BUY</button>
+                                            <button onClick={this.buyIPTV}>BUY</button>
+                                            {/*iptv*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
@@ -1853,12 +1877,39 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                ✅ AD FREE <br />
-                                                ✅ Full warranty subscription<br />
-                                                ✅ If there is any problem please contact as via WhatsApp </p>
+                                                - 16000+ Live TV CHANNELS <br />
+
+                                                - 60,000 VODs (Movies, Series, Anime, Shows) in all languages and from all around the world<br />
+
+                                                - PPV Events<br />
+                                                - Warranty <br />
+
+                                                - LAG-FREE and Anti freeze system.<br />
+
+                                                - Up to 4k Ultra HD quality<br />
+
+                                                - All devices are supported </p><br />
+                                            <span style={{ fontWeight: 'bold' }}>HOW TO USE ?</span><br />
+                                            <span style={{ fontWeight: 'bold' }}>On TV Download :</span><br />
+                                            - Iptv smarters pro Windows IPTV Player<br />
+                                            <span style={{ fontWeight: 'bold' }}>On Apple Tv / iphone :</span><br />
+                                            - iptv smarters pro<br />
+                                            - Xtream iptv<br />
+                                            - Leez tv<br />
+                                            <span style={{ fontWeight: 'bold' }}>Android / Receiver Android :</span><br />
+                                            - iptv smarters pro<br />
+                                            <span style={{ fontWeight: 'bold' }}>Pc</span><br />
+                                            - iptv smarters pro, you can download it from the website <br />
+                                            https://www.iptvsmarters.com<br />
+                                            Windows IPTV Player<br />
+                                            <span style={{ fontWeight: 'bold' }}>--- More info, contact Us ---</span><br />
+
+
+
                                         </div>
                                     </div>
                                 </div>
+                                
                             </div>
                             {/*social media services*/}
                             <p className="titleProduct socialMediaServices">OUR <span>SOCIAL MEDIA</span> SERVICES </p>
