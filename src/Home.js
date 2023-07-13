@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import LoadingScreen from './LoadingScreen';
 import Trustpilot from './Trustilot';
+import Paypal from './Paypal';
 import 'tailwindcss/tailwind.css';
 
 
@@ -34,7 +35,10 @@ class Table extends Component {
             pcDropdownOpen: false,
             psDropdownOpen: false,
             othersDropdownOpen: false,
-            xboxDropdownOpen: false
+            xboxDropdownOpen: false,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
 
         };
 
@@ -62,6 +66,21 @@ class Table extends Component {
         this.interval = setInterval(() => {
             this.plusSlides(1);
         }, 6000);
+
+        this.interval = setInterval(() => {
+            const now = new Date();
+            const remainingTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 0) - now;
+
+            const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            this.setState({ hours, minutes, seconds });
+
+            if (remainingTime === 0) {
+                clearInterval(this.interval);
+            }
+        }, 1000);
 
 
     }
@@ -271,27 +290,27 @@ class Table extends Component {
 
         }
     }
- //NETFLIX private
+    //NETFLIX private
 
- buyPrivateNetflix() {
+    buyPrivateNetflix() {
 
-    const standardPrivateSelect = document.getElementById('standardPrivate');
-    const profilePrivateSelect = document.getElementById('profilePrivate');
-    const accountPrivateTypSelect = document.getElementById('typePrivate');
-    const totalPrivatePrice = document.getElementById('NetflixPrivatePrice').textContent;
-    if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
+        const standardPrivateSelect = document.getElementById('standardPrivate');
+        const profilePrivateSelect = document.getElementById('profilePrivate');
+        const accountPrivateTypSelect = document.getElementById('typePrivate');
+        const totalPrivatePrice = document.getElementById('NetflixPrivatePrice').textContent;
+        if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
 
-        const message = `Salam *Digital Store* bghit \n *---NETFLIX PRIVATE---* \n\n *⇾ SUBSCRIPTION :* ${accountPrivateTypSelect.options[accountPrivateTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardPrivateSelect.options[standardPrivateSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profilePrivateSelect.options[profilePrivateSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrivatePrice}`;
+            const message = `Salam *Digital Store* bghit \n *---NETFLIX PRIVATE---* \n\n *⇾ SUBSCRIPTION :* ${accountPrivateTypSelect.options[accountPrivateTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardPrivateSelect.options[standardPrivateSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profilePrivateSelect.options[profilePrivateSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrivatePrice}`;
 
-        const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
-        window.location.href = url;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        else {
+            alert('Error : Please select an option before clicking buy..');
+
+        }
     }
-    else {
-        alert('Error : Please select an option before clicking buy..');
-
-    }
-}
 
     //Iptv
     buyIPTV() {
@@ -1029,6 +1048,8 @@ class Table extends Component {
 
 
     render() {
+        const { hours, minutes, seconds } = this.state;
+
         const { isLoading } = this.state;
 
         //alert promotion tel
@@ -1038,7 +1059,7 @@ class Table extends Component {
 
         return (
 
-            <div>
+            <div className='bodyClass'>
 
                 <script src="./homeScript"></script>
                 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
@@ -1059,7 +1080,7 @@ class Table extends Component {
 
                 <header className='headerClass'>
                     <div className="inner-width">
-                        <Link to="/home"><h1 className="logo" style={{ fontFamily: 'fantasy' }}> <i className="fas fa-store" style={{ color: '#008507' }} />
+                        <Link to="/home"><h1 className="logo" style={{ fontFamily: 'Roboto' }}> <i className="fa fa-shopping-cart" style={{ color: '#008507' }} />
                             <span style={{ color: '#008507' }}> D</span>igital <span style={{ color: '#008507' }}>S</span>tore
                         </h1></Link>
                         <i id='menu-toggle-btn-2' className="menu-toggle-btn fas fa-bars" onClick={this.toggleMenu2} />
@@ -1070,12 +1091,13 @@ class Table extends Component {
                                 <div className="modal">
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
-                                        <p style={{ color: 'green', margin: '4px' }}>AT : 04/07/2023</p>
-                                        <p style={{ color: 'red', margin: '4px' }}>22 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
-                                        <p>EMAIL : digitalstorev003@gmail.com <br />
-                                            PASS : digitalstore2022
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 13/07/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS EXTRA 5 DAYS </p>
+                                        <p>EMAIL : digitalstoreplus001@gmail.com <br />
+                                            PASS : digitalstore2022 <br/>
+                                            BACKUP CODES :  uzTTXZ / fbYEWd 
                                         </p>
-                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
+                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AND DISABLE 2FA AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
                                         <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR A NETFLIX STANDARD 7 DAYS GIVEAWAY ------</p>
 
 
@@ -1126,19 +1148,19 @@ class Table extends Component {
                         {/*Body slide show*/}
                         <div className="slideAlign">
                             <div className="slideshow-container">
-                                <div className="mySlides fade">
+                                {/* <div className="mySlides fade">
                                     <img className="imgSlide" src="the-last-of-us-part-ii_1578852229.jpg.webp" style={{ width: '100%' }} />
                                     <div className="text"></div>
-                                </div>
+                                </div> */}
 
                                 <div className="mySlides fade">
-                                    <img className="imgSlide" src="Capture d’écran 2023-06-17 à 15.04.31.png" style={{ width: '100%' }} />
+                                    <img className="imgSlide" src="FlashSaleSlide.png" style={{ width: '100%' }} />
                                     <div className="text"></div>
                                 </div>
-                                <div className="mySlides fade">
+                                {/* <div className="mySlides fade">
                                     <img className="imgSlide" src="psPlusSlide2.jpg" style={{ width: '100%' }} />
                                     <div className="text"></div>
-                                </div>
+                                </div> */}
 
                                 <a className="prev" onClick={() => this.plusSlides(-1)}>❮</a>
                                 <a className="next" onClick={() => this.plusSlides(1)}>❯</a>
@@ -1164,7 +1186,7 @@ class Table extends Component {
                                 </div>
                             )}
                             {/*PROMOTION MARQUEE*/}
-                            <marquee scrollamount={3} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
+                            <marquee scrollamount={4} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
                                 LIMITED TIME DISCOUNT <span style={{ color: 'black' }}>/</span> PROMOTION A DURÉE LIMITÉE </marquee>
                             {/*top up product*/}
 
@@ -1291,7 +1313,7 @@ class Table extends Component {
 
 
                                                 Money will be boosted as CASH+Deluxe CARS that you can sell and get full amount. Only CASH possible too but it will be longer delivery and more expensive service!<br />
-                                                If you need LVL boost , just message us on chat G2G.<br /><br />
+                                                If you need LVL boost , just message us on via WhatsApp. +212 637 97 62 57<br /><br />
                                                 <select className="select-style" id='gtaTopup'>
                                                     <option disabled value="-">YOUR PLATFORM</option>
                                                     <option disabled value={"0"}>PLAY STATION 4</option>
@@ -1381,16 +1403,14 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="boxShow">
-                                    <p><img src="20230402_211641.jpg" width="100%" alt="" /></p>
+                                    <p><img src="paypalTopup.jpg" width="100%" alt="" /></p>
                                     <h3 className="info-btn">BUY</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                                <Paypal/>
+                                                
                                             </p>
                                         </div>
                                     </div>
@@ -1422,9 +1442,14 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="SPOTIFY.PNG" alt="" />
                                     <div className="content">
-                                        <span>SPOTIFY Private</span>
-                                        <h6 className="SocialInfos">( UPGRADE F COMPTE DIALK DISPO )</h6>
-                                        <p>
+                                        <span>SPOTIFY PRIVATE</span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="SpotifyMonths" className="select-style">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="0 MAD">---NEW ACCOUNT---</option>
@@ -1434,7 +1459,6 @@ class Table extends Component {
                                                 <option disabled value="0 MAD">---UPGRADE---</option>
                                                 <option value="30 MAD">1 Months UPGRADE </option>
                                                 <option value="40 MAD">2 Months UPGRADE</option>
-                                                <option value="50 MAD">3 Months UPGRADE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1463,12 +1487,53 @@ class Table extends Component {
                                 </div>
 
                                 <div className="wrapper">
+                                    <img src="crunchy.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>CRUNCHY ROLL</span>
+                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
+                                        <p>
+                                            <select name id="CrunchyMonths">
+                                                <option value="-">Choose</option>
+                                                <option disabled value="-">--MEGA FUN--</option>
+                                                <option value="45 MAD">1 MONTHS SHARED</option>
+                                                <option value="55 MAD">1 MONTHS PRIVATE</option>
+                                                <option value="190 MAD">12 MONTHS</option>
+                                                <option disabled value="-">--PREMIUM--</option>
+                                                <option value="35 MAD">1 MONTHS</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="crunchy" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyCrunchy}>BUY</button>
+                                            {/*crunchy*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p> ✅ Full warranty  <br />
+                                                ✅ you don't need VPN to use the account<br />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
                                     <img src="netflixprivate.webp" alt="" />
                                     <div className="content">
+
                                         <span> NETFLIX PRIVATE</span>
-                                        <h6 className="SocialInfos">( + GARANTIE / PRICE 55DH )</h6>
-                                        <p>
-                                            
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                        <p>
+
                                             <select name id="typePrivate" className='notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
                                                 <option value="-">Choose</option>
                                                 <option value={55}>PREMIUM</option>
@@ -1479,7 +1544,7 @@ class Table extends Component {
                                                 <option value={0}>1 Months </option>
                                                 <option disabled value={0}>2 Months </option>
                                                 <option disabled value={0}>3 Months </option>
-                                           
+
                                             </select>
                                             <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
                                                 <option value="-"> Choose</option>
@@ -1514,13 +1579,18 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div className="wrapper">
                                     <img src="netflix.png" alt="" />
                                     <div className="content">
                                         <span>NETFLIX SHARED</span>
-                                        <h6 className="SocialInfos">( + GARANTIE / PRICE 25DH)</h6>
-                                        <p>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="type" className='notThisSelect' onChange={this.calculateNetflixPrice}>
                                                 <option value="-">Choose</option>
                                                 <option value={10}>PREMIUM</option>
@@ -1583,9 +1653,9 @@ class Table extends Component {
                                                 <option value={60}>Classic</option>
                                                 <option value={80}>Nitro</option>
                                             </select>
-                                            <select name id="accountType" className="select-style notThisSelect">
+                                            <select name id="accountType" className="select-style notThisSelect" style={{ display: 'none' }}>
                                                 <option value="-"> Choose</option>
-                                                <option value={0}>Your account</option>
+                                                <option selected value={0}>My account</option>
                                                 <option value={0}>New account</option>
                                             </select>
                                         </p>
@@ -1683,7 +1753,7 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="applemusic.jpeg" alt="" />
                                     <div className="content">
-                                        <span>APPLE MUSIC private</span>
+                                        <span>APPLE MUSIC </span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                         <p>
                                             <select name id="AppleMonths" className="select-style">
@@ -1717,7 +1787,7 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="deezer.jpeg" alt="" />
                                     <div className="content">
-                                        <span>DEEZER Private</span>
+                                        <span>DEEZER PRIVATE</span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
                                         <p>
                                             <select name id="DeezerMonths" className="select-style">
@@ -1789,15 +1859,14 @@ class Table extends Component {
                                         <p>
                                             <select className='notThisSelect' id="DisneyProfile">
                                                 <option value="-">Choose</option>
-                                                <option value={0}>1 PROFILE</option>
-                                                <option value={5}>2 PROFILE</option>
-                                                <option value={10}>3 PROFILE</option>
-                                                <option value={15}>4 PROFILE</option>
-                                                <option value={25}>5 PROFILE</option>
+
+                                                <option value={10}>3 Profiles</option>
+                                                <option value={15}>4 Profiles</option>
+                                                <option value={25}>5 Profiles</option>
                                             </select>
                                             <select className='notThisSelect' id="DisneyMonths">
                                                 <option value="-">Choose</option>
-                                                <option value={30}>1 MONTHS</option>
+                                                <option value={30}>1 Months</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1817,40 +1886,7 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="crunchy.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>CRUNCHY ROLL</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select name id="CrunchyMonths">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="-">--MEGA FUN--</option>
-                                                <option value="45 MAD">1 MONTHS</option>
-                                                <option value="55 MAD">1 MONTHS PV</option>
-                                                <option value="190 MAD">12 MONTHS</option>
-                                                <option disabled value="-">--PREMIUM--</option>
-                                                <option value="35 MAD">1 MONTHS</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="crunchy" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyCrunchy}>BUY</button>
-                                            {/*crunchy*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>✅ Full warranty  <br />
-                                                ✅ you don't need VPN to use the account<br />
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+
 
                                 <div className="wrapper">
                                     <img src="iptv.png" alt="" />
@@ -1909,7 +1945,7 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                             </div>
                             {/*social media services*/}
                             <p className="titleProduct socialMediaServices">OUR <span>SOCIAL MEDIA</span> SERVICES </p>
@@ -2754,14 +2790,19 @@ class Table extends Component {
                                 </div>
                             </div>
                             {/*morocco services*/}
-                            <p className="titleProduct psPlusSlide">OUR PS PLUS <span>SERVICES</span></p>
+                            <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span>(Achat f compte dialk)</p>
                             <div className="container10 " id='container10'>
                                 <div className="wrapper">
                                     <img src="moroccoAccount.jpg" alt="" />
                                     <div className="content">
-                                        <span>1 MONTHS PS+ ACCOUNT</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
+                                        <span>1 MONTHS </span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="firstMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="60 MAD">ESSENTIALS</option>
@@ -2788,9 +2829,14 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="moroccoAccount2.jpg" alt="" />
                                     <div className="content">
-                                        <span>3 MONTHS PS+ ACCOUNT</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
+                                        <span>3 MONTHS </span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="secondMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="120 MAD">ESSENTIALS</option>
@@ -2817,9 +2863,14 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="moroccoAccount3.jpg" alt="" />
                                     <div className="content">
-                                        <span>12 MONTHS PS+ ACCOUNT</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
+                                        <span>12 MONTHS </span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="250 MAD">ESSENTIALS</option>
@@ -3316,7 +3367,7 @@ class Table extends Component {
                             {/* 2EME Voir plus gift cardes */}
                             <div className="container6">
                                 <div className="wrapper">
-                                    <img src="xboxGod3mois.jpeg" alt="" />
+                                    <img src="Social_1920x1080.jpeg" alt="" />
                                     <div className="content">
                                         <span>XBOX LIVE GOLD</span>
                                         <p>
@@ -3353,7 +3404,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="itunes.jpeg" alt="" />
+                                    <img src="06cKTfUyIqRfNTFQseP6AUC-1..v1569486124.png" alt="" />
                                     <div className="content">
                                         <span>ITUNES</span>
                                         <p>
@@ -3379,7 +3430,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="Xbox-game-pass-gift-card.webp" alt="" />
+                                    <img src="GWhZq4.jpeg" alt="" />
                                     <div className="content">
                                         <span>XBOX GAME PASS </span>
                                         <p>

@@ -65,7 +65,7 @@ const ReportForm = () => {
                 <div className="content">
                     <div className="top">
                         <div className="logo-details">
-                            <h1 className="logo" style={{ fontFamily: 'fantasy' }}><span style={{ color: '#008507' }}>D</span>igital <span style={{ color: '#008507' }}>S</span>tore</h1>
+                            <h1 className="logo" style={{ fontFamily: 'Roboto' }}><span style={{ color: '#008507' }}>D</span>igital <span style={{ color: '#008507' }}>S</span>tore</h1>
                         </div>
                         <div className="media-icons">
                             <a href><FontAwesomeIcon icon={faFacebookF} /></a>
@@ -97,8 +97,8 @@ const ReportForm = () => {
                             <form onSubmit={handleSubmit}>
                                 <ul>
                                     <li><input type="text" placeholder="Your E-mail / Name" value={email} onChange={handleEmailChange} /></li>
-                                    <li><input type="text" placeholder="Report a problem with ur order" value={problem} onChange={handleProblemChange} /></li>
-                                    <li><input type="submit" value="Send" /></li>
+                                    <li><input type="text" placeholder="Bugs problem.." value={problem} onChange={handleProblemChange} /></li>
+                                    <li><input type="submit" value="REPORT" /></li>
                                 </ul>
                             </form>
                         </ul>

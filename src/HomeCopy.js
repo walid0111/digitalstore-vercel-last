@@ -38,6 +38,21 @@ class Table extends Component {
             this.plusSlides(1);
         }, 5000);
 
+        this.interval = setInterval(() => {
+            const now = new Date();
+            const remainingTime = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 23, 59, 0) - now;
+
+            const hours = Math.floor(remainingTime / (1000 * 60 * 60));
+            const minutes = Math.floor((remainingTime % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((remainingTime % (1000 * 60)) / 1000);
+
+            this.setState({ hours, minutes, seconds });
+
+            if (remainingTime === 0) {
+                clearInterval(this.interval);
+            }
+        }, 1000);
+
     }
     //slide show
     componentWillUnmount() {
@@ -113,7 +128,10 @@ class Table extends Component {
             lightMode: false,
             showAlert: true,//show alert promotion du tel
             isLoading: true,
-            slideIndex: 1
+            slideIndex: 1,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
 
 
         };
@@ -965,6 +983,8 @@ class Table extends Component {
 
 
     render() {
+        const { hours, minutes, seconds } = this.state;
+
         const { isLoading } = this.state;
 
         //alert promotion tel
@@ -974,7 +994,7 @@ class Table extends Component {
 
         return (
 
-            <div>
+            <div className='bodyClass'>
 
                 <script src="./homeScriptCopy"></script>
 
@@ -992,7 +1012,7 @@ class Table extends Component {
 
                 <header className='headerClass'>
                     <div className="inner-width">
-                        <Link to="/home"><h1 className="logo" style={{ fontFamily: 'fantasy' }}> <i className="fas fa-store" style={{ color: '#008507' }} />
+                        <Link to="/home"><h1 className="logo" style={{ fontFamily: 'Candara' }}> <i className="fa fa-shopping-cart" style={{ color: '#008507' }} />
                             <span style={{ color: '#008507' }}> D</span>igital <span style={{ color: '#008507' }}>S</span>tore
                         </h1></Link>
                         <i id='menu-toggle-btn-1' className="menu-toggle-btn fas fa-bars" onClick={this.toggleMenu} />
@@ -1067,10 +1087,10 @@ class Table extends Component {
                                     <img className="imgSlide" src="Capture d’écran 2023-06-17 à 15.04.31.png" style={{ width: '100%' }} />
                                     <div className="text"></div>
                                 </div>
-                                <div className="mySlides fade">
+                                {/* <div className="mySlides fade">
                                     <img className="imgSlide" src="psPlusSlide2.jpg" style={{ width: '100%' }} />
                                     <div className="text"></div>
-                                </div>
+                                </div> */}
 
                                 <a className="prev" onClick={() => this.plusSlides(-1)}>❮</a>
                                 <a className="next" onClick={() => this.plusSlides(1)}>❯</a>
@@ -1344,7 +1364,7 @@ class Table extends Component {
                                     <img src="SPOTIFY.PNG" alt="" />
                                     <div className="content">
                                         <span>SPOTIFY Private</span>
-                                        <h6 className="SocialInfos">( ACC UPGRADE AVAILABLE )</h6>
+                                        <h6 className="SocialInfos">( UPGRADE IS AVAILABLE )</h6>
                                         <p>
                                             <select name id="SpotifyMonths" className="select-style">
                                                 <option value="-">Choose</option>
@@ -1355,7 +1375,6 @@ class Table extends Component {
                                                 <option disabled value="0 EUR">---UPGRADE---</option>
                                                 <option value="2 EUR">1 Months UPGRADE </option>
                                                 <option value="4 EUR">2 Months UPGRADE</option>
-                                                <option value="5 EUR">3 Months UPGRADE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1443,8 +1462,13 @@ class Table extends Component {
                                     <img src="netflix.png" alt="" />
                                     <div className="content">
                                         <span>NETFLIX</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                           <p>
                                             <select className='notThisSelect' id="type" onChange={this.calculateNetflixPrice}>
                                                 <option value="-">Choose</option>
                                                 <option value={1}>PREMIUM</option>
@@ -3116,7 +3140,7 @@ class Table extends Component {
                             {/* 2EME Voir plus gift cardes */}
                             <div className="container6">
                                 <div className="wrapper">
-                                    <img src="xboxGod3mois.jpeg" alt="" />
+                                    <img src="Social_1920x1080.jpeg" alt="" />
                                     <div className="content">
                                         <span>XBOX LIVE GOLD</span>
                                         <p>
@@ -3153,7 +3177,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="itunes.jpeg" alt="" />
+                                    <img src="06cKTfUyIqRfNTFQseP6AUC-1..v1569486124.png" alt="" />
                                     <div className="content">
                                         <span>ITUNES</span>
                                         <p>
@@ -3179,7 +3203,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="Xbox-game-pass-gift-card.webp" alt="" />
+                                    <img src="GWhZq4.jpeg" alt="" />
                                     <div className="content">
                                         <span>XBOX GAME PASS </span>
                                         <p>

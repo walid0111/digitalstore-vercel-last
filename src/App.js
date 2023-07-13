@@ -9,12 +9,17 @@ import AddOrder from './addOrder';
 import Bugs from './Bugs';
 import UpdateOrder from './UpdateOrder';
 import UpdateSelectedOrder from './UpdateSelectedOrder';
+import Client from './Client';
+import Fortnite from './ItemShop';
+import Paypal from './Paypal';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/Fortnite" element={<Fortnite />} />
         <Route path="/mad" element={<Mad />} />
+        <Route path="/client" element={<Client />} />
         <Route path="/euro" element={<Euro />} />
         <Route path="/orders" element={<Order />} />
         <Route path="/addOrder" element={<AddOrder />} />
@@ -23,6 +28,7 @@ const App = () => {
         <Route path="/updateSelectedOrder" element={<UpdateSelectedOrder />} />
         <Route path="/*" element={<Home />} />
         <Route path="/welcomeAdmin" element={<WelcomeAdmin />} />
+        <Route path="/paypal" element={<Paypal />} />
       </Routes>
     </BrowserRouter>
   );

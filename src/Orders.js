@@ -100,7 +100,7 @@ class Table extends Component {
 
         <header>
           <div className="inner-width">
-            <Link to="/home"><h1 className="logo" style={{ fontFamily: 'fantasy' }}> <i className="fas fa-store" style={{ color: '#008507' }} />
+            <Link to="/home"><h1 className="logo" style={{ fontFamily: 'Candara' }}> <i className="fa fa-shopping-cart" style={{ color: '#008507' }} />
               <span style={{ color: '#008507' }}> D</span>igital <span style={{ color: '#008507' }}>S</span>tore
             </h1></Link>
             <Link to="/home" className="menu-toggle-btn fas fa-arrow-left" />

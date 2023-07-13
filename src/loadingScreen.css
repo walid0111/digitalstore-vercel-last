@@ -2,7 +2,7 @@
   
   
   .bodyLoader {
-    background-color: hsl(var(--hue), 10%, 10%);
+/*     background-color: hsl(var(--hue), 10%, 10%); */
     color: white;
     font: 1em/1.5 "DM Sans", sans-serif;
     height: 100vh;

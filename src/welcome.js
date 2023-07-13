@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./welcomeStyle.css";
+import Fortnite from './ItemShop';
 
 const RegionSelector = () => {
   const [selectedRegion, setSelectedRegion] = useState("");
@@ -13,6 +14,7 @@ const RegionSelector = () => {
 
   return (
     <div className="region-selector">
+      
       <head>
         <meta
           name="trustpilot-one-time-domain-verification-id"
@@ -40,8 +42,20 @@ const RegionSelector = () => {
         >
           Others Country
         </button>
+        <button className='region-option'>
+          <Link to={'/client'} target="_blank">
+            Clients
+          </Link>
+        </button>
+        <button className='region-option'>
+          <Link to={'/Fortnite'} target="_blank">
+            Gifts
+          </Link>
+        </button>
       </div>
+      
       <div className="region-actions">
+        
         {selectedRegion ? (
           <>
             {showPaymentAccepted ? (
@@ -55,9 +69,9 @@ const RegionSelector = () => {
                       <span style={{ fontWeight: "bold", color: "green", textAlign: 'center' }}>
                         Orange, CIH Bank, PayPal, CashPlus
                       </span> <br/><br/>
-                      <span style={{ color: "red", textAlign: 'center',  padding: '10px' }}>
+                      {/* <span style={{ color: "red", textAlign: 'center',  padding: '10px' }}>
                         jib ay carte orange bghiti ghi matkounch carte dial  <span style={{ fontWeight: "bold", color: "red" }}> 30dh</span> 
-                      </span>
+                      </span> */}
                     </span>
                   ) : (
                     <span>
@@ -85,6 +99,7 @@ const RegionSelector = () => {
         )}
       </div>
     </div>
+
   );
 };
 
