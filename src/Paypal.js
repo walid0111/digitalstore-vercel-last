@@ -17,9 +17,7 @@ class Modal extends Component {
 
   render() {
     return (
-      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-        <div className="modal-content">
-          <span className="close-btn">×</span>
+        <div className="">
           <p>
             <h5>I need :</h5>
             Khasni {' '}
@@ -68,7 +66,6 @@ class Modal extends Component {
             </button>
           </p>
         </div>
-      </div>
     );
   }
 }

@@ -12,11 +12,13 @@ import UpdateSelectedOrder from './UpdateSelectedOrder';
 import Client from './Client';
 import Fortnite from './ItemShop';
 import Paypal from './Paypal';
+import Giveaway from './Giveaway';
 
 const App = () => {
   return (
     <BrowserRouter>
       <Routes>
+        <Route path="/Giveaway" element={<Giveaway />} />
         <Route path="/Fortnite" element={<Fortnite />} />
         <Route path="/mad" element={<Mad />} />
         <Route path="/client" element={<Client />} />
