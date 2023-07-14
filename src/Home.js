@@ -1116,6 +1116,7 @@ class Table extends Component {
 
                             </div>
                             <Link to="/orders"><i className="fas fa-shopping-cart" /> ORDER details </Link>
+                            <Link to="/client"><i className="fas fa-star" /> REVIEWS </Link>
                             {/* 
                             <div className="dropdown">
                                 <a href="#"><i className="far fa-comments" /> Contact</a>
@@ -1408,7 +1409,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
+                                            <p> 
                                                 <Paypal/>
                                                 
                                             </p>

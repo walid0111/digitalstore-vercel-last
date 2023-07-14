@@ -3,6 +3,8 @@ import './Client.css';
 import Footer from './Footer';
 import 'font-awesome/css/font-awesome.css';
 import ReactPlayer from 'react-player/lazy'
+import Trustpilot from './Trustilot';
+
 
 
 
@@ -294,6 +296,12 @@ class MyComponent extends Component {
 
           </div>
         </section>
+        <h2 className="product-category  ">Our Customers <span style={{ color: '#008507' }}>Reviews</span></h2>
+        <div style={{display: 'flex', justifyContent:'center', alignItems: 'center'}}>
+          <p style={{backgroundColor: 'black', padding: '8px', borderRadius: '22px', width: '70%', position: 'relative'}}>
+            <Trustpilot />
+          </p>
+        </div>
 
         <h2 className="product-category  ">Review made by <span style={{ color: '#008507' }}>one of our  Clients</span></h2>
 
@@ -327,6 +335,7 @@ class MyComponent extends Component {
             </p>
           </div>
         </div>
+
         <Footer />
       </>
     );
