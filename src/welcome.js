@@ -36,11 +36,11 @@ const RegionSelector = () => {
           Morocco
         </button>
         <button
-          className={`region-option ${selectedRegion === "Others Country" ? "selected" : ""
+          className={`region-option ${selectedRegion === "Other Countries" ? "selected" : ""
             }`}
-          onClick={() => handleRegionSelect("Others Country")}
+          onClick={() => handleRegionSelect("Other Countries")}
         >
-          Others Country
+          Other Countries
         </button>
         <button className='region-option'>
           <Link to={'/client'} target="_blank">

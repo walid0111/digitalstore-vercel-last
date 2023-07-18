@@ -19,10 +19,10 @@ const FortniteItemShop = () => {
                 setLoading(false)
             });
 
-            
+
     }, []);
 
-    
+
     if (loading) {
         return <div style={{ backgroundColor: 'black' }}><Loading /></div>;
     }
@@ -87,6 +87,7 @@ const FortniteItemShop = () => {
                 {daily.map((item) => {
                     let vbucks = item.finalPrice;
                     let itemName = item.items[0].name;
+                    let itemImg = item.items[0].images.icon;
                     let total = '';
 
                     switch (vbucks) {
@@ -141,18 +142,24 @@ const FortniteItemShop = () => {
                         case 2300:
                             total = '80 DH';
                             break;
+                        case 2300:
+                            total = '85 DH';
+                            break;
                         case 2500:
-                            total = '90 DH';
+                            total = '95 DH';
                             break;
                         case 2700:
                             total = '100 DH';
+                            break;
+                        case 2800:
+                            total = '105 DH';
                             break;
                         default:
                             total = '';
                             break;
                     }
 
-                    const message = `Salam *Digital Store* khasni \n *--- GIFT FORNITE ---* \n\n *⇾ ITEM :* ${itemName} \n *⇾ V-Bucks :* ${vbucks} \n *⇾ TOTAL :* ${total}   `;
+                    const message = `Salam *Digital Store* khasni \n *--- GIFT FORNITE ---* \n\n *⇾ IMAGE :* \n ${itemImg}\n *⇾ ITEM :* ${itemName} \n *⇾ V-Bucks :* ${vbucks} \n *⇾ TOTAL :* ${total}   `;
                     const encodedMessage = encodeURIComponent(message);
                     const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
 
@@ -240,6 +247,7 @@ const FortniteItemShop = () => {
                 {featured.map((item) => {
                     let vbucks = item.finalPrice;
                     let itemName = item.items[0].name;
+                    let itemImg = item.items[0].images.icon;
                     let total = '';
 
                     switch (vbucks) {
@@ -294,18 +302,24 @@ const FortniteItemShop = () => {
                         case 2300:
                             total = '80 DH';
                             break;
+                        case 2300:
+                            total = '85 DH';
+                            break;
                         case 2500:
-                            total = '90 DH';
+                            total = '95 DH';
                             break;
                         case 2700:
                             total = '100 DH';
+                            break;
+                        case 2800:
+                            total = '105 DH';
                             break;
                         default:
                             total = '';
                             break;
                     }
 
-                    const message = `Salam *Digital Store* khasni \n *--- GIFT FORNITE ---* \n\n *⇾ ITEM :* ${itemName} \n *⇾ V-Bucks :* ${vbucks} \n *⇾ TOTAL :* ${total}   `;
+                    const message = `Salam *Digital Store* khasni \n *--- GIFT FORNITE ---* \n\n *⇾ IMAGE :* \n ${itemImg}\n *⇾ ITEM :* ${itemName} \n *⇾ V-Bucks :* ${vbucks} \n *⇾ TOTAL :* ${total}   `;
                     const encodedMessage = encodeURIComponent(message);
                     const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
 
@@ -393,6 +407,7 @@ const FortniteItemShop = () => {
                 {specialFeatured.map((item) => {
                     let vbucks = item.finalPrice;
                     let itemName = item.items[0].name;
+                    let itemImg = item.items[0].images.icon;
                     let total = '';
 
                     switch (vbucks) {
@@ -447,18 +462,24 @@ const FortniteItemShop = () => {
                         case 2300:
                             total = '80 DH';
                             break;
+                        case 2300:
+                            total = '85 DH';
+                            break;
                         case 2500:
-                            total = '90 DH';
+                            total = '95 DH';
                             break;
                         case 2700:
                             total = '100 DH';
+                            break;
+                        case 2800:
+                            total = '105 DH';
                             break;
                         default:
                             total = '';
                             break;
                     }
 
-                    const message = `Salam *Digital Store* khasni \n *--- GIFT FORNITE ---* \n\n *⇾ ITEM :* ${itemName} \n *⇾ V-Bucks :* ${vbucks} \n *⇾ TOTAL :* ${total}   `;
+                    const message = `Salam *Digital Store* khasni \n *--- GIFT FORNITE ---* \n\n *⇾ IMAGE :* \n ${itemImg}\n *⇾ ITEM :* ${itemName} \n *⇾ V-Bucks :* ${vbucks} \n *⇾ TOTAL :* ${total}   `;
                     const encodedMessage = encodeURIComponent(message);
                     const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
 

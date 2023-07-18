@@ -55,6 +55,7 @@ class MyComponent extends Component {
   render() {
     return (
       <>
+      
         <section className="client-product">
 
           <h2 className="product-category  ">Our Satisfied <span style={{ color: '#008507' }}>Clients</span></h2>
@@ -305,14 +306,14 @@ class MyComponent extends Component {
 
         <h2 className="product-category  ">Review made by <span style={{ color: '#008507' }}>one of our  Clients</span></h2>
 
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', margin:'10px' }}>
           <ReactPlayer url='https://www.youtube.com/watch?v=Nouq-NMY6U0' playing={false}
             width={'400px'}
             height={'200px'} />
         </div>
 
 
-        <h2 className="product-category  ">Why  <span style={{ color: '#008507' }}>Choose</span> Us ?</h2>
+        <h2 className="product-category">Why  <span style={{ color: '#008507' }}>Choose</span> Us ?</h2>
 
         <div id="benefits-clients">
 

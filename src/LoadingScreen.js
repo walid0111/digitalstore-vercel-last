@@ -26,7 +26,7 @@ const Preloader = () => {
         </svg>
         <div className="preloader__text">
           <p className="preloader__msg">Loading in progress. Please do not leave this page...</p>
-          <p className="preloader__msg preloader__msg--last">Note : All our item is given with a Full Warranty.</p>
+          <p className="preloader__msg preloader__msg--last">Note : All our items are given with a Full Warranty.</p>
         </div>
       </div>
     </div>

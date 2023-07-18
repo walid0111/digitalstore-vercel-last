@@ -874,7 +874,7 @@ class Table extends Component {
     //buy 10 euro psn
     buyPsn10euro() {
 
-        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 10 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 130 MAD   `;
+        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 10 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 MAD   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -883,7 +883,7 @@ class Table extends Component {
     //buy 20euro psn
     buyPsn20euro() {
 
-        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 20 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 250 MAD   `;
+        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 20 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 260 MAD   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -1091,14 +1091,14 @@ class Table extends Component {
                                 <div className="modal">
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
-                                        <p style={{ color: 'green', margin: '4px' }}>AT : 13/07/2023</p>
-                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS EXTRA 5 DAYS </p>
-                                        <p>EMAIL : digitalstoreplus001@gmail.com <br />
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 18/07/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 9 DAYS </p>
+                                        <p>EMAIL : digitalstoredelux0012@gmail.com <br />
                                             PASS : digitalstore2022 <br/>
-                                            BACKUP CODES :  uzTTXZ / fbYEWd 
+                                            BACKUP CODES :  RGgTlI / hBttPQ 
                                         </p>
                                         <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AND DISABLE 2FA AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
-                                        <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR A NETFLIX STANDARD 7 DAYS GIVEAWAY ------</p>
+                                        <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR ANOTHER GIVEAWAY ------</p>
 
 
                                     </div>
@@ -1183,7 +1183,7 @@ class Table extends Component {
                             {showAlert && (
                                 <div className="alert" onClick={this.closeAlert}>
                                     <span className="closebtnAlert" >×</span>
-                                    <strong>PROMOTION ALERT !!</strong> <br /> LIMITED TIME DISCOUNT
+                                    <strong>PROMOTION ALERT !</strong> <br /> UP TO 65% OFF
                                 </div>
                             )}
                             {/*PROMOTION MARQUEE*/}
@@ -1303,7 +1303,7 @@ class Table extends Component {
                             <section className="boxes">
                                 <div className="boxShow">
                                     <p><img src="20230402_211309.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1344,78 +1344,66 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="boxShow">
+                                    <p><img src="paypalTopup.jpg" width="100%" alt="" /></p>
+                                    <h3 className="info-btn">SHOW</h3>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p> 
+                                                <Paypal/>  
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="boxShow">
                                     <p><img src="20230402_205304.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                                Available soon...
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_211241.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                                Available soon...
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_210908.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                                Available soon...
                                             </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_211817.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                                Available soon...
                                             </p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="boxShow">
-                                    <p><img src="paypalTopup.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p> 
-                                                <Paypal/>
-                                                
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
+                                
                                 {/* PES      <div class="boxShow">
                 <p><img src="20230402_212015.jpg " width="100%" alt=""></p>
                 <h3 class="info-btn">BUY</h3>
@@ -1456,7 +1444,7 @@ class Table extends Component {
                                                 <option disabled value="0 MAD">---NEW ACCOUNT---</option>
                                                 <option value="20 MAD">1 Months </option>
                                                 <option value="30 MAD">2 Months </option>
-                                                <option value="40 MAD">3 Months </option>
+                                                <option value="50 MAD">4 Months </option>
                                                 <option disabled value="0 MAD">---UPGRADE---</option>
                                                 <option value="30 MAD">1 Months UPGRADE </option>
                                                 <option value="40 MAD">2 Months UPGRADE</option>
@@ -3186,7 +3174,7 @@ class Table extends Component {
                                         <span>PSN 5€ - France</span>
                                     </div>
                                     <div className="row">
-                                        <div className="price">PRICE : 70 MAD</div>
+                                        <div className="price">PRICE : 80 MAD</div>
                                         <div className="buttons">
                                             <button onClick={this.buyPsn5euro}>BUY</button>
                                             {/*PSN5EU  */}

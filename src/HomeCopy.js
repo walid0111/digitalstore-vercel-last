@@ -1226,7 +1226,7 @@ class Table extends Component {
                             <section className="boxes">
                                 <div className="boxShow">
                                     <p><img src="20230402_211309.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1268,7 +1268,7 @@ class Table extends Component {
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_205304.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1283,7 +1283,7 @@ class Table extends Component {
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_211241.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1298,7 +1298,7 @@ class Table extends Component {
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_210908.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1313,7 +1313,7 @@ class Table extends Component {
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_211817.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1328,7 +1328,7 @@ class Table extends Component {
                                 </div>
                                 <div className="boxShow">
                                     <p><img src="20230402_211641.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">BUY</h3>
+                                    <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>

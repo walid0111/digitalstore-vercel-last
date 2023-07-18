@@ -27,7 +27,7 @@
 }
 
 @media (max-width: 680px) {
-  #benefits-clients, .product-category:nth-child(3) {
+  #benefits-clients, .product-category:nth-child(6) {
       display: none;
   }
 }
@@ -35,7 +35,7 @@
 .client-product {
   position: relative;
   overflow: hidden;
-  padding: 20px;
+  padding: 10px;
   margin: 0;
 
 }
@@ -93,8 +93,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    width: 70%;
-    height: 70%;
+    width: 90%;
+    height: 100%;
     object-fit: cover;
   }
   .client-product-card {
@@ -174,3 +174,7 @@
   grid-column: span 2;
   margin-bottom: 10px;
 }
+
+
+
+
