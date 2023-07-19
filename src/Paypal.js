@@ -11,7 +11,7 @@ class Modal extends Component {
 
   handleChangeMontantSouhaite = (event) => {
     const montantSouhaite = event.target.value;
-    const montantARecevoir = Math.round(parseFloat(montantSouhaite) * 11 * 1.15);
+    const montantARecevoir = Math.round(parseFloat(montantSouhaite) * 10.2 * 1.10);
     this.setState({ montantSouhaite, montantARecevoir });
   };
 
@@ -82,6 +82,7 @@ class Modal extends Component {
         >
           CONVERT
         </button>
+        <p style={{color:'green', margin:'8px'}}>We do not cover fees</p>
       </div>
 
     );
