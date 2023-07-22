@@ -77,12 +77,15 @@ class Modal extends Component {
             border: 'none',
             marginTop: '10px',
             maxWidth: '100%',
-            width: '100%'
+            width: '100%',
+            borderRadius:'8px'
           }}
         >
           CONVERT
         </button>
         <p style={{color:'green', margin:'8px'}}>We do not cover fees</p>
+        <a href='https://www.designhill.com/tools/paypal-fee-calculator' style={{color:'white',borderRadius:'8px', margin:'8px',textAlign:'center'}}           className="btn btn-primary"
+>Calculate Fees Here</a>
       </div>
 
     );

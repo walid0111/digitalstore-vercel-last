@@ -1442,12 +1442,13 @@ class Table extends Component {
                                             <select name id="SpotifyMonths" className="select-style">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                <option value="20 MAD">1 Months </option>
-                                                <option value="30 MAD">2 Months </option>
-                                                <option value="50 MAD">4 Months </option>
-                                                <option disabled value="0 MAD">---UPGRADE---</option>
+                                                <option value="20 MAD">1 Months NEW</option>
+                                                <option value="30 MAD">2 Months NEW</option>
+                                                <option value="50 MAD">4 Months NEW</option>
+                                                <option disabled value="0 MAD">---UPGRADE (COMPTE DIALK)---</option>
                                                 <option value="30 MAD">1 Months UPGRADE </option>
                                                 <option value="40 MAD">2 Months UPGRADE</option>
+                                                <option value="65 MAD">4 Months UPGRADE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1463,11 +1464,12 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <span style={{ fontWeight: 'bold' }}>Upgrade [UG] on your account is Available </span> <br />
+                                                <span style={{ fontWeight: 'bold' }}>Upgrade on your account is Available ( Sift lina ghi mail / pass f WhatsApp ohna ntklfo ) </span> <br />
                                                 ✅ Private Spotify Premium Subscription  <br />
                                                 ✅ 🌍 Works Worldwide <br />
+                                                ✅ You can Download <br />
                                                 ✅ Full Warranty and Support<br />
-                                                ✅ Can Change Email and Password<br />
+                                                ✅ You can Change Email and Password<br />
                                                 ✅ Can be used on All devices – Android, Ios, Pc, Mac, Playstation, etc<br />
                                                 ✅ No interruptions – Play the music you love, ad-free.<br />
                                                 ✅ Offline playback – Save your data by listening offline.</p>
@@ -1561,7 +1563,7 @@ class Table extends Component {
                                                 ✅ Works on any device. <br />
                                                 ✅ You can Download and Add to My List. <br />
                                                 ✅ You can change profile Name / Language / PIN. <br />
-                                                ✅ You can change profiles name. <br />
+                                                ✅ there is no streaming break ( the password change will be done after the end of your subscription )<br />
                                                 ✅ Contact us for any issue<br />
                                                 ✅ Safety Account Warranty 100%<br />
                                             </p>
@@ -1616,10 +1618,13 @@ class Table extends Component {
                                             <p>
                                                 🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
                                                 🟥 STANDARD SUBSCRIPTION HAS A FULL HD Resolution<br />
+
                                                 ✅ Works on any device. <br />
                                                 ✅ Contact us for any issue<br />
                                                 ✅ Safety Account Warranty 100%<br />
-                                                🟥 No guarantee will be given if you change any information in the accounts.<br />
+
+                                                🟥 There are some rules for the account, you will get it after you buy
+                                                🟥 No warranty will be given if you change any information in the accounts.<br />
                                         --> NEED MORE MONTHS OR PROFILES ? CONTACT US VIA WHATSAPP 0637976257
                                             </p>
                                         </div>
@@ -1849,9 +1854,11 @@ class Table extends Component {
                                             <select className='notThisSelect' id="DisneyProfile">
                                                 <option value="-">Choose</option>
 
+                                                <option value={0}>1 Profiles</option>
                                                 <option value={10}>3 Profiles</option>
                                                 <option value={15}>4 Profiles</option>
                                                 <option value={25}>5 Profiles</option>
+                                                <option value={35}>Compte kaml (Privé)</option>
                                             </select>
                                             <select className='notThisSelect' id="DisneyMonths">
                                                 <option value="-">Choose</option>

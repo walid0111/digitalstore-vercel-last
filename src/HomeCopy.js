@@ -1080,13 +1080,13 @@ class Table extends Component {
                         {/*Body slide show*/}
                         <div className="slideAlign">
                             <div className="slideshow-container">
-                                <div className="mySlides fade">
+                                {/* <div className="mySlides fade">
                                     <img className="imgSlide" src="the-last-of-us-part-ii_1578852229.jpg.webp" style={{ width: '100%' }} />
                                     <div className="text"></div>
-                                </div>
+                                </div> */}
 
                                 <div className="mySlides fade">
-                                    <img className="imgSlide" src="Capture d’écran 2023-06-17 à 15.04.31.png" style={{ width: '100%' }} />
+                                    <img className="imgSlide" src="FlashSaleSlide.png" style={{ width: '100%' }} />
                                     <div className="text"></div>
                                 </div>
                                 {/* <div className="mySlides fade">
@@ -1111,7 +1111,7 @@ class Table extends Component {
                             {showAlert && (
                                 <div className="alert" onClick={this.closeAlert}>
                                     <span className="closebtnAlert" >×</span>
-                                    <strong>PROMOTION ALERT !!</strong> <br /> LIMITED TIME DISCOUNT
+                                    <strong>PROMOTION ALERT !</strong> <br /> UP TO 65% OFF
                                 </div>
                             )}
                             {/*PROMOTION MARQUEE*/}
@@ -1273,10 +1273,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                            <p>
+                                                Available soon...
+                                            </p>
                                             </p>
                                         </div>
                                     </div>
@@ -1288,10 +1287,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                            <p>
+                                                Available soon...
+                                            </p>
                                             </p>
                                         </div>
                                     </div>
@@ -1303,10 +1301,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                            <p>
+                                                Available soon...
+                                            </p>
                                             </p>
                                         </div>
                                     </div>
@@ -1318,10 +1315,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                            <p>
+                                                Available soon...
+                                            </p>
                                             </p>
                                         </div>
                                     </div>
@@ -1333,10 +1329,9 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <select >
-                                                    <option disabled value></option>
-
-                                                </select>
+                                            <p>
+                                                Available soon...
+                                            </p>
                                             </p>
                                         </div>
                                     </div>
@@ -1371,12 +1366,13 @@ class Table extends Component {
                                             <select name id="SpotifyMonths" className="select-style">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                                <option value="1.3 EUR">1 Months </option>
+                                                <option value="1.36 EUR">1 Months </option>
                                                 <option value="3 EUR">2 Months </option>
                                                 <option value="4 EUR">3 Months </option>
                                                 <option disabled value="0 EUR">---UPGRADE---</option>
                                                 <option value="2 EUR">1 Months UPGRADE </option>
                                                 <option value="4 EUR">2 Months UPGRADE</option>
+                                                <option value="7 EUR">4 Months UPGRADE</option>
                                             </select>
                                         </p>
                                     </div>
