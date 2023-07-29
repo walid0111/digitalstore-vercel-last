@@ -1094,8 +1094,8 @@ class Table extends Component {
                                         <p style={{ color: 'green', margin: '4px' }}>AT : 18/07/2023</p>
                                         <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 9 DAYS </p>
                                         <p>EMAIL : digitalstoredelux0012@gmail.com <br />
-                                            PASS : digitalstore2022 <br/>
-                                            BACKUP CODES :  RGgTlI / hBttPQ 
+                                            PASS : digitalstore2022 <br />
+                                            BACKUP CODES :  RGgTlI / hBttPQ
                                         </p>
                                         <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AND DISABLE 2FA AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
                                         <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR ANOTHER GIVEAWAY ------</p>
@@ -1349,8 +1349,8 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p> 
-                                                <Paypal/>  
+                                            <p>
+                                                <Paypal />
                                             </p>
                                         </div>
                                     </div>
@@ -1403,7 +1403,7 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 {/* PES      <div class="boxShow">
                 <p><img src="20230402_212015.jpg " width="100%" alt=""></p>
                 <h3 class="info-btn">BUY</h3>
@@ -1427,9 +1427,9 @@ class Table extends Component {
 
                             {/*Body product*/}
                             <p className="titleProduct bestSellings">OUR <span> BEST </span> SELLING</p>
-                            <div className="container">
+                            <div className="container15">
                                 <div className="wrapper">
-                                    <img src="SPOTIFY.PNG" alt="" />
+                                    <img src="20230728_234635.jpg" alt="" />
                                     <div className="content">
                                         <span>SPOTIFY PRIVATE</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -1439,27 +1439,42 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                            <select name id="SpotifyMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                <option value="20 MAD">1 Months NEW</option>
-                                                <option value="30 MAD">2 Months NEW</option>
-                                                <option value="50 MAD">4 Months NEW</option>
-                                                <option disabled value="0 MAD">---UPGRADE (COMPTE DIALK)---</option>
-                                                <option value="30 MAD">1 Months UPGRADE </option>
-                                                <option value="40 MAD">2 Months UPGRADE</option>
-                                                <option value="65 MAD">4 Months UPGRADE</option>
-                                            </select>
+
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="spotify" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buySpotify}>BUY</button>
+                                            <button className="info-btn">BUY
+
+                                            </button>
                                             {/*spotify*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p style={{ textAlign: 'center' }}>
+                                                <select name id="SpotifyMonths" className="select-style">
+                                                    <option value="-">Choose</option>
+                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                    <option value="20 MAD">1 Months NEW</option>
+                                                    <option value="30 MAD">2 Months NEW</option>
+                                                    <option value="50 MAD">4 Months NEW</option>
+                                                    <option disabled value="0 MAD">---UPGRADE (COMPTE DIALK)---</option>
+                                                    <option value="30 MAD">1 Months UPGRADE </option>
+                                                    <option value="40 MAD">2 Months UPGRADE</option>
+                                                    <option value="65 MAD">4 Months UPGRADE</option>
+                                                </select>
+                                                <div id="spotify" className="price">PRICE :</div>
+                                                <button onClick={this.buySpotify}>BUY</button>
+
+                                            </p>
+
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1477,29 +1492,45 @@ class Table extends Component {
                                     </div>
                                 </div>
 
+
+
+
                                 <div className="wrapper">
                                     <img src="crunchy.jpeg" alt="" />
                                     <div className="content">
                                         <span>CRUNCHY ROLL</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select name id="CrunchyMonths">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="-">--MEGA FUN--</option>
-                                                <option value="45 MAD">1 MONTHS SHARED</option>
-                                                <option value="55 MAD">1 MONTHS PRIVATE</option>
-                                                <option value="190 MAD">12 MONTHS</option>
-                                                <option disabled value="-">--PREMIUM--</option>
-                                                <option value="35 MAD">1 MONTHS</option>
-                                            </select>
-                                        </p>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>   
                                     </div>
                                     <div className="row">
-                                        <div id="crunchy" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyCrunchy}>BUY</button>
-                                            {/*crunchy*/}
+                                            <button className="info-btn">BUY</button>
+
                                             <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="CrunchyMonths">
+                                                    <option value="-">Choose</option>
+                                                    <option disabled value="-">--MEGA FUN--</option>
+                                                    <option value="45 MAD">1 MONTHS SHARED</option>
+                                                    <option value="55 MAD">1 MONTHS PRIVATE</option>
+                                                    <option value="190 MAD">12 MONTHS</option>
+                                                    <option disabled value="-">--PREMIUM--</option>
+                                                    <option value="35 MAD">1 MONTHS</option>
+                                                </select>
+                                                <div id="crunchy" className="price">PRICE :</div>
+
+                                                <button onClick={this.buyCrunchy}>BUY</button>
+                                            </p>
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1572,7 +1603,7 @@ class Table extends Component {
                                 </div>
 
                                 <div className="wrapper">
-                                    <img src="netflix.png" alt="" />
+                                    <img src="20230728_223954.png" alt="" />
                                     <div className="content">
                                         <span>NETFLIX SHARED</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
