@@ -1208,6 +1208,9 @@ class Table extends Component {
                                             <a href=".steam" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".steam")}>
                                                 Steam
                                             </a>
+                                            <a href=".giftCardsAndAccount" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".giftCardsAndAccount")}>
+                                                Windows Key
+                                            </a>
 
 
                                         </div>
@@ -1282,6 +1285,9 @@ class Table extends Component {
                                             </a>
                                             <a href=".streamingService" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".streamingService")}>
                                                 NBA / HULU / UFC
+                                            </a>
+                                            <a href=".otherService" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".otherService")}>
+                                                Mobile Account
                                             </a>
                                             <a href=".otherService" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".otherService")}>
                                                 8BALL Pool
@@ -1429,7 +1435,7 @@ class Table extends Component {
                             <p className="titleProduct bestSellings">OUR <span> BEST </span> SELLING</p>
                             <div className="container15">
                                 <div className="wrapper">
-                                    <img src="20230728_234635.jpg" alt="" />
+                                    <img src="spotifyBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>SPOTIFY PRIVATE</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -1505,7 +1511,7 @@ class Table extends Component {
                                                 {minutes.toString().padStart(2, '0')}:
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
-                                        </h6>   
+                                        </h6>
                                     </div>
                                     <div className="row">
                                         <div className="buttons">
@@ -1544,7 +1550,7 @@ class Table extends Component {
                                 </div>
 
                                 <div className="wrapper">
-                                    <img src="netflixprivate.webp" alt="" />
+                                    <img src="Picsart_23-07-29_15-11-17-401.png" alt="" />
                                     <div className="content">
 
                                         <span> NETFLIX PRIVATE</span>
@@ -1554,7 +1560,18 @@ class Table extends Component {
                                                 {minutes.toString().padStart(2, '0')}:
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
-                                        </h6>                                        <p>
+                                        </h6>                                        
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
 
                                             <select name id="typePrivate" className='notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
                                                 <option value="-">Choose</option>
@@ -1578,14 +1595,13 @@ class Table extends Component {
 
                                             </select>
                                         </p>
-                                    </div>
-                                    <div className="row">
                                         <div id="NetflixPrivatePrice" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyPrivateNetflix} >BUY</button>
-                                            <button className="info-btn">INFOS</button>
+
+                                        <button onClick={this.buyPrivateNetflix} >BUY</button>
+
                                         </div>
                                     </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1603,7 +1619,7 @@ class Table extends Component {
                                 </div>
 
                                 <div className="wrapper">
-                                    <img src="20230728_223954.png" alt="" />
+                                    <img src="netflixBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>NETFLIX SHARED</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -1612,37 +1628,47 @@ class Table extends Component {
                                                 {minutes.toString().padStart(2, '0')}:
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
-                                        </h6>                                         <p>
-                                            <select name id="type" className='notThisSelect' onChange={this.calculateNetflixPrice}>
-                                                <option value="-">Choose</option>
-                                                <option value={10}>PREMIUM</option>
-                                                <option value={0}>STANDARD</option>
-                                            </select>
-                                            <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
-                                                <option value="-">Choose</option>
-                                                <option value={25}>1 Months </option>
-                                                <option value={50}>2 Months</option>
-                                                <option value={75}>3 Months</option>
-                                            </select>
-                                            <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
-                                                <option value="-"> Choose</option>
-                                                <option value={0}>1 Profile</option>
-                                                <option value={10}>2 Profiles</option>
-                                                <option disabled value={0}>3 Profiles</option>
-                                                <option disabled value={0}>4 Profiles</option>
-                                                <option disabled value={0}>5 Profiles</option>
-
-                                            </select>
-                                        </p>
+                                        </h6>
                                     </div>
                                     <div className="row">
-                                        <div id="NetflixPrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyNetflix}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*netflix*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="type" className='notThisSelect' onChange={this.calculateNetflixPrice}>
+                                                    <option value="-">Choose</option>
+                                                    <option value={10}>PREMIUM</option>
+                                                    <option value={0}>STANDARD</option>
+                                                </select>
+                                                <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
+                                                    <option value="-">Choose</option>
+                                                    <option value={25}>1 Months </option>
+                                                    <option value={50}>2 Months</option>
+                                                    <option value={75}>3 Months</option>
+                                                </select>
+                                                <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
+                                                    <option value="-"> Choose</option>
+                                                    <option value={0}>1 Profile</option>
+                                                    <option value={10}>2 Profiles</option>
+                                                    <option disabled value={0}>3 Profiles</option>
+                                                    <option disabled value={0}>4 Profiles</option>
+                                                    <option disabled value={0}>5 Profiles</option>
+
+                                                </select>
+
+                                                <div id="NetflixPrice" className="price">PRICE :</div>
+                                                <button onClick={this.buyNetflix}>BUY</button>
+
+                                            </p>
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1666,33 +1692,42 @@ class Table extends Component {
                                     <div className="content">
                                         <span>DISCORD</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="nitro" className="select-style notThisSelect">
-                                                <option value="-">Choose</option>
-                                                <option value={0}>1 Months </option>
-                                                <option value={60}>2 Months</option>
-                                                <option value={75}>3 Months</option>
-                                            </select>
-                                            <select name id="typeNitro" className="select-style notThisSelect">
-                                                <option value="-"> Choose</option>
-                                                <option value={60}>Classic</option>
-                                                <option value={80}>Nitro</option>
-                                            </select>
-                                            <select name id="accountType" className="select-style notThisSelect" style={{ display: 'none' }}>
-                                                <option value="-"> Choose</option>
-                                                <option selected value={0}>My account</option>
-                                                <option value={0}>New account</option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="DiscordPrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyDiscord}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*discord*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="nitro" className="select-style notThisSelect">
+                                                    <option value="-">Choose</option>
+                                                    <option value={0}>1 Months </option>
+                                                    <option value={60}>2 Months</option>
+                                                    <option value={75}>3 Months</option>
+                                                </select>
+                                                <select name id="typeNitro" className="select-style notThisSelect">
+                                                    <option value="-"> Choose</option>
+                                                    <option value={60}>Classic</option>
+                                                    <option value={80}>Nitro</option>
+                                                </select>
+                                                <select name id="accountType" className="select-style notThisSelect" style={{ display: 'none' }}>
+                                                    <option value="-"> Choose</option>
+                                                    <option selected value={0}>My account</option>
+                                                    <option value={0}>New account</option>
+                                                </select>
+                                            </p>
+                                            <div id="DiscordPrice" className="price">PRICE :</div>
+                                            <button onClick={this.buyDiscord}>BUY</button>
+
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1703,33 +1738,45 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
+
                                 <div className="wrapper">
                                     <img src="SHAHID.png" alt="" />
                                     <div className="content">
                                         <span>SHAHID</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select name className='notThisSelect' id="ShahidProfile">
-                                                <option value="-">Choose</option>
-                                                <option value={30}>VIP</option>
-                                                <option value={70}>VIP SPORT</option>
-                                            </select>
-                                            <select name className='notThisSelect' id="shahidType">
-                                                <option value="-">Choose</option>
-                                                <option value={0}>1 MONTHS</option>
-                                                <option value={20}>2 MONTHS</option>
-                                                <option value={50}>3 MONTHS</option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="shahidPrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyShahid}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*shahid*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name className='notThisSelect' id="ShahidProfile">
+                                                    <option value="-">Choose</option>
+                                                    <option value={30}>VIP</option>
+                                                    <option value={70}>VIP SPORT</option>
+                                                </select>
+                                                <select name className='notThisSelect' id="shahidType">
+                                                    <option value="-">Choose</option>
+                                                    <option value={0}>1 MONTHS</option>
+                                                    <option value={20}>2 MONTHS</option>
+                                                    <option value={50}>3 MONTHS</option>
+                                                </select>
+                                                <div id="shahidPrice" className="price">PRICE :</div>
+
+                                                <button onClick={this.buyShahid}>BUY</button>
+
+                                            </p>
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1744,23 +1791,32 @@ class Table extends Component {
                                     <div className="content">
                                         <span>CANVA</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="canvaMonths">
-                                                <option value="-">Choose</option>
-                                                <option value={35}> 1 MONTHS</option>
-                                                <option value={50}> 6 MONTHS</option>
-                                                <option value={75}>12 MONTHS</option>
-                                                <option value={140}>36 MONTHS</option>
-                                                <option value={170}>LIFETIME (Edu)</option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="canva" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyCanva}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*canva*/}
                                             <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="canvaMonths">
+                                                    <option value="-">Choose</option>
+                                                    <option value={35}> 1 MONTHS</option>
+                                                    <option value={50}> 6 MONTHS</option>
+                                                    <option value={75}>12 MONTHS</option>
+                                                    <option value={140}>36 MONTHS</option>
+                                                    <option value={170}>LIFETIME (Edu)</option>
+                                                </select>
+                                            </p>
+                                            <div id="canva" className="price">PRICE :</div>
+
+                                            <button onClick={this.buyCanva}>BUY</button>
+
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1780,20 +1836,28 @@ class Table extends Component {
                                     <div className="content">
                                         <span>APPLE MUSIC </span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="AppleMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                <option value="25 MAD">1 Months </option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="apple" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyAppleMusic}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*apple musicva*/}
                                             <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="AppleMonths" className="select-style">
+                                                    <option value="-">Choose</option>
+                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                    <option value="25 MAD">1 Months </option>
+                                                </select>
+                                            </p>
+                                            <div id="apple" className="price">PRICE :</div>
+                                            <button onClick={this.buyAppleMusic}>BUY</button>
+
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1808,28 +1872,38 @@ class Table extends Component {
                                             </p>
                                         </div>
                                     </div>
+
+
                                 </div>
                                 <div className="wrapper">
                                     <img src="deezer.jpeg" alt="" />
                                     <div className="content">
                                         <span>DEEZER PRIVATE</span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="DeezerMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                <option value="25 MAD">1 Months </option>
-                                                <option value="50 MAD">3 Months </option>
-                                                <option disabled value="0 MAD">---UPGRADE---</option>
-                                            </select>
-                                        </p>
+                                       
                                     </div>
                                     <div className="row">
-                                        <div id="deezer" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyDeezer}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*deezer*/}
                                             <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="DeezerMonths" className="select-style">
+                                                    <option value="-">Choose</option>
+                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                    <option value="25 MAD">1 Months </option>
+                                                    <option value="50 MAD">3 Months </option>
+                                                    <option disabled value="0 MAD">---UPGRADE---</option>
+                                                </select>
+                                            </p>
+                                            <div id="deezer" className="price">PRICE :</div>
+                                            <button onClick={this.buyDeezer}>BUY</button>
+
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1849,22 +1923,30 @@ class Table extends Component {
                                     <div className="content">
                                         <span>PRIME VIDEO</span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="PrimeMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                <option value="40 MAD">1 Months </option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="prime" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyPrime}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*prime*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select name id="PrimeMonths" className="select-style">
+                                                    <option value="-">Choose</option>
+                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                    <option value="40 MAD">1 Months </option>
+                                                </select>
+                                            </p>
+                                            <button onClick={this.buyPrime}>BUY</button>
+
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1876,35 +1958,48 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
+
+
                                 <div className="wrapper">
                                     <img src="disney.jpeg" alt="" />
                                     <div className="content">
                                         <span>DISNEY</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select className='notThisSelect' id="DisneyProfile">
-                                                <option value="-">Choose</option>
 
-                                                <option value={0}>1 Profiles</option>
-                                                <option value={10}>3 Profiles</option>
-                                                <option value={15}>4 Profiles</option>
-                                                <option value={25}>5 Profiles</option>
-                                                <option value={35}>Compte kaml (Privé)</option>
-                                            </select>
-                                            <select className='notThisSelect' id="DisneyMonths">
-                                                <option value="-">Choose</option>
-                                                <option value={30}>1 Months</option>
-                                            </select>
-                                        </p>
                                     </div>
                                     <div className="row">
-                                        <div id="disney" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyDisney}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*disney*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                <select className='notThisSelect' id="DisneyProfile">
+                                                    <option value="-">Choose</option>
+
+                                                    <option value={0}>1 Profiles</option>
+                                                    <option value={10}>3 Profiles</option>
+                                                    <option value={15}>4 Profiles</option>
+                                                    <option value={25}>5 Profiles</option>
+                                                    <option value={35}>Compte kaml (Privé)</option>
+                                                </select>
+                                                <select className='notThisSelect' id="DisneyMonths">
+                                                    <option value="-">Choose</option>
+                                                    <option value={30}>1 Months</option>
+                                                </select>
+                                            </p>
+                                            <div id="disney" className="price">PRICE :</div>
+
+                                            <button onClick={this.buyDisney}>BUY</button>
+
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1920,22 +2015,32 @@ class Table extends Component {
                                     <div className="content">
                                         <span>IPTV</span>
                                         <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="iptvMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option value="150 MAD">6 Months</option>
-                                                <option value="250 MAD">12 Months</option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="iptvPrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyIPTV}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*iptv*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+
+                                            <p>
+                                                <select name id="iptvMonths" className="select-style">
+                                                    <option value="-">Choose</option>
+                                                    <option value="150 MAD">6 Months</option>
+                                                    <option value="250 MAD">12 Months</option>
+                                                </select>
+                                            </p>
+                                            <div id="iptvPrice" className="price">PRICE :</div>
+                                            <button onClick={this.buyIPTV}>BUY</button>
+
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -2818,9 +2923,9 @@ class Table extends Component {
                             </div>
                             {/*morocco services*/}
                             <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span>(Achat f compte dialk)</p>
-                            <div className="container10 " id='container10'>
+                            <div className="container10 "  id='container10'>
                                 <div className="wrapper">
-                                    <img src="moroccoAccount.jpg" alt="" />
+                                    <img src="psplusSlide.png" alt="" />
                                     <div className="content">
                                         <span>1 MONTHS </span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -2854,7 +2959,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="moroccoAccount2.jpg" alt="" />
+                                    <img src="psplusSlide.png" alt="" />
                                     <div className="content">
                                         <span>3 MONTHS </span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -2888,7 +2993,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="moroccoAccount3.jpg" alt="" />
+                                    <img src="psplusSlide.png" alt="" />
                                     <div className="content">
                                         <span>12 MONTHS </span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -2923,7 +3028,7 @@ class Table extends Component {
                                 </div>
                             </div>
                             <p className="titleProduct psGames">OUR <span>PS4</span> /<span> PS5 GAMES</span> </p>
-                            <div className="container">
+                            <div className="container" style={{display:'none'}}>
                                 <div className="wrapper2">
                                     <img src="fifa23Games.png" alt="" />
                                     <div className="content">
@@ -3008,7 +3113,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <h4 style={{ fontWeight: 'bold' }}
+                            <h4 style={{ fontWeight: 'bold',display:'none' }}
                                 className="containerText"
                                 onClick={() => {
                                     document.querySelector('.container2').style.display = 'flex';
@@ -3028,10 +3133,10 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="f1Plateforme">
                                             <option value="-">Choose</option>
-                                            <option value="290 MAD ">PS4 Primary</option>
-                                            <option value="235 MAD ">PS4 Secondary</option>
-                                            <option value="300 MAD ">PS5 Primary</option>
-                                            <option value="235 MAD ">PS5 Secondary</option>
+                                            <option value="290 MAD " disabled>PS4 Primary</option>
+                                            <option value="160 MAD ">PS4 Secondary</option>
+                                            <option value="300 MAD" disabled>PS5 Primary</option>
+                                            <option value="180 MAD ">PS5 Secondary</option>
                                         </select>
                                         <div className="buttons">
                                             <div id="f1Price" className="price">PRICE :</div>
@@ -3057,10 +3162,8 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="gtaPlateforme">
                                             <option value="-">Choose</option>
-                                            <option value="200 MAD ">PS4 Primary</option>
-                                            <option value="150 MAD ">PS4 Secondary</option>
-                                            <option value="345 MAD ">PS5 Primary</option>
-                                            <option value="235 MAD ">PS5 Secondary</option>
+                                            <option value="220 MAD ">PS4 Compte kaml</option>
+                                            
                                         </select>
                                         <div className="buttons">
                                             <div id="gtaPrice" className="price">PRICE :</div>
@@ -3074,7 +3177,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>Compte kaml t9dr tbdl Email / Pass</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3085,11 +3188,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="ragnarokPlateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="455 MAD ">PS4 Primary</option>
-                                            <option value="320 MAD ">PS4 Secondary</option>
-                                            <option value="455 MAD ">PS5 Primary</option>
-                                            <option value="320 MAD ">PS5 Secondary</option>
+                                            <option value="-">Out of stock</option>
+                                            
                                         </select>
                                         <div className="buttons">
                                             <div id="ragnarokPrice" className="price">PRICE :</div>
@@ -3125,11 +3225,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="spidermanPlateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="245 MAD ">PS4 Primary</option>
-                                            <option value="210 MAD ">PS4 Secondary</option>
-                                            <option value="255 MAD ">PS5 Primary</option>
-                                            <option value={220}>PS5 Secondary</option>
+                                        <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="spidermanPrice">PRICE :</div>
@@ -3154,9 +3251,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="rdrPlateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="355 MAD ">PS4 Primary</option>
-                                            <option value="265 MAD ">PS4 Secondary</option>
+                                        <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="rdrPrice">PRICE :</div>
@@ -3181,11 +3277,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="fifa22Plateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="170 MAD ">PS4 Primary</option>
-                                            <option value="135 MAD ">PS4 Secondary</option>
-                                            <option value="180 MAD ">PS5 Primary</option>
-                                            <option value="145 MAD ">PS5 Secondary</option>
+                                        <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="fifa22Price">PRICE :</div>
@@ -3204,7 +3297,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className="titleProduct giftCardsAndAccount">OUR <span>GIFT CARDS </span>/<span> ACCOUNT</span> / <span> GAMEPASS</span> </p>
+                            <p className="titleProduct giftCardsAndAccount">OUR <span>WINDOWS KEY </span>/<span> ACCOUNT</span> / <span> GAMEPASS</span> </p>
                             <div className="container4">
                                 <div className="wrapper">
                                     <img src="psn5euro.jpeg" alt="" />

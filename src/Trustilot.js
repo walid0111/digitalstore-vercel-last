@@ -12,7 +12,7 @@ const TrustBox = ({ trustBoxRef }) => (
         data-style-height="24px"
         data-style-width="100%"
         data-theme="dark"
-        data-min-review-count="100"
+        data-min-review-count="1"
         data-without-reviews-preferred-string-id="3"
         data-style-alignment="center"
     >

@@ -29,7 +29,7 @@ const RegionSelector = () => {
       </h3> */}
 
       <h2 style={{ fontWeight: "bold", fontSize: '22px', padding: '5px' }}>
-        SITE IS UNDER CONSTRUCTION.. <span style={{ color: "#008507" }}>WE WILL BE BACK SOON :)</span>{" "}
+         <span style={{ color: "#008507" }}>WE WILL BE BACK SOON :)</span>{" "}
       </h2>
       <h3 style={{ fontWeight: "bold", textAlign: 'center' }}>
         WHATSAPP : +212 637 97 62 57{" "}

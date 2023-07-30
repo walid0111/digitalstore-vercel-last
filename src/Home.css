@@ -1,7 +1,7 @@
 /* review des clients */
 
 /* fin review */
-
+@import url('https://fonts.cdnfonts.com/css/gt-eesti-display-trial');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;500&display=swap');
 
 select:not(.notThisSelect) {
@@ -69,6 +69,7 @@ svg {
 }
 
 .headerClass {
+    
     z-index: 3;
     position: fixed;
     width: 100%;
@@ -138,6 +139,7 @@ svg {
     }
 
     .navigation-menu {
+        
         float: right;
         display: flex;
         align-items: center;
@@ -145,6 +147,7 @@ svg {
     }
 
     .navigation-menu a {
+        
         margin-left: 10px;
         color: #ddd;
         text-transform: uppercase;
@@ -171,6 +174,7 @@ svg {
     .navigation-menu i {
         margin-right: 8px;
         font-size: 16px;
+        
     }
 
     .home {
@@ -240,6 +244,7 @@ svg {
         padding: 20px 40px;
         box-sizing: border-box;
         border-radius: 0 0 30px 30px;
+        
     }
 
     .navigation-menu::before {
@@ -1059,11 +1064,12 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
 .content span {
-    font-size: 22px;
+    
+    font-size: 20px;
     font-weight: 700;
     color: white;
+    font-family: 'GT Eesti Display Trial', sans-serif;
 }
 
 .content p {
@@ -1150,7 +1156,6 @@ header {
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    display: none;
 
 }
 
@@ -1261,16 +1266,19 @@ header {
 .containerText2 {
     text-align: center;
     animation: slidein infinite 1s;
-    display: none;
     cursor: pointer;
     margin-top: 10px;
 }
 
 /*     <!--body img ps4/ps5 Responsive-->
  */
+
+
+
+
 .container .wrapper2 {
 
-    width: calc(24%);
+    width: calc(27% );
     border-radius: 30px;
     background: rgb(0, 0, 0);
     transition: all 0.3s ease;
@@ -1280,7 +1288,7 @@ header {
 
 .container2 .wrapper2 {
 
-    width: calc(24%);
+    width: calc(27% );
     border-radius: 30px;
     background: rgb(0, 0, 0);
     transition: all 0.3s ease;
@@ -1290,7 +1298,7 @@ header {
 
 .container3 .wrapper2 {
 
-    width: calc(24%);
+    width: calc(27% );
     border-radius: 30px;
     background: rgb(0, 0, 0);
     transition: all 0.3s ease;
@@ -1307,7 +1315,7 @@ header {
 .container .wrapper2 img {
     padding: 5px;
     width: 100%;
-    height: 220px;
+    height: 170px;
     border-radius: 25px 25px 0 0;
     border-rdius: 3px;
 
@@ -1321,7 +1329,7 @@ header {
 .container2 .wrapper2 img {
     padding: 5px;
     width: 100%;
-    height: 220px;
+    height: 170px;
     border-radius: 25px 25px 0 0;
     border-rdius: 3px;
 
@@ -1335,7 +1343,7 @@ header {
 .container3 .wrapper2 img {
     padding: 5px;
     width: 100%;
-    height: 220px;
+    height: 170px;
     border-radius: 25px 25px 0 0;
     border-rdius: 3px;
 
@@ -1372,11 +1380,7 @@ header {
     justify-content: space-between;
 }
 
-.content span {
-    font-size: 22px;
-    font-weight: 700;
-    color: white;
-}
+
 
 .content p {
     margin-top: 10px;
@@ -1385,7 +1389,7 @@ header {
 }
 
 .row .buttons {
-    margin-top: 19px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
 }
@@ -1410,7 +1414,7 @@ header {
 }
 
 .buttons button:last-child {
-    background: #0584d8;
+    background: #017807;
     color: rgb(255, 253, 253);
     margin-left: 10px;
     border-radius: 13px;
@@ -1429,7 +1433,7 @@ header {
 }
 
 .buttons button:nth-child(2):hover {
-    background: #1f99eb;
+    background: #029b09;
     color: #fff;
 }
 
@@ -1491,11 +1495,14 @@ header {
         padding: 5px 10px 5px 10px;
     }
 
+    .row .buttons  {
+        margin: 0;
+    }
     .row .buttons button {
         width: 100%;
         padding: 3px 0;
         font-size: 10px;
-        font-weight: 500;
+        font-weight: bold;
         border-radius: 3px;
         border: 2px solid #000000;
         background: #fff;
@@ -1696,7 +1703,8 @@ header {
 
 
     .row .price {
-        font-size: 14px;
+        font-size: 10px;
+        padding: 8px 0 8px 0;
         color: rgb(246, 112, 3);
     }
 
@@ -1705,11 +1713,7 @@ header {
         justify-content: space-between;
     }
 
-    .content span {
-        font-size: 13px;
-        font-weight: 700;
-        color: white;
-    }
+    
 
     .container4 .wrapper .content {
         padding: 5px 10px 5px 10px;
@@ -2040,7 +2044,7 @@ header {
 
 .container15 .wrapper {
 
-    width: calc(33% - 13px);
+    width: calc(32% - 13px);
     border-radius: 30px;
     background: rgb(0, 0, 0);
     transition: all 0.3s ease;
@@ -2051,7 +2055,7 @@ header {
 .container15 .wrapper img {
     padding-top: 3px;
     width: 98%;
-    height: 150px;
+    height: 160px;
     border-radius: 25px 25px 0 0;
 
     margin-left: auto;
