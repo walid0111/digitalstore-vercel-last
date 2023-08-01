@@ -10,6 +10,9 @@ import LoadingScreen from './LoadingScreen';
 import Trustpilot from './Trustilot';
 import Paypal from './Paypal';
 import 'tailwindcss/tailwind.css';
+import Swal from 'sweetalert2';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+
 
 
 
@@ -59,7 +62,29 @@ class Table extends Component {
                 script.charset = "UTF-8";
                 script.setAttribute("crossorigin", "*");
                 document.getElementsByTagName("head")[0].appendChild(script);
+
+
+
+                Swal.fire({
+                    title: 'PROMOTION ALERT',
+                    text: "Up to 65% Off",
+                    icon: 'warning',
+                    confirmButtonText: 'Ok',
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        Swal.fire({
+                            title: '30 bo7dha limakhdamach',
+                            text: '5, 10, 20, 50, 100 Orange ✅',
+                            imageUrl: '/30DhOrange.png', // Use the correct path to the image in the public folder
+                            imageHeight: 200, // Set the desired height for the image
+                            imageWidth: '80%', // Set the desired width for the image
+                        });
+
+                    }
+                })
             }, 10000);
+
+
         });
 
         this.showSlides(this.state.slideIndex);
@@ -81,6 +106,8 @@ class Table extends Component {
                 clearInterval(this.interval);
             }
         }, 1000);
+
+
 
 
     }
@@ -1091,6 +1118,7 @@ class Table extends Component {
                                 <div className="modal">
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
+                                        <h2 style={{ textAlign: 'center', fontWeight: 'bold', margin: '5px', borderBottom: '1px' }}>SPECIAL GIVEAWAY </h2>
                                         <p style={{ color: 'green', margin: '4px' }}>AT : 18/07/2023</p>
                                         <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 9 DAYS </p>
                                         <p>EMAIL : digitalstoredelux0012@gmail.com <br />
@@ -1180,12 +1208,12 @@ class Table extends Component {
 
 
                             {/*PROMOTION*/}
-                            {showAlert && (
+                            {/* {showAlert && (
                                 <div className="alert" onClick={this.closeAlert}>
                                     <span className="closebtnAlert" >×</span>
                                     <strong>PROMOTION ALERT !</strong> <br /> UP TO 65% OFF
                                 </div>
-                            )}
+                            )} */}
                             {/*PROMOTION MARQUEE*/}
                             <marquee scrollamount={4} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
                                 LIMITED TIME DISCOUNT <span style={{ color: 'black' }}>/</span> PROMOTION A DURÉE LIMITÉE </marquee>
@@ -1434,8 +1462,16 @@ class Table extends Component {
                             {/*Body product*/}
                             <p className="titleProduct bestSellings">OUR <span> BEST </span> SELLING</p>
                             <div className="container15">
-                                <div className="wrapper">
-                                    <img src="spotifyBanner.jpeg" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="SpotifyBanners.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+
                                     <div className="content">
                                         <span>SPOTIFY PRIVATE</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -1461,22 +1497,39 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p style={{ textAlign: 'center' }}>
-                                                <select name id="SpotifyMonths" className="select-style">
-                                                    <option value="-">Choose</option>
-                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                    <option value="20 MAD">1 Months NEW</option>
-                                                    <option value="30 MAD">2 Months NEW</option>
-                                                    <option value="50 MAD">4 Months NEW</option>
-                                                    <option disabled value="0 MAD">---UPGRADE (COMPTE DIALK)---</option>
-                                                    <option value="30 MAD">1 Months UPGRADE </option>
-                                                    <option value="40 MAD">2 Months UPGRADE</option>
-                                                    <option value="65 MAD">4 Months UPGRADE</option>
-                                                </select>
-                                                <div id="spotify" className="price">PRICE :</div>
-                                                <button onClick={this.buySpotify}>BUY</button>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Spotify Premium</h5>
+                                                                <p className="card-text">Upgrade your music experience with Spotify Premium. Enjoy ad-free, offline listening, and more!</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="SpotifyMonths" style={{ border: '1px solid black', margin: '10px', borderRadius: '8px' }} className="form-select mb-3">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                                    <option value="20 MAD">1 Month NEW</option>
+                                                                    <option value="30 MAD">2 Months NEW</option>
+                                                                    <option value="50 MAD">4 Months NEW</option>
+                                                                    <option disabled value="0 MAD">---UPGRADE (COMPTE DIALK)---</option>
+                                                                    <option value="30 MAD">1 Month UPGRADE</option>
+                                                                    <option value="40 MAD">2 Months UPGRADE</option>
+                                                                    <option value="65 MAD">4 Months UPGRADE</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="spotify" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buySpotify} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
-                                            </p>
 
                                         </div>
                                     </div>
@@ -1501,8 +1554,15 @@ class Table extends Component {
 
 
 
-                                <div className="wrapper">
-                                    <img src="crunchy.jpeg" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="crunchyBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>CRUNCHY ROLL</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -1549,8 +1609,15 @@ class Table extends Component {
                                     </div>
                                 </div>
 
-                                <div className="wrapper">
-                                    <img src="Picsart_23-07-29_15-11-17-401.png" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="netflixPrivateBannerTop.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
 
                                         <span> NETFLIX PRIVATE</span>
@@ -1560,7 +1627,7 @@ class Table extends Component {
                                                 {minutes.toString().padStart(2, '0')}:
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
-                                        </h6>                                        
+                                        </h6>
                                     </div>
                                     <div className="row">
                                         <div className="buttons">
@@ -1573,31 +1640,31 @@ class Table extends Component {
                                             <span className="close-btn">×</span>
                                             <p>
 
-                                            <select name id="typePrivate" className='notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
-                                                <option value="-">Choose</option>
-                                                <option value={55}>PREMIUM</option>
-                                                <option disabled value={0}>STANDARD</option>
-                                            </select>
-                                            <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
-                                                <option value="-">Choose</option>
-                                                <option value={0}>1 Months </option>
-                                                <option disabled value={0}>2 Months </option>
-                                                <option disabled value={0}>3 Months </option>
+                                                <select name id="typePrivate" className='notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
+                                                    <option value="-">Choose</option>
+                                                    <option value={55}>PREMIUM</option>
+                                                    <option disabled value={0}>STANDARD</option>
+                                                </select>
+                                                <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                    <option value="-">Choose</option>
+                                                    <option value={0}>1 Months </option>
+                                                    <option disabled value={0}>2 Months </option>
+                                                    <option disabled value={0}>3 Months </option>
 
-                                            </select>
-                                            <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
-                                                <option value="-"> Choose</option>
-                                                <option value={0}>1 Profile</option>
-                                                <option value={20}>2 Profiles</option>
-                                                <option disabled value={0}>3 Profiles</option>
-                                                <option disabled value={0}>4 Profiles</option>
-                                                <option disabled value={0}>5 Profiles</option>
+                                                </select>
+                                                <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                    <option value="-"> Choose</option>
+                                                    <option value={0}>1 Profile</option>
+                                                    <option value={20}>2 Profiles</option>
+                                                    <option disabled value={0}>3 Profiles</option>
+                                                    <option disabled value={0}>4 Profiles</option>
+                                                    <option disabled value={0}>5 Profiles</option>
 
-                                            </select>
-                                        </p>
-                                        <div id="NetflixPrivatePrice" className="price">PRICE :</div>
+                                                </select>
+                                            </p>
+                                            <div id="NetflixPrivatePrice" className="price">PRICE :</div>
 
-                                        <button onClick={this.buyPrivateNetflix} >BUY</button>
+                                            <button onClick={this.buyPrivateNetflix} >BUY</button>
 
                                         </div>
                                     </div>
@@ -1618,8 +1685,15 @@ class Table extends Component {
                                     </div>
                                 </div>
 
-                                <div className="wrapper">
-                                    <img src="netflixBanner.jpeg" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="netflixBannerShared.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>4.9</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>NETFLIX SHARED</span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -1687,8 +1761,15 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="discord.png" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="discordBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>DISCORD</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
@@ -1740,8 +1821,15 @@ class Table extends Component {
                                 </div>
 
 
-                                <div className="wrapper">
-                                    <img src="SHAHID.png" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="shahidBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>SHAHID</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
@@ -1786,8 +1874,15 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="canva.png" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="canvaBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>CANVA</span>
                                         <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
@@ -1831,8 +1926,15 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="applemusic.jpeg" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="appleMusicBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>APPLE MUSIC </span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
@@ -1875,12 +1977,20 @@ class Table extends Component {
 
 
                                 </div>
-                                <div className="wrapper">
-                                    <img src="deezer.jpeg" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    
+                                    <img src="deezerBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>DEEZER PRIVATE</span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                       
+
                                     </div>
                                     <div className="row">
                                         <div className="buttons">
@@ -1918,8 +2028,15 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="PRIMEVIDEO.JPEG" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="primevideoBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>PRIME VIDEO</span>
                                         <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
@@ -1961,8 +2078,15 @@ class Table extends Component {
 
 
 
-                                <div className="wrapper">
-                                    <img src="disney.jpeg" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="disneyBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>DISNEY</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
@@ -2010,8 +2134,15 @@ class Table extends Component {
                                 </div>
 
 
-                                <div className="wrapper">
-                                    <img src="iptv.png" alt="" />
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="iptvBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>IPTV</span>
                                         <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
@@ -2923,7 +3054,7 @@ class Table extends Component {
                             </div>
                             {/*morocco services*/}
                             <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span>(Achat f compte dialk)</p>
-                            <div className="container10 "  id='container10'>
+                            <div className="container10 " id='container10'>
                                 <div className="wrapper">
                                     <img src="psplusSlide.png" alt="" />
                                     <div className="content">
@@ -3028,7 +3159,7 @@ class Table extends Component {
                                 </div>
                             </div>
                             <p className="titleProduct psGames">OUR <span>PS4</span> /<span> PS5 GAMES</span> </p>
-                            <div className="container" style={{display:'none'}}>
+                            <div className="container" style={{ display: 'none' }}>
                                 <div className="wrapper2">
                                     <img src="fifa23Games.png" alt="" />
                                     <div className="content">
@@ -3113,7 +3244,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <h4 style={{ fontWeight: 'bold',display:'none' }}
+                            <h4 style={{ fontWeight: 'bold', display: 'none' }}
                                 className="containerText"
                                 onClick={() => {
                                     document.querySelector('.container2').style.display = 'flex';
@@ -3163,7 +3294,7 @@ class Table extends Component {
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="gtaPlateforme">
                                             <option value="-">Choose</option>
                                             <option value="220 MAD ">PS4 Compte kaml</option>
-                                            
+
                                         </select>
                                         <div className="buttons">
                                             <div id="gtaPrice" className="price">PRICE :</div>
@@ -3189,7 +3320,7 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="ragnarokPlateforme">
                                             <option value="-">Out of stock</option>
-                                            
+
                                         </select>
                                         <div className="buttons">
                                             <div id="ragnarokPrice" className="price">PRICE :</div>
@@ -3225,7 +3356,7 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="spidermanPlateforme">
-                                        <option value="-">Out of stock</option>
+                                            <option value="-">Out of stock</option>
 
                                         </select>
                                         <div className="buttons">
@@ -3251,7 +3382,7 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="rdrPlateforme">
-                                        <option value="-">Out of stock</option>
+                                            <option value="-">Out of stock</option>
 
                                         </select>
                                         <div className="buttons">
@@ -3277,7 +3408,7 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="fifa22Plateforme">
-                                        <option value="-">Out of stock</option>
+                                            <option value="-">Out of stock</option>
 
                                         </select>
                                         <div className="buttons">
