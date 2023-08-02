@@ -1378,7 +1378,7 @@ class Table extends Component {
 
 
                             <p className="titleProduct topUp">OUR <span>TOP UP</span></p><br /> <br />
-                            <section className="boxes">
+                            <section className="boxes" >
                                 <div className="boxShow">
                                     <p><img src="20230402_211309.jpg" width="100%" alt="" /></p>
                                     <h3 className="info-btn">SHOW</h3>
