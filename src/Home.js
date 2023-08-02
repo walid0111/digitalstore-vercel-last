@@ -12,6 +12,8 @@ import Paypal from './Paypal';
 import 'tailwindcss/tailwind.css';
 import Swal from 'sweetalert2';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import Design from "./components/Design";
+import Particles from 'react-tsparticles';
 
 
 
@@ -65,23 +67,35 @@ class Table extends Component {
 
 
 
+
                 Swal.fire({
-                    title: 'PROMOTION ALERT',
-                    text: "Up to 65% Off",
-                    icon: 'warning',
-                    confirmButtonText: 'Ok',
+                    title: 'Jib 50 wla 100',
+                    text: 'lib9a ghadi nkhliwh lik lcommande jaya',
+                    imageUrl: '/rechargeFr.jpg', // Use the correct path to the image in the public folder
+                    imageHeight: 350, // Set the desired height for the image
+                    imageWidth: '90%', // Set the desired width for the image
                 }).then((result) => {
                     if (result.isConfirmed) {
                         Swal.fire({
-                            title: '30 bo7dha limakhdamach',
-                            text: '5, 10, 20, 50, 100 Orange ✅',
-                            imageUrl: '/30DhOrange.png', // Use the correct path to the image in the public folder
-                            imageHeight: 200, // Set the desired height for the image
-                            imageWidth: '80%', // Set the desired width for the image
-                        });
+                            title: 'Jib 50 wla 100',
+                            text: 'lib9a ghadi nkhliwh lik lcommande jaya',
+                            imageUrl: '/rechargeAr.jpg', // Use the correct path to the image in the public folder
+                            imageHeight: 350, // Set the desired height for the image
+                            imageWidth: '90%', // Set the desired width for the image
+                        }).then((result) => { // Added missing `(` before `(result)`
+                            if (result.isConfirmed) {
 
+                                Swal.fire({
+                                    title: 'PROMOTION ALERT',
+                                    text: 'Up to 65% Off',
+                                    icon: 'warning',
+                                    confirmButtonText: 'Ok',
+                                })
+                            }
+                        });
                     }
-                })
+                });
+
             }, 10000);
 
 
@@ -1020,7 +1034,7 @@ class Table extends Component {
             window.location.href = url;
         }
     }
-    //buy free fire
+    //buy free fire account
     buyfreefire() {
         if (document.querySelector('#freefireSelect').value == '-') {
             alert('Error : Please select an option before clicking buy..');
@@ -1028,6 +1042,20 @@ class Table extends Component {
             const price = document.querySelector('#freefireSelect').value;
             const months = document.querySelector('#freefireSelect option:checked').text;
             const message = `Salam *Digital Store* bghit \n *--- FREE FIRE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+
+    //shop free fire 
+    buyfreefireTopup() {
+        if (document.querySelector('#ffTopup').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#ffTopup').value;
+            const months = document.querySelector('#ffTopup option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- FREE FIRE Shopping Service> ---* \n \n *⇾ Offre :* ${months} \n *⇾ Prix :* ${price} MAD  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -1083,6 +1111,7 @@ class Table extends Component {
         const { showAlert } = this.state;
         //fin alert
         const { pcDropdownOpen, psDropdownOpen, othersDropdownOpen, xboxDropdownOpen } = this.state;
+
 
         return (
 
@@ -1172,7 +1201,22 @@ class Table extends Component {
                 {isLoading ? <LoadingScreen /> : <>
 
                     {/*-------------------------Mad------------------------*/}
-                    <div style={{ display: 'block' }}>
+                    <div style={{ display: 'block', position: 'relative' }}>
+                        <Particles
+                            id="tsparticles"
+                            options={{
+                                // Configuration des options des particules
+                                particles: {
+                                    number: {
+                                        value: 80,
+                                    },
+                                    // ... autres options de configuration
+                                },
+                            }}
+                        />
+                        <div className="w-full h-screen absolute">
+                            <Design />
+                        </div>
 
                         {/*Body slide show*/}
                         <div className="slideAlign">
@@ -1390,13 +1434,26 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="boxShow">
-                                    <p><img src="20230402_205304.jpg" width="100%" alt="" /></p>
+                                    <p><img src="20230402_211641.jpg" width="100%" alt="" /></p>
                                     <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
-                                        <div className="modal-content">
+                                    <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                Available soon...
+                                                <span style={{ fontWeight: 'bold' }}>FreeFire Shop </span><br /><br /> <hr /><br />
+
+                                                <select className="select-style" id='ffTopup' style={{border:'solid 1px'}}>
+                                                    <option  value="-">Choose</option>
+                                                    <option  value={"20"}>100 💎</option>
+                                                    <option  value={"50"}>310 💎</option>
+                                                    <option  value={"75"}>520 💎</option>
+                                                    <option  value={"150"}> 1060</option>
+                                                </select> <br /><br />
+                                                <div id="ffTopupPrice" className="price">PRICE : </div><br />
+
+
+                                                <button className='btn btn-primary' style={{ cursor: 'pointer', color: 'white' }} onClick={this.buyfreefireTopup} >BUY NOW</button><br /><br />
+
                                             </p>
                                         </div>
                                     </div>
@@ -1458,7 +1515,22 @@ class Table extends Component {
 
 
 
-
+                            <div id="benefits2"  >
+                                <div >
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px',color: '#008507' }}>+1000 </p>
+                                    <p style={{ fontSize: '16px',fontWeight: 'bold' }}>Products Sold </p>
+                                </div>
+                                <div >
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px',color: '#008507' }}>+700 </p>
+                                    <p style={{ fontSize: '16px',fontWeight: 'bold' }}>Customers
+                                    </p>
+                                </div>
+                                <div >
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px',color: '#008507' }}>4.8 <i className="fas fa-star" /></p>
+                                    <p style={{ fontSize: '16px',fontWeight: 'bold' }}>Trusted </p>
+                                </div>
+                               
+                            </div>
                             {/*Body product*/}
                             <p className="titleProduct bestSellings">OUR <span> BEST </span> SELLING</p>
                             <div className="container15">
@@ -1502,7 +1574,7 @@ class Table extends Component {
                                                     <div className="col-md-9">
                                                         <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
                                                             <div style={{ width: '100%', padding: '10px' }}>
-                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Spotify Premium</h5>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Spotify Premium Private</h5>
                                                                 <p className="card-text">Upgrade your music experience with Spotify Premium. Enjoy ad-free, offline listening, and more!</p>
                                                             </div>
                                                             <hr />
@@ -1583,20 +1655,36 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="CrunchyMonths">
-                                                    <option value="-">Choose</option>
-                                                    <option disabled value="-">--MEGA FUN--</option>
-                                                    <option value="45 MAD">1 MONTHS SHARED</option>
-                                                    <option value="55 MAD">1 MONTHS PRIVATE</option>
-                                                    <option value="190 MAD">12 MONTHS</option>
-                                                    <option disabled value="-">--PREMIUM--</option>
-                                                    <option value="35 MAD">1 MONTHS</option>
-                                                </select>
-                                                <div id="crunchy" className="price">PRICE :</div>
-
-                                                <button onClick={this.buyCrunchy}>BUY</button>
-                                            </p>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Spotify Premium</h5>
+                                                                <p className="card-text">Embark on an anime adventure with Crunchyroll! Immerse yourself in a vast library of the latest and greatest anime series and movies.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="CrunchyMonths">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="-">--MEGA FUN--</option>
+                                                                    <option value="45 MAD">1 MONTHS SHARED</option>
+                                                                    <option value="55 MAD">1 MONTHS PRIVATE</option>
+                                                                    <option value="190 MAD">12 MONTHS</option>
+                                                                    <option disabled value="-">--PREMIUM--</option>
+                                                                    <option value="35 MAD">1 MONTHS</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="crunchy" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyCrunchy} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1638,33 +1726,49 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
 
-                                                <select name id="typePrivate" className='notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
-                                                    <option value="-">Choose</option>
-                                                    <option value={55}>PREMIUM</option>
-                                                    <option disabled value={0}>STANDARD</option>
-                                                </select>
-                                                <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
-                                                    <option value="-">Choose</option>
-                                                    <option value={0}>1 Months </option>
-                                                    <option disabled value={0}>2 Months </option>
-                                                    <option disabled value={0}>3 Months </option>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Netflix Private Subscription</h5>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="typePrivate" className='select-style notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={55}>PREMIUM</option>
+                                                                    <option disabled value={0}>STANDARD</option>
+                                                                </select>
+                                                                <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={0}>1 Months </option>
+                                                                    <option disabled value={0}>2 Months </option>
+                                                                    <option disabled value={0}>3 Months </option>
 
-                                                </select>
-                                                <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
-                                                    <option value="-"> Choose</option>
-                                                    <option value={0}>1 Profile</option>
-                                                    <option value={20}>2 Profiles</option>
-                                                    <option disabled value={0}>3 Profiles</option>
-                                                    <option disabled value={0}>4 Profiles</option>
-                                                    <option disabled value={0}>5 Profiles</option>
+                                                                </select>
+                                                                <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                                    <option value="-"> Choose</option>
+                                                                    <option value={0}>1 Profile</option>
+                                                                    <option value={20}>2 Profiles</option>
+                                                                    <option disabled value={0}>3 Profiles</option>
+                                                                    <option disabled value={0}>4 Profiles</option>
+                                                                    <option disabled value={0}>5 Profiles</option>
 
-                                                </select>
-                                            </p>
-                                            <div id="NetflixPrivatePrice" className="price">PRICE :</div>
-
-                                            <button onClick={this.buyPrivateNetflix} >BUY</button>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="NetflixPrivatePrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyPrivateNetflix} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
 
                                         </div>
                                     </div>
@@ -1714,32 +1818,47 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="type" className='notThisSelect' onChange={this.calculateNetflixPrice}>
-                                                    <option value="-">Choose</option>
-                                                    <option value={10}>PREMIUM</option>
-                                                    <option value={0}>STANDARD</option>
-                                                </select>
-                                                <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
-                                                    <option value="-">Choose</option>
-                                                    <option value={25}>1 Months </option>
-                                                    <option value={50}>2 Months</option>
-                                                    <option value={75}>3 Months</option>
-                                                </select>
-                                                <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
-                                                    <option value="-"> Choose</option>
-                                                    <option value={0}>1 Profile</option>
-                                                    <option value={10}>2 Profiles</option>
-                                                    <option disabled value={0}>3 Profiles</option>
-                                                    <option disabled value={0}>4 Profiles</option>
-                                                    <option disabled value={0}>5 Profiles</option>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Netflix Shared Subscription</h5>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="type" className='select-style notThisSelect' onChange={this.calculateNetflixPrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={10}>PREMIUM</option>
+                                                                    <option value={0}>STANDARD</option>
+                                                                </select>
+                                                                <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={25}>1 Months </option>
+                                                                    <option value={50}>2 Months</option>
+                                                                    <option value={75}>3 Months</option>
+                                                                </select>
+                                                                <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
+                                                                    <option value="-"> Choose</option>
+                                                                    <option value={0}>1 Profile</option>
+                                                                    <option value={10}>2 Profiles</option>
+                                                                    <option disabled value={0}>3 Profiles</option>
+                                                                    <option disabled value={0}>4 Profiles</option>
+                                                                    <option disabled value={0}>5 Profiles</option>
 
-                                                </select>
-
-                                                <div id="NetflixPrice" className="price">PRICE :</div>
-                                                <button onClick={this.buyNetflix}>BUY</button>
-
-                                            </p>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="NetflixPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyNetflix} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -1785,27 +1904,42 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="nitro" className="select-style notThisSelect">
-                                                    <option value="-">Choose</option>
-                                                    <option value={0}>1 Months </option>
-                                                    <option value={60}>2 Months</option>
-                                                    <option value={75}>3 Months</option>
-                                                </select>
-                                                <select name id="typeNitro" className="select-style notThisSelect">
-                                                    <option value="-"> Choose</option>
-                                                    <option value={60}>Classic</option>
-                                                    <option value={80}>Nitro</option>
-                                                </select>
-                                                <select name id="accountType" className="select-style notThisSelect" style={{ display: 'none' }}>
-                                                    <option value="-"> Choose</option>
-                                                    <option selected value={0}>My account</option>
-                                                    <option value={0}>New account</option>
-                                                </select>
-                                            </p>
-                                            <div id="DiscordPrice" className="price">PRICE :</div>
-                                            <button onClick={this.buyDiscord}>BUY</button>
-
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Discord Nitro</h5>
+                                                                <p className="card-text">Elevate your Discord experience with Discord Nitro! Unlock a world of premium features and exclusive perks. Enjoy animated avatars and custom tags to stand out in servers. Get access to a vast library of high-quality emojis and more...</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="nitro" className="select-style notThisSelect">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={0}>1 Months </option>
+                                                                    
+                                                                </select>
+                                                                <select name id="typeNitro" className="select-style notThisSelect">
+                                                                    <option value="-"> Choose</option>
+                                                                    <option value={45}>Classic</option>
+                                                                    <option value={80}>Nitro</option>
+                                                                </select>
+                                                                <select name id="accountType" className="select-style notThisSelect" style={{ display: 'none' }}>
+                                                                    <option value="-"> Choose</option>
+                                                                    <option selected value={0}>My account</option>
+                                                                    <option value={0}>New account</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="DiscordPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyDiscord} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -1845,23 +1979,38 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name className='notThisSelect' id="ShahidProfile">
-                                                    <option value="-">Choose</option>
-                                                    <option value={30}>VIP</option>
-                                                    <option value={70}>VIP SPORT</option>
-                                                </select>
-                                                <select name className='notThisSelect' id="shahidType">
-                                                    <option value="-">Choose</option>
-                                                    <option value={0}>1 MONTHS</option>
-                                                    <option value={20}>2 MONTHS</option>
-                                                    <option value={50}>3 MONTHS</option>
-                                                </select>
-                                                <div id="shahidPrice" className="price">PRICE :</div>
-
-                                                <button onClick={this.buyShahid}>BUY</button>
-
-                                            </p>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Shahid Subscription</h5>
+                                                                <p className="card-text">Elevate your entertainment with Chahid! Dive into a world of premium Arabic content, featuring a vast collection of movies, series, and shows. Experience ad-free streaming and discover a rich selection of exclusive programs</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name className='notThisSelect' id="ShahidProfile">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={30}>VIP</option>
+                                                                    <option value={70}>VIP SPORT</option>
+                                                                </select>
+                                                                <select name className='notThisSelect' id="shahidType">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={0}>1 MONTHS</option>
+                                                                    <option value={20}>2 MONTHS</option>
+                                                                    <option value={50}>3 MONTHS</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="shahidPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyShahid} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -1898,20 +2047,36 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="canvaMonths">
-                                                    <option value="-">Choose</option>
-                                                    <option value={35}> 1 MONTHS</option>
-                                                    <option value={50}> 6 MONTHS</option>
-                                                    <option value={75}>12 MONTHS</option>
-                                                    <option value={140}>36 MONTHS</option>
-                                                    <option value={170}>LIFETIME (Edu)</option>
-                                                </select>
-                                            </p>
-                                            <div id="canva" className="price">PRICE :</div>
 
-                                            <button onClick={this.buyCanva}>BUY</button>
-
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Canva Account</h5>
+                                                                <p className="card-text">Unleash your creativity with Canva! Whether you're a seasoned designer or a beginner, Canva offers an intuitive platform to create stunning graphics, presentations, social media posts, and more.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="canvaMonths">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={35}> 1 MONTHS</option>
+                                                                    <option value={50}> 6 MONTHS</option>
+                                                                    <option value={75}>12 MONTHS</option>
+                                                                    <option value={140}>36 MONTHS</option>
+                                                                    <option value={170}>LIFETIME (Edu)</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="canva" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyCanva} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1950,16 +2115,32 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="AppleMonths" className="select-style">
-                                                    <option value="-">Choose</option>
-                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                    <option value="25 MAD">1 Months </option>
-                                                </select>
-                                            </p>
-                                            <div id="apple" className="price">PRICE :</div>
-                                            <button onClick={this.buyAppleMusic}>BUY</button>
-
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Apple Music Private</h5>
+                                                                <p className="card-text">Elevate your music experience with Apple Music! Dive into a vast world of songs, albums, and playlists curated just for you. Enjoy ad-free, high-quality music streaming, and discover new artists and genres tailored to your preferences.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="AppleMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                                    <option value="25 MAD">1 Months </option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="apple" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyAppleMusic} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -1978,7 +2159,7 @@ class Table extends Component {
 
                                 </div>
                                 <div className="wrapper" style={{ position: 'relative' }}>
-                                    
+
                                     <img src="deezerBanner.jpeg" alt="" />
                                     <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
                                         <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
@@ -2002,18 +2183,34 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="DeezerMonths" className="select-style">
-                                                    <option value="-">Choose</option>
-                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                    <option value="25 MAD">1 Months </option>
-                                                    <option value="50 MAD">3 Months </option>
-                                                    <option disabled value="0 MAD">---UPGRADE---</option>
-                                                </select>
-                                            </p>
-                                            <div id="deezer" className="price">PRICE :</div>
-                                            <button onClick={this.buyDeezer}>BUY</button>
-
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Deezer Private</h5>
+                                                                <p className="card-text">Enhance your music journey with Deezer! Immerse yourself in a world of endless tunes, podcasts, and audio content. Enjoy ad-free, high-quality streaming that lets you discover new artists and genres with ease.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="DeezerMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                                    <option value="25 MAD">1 Months </option>
+                                                                    <option value="50 MAD">3 Months </option>
+                                                                    <option disabled value="0 MAD">---UPGRADE---</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="deezer" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyDeezer} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                     <div className="modal">
@@ -2052,15 +2249,32 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select name id="PrimeMonths" className="select-style">
-                                                    <option value="-">Choose</option>
-                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                    <option value="40 MAD">1 Months </option>
-                                                </select>
-                                            </p>
-                                            <button onClick={this.buyPrime}>BUY</button>
-
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Prime Video</h5>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="PrimeMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 MAD">---NEW ACCOUNT---</option>
+                                                                    <option value="40 MAD">1 Months </option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="prime" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyPrime} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -2102,25 +2316,40 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <select className='notThisSelect' id="DisneyProfile">
-                                                    <option value="-">Choose</option>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Disney +</h5>
+                                                                <p className="card-text">Disney+ has something for every generation to enjoy. Dive into an extensive library of timeless content from Disney, Pixar, Marvel, Star Wars, and National Geographic.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select className='notThisSelect' id="DisneyProfile">
+                                                                    <option value="-">Choose</option>
 
-                                                    <option value={0}>1 Profiles</option>
-                                                    <option value={10}>3 Profiles</option>
-                                                    <option value={15}>4 Profiles</option>
-                                                    <option value={25}>5 Profiles</option>
-                                                    <option value={35}>Compte kaml (Privé)</option>
-                                                </select>
-                                                <select className='notThisSelect' id="DisneyMonths">
-                                                    <option value="-">Choose</option>
-                                                    <option value={30}>1 Months</option>
-                                                </select>
-                                            </p>
-                                            <div id="disney" className="price">PRICE :</div>
-
-                                            <button onClick={this.buyDisney}>BUY</button>
-
+                                                                    <option value={0}>1 Profiles</option>
+                                                                    <option value={10}>3 Profiles</option>
+                                                                    <option value={15}>4 Profiles</option>
+                                                                    <option value={25}>5 Profiles</option>
+                                                                    <option value={35}>Compte kaml (Privé)</option>
+                                                                </select>
+                                                                <select className='notThisSelect' id="DisneyMonths">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={30}>1 Months</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="disney" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyDisney} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -2158,17 +2387,32 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-
-                                            <p>
-                                                <select name id="iptvMonths" className="select-style">
-                                                    <option value="-">Choose</option>
-                                                    <option value="150 MAD">6 Months</option>
-                                                    <option value="250 MAD">12 Months</option>
-                                                </select>
-                                            </p>
-                                            <div id="iptvPrice" className="price">PRICE :</div>
-                                            <button onClick={this.buyIPTV}>BUY</button>
-
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>IPTV Subscription</h5>
+                                                                <p className="card-text">Experience limitless entertainment with IPTV! Discover a world of live TV channels, movies, series, and on-demand content from around the globe. Enjoy crystal-clear quality and seamless streaming on any device, from smart TVs to smartphones.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="iptvMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value="150 MAD">6 Months</option>
+                                                                    <option value="250 MAD">12 Months</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="iptvPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyIPTV} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
 
@@ -2210,11 +2454,12 @@ class Table extends Component {
                                 </div>
 
                             </div>
+
                             {/*social media services*/}
                             <p className="titleProduct socialMediaServices">OUR <span>SOCIAL MEDIA</span> SERVICES </p>
                             <div className="container15">
                                 <div className="wrapper">
-                                    <img src="youtube.png" alt="" />
+                                    <img src="youtubeBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>YOUTUBE</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -2263,7 +2508,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="snapchat.png" alt="" />
+                                    <img src="snapchatBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>SNAPCHAT</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -2300,7 +2545,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="tiktok.png" alt="" />
+                                    <img src="tiktokBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>TIK-TOK</span> <br />
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -2329,7 +2574,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="insta.png" alt="" />
+                                    <img src="istagramBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>INSTAGRAM</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -2372,7 +2617,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="facebook.png" alt="" />
+                                    <img src="facebookBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>FACEBOOK</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -2400,7 +2645,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="twitch.png" alt="" />
+                                    <img src="tiwtchBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>TWITCH</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -2820,7 +3065,9 @@ class Table extends Component {
                             </div>
                             {/*STEAM services*/}
                             <p className="titleProduct steam">OUR STEAM <span>SERVICES</span></p>
+
                             <div className="container10">
+
                                 <div className="wrapper">
                                     <img src="resident.jpeg" alt="" />
                                     <div className="content">
@@ -3056,9 +3303,9 @@ class Table extends Component {
                             <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span>(Achat f compte dialk)</p>
                             <div className="container10 " id='container10'>
                                 <div className="wrapper">
-                                    <img src="psplusSlide.png" alt="" />
+                                    <img src="psPlus1Months.jpeg" alt="" />
                                     <div className="content">
-                                        <span>1 MONTHS </span>
+                                        <span>1 MONTH </span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
                                             <span >
                                                 {hours.toString().padStart(2, '0')}H:
@@ -3090,7 +3337,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="psplusSlide.png" alt="" />
+                                    <img src="psPlus3Months.jpeg" alt="" />
                                     <div className="content">
                                         <span>3 MONTHS </span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -3124,7 +3371,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="psplusSlide.png" alt="" />
+                                    <img src="psPlus12Months.jpeg" alt="" />
                                     <div className="content">
                                         <span>12 MONTHS </span>
                                         <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
@@ -3873,11 +4120,15 @@ class Table extends Component {
                             <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
 
                         </div>
+
                         <Footer />
 
                     </div>
                 </>}
+
             </div >
+
+
 
         )
     }

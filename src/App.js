@@ -18,14 +18,14 @@ const App = () => {
   return (
     <BrowserRouter>
       <Routes>
-      {/*   <Route path="/Giveaway" element={<Giveaway />} />
+        <Route path="/Giveaway" element={<Giveaway />} />
         <Route path="/Fortnite" element={<Fortnite />} />
         <Route path="/mad" element={<Mad />} />
         <Route path="/client" element={<Client />} />
         <Route path="/euro" element={<Euro />} />
         <Route path="/orders" element={<Order />} />
         <Route path="/addOrder" element={<AddOrder />} />
-        <Route path="/updateOrder" element={<UpdateOrder />} /> */}
+        <Route path="/updateOrder" element={<UpdateOrder />} />
         <Route path="/bugList" element={<Bugs />} />
         <Route path="/updateSelectedOrder" element={<UpdateSelectedOrder />} />
         <Route path="/*" element={<Home />} />

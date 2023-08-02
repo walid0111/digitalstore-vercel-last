@@ -21,20 +21,15 @@ const RegionSelector = () => {
           content="672a6854-e560-4596-b310-7f409f718210"
         />
       </head>
-     {/*  <h2 style={{ fontWeight: "bold", fontSize: '22px', padding: '5px' }}>
+      <h2 style={{ fontWeight: "bold", fontSize: '22px', padding: '5px' }}>
         WELCOME TO <span style={{ color: "#008507" }}>DIGITAL STORE..</span>{" "}
       </h2>
       <h3 style={{ fontWeight: "bold", textAlign: 'center' }}>
         FIND YOUR ITEM AT THE LOWEST PRICE AND WITH A WARRANTY. SHOP WITH CONFIDENCE !{" "}
-      </h3> */}
+      </h3> 
 
-      <h2 style={{ fontWeight: "bold", fontSize: '22px', padding: '5px' }}>
-         <span style={{ color: "#008507" }}>WE WILL BE BACK SOON :)</span>{" "}
-      </h2>
-      <h3 style={{ fontWeight: "bold", textAlign: 'center' }}>
-        WHATSAPP : +212 637 97 62 57{" "}
-      </h3>
-      {/* <div className="region-options">
+      
+      <div className="region-options">
         <button
           className={`region-option ${selectedRegion === "Morocco" ? "selected" : ""
             }`}
@@ -59,9 +54,9 @@ const RegionSelector = () => {
             Gifts
           </Link>
         </button>
-      </div> */}
+      </div>
       
-      {/* <div className="region-actions">
+      <div className="region-actions">
         
         {selectedRegion ? (
           <>
@@ -75,11 +70,11 @@ const RegionSelector = () => {
                     <span>
                       <span style={{ fontWeight: "bold", color: "green", textAlign: 'center' }}>
                         Orange, CIH Bank, PayPal, CashPlus
-                      </span> <br/><br/> */}
+                      </span> <br/><br/> 
                       {/* <span style={{ color: "red", textAlign: 'center',  padding: '10px' }}>
                         jib ay carte orange bghiti ghi matkounch carte dial  <span style={{ fontWeight: "bold", color: "red" }}> 30dh</span> 
                       </span> */}
-                    {/* </span>
+                     </span>
                   ) : (
                     <span>
                       <span style={{ fontWeight: "bold", color: "green", textAlign: 'center' }}>
@@ -104,7 +99,7 @@ const RegionSelector = () => {
             CHOOSE YOUR COUNTRY TO GET STARTED
           </p>
         )}
-      </div> */}
+      </div> 
     </div>
 
   );

@@ -403,6 +403,13 @@ export default function setupMenu() {
     selectGtaTopup.addEventListener("change", function () {
         spanGtaPopup.innerText = "PRICE : " + selectGtaTopup.value;
     });
+    // ff  top up
+
+    const selectFfTopup = document.getElementById("ffTopup");
+    const spanFfTopup = document.getElementById("ffTopupPrice");
+    selectFfTopup.addEventListener("change", function () {
+        spanFfTopup.innerText = "PRICE : " + selectFfTopup.value;
+    });
     // ufc fight script
 
     const selectUfcFight = document.getElementById("ufcFightService");
