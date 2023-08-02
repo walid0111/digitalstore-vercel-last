@@ -69,20 +69,14 @@ class Table extends Component {
 
 
                 Swal.fire({
-                    title: 'Jib 50 wla 100',
-                    text: 'lib9a ghadi nkhliwh lik lcommande jaya',
+                  /*   title: 'Jib 50 wla 100',
+                    text: 'lib9a ghadi nkhliwh lik lcommande jaya', */
                     imageUrl: '/rechargeFr.jpg', // Use the correct path to the image in the public folder
-                    imageHeight: 350, // Set the desired height for the image
+                    imageHeight: 380, // Set the desired height for the image
                     imageWidth: '90%', // Set the desired width for the image
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        Swal.fire({
-                            title: 'Jib 50 wla 100',
-                            text: 'lib9a ghadi nkhliwh lik lcommande jaya',
-                            imageUrl: '/rechargeAr.jpg', // Use the correct path to the image in the public folder
-                            imageHeight: 350, // Set the desired height for the image
-                            imageWidth: '90%', // Set the desired width for the image
-                        }).then((result) => { // Added missing `(` before `(result)`
+                    confirmButtonText: `J'accepte`,
+
+                }).then((result) => { // Added missing `(` before `(result)`
                             if (result.isConfirmed) {
 
                                 Swal.fire({
@@ -93,8 +87,8 @@ class Table extends Component {
                                 })
                             }
                         });
-                    }
-                });
+                    
+                
 
             }, 10000);
 
@@ -1116,21 +1110,7 @@ class Table extends Component {
         return (
 
             <div className='bodyClass'>
-<Particles
-                            id="tsparticles"
-                            options={{
-                                // Configuration des options des particules
-                                particles: {
-                                    number: {
-                                        value: 80,
-                                    },
-                                    // ... autres options de configuration
-                                },
-                            }}
-                        />
-                        <div className="w-full h-screen absolute">
-                            <Design />
-                        </div>
+                
                 <script src="./homeScript"></script>
                 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
@@ -1212,11 +1192,27 @@ class Table extends Component {
                         </nav>
                     </div>
                 </header>
+                
                 {isLoading ? <LoadingScreen /> : <>
+                <Particles
+                    id="tsparticles"
+                    options={{
+                        // Configuration des options des particules
+                        particles: {
+                            number: {
+                                value: 80,
+                            },
+                            // ... autres options de configuration
+                        },
+                    }}
+                />
+                <div className="w-full h-screen absolute">
+                    <Design />
+                </div>
 
                     {/*-------------------------Mad------------------------*/}
                     <div style={{ display: 'block', position: 'relative' }}>
-                        
+
 
                         {/*Body slide show*/}
                         <div className="slideAlign">
@@ -1437,17 +1433,17 @@ class Table extends Component {
                                     <p><img src="20230402_211641.jpg" width="100%" alt="" /></p>
                                     <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
-                                    <div className="modal-content">
+                                        <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
                                                 <span style={{ fontWeight: 'bold' }}>FreeFire Shop </span><br /><br /> <hr /><br />
 
-                                                <select className="select-style" id='ffTopup' style={{border:'solid 1px'}}>
-                                                    <option  value="-">Choose</option>
-                                                    <option  value={"20"}>100 💎</option>
-                                                    <option  value={"50"}>310 💎</option>
-                                                    <option  value={"75"}>520 💎</option>
-                                                    <option  value={"150"}> 1060</option>
+                                                <select className="select-style" id='ffTopup' style={{ border: 'solid 1px' }}>
+                                                    <option value="-">Choose</option>
+                                                    <option value={"20"}>100 💎</option>
+                                                    <option value={"50"}>310 💎</option>
+                                                    <option value={"75"}>520 💎</option>
+                                                    <option value={"150"}> 1060</option>
                                                 </select> <br /><br />
                                                 <div id="ffTopupPrice" className="price">PRICE : </div><br />
 
@@ -1517,19 +1513,19 @@ class Table extends Component {
 
                             <div id="benefits2"  >
                                 <div >
-                                    <p style={{ fontWeight: 'bold', fontSize: '20px',color: '#008507' }}>+1000 </p>
-                                    <p style={{ fontSize: '16px',fontWeight: 'bold' }}>Products Sold </p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px', color: '#008507' }}>+1000 </p>
+                                    <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Products Sold </p>
                                 </div>
                                 <div >
-                                    <p style={{ fontWeight: 'bold', fontSize: '20px',color: '#008507' }}>+700 </p>
-                                    <p style={{ fontSize: '16px',fontWeight: 'bold' }}>Customers
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px', color: '#008507' }}>+700 </p>
+                                    <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Customers
                                     </p>
                                 </div>
                                 <div >
-                                    <p style={{ fontWeight: 'bold', fontSize: '20px',color: '#008507' }}>4.8 <i className="fas fa-star" /></p>
-                                    <p style={{ fontSize: '16px',fontWeight: 'bold' }}>Trusted </p>
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px', color: '#008507' }}>4.8 <i className="fas fa-star" /></p>
+                                    <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Trusted </p>
                                 </div>
-                               
+
                             </div>
                             {/*Body product*/}
                             <p className="titleProduct bestSellings">OUR <span> BEST </span> SELLING</p>
@@ -1918,7 +1914,7 @@ class Table extends Component {
                                                                 <select name id="nitro" className="select-style notThisSelect">
                                                                     <option value="-">Choose</option>
                                                                     <option value={0}>1 Months </option>
-                                                                    
+
                                                                 </select>
                                                                 <select name id="typeNitro" className="select-style notThisSelect">
                                                                     <option value="-"> Choose</option>
