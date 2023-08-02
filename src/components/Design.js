@@ -35,7 +35,6 @@ const Design = () => {
               onHover: {
                 enable: true,
                 mode: "repulse",
-
                 distance: 400,
               },
               resize: true,
