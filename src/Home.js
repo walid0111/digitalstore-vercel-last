@@ -1116,7 +1116,21 @@ class Table extends Component {
         return (
 
             <div className='bodyClass'>
-
+<Particles
+                            id="tsparticles"
+                            options={{
+                                // Configuration des options des particules
+                                particles: {
+                                    number: {
+                                        value: 80,
+                                    },
+                                    // ... autres options de configuration
+                                },
+                            }}
+                        />
+                        <div className="w-full h-screen absolute">
+                            <Design />
+                        </div>
                 <script src="./homeScript"></script>
                 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
@@ -1202,21 +1216,7 @@ class Table extends Component {
 
                     {/*-------------------------Mad------------------------*/}
                     <div style={{ display: 'block', position: 'relative' }}>
-                        <Particles
-                            id="tsparticles"
-                            options={{
-                                // Configuration des options des particules
-                                particles: {
-                                    number: {
-                                        value: 80,
-                                    },
-                                    // ... autres options de configuration
-                                },
-                            }}
-                        />
-                        <div className="w-full h-screen absolute">
-                            <Design />
-                        </div>
+                        
 
                         {/*Body slide show*/}
                         <div className="slideAlign">
@@ -1248,7 +1248,7 @@ class Table extends Component {
                             </div>
                         </div>
 
-                        <div id="madDisplay">
+                        <div id="madDisplay" >
 
 
                             {/*PROMOTION*/}
