@@ -69,10 +69,10 @@ class Table extends Component {
 
 
                 Swal.fire({
-                  /*   title: 'Jib 50 wla 100',
-                    text: 'lib9a ghadi nkhliwh lik lcommande jaya', */
+                  /*   title: 'Jib 50 wla 100', */
+                    text: `tsna tswira tban 3ad dir j'accepte DARORI !`,
                     imageUrl: '/rechargeFr.jpg', // Use the correct path to the image in the public folder
-                    imageHeight: 380, // Set the desired height for the image
+                    imageHeight: 390, // Set the desired height for the image
                     imageWidth: '90%', // Set the desired width for the image
                     confirmButtonText: `J'accepte`,
 
@@ -1665,11 +1665,11 @@ class Table extends Component {
                                                                 <select name id="CrunchyMonths">
                                                                     <option value="-">Choose</option>
                                                                     <option disabled value="-">--MEGA FUN--</option>
-                                                                    <option value="45 MAD">1 MONTHS SHARED</option>
-                                                                    <option value="55 MAD">1 MONTHS PRIVATE</option>
+                                                                    <option value="45 MAD">1 MONTH SHARED</option>
+                                                                    <option value="55 MAD">1 MONTH PRIVATE</option>
                                                                     <option value="190 MAD">12 MONTHS</option>
                                                                     <option disabled value="-">--PREMIUM--</option>
-                                                                    <option value="35 MAD">1 MONTHS</option>
+                                                                    <option value="35 MAD">1 MONTH</option>
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -1741,7 +1741,7 @@ class Table extends Component {
                                                                 </select>
                                                                 <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
                                                                     <option value="-">Choose</option>
-                                                                    <option value={0}>1 Months </option>
+                                                                    <option value={0}>1 Month </option>
                                                                     <option disabled value={0}>2 Months </option>
                                                                     <option disabled value={0}>3 Months </option>
 
@@ -1832,7 +1832,7 @@ class Table extends Component {
                                                                 </select>
                                                                 <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
                                                                     <option value="-">Choose</option>
-                                                                    <option value={25}>1 Months </option>
+                                                                    <option value={25}>1 Month </option>
                                                                     <option value={50}>2 Months</option>
                                                                     <option value={75}>3 Months</option>
                                                                 </select>
@@ -1913,7 +1913,7 @@ class Table extends Component {
                                                                 <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
                                                                 <select name id="nitro" className="select-style notThisSelect">
                                                                     <option value="-">Choose</option>
-                                                                    <option value={0}>1 Months </option>
+                                                                    <option value={0}>1 Month </option>
 
                                                                 </select>
                                                                 <select name id="typeNitro" className="select-style notThisSelect">
@@ -1993,7 +1993,7 @@ class Table extends Component {
                                                                 </select>
                                                                 <select name className='notThisSelect' id="shahidType">
                                                                     <option value="-">Choose</option>
-                                                                    <option value={0}>1 MONTHS</option>
+                                                                    <option value={0}>1 MONTH</option>
                                                                     <option value={20}>2 MONTHS</option>
                                                                     <option value={50}>3 MONTHS</option>
                                                                 </select>
@@ -2057,7 +2057,7 @@ class Table extends Component {
                                                                 <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
                                                                 <select name id="canvaMonths">
                                                                     <option value="-">Choose</option>
-                                                                    <option value={35}> 1 MONTHS</option>
+                                                                    <option value={35}> 1 MONTH</option>
                                                                     <option value={50}> 6 MONTHS</option>
                                                                     <option value={75}>12 MONTHS</option>
                                                                     <option value={140}>36 MONTHS</option>
@@ -2125,7 +2125,7 @@ class Table extends Component {
                                                                 <select name id="AppleMonths" className="select-style">
                                                                     <option value="-">Choose</option>
                                                                     <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                                    <option value="25 MAD">1 Months </option>
+                                                                    <option value="25 MAD">1 Month </option>
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -2193,7 +2193,7 @@ class Table extends Component {
                                                                 <select name id="DeezerMonths" className="select-style">
                                                                     <option value="-">Choose</option>
                                                                     <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                                    <option value="25 MAD">1 Months </option>
+                                                                    <option value="25 MAD">1 Month </option>
                                                                     <option value="50 MAD">3 Months </option>
                                                                     <option disabled value="0 MAD">---UPGRADE---</option>
                                                                 </select>
@@ -2259,7 +2259,7 @@ class Table extends Component {
                                                                 <select name id="PrimeMonths" className="select-style">
                                                                     <option value="-">Choose</option>
                                                                     <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                                    <option value="40 MAD">1 Months </option>
+                                                                    <option value="40 MAD">1 Month </option>
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -2334,7 +2334,7 @@ class Table extends Component {
                                                                 </select>
                                                                 <select className='notThisSelect' id="DisneyMonths">
                                                                     <option value="-">Choose</option>
-                                                                    <option value={30}>1 Months</option>
+                                                                    <option value={30}>1 Month</option>
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -2650,7 +2650,7 @@ class Table extends Component {
                                                 <option value="-">Choose</option>
                                                 <option value="60 MAD">1K FOLLOWERS</option>
                                                 <option disabled value="25 MAD">--TIER 1--</option>
-                                                <option value="25 MAD">1 MONTHS</option>
+                                                <option value="25 MAD">1 MONTH</option>
                                                 <option value="50 MAD">3 MONTHS</option>
                                                 <option value="90 MAD">6 MONTHS</option>
                                             </select>
@@ -3867,7 +3867,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="goldService">
                                                 <option value="-">Choose</option>
-                                                <option value={34} disabled>1 MONTHS</option>
+                                                <option value={34} disabled>1 MONTH</option>
                                                 <option value={250}>3 MONTHS</option>
                                                 <option value={600}>12 MONTHS</option>
                                             </select>
@@ -4021,8 +4021,8 @@ class Table extends Component {
                                             <select name id="robloxService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">-ROBUX + PREMIUM-</option>
-                                                <option value="115 MAD">1k RBX + 1MONTHS </option>
-                                                <option value="210 MAD">2k RBX + 1MONTHS </option>
+                                                <option value="115 MAD">1k RBX + 1 Month </option>
+                                                <option value="210 MAD">2k RBX + 1 Month </option>
                                                 <option disabled value="-">--ONLY ROBUX--</option>
                                                 <option value="120 MAD">800 RBX </option>
                                                 <option value="160 MAD">1200 RBX </option>

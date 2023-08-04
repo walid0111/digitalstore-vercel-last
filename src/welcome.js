@@ -51,7 +51,7 @@ const RegionSelector = () => {
         </button>
         <button className='region-option'>
           <Link to={'/Fortnite'} target="_blank">
-            Gifts
+            Fortnite
           </Link>
         </button>
       </div>

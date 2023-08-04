@@ -200,6 +200,24 @@ export default function setupMenu() {
     shahidProfileSelect.addEventListener('change', calculateShahidPrice);
     shahidType.addEventListener('change', calculateShahidPrice);
 
+    //hbo script
+    const hboProfileSelect = document.getElementById('hboProfile');
+    const hboType = document.getElementById('hboMonths');
+
+    const hboPriceSpan = document.getElementById('hboPrice');
+
+    function calculateShahidPrice() {
+        const hboProfileValue = parseInt(hboProfileSelect.value);
+        const hboTypeValue = parseInt(hboType.value);
+
+        if (hboProfileSelect.value != '-' && hboType.value != '-') {
+            const totalhboPrice = hboProfileValue + hboTypeValue;
+            hboPriceSpan.innerHTML = "PRICE : " + totalhboPrice;
+        }
+    }
+
+    shahidProfileSelect.addEventListener('change', calculateShahidPrice);
+    shahidType.addEventListener('change', calculateShahidPrice);
     // canva script
 
     const selectCanva = document.getElementById("canvaMonths");
@@ -563,6 +581,15 @@ export default function setupMenu() {
         });
     });
 }
+
+
+
+
+
+
+
+
+                                
 
 
 

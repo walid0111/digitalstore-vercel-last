@@ -1,22 +1,55 @@
-import axios from 'axios';
 import React, { Component, useRef, useEffect } from 'react';
 import "./Home.css"
+import setupMenu from './homeScript';
 import Footer from './Footer';
-import setupMenu from './homeScriptCopy';
 import $ from 'jquery';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faExchangeAlt } from '@fortawesome/free-solid-svg-icons';
 import LoadingScreen from './LoadingScreen';
 import Trustpilot from './Trustilot';
+import Paypal from './Paypal';
 import 'tailwindcss/tailwind.css';
+import Swal from 'sweetalert2';
+import { faYoutube } from '@fortawesome/free-brands-svg-icons';
+import Design from "./components/Design";
+import Particles from 'react-tsparticles';
 
 
 
 
 class Table extends Component {
 
+    //---------------the button that show the navbar in phone----------------------
+    toggleMenu2() {
+        $('.menu-toggle-btn2').toggleClass('open-2');
+        $('.navigation-menu2').toggleClass('active-2');
+    }
+    //-----------------Change dark/light Mode /// Alert promo tel ---------------------
+    //end loading screen
+
+    //end loading screen
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            lightMode: false,
+            showAlert: true, // montrer l'alerte de promotion du téléphone
+            isLoading: true,
+            slideIndex: 1,
+            pcDropdownOpen: false,
+            psDropdownOpen: false,
+            othersDropdownOpen: false,
+            xboxDropdownOpen: false,
+            hours: 0,
+            minutes: 0,
+            seconds: 0
+
+        };
+
+        this.changeMode = this.changeMode.bind(this);
+        this.closeAlert = this.closeAlert.bind(this); // fermer l'alerte de promotion du téléphone
+    }
     componentDidMount() {
         // Utiliser requestAnimationFrame pour retarder l'exécution de setTimeout
         requestAnimationFrame(() => {
@@ -31,12 +64,22 @@ class Table extends Component {
                 script.charset = "UTF-8";
                 script.setAttribute("crossorigin", "*");
                 document.getElementsByTagName("head")[0].appendChild(script);
+
+
+
+
+                
+                
+
             }, 10000);
+
+
         });
+
         this.showSlides(this.state.slideIndex);
         this.interval = setInterval(() => {
             this.plusSlides(1);
-        }, 5000);
+        }, 6000);
 
         this.interval = setInterval(() => {
             const now = new Date();
@@ -53,10 +96,14 @@ class Table extends Component {
             }
         }, 1000);
 
+
+
+
     }
     //slide show
     componentWillUnmount() {
         clearInterval(this.interval);
+
     }
 
     plusSlides = (n) => {
@@ -113,41 +160,13 @@ class Table extends Component {
         }
     }
 
-
-    //---------------the button that show the navbar in phone----------------------
-    toggleMenu() {
-        $('#menu-toggle-btn-1').toggleClass('open-1');
-        $('#navigation-menu-1').toggleClass('active-1');
-    }
-    //-----------------Change dark/light Mode /// Alert promo tel ---------------------
-
-
-    constructor(props) {
-        super(props);
-        this.state = {
-            lightMode: false,
-            showAlert: true,//show alert promotion du tel
-            isLoading: true,
-            slideIndex: 1,
-            hours: 0,
-            minutes: 0,
-            seconds: 0
-
-
-        };
-
-        this.changeMode = this.changeMode.bind(this);
-
-
-        this.closeAlert = this.closeAlert.bind(this);//close alert promotion tel
-    }
     //close alert promotion tel
     closeAlert() {
         this.setState({ showAlert: false });
     }
     //---
     changeMode() {
-        const body = document.querySelector('#EURDisplay');
+        const body = document.querySelector('#$Display');
 
         if (!this.state.lightMode) {
             if (body) {
@@ -259,7 +278,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#SpotifyMonths').value;
             const months = document.querySelector('#SpotifyMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *---SPOTIFY---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
+            const message = `Salam *Digital Store* bghit \n *---SPOTIFY---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -276,7 +295,28 @@ class Table extends Component {
         const totalPrice = document.getElementById('NetflixPrice').textContent;
         if (profileSelect.value != '-' && standardSelect.value != '-' && accountTypSelect.value != '-') {
 
-            const message = `Hello *Digital Store* i want to buy :  \n *---NETFLIX---* \n\n *⇾ SUBSCRIPTION :* ${accountTypSelect.options[accountTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardSelect.options[standardSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profileSelect.options[profileSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrice}`;
+            const message = `Salam *Digital Store* bghit \n *---NETFLIX---* \n\n *⇾ SUBSCRIPTION :* ${accountTypSelect.options[accountTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardSelect.options[standardSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profileSelect.options[profileSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrice}`;
+
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+        else {
+            alert('Error : Please select an option before clicking buy..');
+
+        }
+    }
+    //NETFLIX private
+
+    buyPrivateNetflix() {
+
+        const standardPrivateSelect = document.getElementById('standardPrivate');
+        const profilePrivateSelect = document.getElementById('profilePrivate');
+        const accountPrivateTypSelect = document.getElementById('typePrivate');
+        const totalPrivatePrice = document.getElementById('NetflixPrivatePrice').textContent;
+        if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
+
+            const message = `Salam *Digital Store* bghit \n *---NETFLIX PRIVATE---* \n\n *⇾ SUBSCRIPTION :* ${accountPrivateTypSelect.options[accountPrivateTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardPrivateSelect.options[standardPrivateSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profilePrivateSelect.options[profilePrivateSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrivatePrice}`;
 
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
@@ -295,7 +335,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#iptvMonths').value;
             const months = document.querySelector('#iptvMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- IPTV ---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
+            const message = `Salam *Digital Store* bghit \n *--- IPTV ---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -310,7 +350,7 @@ class Table extends Component {
             const months = document.querySelector('#nitro option:checked').text;
             const typeSubs = document.querySelector('#typeNitro option:checked').text;
             const accountSubs = document.querySelector('#accountType option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- DISCORD ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n  *⇾ SERVICE :* ${accountSubs} \n *⇾ QUANTITY :* 1 \n \n *⇾ ${price}*  `;
+            const message = `Salam *Digital Store* bghit \n *--- DISCORD ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n  *⇾ SERVICE :* ${accountSubs} \n *⇾ QUANTITY :* 1 \n \n *⇾ ${price}*  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -324,12 +364,13 @@ class Table extends Component {
             const price = document.getElementById('shahidPrice').textContent
             const months = document.querySelector('#shahidType option:checked').text;
             const typeSubs = document.querySelector('#ShahidProfile option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- SHAHID ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n   *⇾ QUANTITY :* 1 \n \n *⇾ ${price} EUR*  `;
+            const message = `Salam *Digital Store* bghit \n *--- SHAHID ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n   *⇾ QUANTITY :* 1 \n \n *⇾ ${price} $*  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
         }
     }
+    
     //buy canva
 
     buyCanva() {
@@ -338,7 +379,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#canvaMonths').value;
             const months = document.querySelector('#canvaMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- CANVA ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL : ${price} EUR*  `;
+            const message = `Salam *Digital Store* bghit \n *--- CANVA ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL : ${price} $*  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -351,7 +392,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#AppleMonths').value;
             const months = document.querySelector('#AppleMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- APPLE MUSIC ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- APPLE MUSIC ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -364,7 +405,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#DeezerMonths').value;
             const months = document.querySelector('#DeezerMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- DEEZER ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- DEEZER ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -377,7 +418,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#PrimeMonths').value;
             const months = document.querySelector('#PrimeMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- PRIME VIDEO ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- PRIME VIDEO ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -392,7 +433,7 @@ class Table extends Component {
             const price = document.getElementById('disney').innerText;
             const profileDisney = document.querySelector('#DisneyProfile option:checked').text;
             const months = document.querySelector('#DisneyMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- DISNEY ---* \n\n *⇾ DURATION :* ${months} \n *⇾ PROFILES :* ${profileDisney} \n *⇾ QUANTITY :* 1 \n *⇾* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- DISNEY ---* \n\n *⇾ DURATION :* ${months} \n *⇾ PROFILES :* ${profileDisney} \n *⇾ QUANTITY :* 1 \n *⇾* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -406,7 +447,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#CrunchyMonths').value;
             const months = document.querySelector('#CrunchyMonths option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- CRUNCHY ROLL ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- CRUNCHY ROLL ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -551,7 +592,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#GrapplingClaw2').value;
             const months = document.querySelector('#GrapplingClaw2 option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- RANDOM FORTNITE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1 \n *⇾ SKINS COUNT :* ${months} \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- RANDOM FORTNITE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1 \n *⇾ SKINS COUNT :* ${months} \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -564,7 +605,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#GrapplingClaw3').value;
             const months = document.querySelector('#GrapplingClaw3 option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- 13k V-BUCKS ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- 13k V-BUCKS ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -574,7 +615,7 @@ class Table extends Component {
     //buy resident evil
     buyResidentEvil4() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- RESIDENT EVIL 4 OFFLINE STEAM ACCOUNT ---* \n-- +2 FREE GAMES --\n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 9 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- RESIDENT EVIL 4 OFFLINE STEAM ACCOUNT ---* \n-- +2 FREE GAMES --\n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 90 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -582,7 +623,7 @@ class Table extends Component {
     //buy gta5
     buyGta5AndRdr2() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- GTA 5 + RDR2 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 15 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- GTA 5 + RDR2 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -590,7 +631,7 @@ class Table extends Component {
     //buy fh5
     buyFh5() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- FH5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 11 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- FH5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 110 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -598,7 +639,7 @@ class Table extends Component {
     //buy last of us
     buyLastOfUs() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- THE LAST OF US OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 8 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- THE LAST OF US OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -606,7 +647,7 @@ class Table extends Component {
     //buy gow
     buyGow2018() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- GOW OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 8 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- GOW OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -614,7 +655,7 @@ class Table extends Component {
     //buy gta5
     buyGta5Alone() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- GTA 5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 10 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- GTA 5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 100 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -622,7 +663,7 @@ class Table extends Component {
     //buy hogwart 
     buyHogwart() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- HOGWARTS OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 9 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- HOGWARTS OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 90 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -630,7 +671,7 @@ class Table extends Component {
     //buy uncharted
     buyUncharted() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- UNCHARTED LEGACY OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 8 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- UNCHARTED LEGACY OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -638,7 +679,7 @@ class Table extends Component {
     //buy f1 + f1 manager
     buyF1AndF1Manager() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- F1 + F1 MANAGER OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 10 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- F1 + F1 MANAGER OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 100 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -650,7 +691,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#firstMoroccoService').value;
             const months = document.querySelector('#firstMoroccoService option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 1 MONTH \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 1 MONTH \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -663,7 +704,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#secondMoroccoService').value;
             const months = document.querySelector('#secondMoroccoService option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 3 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 3 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -676,7 +717,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#thirdMoroccoService').value;
             const months = document.querySelector('#thirdMoroccoService option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 12 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 12 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -689,7 +730,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#huluService').value;
             const months = document.querySelector('#huluService option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- HULU ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- HULU ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -702,7 +743,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#nbaLeagueService').value;
             const months = document.querySelector('#nbaLeagueService option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- NBA LEAGUE ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- NBA LEAGUE ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -715,7 +756,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#ufcFightService').value;
             const months = document.querySelector('#ufcFightService option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- UFC FIGHT ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- UFC FIGHT ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -728,7 +769,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#fifa23Plateforme').value;
             const months = document.querySelector('#fifa23Plateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- FIFA 23 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- FIFA 23 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -741,7 +782,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#bo3Plateforme').value;
             const months = document.querySelector('#bo3Plateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- BO3 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- BO3 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -754,7 +795,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#assetoPlateforme').value;
             const months = document.querySelector('#assetoPlateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- ASSETO CORSA ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- ASSETO CORSA ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -767,7 +808,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#f1Plateforme').value;
             const months = document.querySelector('#f1Plateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- F1 2022 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- F1 2022 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -780,7 +821,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#gtaPlateforme').value;
             const months = document.querySelector('#gtaPlateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- GTA 5 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- GTA 5 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -793,7 +834,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#ragnarokPlateforme').value;
             const months = document.querySelector('#ragnarokPlateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- GOW RAGNAROK ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- GOW RAGNAROK ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -806,7 +847,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#spidermanPlateforme').value;
             const months = document.querySelector('#spidermanPlateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- SPIDERMAN MILES MORALS ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- SPIDERMAN MILES MORALS ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -819,7 +860,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#rdrPlateforme').value;
             const months = document.querySelector('#rdrPlateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- RDR 2 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- RDR 2 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -832,7 +873,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#fifa22Plateforme').value;
             const months = document.querySelector('#fifa22Plateforme option:checked').text;
-            const message = `Hello *Digital Store* i want to buy :  \n *--- FIFA 22 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Salam *Digital Store* bghit \n *--- FIFA 22 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -841,7 +882,7 @@ class Table extends Component {
     //buy psn 5 euro
     buyPsn5euro() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- CARTE PSN 5 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 7 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 5 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 70 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -850,7 +891,7 @@ class Table extends Component {
     //buy 10 euro psn
     buyPsn10euro() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- CARTE PSN 10 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 13 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 10 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -859,7 +900,7 @@ class Table extends Component {
     //buy 20euro psn
     buyPsn20euro() {
 
-        const message = `Hello *Digital Store* i want to buy :  \n *--- CARTE PSN 20 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 25 EUR   `;
+        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 20 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 260 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -871,7 +912,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#valoService').value;
             const months = document.querySelector('#valoService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- PSN VALO SERVICE ---* \n\n *⇾ SERVICE :* ${months} RIO POINTS \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- PSN VALO SERVICE ---* \n\n *⇾ SERVICE :* ${months} RIO POINTS \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -884,7 +925,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#gamepassService').value;
             const months = document.querySelector('#gamepassService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- XBOX GAME PASS ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- XBOX GAME PASS ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -898,7 +939,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#steamService').value;
             const months = document.querySelector('#steamService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- STEAM GIFT CARDS ---* \n\n *⇾ CARDS :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- STEAM GIFT CARDS ---* \n\n *⇾ CARDS :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -911,7 +952,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#goldService').value;
             const months = document.querySelector('#goldService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- XBOX LIVE GOLD GIFT CARDS ---* \n\n *⇾ SUBSCRIPTION :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- XBOX LIVE GOLD GIFT CARDS ---* \n\n *⇾ SUBSCRIPTION :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -924,7 +965,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#robloxService').value;
             const months = document.querySelector('#robloxService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- ROBLOX SERVICE ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- ROBLOX SERVICE ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}    `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -937,7 +978,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#officeService').value;
             const months = document.querySelector('#officeService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- MICROSOFT OFFICE SERVICE  ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- MICROSOFT OFFICE SERVICE  ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -950,7 +991,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#itunesService').value;
             const months = document.querySelector('#itunesService option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- ITUNES GIFT CARD  ---* \n\n *⇾ CARD :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- ITUNES GIFT CARD  ---* \n\n *⇾ CARD :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -963,12 +1004,66 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#gtaTopup').value;
             const months = document.querySelector('#gtaTopup option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- GTA 5 TOP UP  ---* \n\n *⇾ PLATFORMS :* ${months}  \n *⇾ MONEY :* 100M \n *⇾ TOTAL :* ${price} EUR   `;
+            const message = `Salam *Digital Store* khasni \n *--- GTA 5 TOP UP  ---* \n\n *⇾ PLATFORMS :* ${months}  \n *⇾ MONEY :* 100M \n *⇾ TOTAL :* ${price} $   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
         }
     }
+    //buy free fire account
+    buyfreefire() {
+        if (document.querySelector('#freefireSelect').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#freefireSelect').value;
+            const months = document.querySelector('#freefireSelect option:checked').text;
+            const message = `Salam *Digital Store* bghit \n *--- FREE FIRE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+
+    //shop free fire 
+    buyfreefireTopup() {
+        if (document.querySelector('#ffTopup').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#ffTopup').value;
+            const months = document.querySelector('#ffTopup option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- FREE FIRE Shopping Service> ---* \n \n *⇾ Offre :* ${months} \n *⇾ Prix :* ${price} $  `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy brawlstar
+    buyBrawlstar() {
+        if (document.querySelector('#brawlstarselect').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#brawlstarselect').value;
+            const months = document.querySelector('#brawlstarselect option:checked').text;
+            const message = `Salam *Digital Store* bghit \n *--- BRAWL STAR ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy EFOOTBALL
+    buyEfootball() {
+        if (document.querySelector('#efootballSelect').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#efootballSelect').value;
+            const months = document.querySelector('#efootballSelect option:checked').text;
+            const message = `Salam *Digital Store* bghit \n *--- E-FOOTBALL ACCOUNT LI FL SITE + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+
     //dropdown search items
     toggleDropdown = (dropdownName) => {
         this.setState((prevState) => ({
@@ -982,6 +1077,7 @@ class Table extends Component {
 
 
 
+
     render() {
         const { hours, minutes, seconds } = this.state;
 
@@ -992,11 +1088,14 @@ class Table extends Component {
         //fin alert
         const { pcDropdownOpen, psDropdownOpen, othersDropdownOpen, xboxDropdownOpen } = this.state;
 
+
         return (
 
             <div className='bodyClass'>
+                
+                <script src="./homeScript"></script>
+                <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
-                <script src="./homeScriptCopy"></script>
 
                 <head>
                     <meta charSet="UTF-8" />
@@ -1005,6 +1104,7 @@ class Table extends Component {
                     <meta name="trustpilot-one-time-domain-verification-id" content="672a6854-e560-4596-b310-7f409f718210" />
                     <title>Document</title>
                     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
+
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
                 </head>
@@ -1012,24 +1112,26 @@ class Table extends Component {
 
                 <header className='headerClass'>
                     <div className="inner-width">
-                        <Link to="/home"><h1 className="logo" style={{ fontFamily: 'Candara' }}> <i className="fa fa-shopping-cart" style={{ color: '#008507' }} />
+                        <Link to="/home"><h1 className="logo" style={{ fontFamily: 'Roboto' }}> <i className="fa fa-shopping-cart" style={{ color: '#008507' }} />
                             <span style={{ color: '#008507' }}> D</span>igital <span style={{ color: '#008507' }}>S</span>tore
                         </h1></Link>
-                        <i id='menu-toggle-btn-1' className="menu-toggle-btn fas fa-bars" onClick={this.toggleMenu} />
-                        <nav id='navigation-menu-1' className="navigation-menu">
+                        <i id='menu-toggle-btn-2' className="menu-toggle-btn fas fa-bars" onClick={this.toggleMenu2} />
+                        <nav id='navigation-menu-2' className="navigation-menu">
                             {/*<a href="#"><i class="fas fa-home home"></i> Home</a>*/}
                             <div className="dropdown">
                                 <a className="info-btn" style={{ cursor: 'pointer' }}><i className="fas fa-gift" /> GIVEAWAY</a>
                                 <div className="modal">
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
-                                        <p style={{ color: 'green', margin: '4px' }}>AT : 04/07/2023</p>
-                                        <p style={{ color: 'red', margin: '4px' }}>22 DAYS OF SPOTIFY PREMIUM SUBSCRIPTION (PRIVATE ACCOUNT)</p>
-                                        <p>EMAIL : digitalstorev003@gmail.com <br />
-                                            PASS : digitalstore2022
+                                        <h2 style={{ textAlign: 'center', fontWeight: 'bold', margin: '5px', borderBottom: '1px' }}>SPECIAL GIVEAWAY </h2>
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 18/07/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 9 DAYS </p>
+                                        <p>EMAIL : digitalstoredelux0012@gmail.com <br />
+                                            PASS : digitalstore2022 <br />
+                                            BACKUP CODES :  RGgTlI / hBttPQ
                                         </p>
-                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
-                                        <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR A NETFLIX STANDARD 7 DAYS GIVEAWAY ------</p>
+                                        <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AND DISABLE 2FA AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
+                                        <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR ANOTHER GIVEAWAY ------</p>
 
 
                                     </div>
@@ -1048,7 +1150,6 @@ class Table extends Component {
                             </div>
                             <Link to="/orders"><i className="fas fa-shopping-cart" /> ORDER details </Link>
                             <Link to="/client"><i className="fas fa-star" /> REVIEWS </Link>
-
                             {/* 
                             <div className="dropdown">
                                 <a href="#"><i className="far fa-comments" /> Contact</a>
@@ -1063,7 +1164,7 @@ class Table extends Component {
  */}
 
                             <div name="currency" style={{ backgroundColor: 'black', color: 'white', border: 'none', cursor: 'pointer', paddingLeft: '8px' }}>
-                                <Link to="/mad"><FontAwesomeIcon icon={faExchangeAlt} /> MAD 🇲🇦</Link>
+                                <Link to="/$"><FontAwesomeIcon icon={faExchangeAlt} /> MAD 🇲🇦</Link>
                             </div>
                             <i id="darkLightMode" style={{ padding: '5px', marginLeft: '40px', cursor: 'pointer', color: 'white' }} className="fas fa-sun" onClick={this.changeMode} />
 
@@ -1073,10 +1174,28 @@ class Table extends Component {
                         </nav>
                     </div>
                 </header>
+                
                 {isLoading ? <LoadingScreen /> : <>
+                <Particles
+                    id="tsparticles"
+                    options={{
+                        // Configuration des options des particules
+                        particles: {
+                            number: {
+                                value: 80,
+                            },
+                            // ... autres options de configuration
+                        },
+                    }}
+                />
+                <div className="w-full h-screen absolute">
+                    <Design />
+                </div>
 
-                    {/*-------------------------EUR------------------------*/}
-                    <div style={{ display: 'block' }}>
+                    {/*-------------------------$------------------------*/}
+                    <div style={{ display: 'block', position: 'relative' }}>
+
+
                         {/*Body slide show*/}
                         <div className="slideAlign">
                             <div className="slideshow-container">
@@ -1106,19 +1225,23 @@ class Table extends Component {
                                 <span className="dot" onClick={() => this.currentSlide(5)}></span>
                             </div>
                         </div>
-                        <div id="EURDisplay">
+
+                        <div id="$Display" >
+
+
                             {/*PROMOTION*/}
-                            {showAlert && (
+                            {/* {showAlert && (
                                 <div className="alert" onClick={this.closeAlert}>
                                     <span className="closebtnAlert" >×</span>
                                     <strong>PROMOTION ALERT !</strong> <br /> UP TO 65% OFF
                                 </div>
-                            )}
+                            )} */}
                             {/*PROMOTION MARQUEE*/}
-                            <marquee scrollamount={3} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
+                            <marquee scrollamount={4} loop={-1} behavior="alternate" style={{ color: 'white', margin: '100px 140px 0 100px', backgroundColor: 'rgb(212, 6, 6)', fontSize: '22px', borderRadius: '60px', padding: '10px 20px 10px 20px', fontWeight: 'bold', letterSpacing: '2px', wordSpacing: '3px' }}>
                                 LIMITED TIME DISCOUNT <span style={{ color: 'black' }}>/</span> PROMOTION A DURÉE LIMITÉE </marquee>
                             {/*top up product*/}
-                            <p className="titleProduct bestSellings">FIND YOUR<span> ITEM </span> EASILY </p>
+
+                            <p className="titleProduct bestSellings" >FIND YOUR<span> ITEM </span> EASILY </p>
                             <div className="flex justify-center">
                                 <div className="relative group">
                                     <button
@@ -1134,6 +1257,9 @@ class Table extends Component {
                                         <div className="relative z-10 mt-2 space-y-2 bg-black rounded-md shadow-lg">
                                             <a href=".steam" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".steam")}>
                                                 Steam
+                                            </a>
+                                            <a href=".giftCardsAndAccount" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".giftCardsAndAccount")}>
+                                                Windows Key
                                             </a>
 
 
@@ -1211,6 +1337,9 @@ class Table extends Component {
                                                 NBA / HULU / UFC
                                             </a>
                                             <a href=".otherService" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".otherService")}>
+                                                Mobile Account
+                                            </a>
+                                            <a href=".otherService" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".otherService")}>
                                                 8BALL Pool
                                             </a>
                                             <a href=".otherService" className="block px-4 py-2 text-white hover:text-green-600" onClick={(event) => this.handleLinkClick(event, ".otherService")}>
@@ -1222,8 +1351,12 @@ class Table extends Component {
                                     )}
                                 </div>
                             </div>
-                            <p className="titleProduct topUp">OUR <span>TOP UP </span></p><br /> <br />
-                            <section className="boxes">
+
+
+
+
+                            <p className="titleProduct topUp">OUR <span>TOP UP</span></p><br /> <br />
+                            <section className="boxes" >
                                 <div className="boxShow">
                                     <p><img src="20230402_211309.jpg" width="100%" alt="" /></p>
                                     <h3 className="info-btn">SHOW</h3>
@@ -1237,7 +1370,7 @@ class Table extends Component {
 
 
                                                 Money will be boosted as CASH+Deluxe CARS that you can sell and get full amount. Only CASH possible too but it will be longer delivery and more expensive service!<br />
-                                                If you need LVL boost , just message us on chat G2G.<br /><br />
+                                                If you need LVL boost , just message us on via WhatsApp. +212 637 97 62 57<br /><br />
                                                 <select className="select-style" id='gtaTopup'>
                                                     <option disabled value="-">YOUR PLATFORM</option>
                                                     <option disabled value={"0"}>PLAY STATION 4</option>
@@ -1267,57 +1400,14 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="boxShow">
-                                    <p><img src="20230402_205304.jpg" width="100%" alt="" /></p>
+                                    <p><img src="paypalTopup.jpg" width="100%" alt="" /></p>
                                     <h3 className="info-btn">SHOW</h3>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                            <p>
-                                                Available soon...
-                                            </p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="boxShow">
-                                    <p><img src="20230402_211241.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">SHOW</h3>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                            <p>
-                                                Available soon...
-                                            </p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="boxShow">
-                                    <p><img src="20230402_210908.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">SHOW</h3>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                            <p>
-                                                Available soon...
-                                            </p>
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="boxShow">
-                                    <p><img src="20230402_211817.jpg" width="100%" alt="" /></p>
-                                    <h3 className="info-btn">SHOW</h3>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                            <p>
-                                                Available soon...
-                                            </p>
+                                            Not available in your country
+
                                             </p>
                                         </div>
                                     </div>
@@ -1329,13 +1419,57 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                            <p>
-                                                Available soon...
-                                            </p>
+                                                <span style={{ fontWeight: 'bold' }}>FreeFire Shop </span><br /><br /> <hr /><br />
+
+                                                <select className="select-style" id='ffTopup' style={{ border: 'solid 1px' }}>
+                                                    <option value="-">Choose</option>
+                                                </select> <br /><br />
+                                                <div id="ffTopupPrice" className="price">PRICE : </div><br />
+
+
+                                                <button className='btn btn-primary' style={{ cursor: 'pointer', color: 'white' }} onClick={this.buyfreefireTopup} >BUY NOW</button><br /><br />
+
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+                                <div className="boxShow">
+                                    <p><img src="20230402_211241.jpg" width="100%" alt="" /></p>
+                                    <h3 className="info-btn">SHOW</h3>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                Available soon...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="boxShow">
+                                    <p><img src="20230402_210908.jpg" width="100%" alt="" /></p>
+                                    <h3 className="info-btn">SHOW</h3>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                Available soon...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="boxShow">
+                                    <p><img src="20230402_211817.jpg" width="100%" alt="" /></p>
+                                    <h3 className="info-btn">SHOW</h3>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                Available soon...
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 {/* PES      <div class="boxShow">
                 <p><img src="20230402_212015.jpg " width="100%" alt=""></p>
                 <h3 class="info-btn">BUY</h3>
@@ -1354,72 +1488,905 @@ class Table extends Component {
         */}
                             </section>
 
+
+
+                            <div id="benefits2"  >
+                                <div >
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px', color: '#008507' }}>+1000 </p>
+                                    <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Products Sold </p>
+                                </div>
+                                <div >
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px', color: '#008507' }}>+700 </p>
+                                    <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Customers
+                                    </p>
+                                </div>
+                                <div >
+                                    <p style={{ fontWeight: 'bold', fontSize: '20px', color: '#008507' }}>4.8 <i className="fas fa-star" /></p>
+                                    <p style={{ fontSize: '16px', fontWeight: 'bold' }}>Trusted </p>
+                                </div>
+
+                            </div>
                             {/*Body product*/}
                             <p className="titleProduct bestSellings">OUR <span> BEST </span> SELLING</p>
-                            <div className="container">
-                                <div className="wrapper">
-                                    <img src="SPOTIFY.PNG" alt="" />
+                            <div className="container15">
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="SpotifyBanners.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+
                                     <div className="content">
-                                        <span>SPOTIFY Private</span>
-                                        <h6 className="SocialInfos">( UPGRADE IS AVAILABLE )</h6>
-                                        <p>
-                                            <select name id="SpotifyMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                                <option value="1.36 EUR">1 Months </option>
-                                                <option value="3 EUR">2 Months </option>
-                                                <option value="4 EUR">3 Months </option>
-                                                <option disabled value="0 EUR">---UPGRADE---</option>
-                                                <option value="2 EUR">1 Months UPGRADE </option>
-                                                <option value="4 EUR">2 Months UPGRADE</option>
-                                                <option value="7 EUR">4 Months UPGRADE</option>
-                                            </select>
+                                        <span>SPOTIFY PRIVATE</span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
+
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="spotify" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buySpotify}>BUY</button>
+                                            <button className="info-btn">BUY
+
+                                            </button>
                                             {/*spotify*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Spotify Premium Private</h5>
+                                                                <p className="card-text">Upgrade your music experience with Spotify Premium. Enjoy ad-free, offline listening, and more!</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="SpotifyMonths" style={{ border: '1px solid black', margin: '10px', borderRadius: '8px' }} className="form-select mb-3">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 $">---NEW ACCOUNT---</option>
+                                                                    <option value="2.41 $">1 Month NEW</option>
+                                                                    <option value="3.45 $">2 Months NEW</option>
+                                                                    <option value="5.54 $">4 Months NEW</option>
+                                                                    <option disabled value="0 $">---UPGRADE (COMPTE DIALK)---</option>
+                                                                    <option value="3.45 $">1 Month UPGRADE</option>
+                                                                    <option value="4.50 $">2 Months UPGRADE</option>
+                                                                    <option value="6.60 $">4 Months UPGRADE</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="spotify" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buySpotify} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                                <span style={{ fontWeight: 'bold' }}>Upgrade [UG] on your account is Available </span> <br />
+                                                <span style={{ fontWeight: 'bold' }}>Upgrade on your account is Available ( Sift lina ghi mail / pass f WhatsApp ohna ntklfo ) </span> <br />
                                                 ✅ Private Spotify Premium Subscription  <br />
                                                 ✅ 🌍 Works Worldwide <br />
+                                                ✅ You can Download <br />
                                                 ✅ Full Warranty and Support<br />
-                                                ✅ Can Change Email and Password<br />
+                                                ✅ You can Change Email and Password<br />
                                                 ✅ Can be used on All devices – Android, Ios, Pc, Mac, Playstation, etc<br />
                                                 ✅ No interruptions – Play the music you love, ad-free.<br />
                                                 ✅ Offline playback – Save your data by listening offline.</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="iptv.png" alt="" />
+
+
+
+
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="crunchyBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>CRUNCHY ROLL</span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Spotify Premium</h5>
+                                                                <p className="card-text">Embark on an anime adventure with Crunchyroll! Immerse yourself in a vast library of the latest and greatest anime series and movies.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="CrunchyMonths">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="-">--MEGA FUN--</option>
+                                                                    <option value="5.13 $">1 MONTH SHARED</option>
+                                                                    <option value="6.17 $">1 MONTH PRIVATE</option>
+                                                                    <option value="20.71 $">12 MONTHS</option>
+                                                                    <option disabled value="-">--PREMIUM--</option>
+                                                                    <option value="4.08 $">1 MONTH</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="crunchy" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyCrunchy} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p> ✅ Full warranty  <br />
+                                                ✅ you don't need VPN to use the account<br />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="netflixPrivateBannerTop.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+
+                                        <span> NETFLIX PRIVATE</span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Netflix Private Subscription</h5>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="typePrivate" className='select-style notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={6.17}>PREMIUM</option>
+                                                                    <option disabled value={0}>STANDARD</option>
+                                                                </select>
+                                                                <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={0}>1 Months </option>
+                                                                    <option disabled value={0}>2 Months </option>
+                                                                    <option disabled value={0}>3 Months </option>
+
+                                                                </select>
+                                                                <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
+                                                                    <option value="-"> Choose</option>
+                                                                    <option value={0}>1 Profile</option>
+                                                                    <option value={2}>2 Profiles</option>
+                                                                    <option disabled value={0}>3 Profiles</option>
+                                                                    <option disabled value={0}>4 Profiles</option>
+                                                                    <option disabled value={0}>5 Profiles</option>
+
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="NetflixPrivatePrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyPrivateNetflix} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
+                                                ✅ Works on any device. <br />
+                                                ✅ You can Download and Add to My List. <br />
+                                                ✅ You can change profile Name / Language / PIN. <br />
+                                                ✅ there is no streaming break ( the password change will be done after the end of your subscription )<br />
+                                                ✅ Contact us for any issue<br />
+                                                ✅ Safety Account Warranty 100%<br />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="netflixBannerShared.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>4.9</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>NETFLIX SHARED</span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*netflix*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Netflix Shared Subscription</h5>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px',display:'none' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="type" className='select-style notThisSelect' onChange={this.calculateNetflixPrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={10}>PREMIUM</option>
+                                                                    <option value={0}>STANDARD</option>
+                                                                </select>
+                                                                <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={25}>1 Months </option>
+                                                                    <option value={50}>2 Months</option>
+                                                                    <option value={75}>3 Months</option>
+                                                                </select>
+                                                                <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
+                                                                    <option value="-"> Choose</option>
+                                                                    <option value={0}>1 Profile</option>
+                                                                    <option value={10}>2 Profiles</option>
+                                                                    <option disabled value={0}>3 Profiles</option>
+                                                                    <option disabled value={0}>4 Profiles</option>
+                                                                    <option disabled value={0}>5 Profiles</option>
+
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="NetflixPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyNetflix} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
+                                                🟥 STANDARD SUBSCRIPTION HAS A FULL HD Resolution<br />
+
+                                                ✅ Works on any device. <br />
+                                                ✅ Contact us for any issue<br />
+                                                ✅ Safety Account Warranty 100%<br />
+
+                                                🟥 There are some rules for the account, you will get it after you buy
+                                                🟥 No warranty will be given if you change any information in the accounts.<br />
+                                        --> NEED MORE MONTHS OR PROFILES ? CONTACT US VIA WHATSAPP 0637976257
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="discordBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>DISCORD</span>
+                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*discord*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Discord Nitro</h5>
+                                                                <p className="card-text">Elevate your Discord experience with Discord Nitro! Unlock a world of premium features and exclusive perks. Enjoy animated avatars and custom tags to stand out in servers. Get access to a vast library of high-quality emojis and more...</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="nitro" className="select-style notThisSelect">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={0}>1 Months </option>
+
+                                                                </select>
+                                                                <select name id="typeNitro" className="select-style notThisSelect">
+                                                                    <option value="-"> Choose</option>
+                                                                    <option value={5}>Classic</option>
+                                                                    <option value={9}>Nitro</option>
+                                                                </select>
+                                                                <select name id="accountType" className="select-style notThisSelect" style={{ display: 'none' }}>
+                                                                    <option value="-"> Choose</option>
+                                                                    <option selected value={0}>My account</option>
+                                                                    <option value={0}>New account</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="DiscordPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyDiscord} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>- 🌍WORKS WORLDWIDE🌍 <br />
+                                                -We need your account information to do the process..  <span style={{ fontWeight: 'bold' }}>YOU CAN SEND US THESE INFORMATIONS VIA WHATSAPP +212 637976257</span><br />
+                                                ⚡✔️ We guarantee you that this process is safe and NOT forbidden by Discord rules!✔️⚡<br />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="hbomaxBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>HBO MAX</span>
+                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*shahid*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Hbo MAX Subscription</h5>
+                                                                <p className="card-text">Embark on an enchanting entertainment journey with HBO Max! Immerse yourself in an extensive realm of diverse content, ranging from iconic series to must-see films. Explore a rich and varied collection that caters to every taste</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name className='notThisSelect' id="ShahidProfile">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={4}>1 MONTH</option>
+                                                                </select>
+                                                                <select name className='notThisSelect' id="shahidType">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={0}>1 PROFILE</option>
+                                                                    
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="shahidPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyShahid} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>🔥 Works on any device. <br />
+
+                                                🔥 Safety Account Warranty 100% ( Contact us for any issue  )</p><br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="canvaBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>CANVA</span>
+                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*canva*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Canva Account</h5>
+                                                                <p className="card-text">Unleash your creativity with Canva! Whether you're a seasoned designer or a beginner, Canva offers an intuitive platform to create stunning graphics, presentations, social media posts, and more.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="canvaMonths">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={4}> 1 MONTHS</option>
+                                                                    <option value={6}> 6 MONTHS</option>
+                                                                    <option value={8}>12 MONTHS</option>
+                                                                    <option value={15}>36 MONTHS</option>
+                                                                    <option value={18}>LIFETIME (Edu)</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="canva" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyCanva} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>✅Non-stop <br />
+                                                ✅Auto renew<br />
+                                                ✅upgrade your own account or give you a new one<br />
+                                                ✅Private account (You can change the email and password)<br />
+                                                🔥🔥 Full Warranty 🔥🔥<br />
+                                                ✅If you need help or anything, you can contact us anytime, and we'll be happy to assist you.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="appleMusicBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>APPLE MUSIC </span>
+                                        <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*apple musicva*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Apple Music Private</h5>
+                                                                <p className="card-text">Elevate your music experience with Apple Music! Dive into a vast world of songs, albums, and playlists curated just for you. Enjoy ad-free, high-quality music streaming, and discover new artists and genres tailored to your preferences.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="AppleMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 $">---NEW ACCOUNT---</option>
+                                                                    <option value="3 $">1 Month </option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="apple" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyAppleMusic} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>✅ Apple music premium With Warranty. <br />
+                                                ✅ it is a private account which means you can update your account password.<br />
+                                                ✅ Our Product :
+                                                After a successful purchase, we will create a brand new Apple music premium, and then we send it to you.<br />
+
+                                                ✅ We offer Warranty which means any problem you face using the account during this period, we'll either fix the problem for you or replace the account. A pleasant customer experience is our aim. <br />
+                                            </p>
+                                        </div>
+                                    </div>
+
+
+                                </div>
+                                <div className="wrapper" style={{ position: 'relative' }}>
+
+                                    <img src="deezerBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>DEEZER PRIVATE</span>
+                                        <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*deezer*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Deezer Private</h5>
+                                                                <p className="card-text">Enhance your music journey with Deezer! Immerse yourself in a world of endless tunes, podcasts, and audio content. Enjoy ad-free, high-quality streaming that lets you discover new artists and genres with ease.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="DeezerMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 $">---NEW ACCOUNT---</option>
+                                                                    <option value="4 $">1 Months </option>
+                                                                    <option value="5.54 $">3 Months </option>
+                                                                    <option disabled value="0 $">---UPGRADE---</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="deezer" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyDeezer} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                ✅Private account you can change the email and password <br />
+                                                ✅We are Warranty <br />
+                                                ✅listen to High-quality music with Deezer.<br />
+                                                ✅You can listen to your favorites on many devices.<br />
+                                                If you have any problem during 3 months please contact us and we will be happy to fix it </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="primevideoBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>PRIME VIDEO</span>
+                                        <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*prime*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Prime Video</h5>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="PrimeMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option disabled value="0 $">---NEW ACCOUNT---</option>
+                                                                    <option value="4.60 $">1 Months </option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="prime" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyPrime} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                ✅ Full access account, means you can change Email and Password<br />
+                                                ✅ 6 profile total<br />
+                                                ✅ Full Guaranteed <br />
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="disneyBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
+                                    <div className="content">
+                                        <span>DISNEY</span>
+                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
+
+                                    </div>
+                                    <div className="row">
+                                        <div className="buttons">
+                                            <button className="info-btn">BUY</button>
+                                            {/*disney*/}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Disney +</h5>
+                                                                <p className="card-text">Disney+ has something for every generation to enjoy. Dive into an extensive library of timeless content from Disney, Pixar, Marvel, Star Wars, and National Geographic.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select className='notThisSelect' id="DisneyProfile">
+                                                                    <option value="-">Choose</option>
+
+                                                                    <option value={0}>1 Profiles</option>
+                                                                    <option value={2}>3 Profiles</option>
+                                                                    <option value={3}>4 Profiles</option>
+                                                                </select>
+                                                                <select className='notThisSelect' id="DisneyMonths">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value={3}>1 Months</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="disney" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyDisney} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>✅ Disney+ account.<br />
+                                                ✅ Product warranty.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div className="wrapper" style={{ position: 'relative' }}>
+                                    <img src="iptvBanner.jpeg" alt="" />
+                                    <div className="content" style={{ position: 'absolute', top: '10px', right: '5px' }}>
+                                        <div style={{ backgroundColor: 'black', borderRadius: '8px', padding: '5px', display: 'inline-flex', alignItems: 'center' }}>
+                                            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z"></path><path d="M7.62109 12.2614L12.2175 15.0355L10.9977 9.80698L15.0586 6.28905L9.71103 5.83536L7.62109 0.904297L5.53116 5.83536L0.183594 6.28905L4.24447 9.80698L3.02472 15.0355L7.62109 12.2614Z" fill="url(#paint0_linear_3667_3571)"></path><defs><linearGradient id="paint0_linear_3667_3571" x1="7.62109" y1="0.904297" x2="7.62109" y2="15.0355" gradientUnits="userSpaceOnUse"><stop stop-color="#FF3F19"></stop><stop offset="1" stop-color="#FF3F19"></stop></linearGradient></defs>
+                                            </svg>
+                                            <span style={{ color: '#FF3F19', marginLeft: '3px', fontSize: '12px' }}>5.0</span>
+                                        </div>
+                                    </div>
                                     <div className="content">
                                         <span>IPTV</span>
                                         <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="iptvMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option value="15 EUR">6 Months</option>
-                                                <option value="25 EUR">12 Months</option>
-                                            </select>
-                                        </p>
+
                                     </div>
                                     <div className="row">
-                                        <div id="iptvPrice" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyIPTV}>BUY</button>
+                                            <button className="info-btn">BUY</button>
                                             {/*iptv*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <div className="">
+                                                <div className="row justify-content-center">
+                                                    <div className="col-md-9">
+                                                        <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>IPTV Subscription</h5>
+                                                                <p className="card-text">Experience limitless entertainment with IPTV! Discover a world of live TV channels, movies, series, and on-demand content from around the globe. Enjoy crystal-clear quality and seamless streaming on any device, from smart TVs to smartphones.</p>
+                                                            </div>
+                                                            <hr />
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
+                                                                <select name id="iptvMonths" className="select-style">
+                                                                    <option value="-">Choose</option>
+                                                                    <option value="16.53 $">6 Months</option>
+                                                                    <option value="27.10 $">12 Months</option>
+                                                                </select>
+                                                            </div>
+                                                            <div style={{ width: '100%', padding: '10px' }}>
+                                                                <div id="iptvPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
+                                                                <button onClick={this.buyIPTV} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
@@ -1456,404 +2423,40 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="netflix.png" alt="" />
-                                    <div className="content">
-                                        <span>NETFLIX</span>
-                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
-                                            <span >
-                                                {hours.toString().padStart(2, '0')}H:
-                                                {minutes.toString().padStart(2, '0')}:
-                                                {seconds.toString().padStart(2, '0')}
-                                            </span>
-                                        </h6>                                           <p>
-                                            <select className='notThisSelect' id="type" onChange={this.calculateNetflixPrice}>
-                                                <option value="-">Choose</option>
-                                                <option value={1}>PREMIUM</option>
-                                                <option value={0}>STANDARD</option>
-                                            </select>
-                                            <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
-                                                <option value="-">Choose</option>
-                                                <option value={3}>1 Months </option>
-                                                <option value={5}>2 Months</option>
-                                                <option value={8}>3 Months</option>
-                                            </select>
-                                            <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
-                                                <option value="-"> Choose</option>
-                                                <option value={0}>1 Profile</option>
-                                                <option value={1}>2 Profiles</option>
-                                                <option value={2}>3 Profiles</option>
-                                                <option value={3}>4 Profiles</option>
-                                                <option value={4}>5 Profiles</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="NetflixPrice" className="price">PRICE : </div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyNetflix}>BUY</button>
-                                            {/*netflix*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
-                                                🟥  STANDARD SUBSCRIPTION HAS A FULL HD Resolution<br />
-                                                ✅ Works on any device. <br />
-                                                ✅ Contact us for any issue<br />
-                                                ✅Safety Account Warranty 100%<br />
-                                                🟥 No guarantee will be given if you change any information in the accounts.<br />
-                                        --> WANNA MORE MONTHS ? CONTACT US VIA WHATSAPP 0637976257
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="discord.png" alt="" />
-                                    <div className="content">
-                                        <span>DISCORD</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="nitro" className="select-style notThisSelect">
-                                                <option value="-">Choose</option>
-                                                <option value={0}>1 Months </option>
-                                                <option value={6}>2 Months</option>
-                                                <option value={8}>3 Months</option>
-                                            </select>
-                                            <select name id="typeNitro" className="select-style notThisSelect">
-                                                <option value="-"> Choose</option>
-                                                <option value={6}>Classic</option>
-                                                <option value={8}>Nitro</option>
-                                            </select>
-                                            <select name id="accountType" className="select-style notThisSelect">
-                                                <option value="-"> Choose</option>
-                                                <option value={0}>Your account</option>
-                                                <option value={0}>New account</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="DiscordPrice" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyDiscord}>BUY</button>
-                                            {/*discord*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>- 🌍WORKS WORLDWIDE🌍 <br />
-                                                -We need your account information to do the process..  <span style={{ fontWeight: 'bold' }}>YOU CAN SEND US THESE INFORMATIONS VIA WHATSAPP +212 637976257</span><br />
-                                                ⚡✔️ We guarantee you that this process is safe and NOT forbidden by Discord rules!✔️⚡<br />
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="SHAHID.png" alt="" />
-                                    <div className="content">
-                                        <span>SHAHID</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select className='notThisSelect' id="ShahidProfile">
-                                                <option value="-">Choose</option>
-                                                <option value={3}>VIP</option>
-                                                <option value={7}>VIP SPORT</option>
-                                            </select>
-                                            <select className='notThisSelect' id="shahidType">
-                                                <option value="-">Choose</option>
-                                                <option value={0}>1 MONTHS</option>
-                                                <option value={2}>2 MONTHS</option>
-                                                <option value={5}>3 MONTHS</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="shahidPrice" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyShahid}>BUY</button>
-                                            {/*shahid*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>🔥 Works on any device. <br />
 
-                                                🔥 Safety Account Warranty 100% ( Contact us for any issue  )</p><br />
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="canva.png" alt="" />
-                                    <div className="content">
-                                        <span>CANVA</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="canvaMonths">
-                                                <option value="-">Choose</option>
-                                                <option value={4}> 1 MONTHS</option>
-                                                <option value={5}> 6 MONTHS</option>
-                                                <option value={8}>12 MONTHS</option>
-                                                <option value={14}>36 MONTHS</option>
-                                                <option value={17}>LIFETIME (Edu)</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="canva" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyCanva}>BUY</button>
-                                            {/*canva*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>✅Non-stop <br />
-                                                ✅Auto renew<br />
-                                                ✅upgrade your own account or give you a new one<br />
-                                                ✅Private account (You can change the email and password)<br />
-                                                🔥🔥 Full Warranty 🔥🔥<br />
-                                                ✅If you need help or anything, you can contact us anytime, and we'll be happy to assist you.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="applemusic.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>APPLE MUSIC private</span>
-                                        <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="AppleMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                                <option value="3 EUR">1 Months </option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="apple" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyAppleMusic}>BUY</button>
-                                            {/*apple musicva*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>✅ Apple music premium With Warranty. <br />
-                                                ✅ it is a private account which means you can update your account password.<br />
-                                                ✅ Our Product :
-                                                After a successful purchase, we will create a brand new Apple music premium, and then we send it to you.<br />
-
-                                                ✅ We offer Warranty which means any problem you face using the account during this period, we'll either fix the problem for you or replace the account. A pleasant customer experience is our aim. <br />
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="deezer.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>DEEZER Private</span>
-                                        <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="DeezerMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                                <option value="3 EUR">1 Months </option>
-                                                <option value="6 EUR">3 Months </option>
-                                                <option disabled value="0 EUR">---UPGRADE---</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="deezer" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyDeezer}>BUY</button>
-                                            {/*deezer*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                ✅Private account you can change the email and password <br />
-                                                ✅We are Warranty <br />
-                                                ✅listen to High-quality music with Deezer.<br />
-                                                ✅You can listen to your favorites on many devices.<br />
-                                                If you have any problem during 3 months please contact us and we will be happy to fix it </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="PRIMEVIDEO.JPEG" alt="" />
-                                    <div className="content">
-                                        <span>PRIME VIDEO</span>
-                                        <h6 className="SocialInfos">( NEW PRIVATE ACCOUNT )</h6>
-                                        <p>
-                                            <select name id="PrimeMonths" className="select-style">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="0 EUR">---NEW ACCOUNT---</option>
-                                                <option value="4 EUR">1 Months </option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="prime" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyPrime}>BUY</button>
-                                            {/*prime*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                ✅ Full access account, means you can change Email and Password<br />
-                                                ✅ 6 profile total<br />
-                                                ✅ Full Guaranteed <br />
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="disney.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>DISNEY</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select className='notThisSelect' id="DisneyProfile">
-                                                <option value="-">Choose</option>
-                                                <option value={0}>1 PROFILE</option>
-
-                                            </select>
-                                            <select className='notThisSelect' id="DisneyMonths">
-                                                <option value="-">Choose</option>
-                                                <option value={3}>1 MONTHS</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="disney" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyDisney}>BUY</button>
-                                            {/*disney*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>✅ Disney+ account.<br />
-                                                ✅ Product warranty.</p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="crunchy.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>CRUNCHY ROLL</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select name id="CrunchyMonths">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="-">--MEGA FUN--</option>
-                                                <option value="5 EUR">1 MONTHS</option>
-                                                <option value="6 EUR">1 MONTHS PV</option>
-                                                <option value="19 EUR">12 MONTHS</option>
-                                                <option disabled value="-">--PREMIUM--</option>
-                                                <option value="4 EUR">1 MONTHS</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="crunchy" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button onClick={this.buyCrunchy}>BUY</button>
-                                            {/*crunchy*/}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>✅ Full warranty  <br />
-                                                ✅ you don't need VPN to use the account<br />
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="hbo.jpeg" alt="" />
-                                    <div className="content">
-                                        <span> HBO MAX</span>
-                                        <h6 className="SocialInfos">( + WARRANTY )</h6>
-                                        <p>
-                                            <select name id="HboMonths">
-                                                <option value="-">Choose</option>
-                                                <option disabled value="-">Not Available</option>
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="hbo" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button style={{ cursor: 'not-allowed' }}>BUY</button>
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                ✅ AD FREE <br />
-                                                ✅ Full warranty subscription<br />
-                                                ✅ If there is any problem please contact as via WhatsApp </p>
-                                        </div>
-                                    </div>
-                                </div>
                             </div>
+
                             {/*social media services*/}
                             <p className="titleProduct socialMediaServices">OUR <span>SOCIAL MEDIA</span> SERVICES </p>
                             <div className="container15">
                                 <div className="wrapper">
-                                    <img src="youtube.png" alt="" />
+                                    <img src="youtubeBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>YOUTUBE</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                         <p>
                                             <select name id="youtubeService">
                                                 <option value="-">Choose</option>
-                                                <option disabled value="50 EUR">--PRIVATE ACC--</option>
-                                                <option value="11 EUR">3 MONTHS PREMIUM </option>
-                                                <option value="30 EUR">1 YEAR PREM+MUSIC</option>
-                                                <option disabled value="50 EUR">---LIKES---</option>
-                                                <option value="5 EUR">1K LIKES</option>
-                                                <option value="9 EUR">2K LIKES</option>
-                                                <option value="13 EUR">3K LIKES</option>
-                                                <option disabled value="50 EUR">--VIEWS--</option>
-                                                <option value="5 EUR">1K [HQ] VIEWS</option>
-                                                <option value="7 EUR">1K [HQ] REAL VIEWS</option>
-                                                <option value="9 EUR">2K [HQ] VIEWS</option>
-                                                <option value="12 EUR">2K [HQ] REAL VIEWS</option>
-                                                <option disabled value="50 EUR">--FOLLOWERS--</option>
-                                                <option value="19 EUR">500 [HQ] FOLLOWERS</option>
-                                                <option value="35 EUR">1K [HQ] FOLLOWERS</option>
-                                                <option disabled value="50 EUR">--WATCHTIME--</option>
-                                                <option value="12 EUR">500 [HQ] WATCHTIME</option>
-                                                <option value="23 EUR">1K [HQ] WATCHTIME</option>
-                                                <option value="45 EUR">2K [HQ] WATCHTIME</option>
-                                                <option value="90 EUR">4K [HQ] WATCHTIME</option>
+                                                <option disabled value="50 $">--PRIVATE ACC--</option>
+                                                <option value="11.81 $">3 MONTHS PREMIUM </option>
+                                                <option value="32.74 $">1 YEAR PREM+MUSIC </option>
+                                                <option disabled value="50 $">---LIKES---</option>
+                                                <option value="5.65 $">1K LIKES</option>
+                                                <option value="9.83 $">2K LIKES</option>
+                                                <option value="14.44 $">3K LIKES</option>
+                                                <option disabled value="50 $">--VIEWS--</option>
+                                                <option value="5.65 $">1K [HQ] VIEWS</option>
+                                                <option value="7.30 $">1K [HQ] REAL VIEWS</option>
+                                                <option value="9.83 $">2K [HQ] VIEWS</option>
+                                                <option value="14 $">2K [HQ] REAL VIEWS</option>
+                                                <option disabled value="50 $">--FOLLOWERS--</option>
+                                                <option value="20.3 $">500 [HQ] FOLLOWERS</option>
+                                                <option value="38 $">1K [HQ] FOLLOWERS</option>
+                                                <option disabled value="50 $">--WATCHTIME--</option>
+                                                <option value="14 $">500 [HQ] WATCHTIME</option>
+                                                <option value="25 $">1K [HQ] WATCHTIME</option>
+                                                <option value="48 $">2K [HQ] WATCHTIME</option>
+                                                <option value="95.5 $">4K [HQ] WATCHTIME</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1875,23 +2478,22 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-
                                 <div className="wrapper">
-                                    <img src="snapchat.png" alt="" />
+                                    <img src="snapchatBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>SNAPCHAT</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                         <p>
                                             <select name id="snapchatService">
                                                 <option value="-">Choose</option>
-                                                <option disabled value="50 EUR">---FOLLOWERS---</option>
-                                                <option value="20 EUR">100 [Hight Quality] REAL </option>
-                                                <option value="60 EUR">500 [Hight Quality] REAL </option>
-                                                <option disabled value="50 EUR">--SNAPCHAT + --</option>
-                                                <option value="2 EUR">1 MONTH SNAP+</option>
-                                                <option value="3 EUR">2 MONTHS SNAP+</option>
-                                                <option value="4 EUR">3 MONTHS SNAP+</option>
-                                                <option value="9 EUR">1 YEAR SNAP+</option>
+                                                <option disabled value="50 $">---FOLLOWERS---</option>
+                                                <option value="20.30 $">100 [Hight Quality] REAL </option>
+                                                <option value="62.55 $">500 [Hight Quality] REAL </option>
+                                                <option disabled value="50 $">--SNAPCHAT + --</option>
+                                                <option value="2.36 $">1 MONTH SNAP+</option>
+                                                <option value="4.57 $">2 MONTHS SNAP+</option>
+                                                <option value="5.76 $">3 MONTHS SNAP+</option>
+                                                <option value="9.86 $">1 YEAR SNAP+</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1914,16 +2516,16 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="tiktok.png" alt="" />
+                                    <img src="tiktokBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>TIK-TOK</span> <br />
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                         <p>
                                             <select name id="tiktokService">
                                                 <option value="-">Choose</option>
-                                                <option value="12 EUR">1K FOLLOWERS</option>
-                                                <option value="8 EUR">1K LIKES</option>
-                                                <option value="6 EUR">10K VIEWS</option>
+                                                <option value="13.08 $">1K FOLLOWERS</option>
+                                                <option value="8.76 $">1K LIKES</option>
+                                                <option value="6.78 $">10K VIEWS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -1943,7 +2545,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="insta.png" alt="" />
+                                    <img src="istagramBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>INSTAGRAM</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
@@ -1951,22 +2553,22 @@ class Table extends Component {
                                             <select name id="instagramService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">-FOLLOWERS Hight Quality-</option>
-                                                <option value="3 EUR">1K FOLLOWERS </option>
-                                                <option value="10 EUR">5K FOLLOWERS </option>
-                                                <option value="18 EUR">10K FOLLOWERS </option>
+                                                <option value="4.86 $">1K FOLLOWERS </option>
+                                                <option value="10.88 $">5K FOLLOWERS </option>
+                                                <option value="19.25 $">10K FOLLOWERS </option>
                                                 <option disabled value="-">-FOLLOWERS NO DROP-</option>
-                                                <option value="4 EUR">1K FOLLOWERS</option>
-                                                <option value="11 EUR">5K FOLLOWERS</option>
-                                                <option value="19 EUR">10K FOLLOWERS</option>
+                                                <option value="4.86 $">1K FOLLOWERS</option>
+                                                <option value="11.92 $">5K FOLLOWERS</option>
+                                                <option value="21 $">10K FOLLOWERS</option>
                                                 <option disabled value="-">-LIKES NO DROP-</option>
-                                                <option value="2 EUR">1K LIKE </option>
-                                                <option value="3 EUR">5K LIKES </option>
-                                                <option value="5 EUR">10K LIKES </option>
-                                                <option value="9 EUR">20K LIKES </option>
+                                                <option value="3 $">1K LIKE </option>
+                                                <option value="4.76 $">5K LIKES </option>
+                                                <option value="6.86 $">10K LIKES </option>
+                                                <option value="11 $">20K LIKES </option>
                                                 <option disabled value="-">-COMMENTS-</option>
-                                                <option value="2 EUR">10 COMMENTS </option>
-                                                <option value="3 EUR">20 COMMENTS </option>
-                                                <option value="4 EUR">30 COMMENTS </option>
+                                                <option value="2.89 $">10 COMMENTS </option>
+                                                <option value="3.89 $">20 COMMENTS </option>
+                                                <option value="4.91 $">30 COMMENTS </option>
                                             </select>
                                         </p>
                                     </div>
@@ -1986,15 +2588,15 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="facebook.png" alt="" />
+                                    <img src="facebookBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>FACEBOOK</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                         <p>
                                             <select name id="facebookService">
                                                 <option value="-">Choose</option>
-                                                <option value="9 EUR">1K FOLLOWERS</option>
-                                                <option value="9 EUR">1K LIKES</option>
+                                                <option value="11 $">1K FOLLOWERS</option>
+                                                <option value="9.97 $">1K LIKES</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2014,18 +2616,18 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="twitch.png" alt="" />
+                                    <img src="tiwtchBanner.jpeg" alt="" />
                                     <div className="content">
                                         <span>TWITCH</span>
                                         <h6 className="SocialInfos">( 100% SAFE + WARRANTY )</h6>
                                         <p>
                                             <select name id="twitchService">
                                                 <option value="-">Choose</option>
-                                                <option value="6 EUR">1K FOLLOWERS</option>
-                                                <option disabled value="25 EUR">--TIER 1--</option>
-                                                <option value="3 EUR">1 MONTHS</option>
-                                                <option value="5 EUR">3 MONTHS</option>
-                                                <option value="9 EUR">6 MONTHS</option>
+                                                <option value="6.87 $">1K FOLLOWERS</option>
+                                                <option disabled value="25 $">--TIER 1--</option>
+                                                <option value="3.76 $">1 MONTHS</option>
+                                                <option value="5.87 $">3 MONTHS</option>
+                                                <option value="9.91 $">6 MONTHS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2057,8 +2659,8 @@ class Table extends Component {
                                         <p>
                                             <select name id="nbaLeagueService">
                                                 <option value="-">Choose</option>
-                                                <option value="5 EUR">1 MONTH</option>
-                                                <option value="11 EUR">3 MONTHS</option>
+                                                <option value="5.86 $">1 MONTH</option>
+                                                <option value="13 $">3 MONTHS</option>
 
                                             </select>
                                         </p>
@@ -2086,8 +2688,8 @@ class Table extends Component {
                                         <p>
                                             <select name id="huluService">
                                                 <option value="-">Choose</option>
-                                                <option value="4 EUR">1 MONTH</option>
-                                                <option value="10 EUR">3 MONTHS NO ADS</option>
+                                                <option value="4.87 $">1 MONTH</option>
+                                                <option value="10.78 $">3 MONTHS NO ADS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2117,8 +2719,8 @@ class Table extends Component {
                                         <p>
                                             <select name id="ufcFightService">
                                                 <option value="-">Choose</option>
-                                                <option value="9 EUR">3 MONTHS</option>
-                                                <option value="17 EUR">6 MONTHS</option>
+                                                <option value="10.89 $">3 MONTHS</option>
+                                                <option value="19 $">6 MONTHS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2142,7 +2744,7 @@ class Table extends Component {
                                 </div>
                             </div>
                             {/*other services*/}
-                            <p className="titleProduct">OTHER <span>SERVICES</span></p>
+                            <p className="titleProduct otherService">OTHER <span>SERVICES</span></p>
                             <div className="container9">
                                 <div className="wrapper">
                                     <img src="8BALL.JPEG" alt="" />
@@ -2152,9 +2754,9 @@ class Table extends Component {
                                         <p>
                                             <select name id="firstUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="6 EUR">100M COIN+ALL TABLES </option>
-                                                <option value="6 EUR">DIAMOND CUE</option>
-                                                <option value="16 EUR">1B💸 +💎CUE+OUTBREAK </option>
+                                                <option value="55 $">100M +ALL TABLES </option>
+                                                <option value="55 $">DIAMOND CUE</option>
+                                                <option value="155 $">1B💸 + diamond CUE💎 + OUTBREAK </option>
                                             </select>
                                         </p>
                                     </div>
@@ -2187,7 +2789,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="secondUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="6 EUR">ON MY ACCOUNT</option>
+                                                <option value="7.23 $">ON MY ACCOUNT</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2214,7 +2816,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="thirdUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="13 EUR">ON MY ACCOUNT</option>
+                                                <option value="14.87 $">ON MY ACCOUNT</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2245,7 +2847,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="GrapplingClaw1">
                                                 <option value="-">Choose</option>
-                                                <option value="11 EUR">ON MY ACCOUNT</option>
+                                                <option value="11.43 $">ON MY ACCOUNT</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2274,8 +2876,8 @@ class Table extends Component {
                                         <p>
                                             <select name id="GrapplingClaw2">
                                                 <option value="-">Choose</option>
-                                                <option value="16 EUR">20 + SKINS</option>
-                                                <option value="33 EUR">70 + SKINS</option>
+                                                <option value="16.43 $">20 + SKINS</option>
+                                                <option value="34.81 $">70 + SKINS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2319,7 +2921,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="GrapplingClaw3">
                                                 <option value="-">Choose</option>
-                                                <option value="35 EUR">NEW ACCOUNT</option>
+                                                <option value="37 $">NEW ACCOUNT</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2340,10 +2942,103 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="wrapper">
+                                    <img src="freefire.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>FREE FIRE</span>
+                                        <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
+                                        <p>
+                                            <select name id="freefireSelect">
+                                                <option value="-">Budget </option>
+                                                <option value="7.86 $">65 DH</option>
+                                                <option value="9.43 $">80 DH</option>
+                                                <option value="11 $">95 DH</option>
+                                                <option value="12.76 $">110 DH</option>
+                                                <option value="14 $">125 DH</option>
+                                                <option value="15.84 $">140 DH</option>
+                                                <option value="16.91 $">155 DH</option>
+                                                <option value="18.91 $">170 DH</option>
+                                                <option value="20 $">185 DH</option>
+                                                <option value="21.23 $">200 DH</option>                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="freefireprice" className="price">PRICE : </div>
+                                        <div className="buttons">
+                                            <button onClick={this.buy13kVnucks}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>Click buy for more infos</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="efootaball.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>E-FOOTBALL 2023</span>
+                                        <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
+                                        <p>
+                                            <select name id="efootballSelect">
+                                                <option value="-">Choose</option>
+                                                <option value="9.87 $">THIS ACCOUNT</option>
+                                                <option value="A Discuter">Other ACCOUNT</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="efootballprice" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyEfootball}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>Click buy for more infos</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="brawlstar19k.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>BRAWL STARS</span>
+                                        <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
+                                        <p>
+                                            <select name id="brawlstarselect">
+                                                <option value="-">Choose</option>
+                                                <option value="9.87 $">THIS ACCOUNT</option>
+                                                <option value="A Discuter">Other ACCOUNT</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="brawlstarprice" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buy13kVnucks}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p> photos are available,  there are 10000 gold in the account and 1000 jewels</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             {/*STEAM services*/}
                             <p className="titleProduct steam">OUR STEAM <span>SERVICES</span></p>
+
                             <div className="container10">
+
                                 <div className="wrapper">
                                     <img src="resident.jpeg" alt="" />
                                     <div className="content">
@@ -2353,7 +3048,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 9 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 9.87 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyResidentEvil4}>BUY</button>
                                             {/*residentEvil steam */}
@@ -2377,7 +3072,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 15 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 16.87 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyGta5AndRdr2}>BUY</button>
                                             {/*gta 5 + RDR2 steam */}
@@ -2412,7 +3107,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 11 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 12.87 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyFh5}>BUY</button>
                                             {/*FH5 steam */}
@@ -2437,7 +3132,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 8 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 8.91 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyLastOfUs}>BUY</button>
                                             {/*lastOfUs steam */}
@@ -2461,7 +3156,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 8 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 8.91 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyGow2018}>BUY</button>
                                             {/*gow steam */}
@@ -2485,7 +3180,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 10 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 11.23 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyGta5Alone}>BUY</button>
                                             {/*gta 5 steam */}
@@ -2511,7 +3206,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 9 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 9.91 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyHogwart}>BUY</button>
                                             {/*HOGWARTS steam */}
@@ -2535,7 +3230,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 8 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 8.93 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyUncharted}>BUY</button>
                                             {/*UNCHARTED steam */}
@@ -2559,7 +3254,7 @@ class Table extends Component {
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstUsaPrice" className="price">PRICE : 10 EUR</div>
+                                        <div id="firstUsaPrice" className="price">PRICE : 11.34 $</div>
                                         <div className="buttons">
                                             <button onClick={this.buyF1AndF1Manager}>BUY</button>
                                             {/*F1 + F1 MANAGER steam */}
@@ -2576,19 +3271,24 @@ class Table extends Component {
                                 </div>
                             </div>
                             {/*morocco services*/}
-                            <p className="titleProduct psPlusSlide">OUR PS PLUS <span>SERVICES</span></p>
-                            <div className="container10">
+                            <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span>(Achat f compte dialk)</p>
+                            <div className="container10 " id='container10'>
                                 <div className="wrapper">
-                                    <img src="psplusSlide.png" alt="" />
+                                    <img src="psPlus1Months.jpeg" alt="" />
                                     <div className="content">
-                                        <span>1 MONTHS PS+ ACCOUNT</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
+                                        <span>1 MONTH </span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="firstMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="7 EUR">ESSENTIALS</option>
-                                                <option value="8 EUR">EXTRA</option>
-                                                <option value="10 EUR">DELUXE</option>
+                                                <option value="7.64 $">ESSENTIALS</option>
+                                                <option value="8.68 $">EXTRA</option>
+                                                <option value="10.77 $">DELUXE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2608,16 +3308,21 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="psplusSlide.png" alt="" />
+                                    <img src="psPlus3Months.jpeg" alt="" />
                                     <div className="content">
-                                        <span>3 MONTHS PS+ ACCOUNT</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
+                                        <span>3 MONTHS </span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="secondMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="12 EUR">ESSENTIALS</option>
-                                                <option value="20 EUR">EXTRA</option>
-                                                <option value="22 EUR">DELUXE</option>
+                                                <option value="12.87 $">ESSENTIALS</option>
+                                                <option value="21.23 $">EXTRA</option>
+                                                <option value="23.33 $">DELUXE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2637,16 +3342,21 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="psplusSlide.png" alt="" /> {/* image name : 12monthsPsPlus.jpeg */}
+                                    <img src="psPlus12Months.jpeg" alt="" />
                                     <div className="content">
-                                        <span>12 MONTHS PS+ ACCOUNT</span>
-                                        <h6 className="SocialInfos">( IN YOUR ACCOUNT )</h6>
-                                        <p>
+                                        <span>12 MONTHS </span>
+                                        <h6 className="SocialInfos blinkOffer">Offer ends in{' '}
+                                            <span >
+                                                {hours.toString().padStart(2, '0')}H:
+                                                {minutes.toString().padStart(2, '0')}:
+                                                {seconds.toString().padStart(2, '0')}
+                                            </span>
+                                        </h6>                                         <p>
                                             <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="25 EUR">ESSENTIALS</option>
-                                                <option value="31 EUR">EXTRA</option>
-                                                <option value="37 EUR">DELUXE</option>
+                                                <option value="26.46 $">ESSENTIALS</option>
+                                                <option value="32.74 $">EXTRA</option>
+                                                <option value="39.02 $">DELUXE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2667,7 +3377,7 @@ class Table extends Component {
                                 </div>
                             </div>
                             <p className="titleProduct psGames">OUR <span>PS4</span> /<span> PS5 GAMES</span> </p>
-                            <div className="container">
+                            <div className="container" style={{ display: 'none' }}>
                                 <div className="wrapper2">
                                     <img src="fifa23Games.png" alt="" />
                                     <div className="content">
@@ -2676,10 +3386,10 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="fifa23Plateforme">
                                             <option value="-">Choose</option>
-                                            <option value="23 EUR ">PS4 Primary</option>
-                                            <option value="21 EUR">PS4 Secondary</option>
-                                            <option value="29 EUR ">PS5 Primary</option>
-                                            <option value="23 EUR ">PS5 Secondary</option>
+                                            <option value="230 $ ">PS4 Primary</option>
+                                            <option value="210 $">PS4 Secondary</option>
+                                            <option value="285 $ ">PS5 Primary</option>
+                                            <option value="220 $ ">PS5 Secondary</option>
                                         </select>
                                         <div className="buttons">
                                             <div id="fifaPrice" className="price">PRICE :</div>
@@ -2705,8 +3415,8 @@ class Table extends Component {
                                     <div className="row">
                                         <select name id="bo3Plateforme" style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }}>
                                             <option value="-">Choose</option>
-                                            <option value="25 EUR ">PS4 Primary</option>
-                                            <option value="18 EUR ">PS4 Secondary</option>
+                                            <option value="245 $ ">PS4 Primary</option>
+                                            <option value="180 $ ">PS4 Secondary</option>
                                         </select>
                                         <div className="buttons">
                                             <div id="bo3Price" className="price">PRICE :</div>
@@ -2732,8 +3442,8 @@ class Table extends Component {
                                     <div className="row">
                                         <select name id="assetoPlateforme" style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }}>
                                             <option value="-">Choose</option>
-                                            <option value="13 EUR ">PS4 Primary</option>
-                                            <option value="9 EUR">PS4 Secondary</option>
+                                            <option value="125 $ ">PS4 Primary</option>
+                                            <option value="90 $">PS4 Secondary</option>
                                         </select>
                                         <div className="buttons">
                                             <div id="assetoPrice" className="price">PRICE :</div>
@@ -2752,7 +3462,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <h4 style={{ fontWeight: 'bold' }}
+                            <h4 style={{ fontWeight: 'bold', display: 'none' }}
                                 className="containerText"
                                 onClick={() => {
                                     document.querySelector('.container2').style.display = 'flex';
@@ -2772,10 +3482,10 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="f1Plateforme">
                                             <option value="-">Choose</option>
-                                            <option value="29 EUR ">PS4 Primary</option>
-                                            <option value="24 EUR ">PS4 Secondary</option>
-                                            <option value="30 EUR ">PS5 Primary</option>
-                                            <option value="24 EUR ">PS5 Secondary</option>
+                                            <option value="290 $ " disabled>PS4 Primary</option>
+                                            <option value="17 $ ">PS4 Secondary</option>
+                                            <option value="300 $" disabled>PS5 Primary</option>
+                                            <option value="19 $ ">PS5 Secondary</option>
                                         </select>
                                         <div className="buttons">
                                             <div id="f1Price" className="price">PRICE :</div>
@@ -2801,10 +3511,8 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="gtaPlateforme">
                                             <option value="-">Choose</option>
-                                            <option value="20 EUR ">PS4 Primary</option>
-                                            <option value="15 EUR ">PS4 Secondary</option>
-                                            <option value="35 EUR ">PS5 Primary</option>
-                                            <option value="24 EUR ">PS5 Secondary</option>
+                                            <option value="23.39 $ ">PS4 Compte kaml</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div id="gtaPrice" className="price">PRICE :</div>
@@ -2818,7 +3526,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>You can change email / password</p>
                                         </div>
                                     </div>
                                 </div>
@@ -2829,11 +3537,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="ragnarokPlateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="46 EUR ">PS4 Primary</option>
-                                            <option value="32 EUR ">PS4 Secondary</option>
-                                            <option value="46 EUR ">PS5 Primary</option>
-                                            <option value="32 EUR ">PS5 Secondary</option>
+                                            <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div id="ragnarokPrice" className="price">PRICE :</div>
@@ -2869,11 +3574,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="spidermanPlateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="25 EUR ">PS4 Primary</option>
-                                            <option value="21 EUR ">PS4 Secondary</option>
-                                            <option value="26 EUR ">PS5 Primary</option>
-                                            <option value="23 EUR">PS5 Secondary</option>
+                                            <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="spidermanPrice">PRICE :</div>
@@ -2898,9 +3600,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="rdrPlateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="36 EUR ">PS4 Primary</option>
-                                            <option value="27 EUR ">PS4 Secondary</option>
+                                            <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="rdrPrice">PRICE :</div>
@@ -2925,11 +3626,8 @@ class Table extends Component {
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="fifa22Plateforme">
-                                            <option value="-">Choose</option>
-                                            <option value="17 EUR ">PS4 Primary</option>
-                                            <option value="14 EUR ">PS4 Secondary</option>
-                                            <option value="18 EUR ">PS5 Primary</option>
-                                            <option value="15 EUR ">PS5 Secondary</option>
+                                            <option value="-">Out of stock</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="fifa22Price">PRICE :</div>
@@ -2948,7 +3646,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className="titleProduct giftCardsAndAccount">OUR <span>GIFT CARDS </span>/<span> ACCOUNT</span> / <span> GAMEPASS</span> </p>
+                            <p className="titleProduct giftCardsAndAccount">OUR <span>WINDOWS KEY </span>/<span> ACCOUNT</span> / <span> GAMEPASS</span> </p>
                             <div className="container4">
                                 <div className="wrapper">
                                     <img src="psn5euro.jpeg" alt="" />
@@ -2956,10 +3654,10 @@ class Table extends Component {
                                         <span>PSN 5€ - France</span>
                                     </div>
                                     <div className="row">
-                                        <div className="price">PRICE : - EUR</div>
+                                        <div className="price">PRICE : Unavailable</div>
                                         <div className="buttons">
-                                            {/*                                     <button onClick={this.buyPsn5euro}>BUY</button>
- */}                                    {/*PSN5EU  */}
+                                            <button /* onClick={this.buyPsn5euro} */>BUY</button>
+                                            {/*PSN5EU  */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
@@ -2981,10 +3679,10 @@ class Table extends Component {
                                         <span>PSN 10€ - France</span>
                                     </div>
                                     <div className="row">
-                                        <div className="price">PRICE : - EUR</div>
+                                    <div className="price">PRICE : Unavailable</div>
                                         <div className="buttons">
-                                            {/*                                     <button onClick={this.buyPsn10euro}>BUY</button>
- */}                                    {/*PSN10EU  */}
+                                            <button /* onClick={this.buyPsn10euro} */>BUY</button>
+                                            {/*PSN10EU  */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
@@ -3006,10 +3704,10 @@ class Table extends Component {
                                         <span>PSN 20€ - France</span>
                                     </div>
                                     <div className="row">
-                                        <div className="price">PRICE : - EUR</div>
+                                    <div className="price">PRICE : Unavailable</div>
                                         <div className="buttons">
-                                            {/*                                     <button onClick={this.buyPsn20euro}>BUY</button>
- */}                                    {/*PSN20EU  */}
+                                            <button /* onClick={this.buyPsn20euro} */>BUY</button>
+                                            {/*PSN20EU  */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
@@ -3058,7 +3756,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>...</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3099,7 +3797,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="valoService">
                                                 <option value="-">Choose</option>
-                                                <option value={16}>1000 PTS</option>
+                                                <option value={18}>1000 PTS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3145,8 +3843,8 @@ class Table extends Component {
                                             <select name id="goldService">
                                                 <option value="-">Choose</option>
                                                 <option value={34} disabled>1 MONTHS</option>
-                                                <option value={25}>3 MONTHS</option>
-                                                <option value={60}>12 MONTHS</option>
+                                                <option value={26}>3 MONTHS</option>
+                                                <option value={68}>12 MONTHS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3208,12 +3906,12 @@ class Table extends Component {
                                             <select name id="gamepassService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">--Xbox & Pc--</option>
-                                                <option value={8}>2 Months</option>
-                                                <option value={15}>4 Months</option>
+                                                <option value={9}>2 Months</option>
+                                                <option value={16}>4 Months</option>
                                                 <option disabled value="-">--Only Pc--</option>
-                                                <option value={7}>3 Months</option>
+                                                <option value={8}>3 Months</option>
                                                 <option disabled value="-">--Top Up--</option>
-                                                <option value={32}>10 Months</option>
+                                                <option value={34}>10 Months</option>
 
 
 
@@ -3263,8 +3961,8 @@ class Table extends Component {
                                         <p>
                                             <select name id="steamService">
                                                 <option value="-">Choose</option>
-                                                <option value={17}>10 Euro</option>
-                                                <option value={29}>20 Euro</option>
+                                                <option value={18}>10 Euro</option>
+                                                <option value={31}>20 Euro</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3298,14 +3996,14 @@ class Table extends Component {
                                             <select name id="robloxService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">-ROBUX + PREMIUM-</option>
-                                                <option value="12 EUR">1k RBX + 1MONTHS </option>
-                                                <option value="20 EUR">2k RBX + 1MONTHS </option>
+                                                <option value="13 $">1k RBX + 1 Month </option>
+                                                <option value="23 $">2k RBX + 1 Month </option>
                                                 <option disabled value="-">--ONLY ROBUX--</option>
-                                                <option value="12 EUR">800 RBX </option>
-                                                <option value="16 EUR">1200 RBX </option>
-                                                <option value="22 EUR">1700 RBX </option>
-                                                <option value="25 EUR">2000 RBX </option>
-                                                <option value="50 EUR">4500 RBX </option>
+                                                <option value="13.76 $">800 RBX </option>
+                                                <option value="16.65 $">1200 RBX </option>
+                                                <option value="23.43 $">1700 RBX </option>
+                                                <option value="26.53 $">2000 RBX </option>
+                                                <option value="52 $">4500 RBX </option>
                                             </select>
                                         </p>
                                     </div>
@@ -3338,9 +4036,9 @@ class Table extends Component {
                                             <select name id="officeService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">--LIFETIME KEY--</option>
-                                                <option value="9 EUR">WINDOWS 10 PRO</option>
-                                                <option value="10 EUR">WINDOWS 11 PRO</option>
-                                                <option value="12 EUR"> OFFICE</option>
+                                                <option value="10 $">WINDOWS 10 PRO</option>
+                                                <option value="11.86 $">WINDOWS 11 PRO</option>
+                                                <option value="13.89 $"> OFFICE</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3388,12 +4086,19 @@ class Table extends Component {
                             {/*reviews*/}
                             <p className="benefitQuestion">OUR <span> SATISFIED</span> CUSTOMERS </p><br />
 
+                            order by numType DSC limits 1
+
                             <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
+
                         </div>
+
                         <Footer />
+
                     </div>
                 </>}
+
             </div >
+
 
 
         )
