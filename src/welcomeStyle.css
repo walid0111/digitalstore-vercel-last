@@ -64,6 +64,26 @@
   color: #ffffff;
 }
 
+
+.btn-cta-orange {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  background-color: #333333;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  text-align: center;
+}
+
+.btn-cta-orange:hover {
+  background-color: #008507;
+  color: #ffffff;
+}
 /* Media Queries */
 
 /* Pour les écrans plus petits que 768px */

@@ -69,26 +69,26 @@ class Table extends Component {
 
 
                 Swal.fire({
-                  /*   title: 'Jib 50 wla 100', */
-                    text: `tsna tswira tban 3ad dir j'accepte DARORI !`,
+                    text: 'Recharge Rapide fhad nmra Orange : 0660074477',
+                    title: `tsna tswira tban 3ad dir j'accepte DARORI !`,
                     imageUrl: '/rechargeFr.jpg', // Use the correct path to the image in the public folder
                     imageHeight: 390, // Set the desired height for the image
                     imageWidth: '90%', // Set the desired width for the image
                     confirmButtonText: `J'accepte`,
 
                 }).then((result) => { // Added missing `(` before `(result)`
-                            if (result.isConfirmed) {
+                    if (result.isConfirmed) {
 
-                                Swal.fire({
-                                    title: 'PROMOTION ALERT',
-                                    text: 'Up to 65% Off',
-                                    icon: 'warning',
-                                    confirmButtonText: 'Ok',
-                                })
-                            }
-                        });
-                    
-                
+                        Swal.fire({
+                            title: 'PROMOTION !!',
+                            text: 'Up to 65% Off',
+                            icon: 'warning',
+                            confirmButtonText: 'Ok',
+                        })
+                    }
+                });
+
+
 
             }, 10000);
 
@@ -1110,7 +1110,7 @@ class Table extends Component {
         return (
 
             <div className='bodyClass'>
-                
+
                 <script src="./homeScript"></script>
                 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
@@ -1192,23 +1192,23 @@ class Table extends Component {
                         </nav>
                     </div>
                 </header>
-                
+
                 {isLoading ? <LoadingScreen /> : <>
-                <Particles
-                    id="tsparticles"
-                    options={{
-                        // Configuration des options des particules
-                        particles: {
-                            number: {
-                                value: 80,
+                    <Particles
+                        id="tsparticles"
+                        options={{
+                            // Configuration des options des particules
+                            particles: {
+                                number: {
+                                    value: 80,
+                                },
+                                // ... autres options de configuration
                             },
-                            // ... autres options de configuration
-                        },
-                    }}
-                />
-                <div className="w-full h-screen absolute">
-                    <Design />
-                </div>
+                        }}
+                    />
+                    <div className="w-full h-screen absolute">
+                        <Design />
+                    </div>
 
                     {/*-------------------------Mad------------------------*/}
                     <div style={{ display: 'block', position: 'relative' }}>
@@ -2565,7 +2565,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -2636,7 +2636,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -2667,7 +2667,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3411,10 +3411,9 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="fifa23Plateforme">
                                             <option value="-">Choose</option>
-                                            <option value="230 MAD ">PS4 Primary</option>
-                                            <option value="210 MAD">PS4 Secondary</option>
-                                            <option value="285 MAD ">PS5 Primary</option>
-                                            <option value="220 MAD ">PS5 Secondary</option>
+                                            <option value="170 MAD ">PS4 Compte kaml (t9dr tbdl lih mail / pass)</option>
+                                            <option value="200 MAD ">PS5 Compte kaml (t9dr tbdl lih mail / pass)</option>
+
                                         </select>
                                         <div className="buttons">
                                             <div id="fifaPrice" className="price">PRICE :</div>
@@ -3428,7 +3427,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3455,7 +3454,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3482,7 +3481,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3524,7 +3523,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3536,7 +3535,7 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="gtaPlateforme">
                                             <option value="-">Choose</option>
-                                            <option value="220 MAD ">PS4 Compte kaml</option>
+                                            <option value="220 MAD ">PS4 Compte kaml (t9dr tbdl mail / pass)</option>
 
                                         </select>
                                         <div className="buttons">
@@ -3577,7 +3576,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3614,7 +3613,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3640,19 +3639,20 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="wrapper2">
-                                    <img src="fifa22.png" alt="" />
+                                    <img src="fifa23Banner.jpeg" alt="" />
                                     <div className="content">
-                                        <span>FIFA 22</span>
+                                        <span>FIFA 23</span>
                                     </div>
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="fifa22Plateforme">
-                                            <option value="-">Out of stock</option>
-
+                                            <option value="-">Choose</option>
+                                            <option value="170 MAD ">PS4 Compte kaml (t9dr tbdl mail / pass)</option>
+                                            <option value="200 MAD ">PS5 Compte kaml (t9dr tbdl mail / pass)</option>
                                         </select>
                                         <div className="buttons">
                                             <div className="price" id="fifa22Price">PRICE :</div>
@@ -3666,7 +3666,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -3919,7 +3919,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
@@ -4021,14 +4021,8 @@ class Table extends Component {
                                             <select name id="robloxService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">-ROBUX + PREMIUM-</option>
-                                                <option value="115 MAD">1k RBX + 1 Month </option>
-                                                <option value="210 MAD">2k RBX + 1 Month </option>
-                                                <option disabled value="-">--ONLY ROBUX--</option>
-                                                <option value="120 MAD">800 RBX </option>
-                                                <option value="160 MAD">1200 RBX </option>
-                                                <option value="220 MAD">1700 RBX </option>
-                                                <option value="250 MAD">2000 RBX </option>
-                                                <option value="500 MAD">4500 RBX </option>
+                                                <option value="150 MAD">1k ROBUX </option>
+
                                             </select>
                                         </p>
                                     </div>
@@ -4077,7 +4071,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>

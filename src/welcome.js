@@ -2,19 +2,27 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./welcomeStyle.css";
 import Fortnite from './ItemShop';
+import ReactPlayer from 'react-player';
+
 
 const RegionSelector = () => {
   const [selectedRegion, setSelectedRegion] = useState("");
   const [showPaymentAccepted, setShowPaymentAccepted] = useState(false);
+  const [showVideo, setShowVideo] = useState(false);
+
 
   const handleRegionSelect = (region) => {
     setSelectedRegion(region);
     setShowPaymentAccepted(true);
   };
 
+  const handleShowVideo = () => {
+    setShowVideo(true);
+  };
+
   return (
     <div className="region-selector">
-      
+
       <head>
         <meta
           name="trustpilot-one-time-domain-verification-id"
@@ -26,9 +34,9 @@ const RegionSelector = () => {
       </h2>
       <h3 style={{ fontWeight: "bold", textAlign: 'center' }}>
         FIND YOUR ITEM AT THE LOWEST PRICE AND WITH A WARRANTY. SHOP WITH CONFIDENCE !{" "}
-      </h3> 
+      </h3>
 
-      
+
       <div className="region-options">
         <button
           className={`region-option ${selectedRegion === "Morocco" ? "selected" : ""
@@ -54,10 +62,13 @@ const RegionSelector = () => {
             Fortnite
           </Link>
         </button>
+
+
+
       </div>
-      
+
       <div className="region-actions">
-        
+
         {selectedRegion ? (
           <>
             {showPaymentAccepted ? (
@@ -70,11 +81,11 @@ const RegionSelector = () => {
                     <span>
                       <span style={{ fontWeight: "bold", color: "green", textAlign: 'center' }}>
                         Orange, CIH Bank, PayPal, CashPlus
-                      </span> <br/><br/> 
+                      </span> <br /><br />
                       {/* <span style={{ color: "red", textAlign: 'center',  padding: '10px' }}>
                         jib ay carte orange bghiti ghi matkounch carte dial  <span style={{ fontWeight: "bold", color: "red" }}> 30dh</span> 
                       </span> */}
-                     </span>
+                    </span>
                   ) : (
                     <span>
                       <span style={{ fontWeight: "bold", color: "green", textAlign: 'center' }}>
@@ -90,8 +101,21 @@ const RegionSelector = () => {
                 to={selectedRegion === "Morocco" ? "/mad" : "/euro"}
                 className="btn-cta"
               >
-                OK
+                GO Shopping
               </Link>
+
+              {selectedRegion === "Morocco" && (
+                <div className="get-started-button" style={{margin:'5px 0 5px 0'}}>
+                  <div
+                    className="btn-cta-orange"
+                    onClick={handleShowVideo}
+                  >
+                    Kifach nkhls b Orange ?
+                  </div>
+                </div>
+              )}
+
+
             </div>
           </>
         ) : (
@@ -99,7 +123,20 @@ const RegionSelector = () => {
             CHOOSE YOUR COUNTRY TO GET STARTED
           </p>
         )}
-      </div> 
+      </div>
+
+
+      {showVideo && (
+        <div className="video-container">
+          <ReactPlayer
+            url="https://youtu.be/MHEWKA82JHw"
+            controls={true}
+            width="100%"
+            height="100%"
+            style={{ position: 'absolute', top: 0, left: 0 }}
+          />
+        </div>
+      )}
     </div>
 
   );
