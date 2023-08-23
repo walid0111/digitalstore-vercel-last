@@ -67,12 +67,13 @@ class Table extends Component {
                 script.setAttribute("crossorigin", "*");
                 document.getElementsByTagName("head")[0].appendChild(script);
 
-
-
-
-
-
-
+                        Swal.fire({
+                            title: 'LIMITED PROMOTION !!',
+                            text: 'Up to 65% Off',
+                            icon: 'warning',
+                            confirmButtonText: 'Ok',
+                        })
+                   
             }, 10000);
 
 

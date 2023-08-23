@@ -70,9 +70,11 @@ class Table extends Component {
 
 
                 Swal.fire({
-                    text:'( wla jib carte 50Dh ra khdama oghadi n7tafdo lik blfr9 dial taman la commande jaya )!',
-                    title: `Pour le paiement orange, ghadi ykhsk tmchi 3nd l7anot otgolih isift le montant dial produit libghiti lhad nmra Orange 0660074477 ( solde 3adi bla maydir njma )!`,
-                    imageHeight: 390, // Set the desired height for the image
+                    /* text:'( wla jib carte 50Dh ra khdama oghadi n7tafdo lik blfr9 dial taman la commande jaya )!',*/
+                    text: `UPDATE ORANGE 🍊, ghadi ykhsk tmchi 3nd l7anot otgolih isift le montant libghiti lhad nmra Orange 0660074477 ( solde 3adi bla maydir njma 👍)! ( wla jib carte 50Dh ra khdama oghadi n7tafdo lik blfr9 dial taman la commande jaya ✅ )!`, 
+
+/*                     title:'ORANGE UPDATE  : Paiement Express/Rapide wla Les Cartes 50Dh / 100Dh ra khdamin',
+ */                    imageHeight: 390, // Set the desired height for the image
                     imageWidth: '90%', // Set the desired width for the image
                     confirmButtonText: `J'accepte`,
 
@@ -80,7 +82,7 @@ class Table extends Component {
                     if (result.isConfirmed) {
 
                         Swal.fire({
-                            title: 'PROMOTION !!',
+                            title: 'LIMITED PROMOTION !!',
                             text: 'Up to 65% Off',
                             icon: 'warning',
                             confirmButtonText: 'Ok',
