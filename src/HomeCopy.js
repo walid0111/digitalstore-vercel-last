@@ -14,6 +14,8 @@ import Swal from 'sweetalert2';
 import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Design from "./components/Design";
 import Particles from 'react-tsparticles';
+import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+
 
 
 
@@ -68,8 +70,8 @@ class Table extends Component {
 
 
 
-                
-                
+
+
 
             }, 10000);
 
@@ -278,7 +280,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#SpotifyMonths').value;
             const months = document.querySelector('#SpotifyMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *---SPOTIFY---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
+            const message = `Hello *Digital Store* i want to buy \n *---SPOTIFY---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -287,6 +289,32 @@ class Table extends Component {
 
     //NETFLIX
 
+    //buyea1Month
+    buyea1Monthps() {
+
+        const message = `Hello *Digital Store* i want to buy \n *---  EA Play - 1 Month ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* $16.86   `;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
+
+    //buyea6Months
+    buyea6Monthsps() {
+
+        const message = `Hello *Digital Store* i want to buy \n *---  EA Play - 6 Months ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* $26.46   `;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
+
+    //buyea12Months
+    buyea12Monthsps() {
+
+        const message = `Hello *Digital Store* i want to buy \n *---  EA Play - 12 Months ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* $32.43   `;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
     buyNetflix() {
 
         const standardSelect = document.getElementById('standard');
@@ -295,7 +323,7 @@ class Table extends Component {
         const totalPrice = document.getElementById('NetflixPrice').textContent;
         if (profileSelect.value != '-' && standardSelect.value != '-' && accountTypSelect.value != '-') {
 
-            const message = `Salam *Digital Store* bghit \n *---NETFLIX---* \n\n *⇾ SUBSCRIPTION :* ${accountTypSelect.options[accountTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardSelect.options[standardSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profileSelect.options[profileSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrice}`;
+            const message = `Hello *Digital Store* i want to buy \n *---NETFLIX---* \n\n *⇾ SUBSCRIPTION :* ${accountTypSelect.options[accountTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardSelect.options[standardSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profileSelect.options[profileSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrice}`;
 
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
@@ -316,7 +344,7 @@ class Table extends Component {
         const totalPrivatePrice = document.getElementById('NetflixPrivatePrice').textContent;
         if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
 
-            const message = `Salam *Digital Store* bghit \n *---NETFLIX PRIVATE---* \n\n *⇾ SUBSCRIPTION :* ${accountPrivateTypSelect.options[accountPrivateTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardPrivateSelect.options[standardPrivateSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profilePrivateSelect.options[profilePrivateSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrivatePrice}`;
+            const message = `Hello *Digital Store* i want to buy \n *---NETFLIX PRIVATE---* \n\n *⇾ SUBSCRIPTION :* ${accountPrivateTypSelect.options[accountPrivateTypSelect.selectedIndex].text} \n *⇾  MONTHS :* ${standardPrivateSelect.options[standardPrivateSelect.selectedIndex].text} \n *⇾ PROFILES :* ${profilePrivateSelect.options[profilePrivateSelect.selectedIndex].text} \n *⇾ TOTAL* ${totalPrivatePrice}`;
 
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
@@ -335,7 +363,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#iptvMonths').value;
             const months = document.querySelector('#iptvMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- IPTV ---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
+            const message = `Hello *Digital Store* i want to buy \n *--- IPTV ---* \n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -350,7 +378,7 @@ class Table extends Component {
             const months = document.querySelector('#nitro option:checked').text;
             const typeSubs = document.querySelector('#typeNitro option:checked').text;
             const accountSubs = document.querySelector('#accountType option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- DISCORD ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n  *⇾ SERVICE :* ${accountSubs} \n *⇾ QUANTITY :* 1 \n \n *⇾ ${price}*  `;
+            const message = `Hello *Digital Store* i want to buy \n *--- DISCORD ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n  *⇾ SERVICE :* ${accountSubs} \n *⇾ QUANTITY :* 1 \n \n *⇾ ${price}*  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -364,13 +392,13 @@ class Table extends Component {
             const price = document.getElementById('shahidPrice').textContent
             const months = document.querySelector('#shahidType option:checked').text;
             const typeSubs = document.querySelector('#ShahidProfile option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- SHAHID ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n   *⇾ QUANTITY :* 1 \n \n *⇾ ${price} $*  `;
+            const message = `Hello *Digital Store* i want to buy \n *--- SHAHID ---* \n \n  *⇾ DURATION :* ${months} \n  *⇾ SUBSCRIPTION :* ${typeSubs} \n   *⇾ QUANTITY :* 1 \n \n *⇾ ${price} $*  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
         }
     }
-    
+
     //buy canva
 
     buyCanva() {
@@ -379,7 +407,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#canvaMonths').value;
             const months = document.querySelector('#canvaMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- CANVA ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL : ${price} $*  `;
+            const message = `Hello *Digital Store* i want to buy \n *--- CANVA ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL : ${price} $*  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -392,7 +420,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#AppleMonths').value;
             const months = document.querySelector('#AppleMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- APPLE MUSIC ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- APPLE MUSIC ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -405,7 +433,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#DeezerMonths').value;
             const months = document.querySelector('#DeezerMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- DEEZER ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- DEEZER ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -418,7 +446,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#PrimeMonths').value;
             const months = document.querySelector('#PrimeMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- PRIME VIDEO ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- PRIME VIDEO ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -433,7 +461,7 @@ class Table extends Component {
             const price = document.getElementById('disney').innerText;
             const profileDisney = document.querySelector('#DisneyProfile option:checked').text;
             const months = document.querySelector('#DisneyMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- DISNEY ---* \n\n *⇾ DURATION :* ${months} \n *⇾ PROFILES :* ${profileDisney} \n *⇾ QUANTITY :* 1 \n *⇾* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- DISNEY ---* \n\n *⇾ DURATION :* ${months} \n *⇾ PROFILES :* ${profileDisney} \n *⇾ QUANTITY :* 1 \n *⇾* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -447,7 +475,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#CrunchyMonths').value;
             const months = document.querySelector('#CrunchyMonths option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- CRUNCHY ROLL ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- CRUNCHY ROLL ---* \n\n *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -592,7 +620,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#GrapplingClaw2').value;
             const months = document.querySelector('#GrapplingClaw2 option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- RANDOM FORTNITE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1 \n *⇾ SKINS COUNT :* ${months} \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- RANDOM FORTNITE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1 \n *⇾ SKINS COUNT :* ${months} \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -605,7 +633,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#GrapplingClaw3').value;
             const months = document.querySelector('#GrapplingClaw3 option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- 13k V-BUCKS ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- 13k V-BUCKS ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -615,7 +643,7 @@ class Table extends Component {
     //buy resident evil
     buyResidentEvil4() {
 
-        const message = `Salam *Digital Store* bghit \n *--- RESIDENT EVIL 4 OFFLINE STEAM ACCOUNT ---* \n-- +2 FREE GAMES --\n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 90 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- RESIDENT EVIL 4 OFFLINE STEAM ACCOUNT ---* \n-- +2 FREE GAMES --\n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 90 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -623,7 +651,7 @@ class Table extends Component {
     //buy gta5
     buyGta5AndRdr2() {
 
-        const message = `Salam *Digital Store* bghit \n *--- GTA 5 + RDR2 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- GTA 5 + RDR2 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -631,7 +659,7 @@ class Table extends Component {
     //buy fh5
     buyFh5() {
 
-        const message = `Salam *Digital Store* bghit \n *--- FH5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 110 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- FH5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 110 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -639,7 +667,7 @@ class Table extends Component {
     //buy last of us
     buyLastOfUs() {
 
-        const message = `Salam *Digital Store* bghit \n *--- THE LAST OF US OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- THE LAST OF US OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -647,7 +675,7 @@ class Table extends Component {
     //buy gow
     buyGow2018() {
 
-        const message = `Salam *Digital Store* bghit \n *--- GOW OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- GOW OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -655,7 +683,7 @@ class Table extends Component {
     //buy gta5
     buyGta5Alone() {
 
-        const message = `Salam *Digital Store* bghit \n *--- GTA 5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 100 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- GTA 5 STEAM ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 100 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -663,7 +691,7 @@ class Table extends Component {
     //buy hogwart 
     buyHogwart() {
 
-        const message = `Salam *Digital Store* bghit \n *--- HOGWARTS OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 90 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- HOGWARTS OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 90 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -671,7 +699,7 @@ class Table extends Component {
     //buy uncharted
     buyUncharted() {
 
-        const message = `Salam *Digital Store* bghit \n *--- UNCHARTED LEGACY OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- UNCHARTED LEGACY OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 80 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -679,7 +707,7 @@ class Table extends Component {
     //buy f1 + f1 manager
     buyF1AndF1Manager() {
 
-        const message = `Salam *Digital Store* bghit \n *--- F1 + F1 MANAGER OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 100 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- F1 + F1 MANAGER OFFLINE STEAM ACCOUNT ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 100 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -691,7 +719,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#firstMoroccoService').value;
             const months = document.querySelector('#firstMoroccoService option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 1 MONTH \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 1 MONTH \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -704,7 +732,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#secondMoroccoService').value;
             const months = document.querySelector('#secondMoroccoService option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 3 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 3 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -717,7 +745,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#thirdMoroccoService').value;
             const months = document.querySelector('#thirdMoroccoService option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 12 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- PS PLUS ON MY ACCOUNT ---* \n\n  *⇾ DURATION :* 12 MONTHS \n *⇾ SUBSCRIPTION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -730,7 +758,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#huluService').value;
             const months = document.querySelector('#huluService option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- HULU ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- HULU ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -743,7 +771,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#nbaLeagueService').value;
             const months = document.querySelector('#nbaLeagueService option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- NBA LEAGUE ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- NBA LEAGUE ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -756,7 +784,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#ufcFightService').value;
             const months = document.querySelector('#ufcFightService option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- UFC FIGHT ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- UFC FIGHT ACCOUNT ---* \n\n  *⇾ DURATION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -769,7 +797,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#fifa23Plateforme').value;
             const months = document.querySelector('#fifa23Plateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- FIFA 23 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- FIFA 23 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -782,7 +810,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#bo3Plateforme').value;
             const months = document.querySelector('#bo3Plateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- BO3 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- BO3 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -795,7 +823,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#assetoPlateforme').value;
             const months = document.querySelector('#assetoPlateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- ASSETO CORSA ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- ASSETO CORSA ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -808,7 +836,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#f1Plateforme').value;
             const months = document.querySelector('#f1Plateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- F1 2022 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- F1 2022 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -821,7 +849,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#gtaPlateforme').value;
             const months = document.querySelector('#gtaPlateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- GTA 5 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- GTA 5 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -834,7 +862,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#ragnarokPlateforme').value;
             const months = document.querySelector('#ragnarokPlateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- GOW RAGNAROK ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- GOW RAGNAROK ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -847,7 +875,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#spidermanPlateforme').value;
             const months = document.querySelector('#spidermanPlateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- SPIDERMAN MILES MORALS ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- SPIDERMAN MILES MORALS ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -860,7 +888,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#rdrPlateforme').value;
             const months = document.querySelector('#rdrPlateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- RDR 2 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- RDR 2 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -873,7 +901,58 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#fifa22Plateforme').value;
             const months = document.querySelector('#fifa22Plateforme option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- FIFA 22 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- FIFA 22 ---* \n\n *⇾ VERSION :* ${months} \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price}   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy fifa23 xbox
+    buyFifa23xbox() {
+
+        const message = `Hello *Digital Store* i want to buy \n *--- FIFA 23 XBOX ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 27.46 $   `;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
+    //buy minecraft xbox
+    buyMinecraftxbox() {
+
+        const message = `Hello *Digital Store* i want to buy \n *--- MINECRAFT XBOX ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 12.46 $   `;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
+    //buy gta5 xbox
+    buyGta5xbox() {
+
+        const message = `Hello *Digital Store* i want to buy \n *--- GTA 5 XBOX ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 17.46 $   `;
+        const encodedMessage = encodeURIComponent(message);
+        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+        window.location.href = url;
+    }
+
+    //buy desired ps game
+    buyPsGameDesired() {
+        const games = document.getElementById('input-text-ps').value;
+        if (games == '') {
+            alert('Error : Please write a game name before ordering..');
+        }
+        else {
+            const message = `Hello *Digital Store* i want to buy \n *--- ${games} ---* \n *⇾ QUANTITY :* 1  \n *⇾ PLATEFORM :* PLAYSTATION   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy desired ps game
+    buyXboxGameDesired() {
+        const games = document.getElementById('input-text-xbox').value;
+        if (games == '') {
+            alert('Error : Please write a game name before ordering..');
+        }
+        else {
+            const message = `Hello *Digital Store* i want to buy \n *--- ${games} ---* \n *⇾ QUANTITY :* 1  \n *⇾ PLATEFORM :* XBOX   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -882,7 +961,7 @@ class Table extends Component {
     //buy psn 5 euro
     buyPsn5euro() {
 
-        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 5 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 70 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- CARTE PSN 5 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 70 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -891,7 +970,7 @@ class Table extends Component {
     //buy 10 euro psn
     buyPsn10euro() {
 
-        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 10 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- CARTE PSN 10 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 150 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -900,7 +979,7 @@ class Table extends Component {
     //buy 20euro psn
     buyPsn20euro() {
 
-        const message = `Salam *Digital Store* bghit \n *--- CARTE PSN 20 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 260 $   `;
+        const message = `Hello *Digital Store* i want to buy \n *--- CARTE PSN 20 EURO ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* 260 $   `;
         const encodedMessage = encodeURIComponent(message);
         const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
         window.location.href = url;
@@ -945,6 +1024,70 @@ class Table extends Component {
             window.location.href = url;
         }
     }
+    //buy cv design
+    buyCvDesign() {
+        if (document.querySelector('#cvdesignService').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#cvdesignService').value;
+            const months = document.querySelector('#cvdesignService option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- CV DESIGN ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ TOTAL :* ${price} $   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+
+    //buy adobe
+    buyAdobe() {
+        if (document.querySelector('#adobeService').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#adobeService').value;
+            const months = document.querySelector('#adobeService option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- ADOBE CREATIVE CLOUD ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ TOTAL :* ${price} $   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    //buy gpt
+    buyGpt() {
+        if (document.querySelector('#gptService').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#gptService').value;
+            const months = document.querySelector('#gptService option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- CHAT GPT ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ TOTAL :* ${price} $   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    buyApex() {
+        if (document.querySelector('#apexService').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#apexService').value;
+            const months = document.querySelector('#apexService option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- APEX LEGENDS ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ TOTAL :* ${price} $   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
+    buyAvakin() {
+        if (document.querySelector('#avakinService').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#avakinService').value;
+            const months = document.querySelector('#avakinService option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- AVAKIN LIFE ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ TOTAL :* ${price} $   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
     //buy xbox live
     buyXboxLiveGold() {
         if (document.querySelector('#goldService').value == '-') {
@@ -984,6 +1127,19 @@ class Table extends Component {
             window.location.href = url;
         }
     }
+    //buy office
+    buyWindows() {
+        if (document.querySelector('#windowsService').value == '-') {
+            alert('Error : Please select an option before clicking buy..');
+        } else {
+            const price = document.querySelector('#windowsService').value;
+            const months = document.querySelector('#windowsService option:checked').text;
+            const message = `Salam *Digital Store* khasni \n *--- WINDOWS KEY  ---* \n\n *⇾ SERVICE :* ${months}  \n *⇾ QUANTITY :* 1 \n *⇾ TOTAL :* ${price} $   `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
+    }
     //buy itunes
     buyItunes() {
         if (document.querySelector('#itunesService').value == '-') {
@@ -1017,7 +1173,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#freefireSelect').value;
             const months = document.querySelector('#freefireSelect option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- FREE FIRE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- FREE FIRE ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -1031,7 +1187,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#ffTopup').value;
             const months = document.querySelector('#ffTopup option:checked').text;
-            const message = `Salam *Digital Store* khasni \n *--- FREE FIRE Shopping Service> ---* \n \n *⇾ Offre :* ${months} \n *⇾ Prix :* ${price} $  `;
+            const message = `Salam *Digital Store* khasni \n *--- FREE FIRE Shopping Service> ---* \n \n *⇾ Offer :* ${months} \n *⇾ PRICE :* ${price} $  `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -1044,7 +1200,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#brawlstarselect').value;
             const months = document.querySelector('#brawlstarselect option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- BRAWL STAR ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- BRAWL STAR ACCOUNT + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ BUDGET :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -1057,7 +1213,7 @@ class Table extends Component {
         } else {
             const price = document.querySelector('#efootballSelect').value;
             const months = document.querySelector('#efootballSelect option:checked').text;
-            const message = `Salam *Digital Store* bghit \n *--- E-FOOTBALL ACCOUNT LI FL SITE + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
+            const message = `Hello *Digital Store* i want to buy \n *--- E-FOOTBALL ACCOUNT LI FL SITE + MAIL ACCESS ---* \n\n *⇾ QUANTITY :* 1  \n *⇾ TOTAL :* ${price}   `;
             const encodedMessage = encodeURIComponent(message);
             const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
             window.location.href = url;
@@ -1092,7 +1248,7 @@ class Table extends Component {
         return (
 
             <div className='bodyClass'>
-                
+
                 <script src="./homeScript"></script>
                 <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
@@ -1164,7 +1320,7 @@ class Table extends Component {
  */}
 
                             <div name="currency" style={{ backgroundColor: 'black', color: 'white', border: 'none', cursor: 'pointer', paddingLeft: '8px' }}>
-                                <Link to="/$"><FontAwesomeIcon icon={faExchangeAlt} /> MAD 🇲🇦</Link>
+                                <Link to="/$"><FontAwesomeIcon icon={faExchangeAlt} /> $ 🇲🇦</Link>
                             </div>
                             <i id="darkLightMode" style={{ padding: '5px', marginLeft: '40px', cursor: 'pointer', color: 'white' }} className="fas fa-sun" onClick={this.changeMode} />
 
@@ -1174,23 +1330,23 @@ class Table extends Component {
                         </nav>
                     </div>
                 </header>
-                
+
                 {isLoading ? <LoadingScreen /> : <>
-                <Particles
-                    id="tsparticles"
-                    options={{
-                        // Configuration des options des particules
-                        particles: {
-                            number: {
-                                value: 80,
+                    <Particles
+                        id="tsparticles"
+                        options={{
+                            // Configuration des options des particules
+                            particles: {
+                                number: {
+                                    value: 80,
+                                },
+                                // ... autres options de configuration
                             },
-                            // ... autres options de configuration
-                        },
-                    }}
-                />
-                <div className="w-full h-screen absolute">
-                    <Design />
-                </div>
+                        }}
+                    />
+                    <div className="w-full h-screen absolute">
+                        <Design />
+                    </div>
 
                     {/*-------------------------$------------------------*/}
                     <div style={{ display: 'block', position: 'relative' }}>
@@ -1406,7 +1562,7 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>
-                                            Not available in your country
+                                                Not available in your country
 
                                             </p>
                                         </div>
@@ -1736,7 +1892,7 @@ class Table extends Component {
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
-                                                                <div id="NetflixPrivatePrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div id="NetflixPrivatePrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE: $</div>
                                                                 <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
                                                                 <button onClick={this.buyPrivateNetflix} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
                                                             </div>
@@ -1799,10 +1955,10 @@ class Table extends Component {
                                                         <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
                                                             <div style={{ width: '100%', padding: '10px' }}>
                                                                 <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Netflix Shared Subscription</h5>
-                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads.</p>
                                                             </div>
                                                             <hr />
-                                                            <div style={{ width: '100%', padding: '10px',display:'none' }}>
+                                                            <div style={{ width: '100%', padding: '10px', display: 'none' }}>
                                                                 <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
                                                                 <select name id="type" className='select-style notThisSelect' onChange={this.calculateNetflixPrice}>
                                                                     <option value="-">Choose</option>
@@ -1826,7 +1982,7 @@ class Table extends Component {
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
-                                                                <div id="NetflixPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div id="NetflixPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE: Unavailable</div>
                                                                 <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
                                                                 <button onClick={this.buyNetflix} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
                                                             </div>
@@ -1972,11 +2128,11 @@ class Table extends Component {
                                                                 <select name className='notThisSelect' id="shahidType">
                                                                     <option value="-">Choose</option>
                                                                     <option value={0}>1 PROFILE</option>
-                                                                    
+
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
-                                                                <div id="shahidPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE:</div>
+                                                                <div id="shahidPrice" style={{ fontWeight: 'bold', margin: '5px' }}>PRICE: </div> $
                                                                 <div style={{ fontWeight: '200' }}>WARRANTY IS UNCLUEDED</div>
                                                                 <button onClick={this.buyShahid} className="btn btn-success" style={{ borderRadius: '8px', color: 'white', margin: '5px' }}>BUY NOW!</button>
                                                             </div>
@@ -2034,11 +2190,11 @@ class Table extends Component {
                                                                 <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
                                                                 <select name id="canvaMonths">
                                                                     <option value="-">Choose</option>
-                                                                    <option value={4}> 1 MONTHS</option>
-                                                                    <option value={6}> 6 MONTHS</option>
-                                                                    <option value={8}>12 MONTHS</option>
-                                                                    <option value={15}>36 MONTHS</option>
-                                                                    <option value={18}>LIFETIME (Edu)</option>
+                                                                    <option value={'4 $'}> 1 MONTHS</option>
+                                                                    <option value={'6 $'}> 6 MONTHS</option>
+                                                                    <option value={'8 $'}>12 MONTHS</option>
+                                                                    <option value={'15 $'}>36 MONTHS</option>
+                                                                    <option value={'18 $'}>LIFETIME (Edu)</option>
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -2652,7 +2808,7 @@ class Table extends Component {
                             <p className="titleProduct streamingService">OUR STREAMING <span>SERVICES</span></p>
                             <div className="container10">
                                 <div className="wrapper">
-                                    <img src="nba.png" alt="" />
+                                    <img src="leaguepass.jpeg" alt="" />
                                     <div className="content">
                                         <span>NBA LEAGUE PASS</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
@@ -2681,7 +2837,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="hulu.png" alt="" />
+                                    <img src="hulu.jpeg" alt="" />
                                     <div className="content">
                                         <span>HULU</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
@@ -2712,7 +2868,7 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="ufc.png" alt="" />
+                                    <img src="ufcfight.jpeg" alt="" />
                                     <div className="content">
                                         <span>UFC FIGHT PASS</span>
                                         <h6 className="SocialInfos">( + WARRANTY )</h6>
@@ -2754,9 +2910,9 @@ class Table extends Component {
                                         <p>
                                             <select name id="firstUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="55 $">100M +ALL TABLES </option>
-                                                <option value="55 $">DIAMOND CUE</option>
-                                                <option value="155 $">1B💸 + diamond CUE💎 + OUTBREAK </option>
+                                                <option value="6.13 $">100M +ALL TABLES </option>
+                                                <option value="6.13 $">DIAMOND CUE</option>
+                                                <option value="16.89 $">1B💸 + diamond CUE💎 + OUTBREAK </option>
                                             </select>
                                         </p>
                                     </div>
@@ -2782,14 +2938,14 @@ class Table extends Component {
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="crosscomms.jpeg" alt="" />
+                                    <img src="travisSkin.jpeg" alt="" />
                                     <div className="content">
-                                        <span>CROSS COMMS</span>
-                                        <h6 className="SocialInfos">( TOP UP IN YOUR ACCOUNT )</h6>
+                                        <span>TRAVIS SCOTT </span>
+                                        <h6 className="SocialInfos">( PRIVATE ACCOUNT )</h6>
                                         <p>
                                             <select name id="secondUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="7.23 $">ON MY ACCOUNT</option>
+                                                <option value="71 $">TRAVIS + TRILLOGY + 46 SKINS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2804,19 +2960,20 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>After buying, we will need your fortnite account to login and buy this pack </p>
+                                            <p>1 Account is available with a reasonable price </p>
+                                            <p>This is a Full access Acouunt. means you ca change email and password </p>
                                         </div>
                                     </div>
                                 </div>
                                 <div className="wrapper">
-                                    <img src="harley.jpeg" />
+                                    <img src="intrepidSkin.jpeg" />
                                     <div className="content">
-                                        <span>HARLEY QUINN </span> <br />
+                                        <span>INTREPID PACK </span> <br />
                                         <h6 className="SocialInfos">( GIFT CARD [KEY] )</h6>
                                         <p>
                                             <select name id="thirdUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="14.87 $">ON MY ACCOUNT</option>
+                                                <option value="15 $">ON MY ACCOUNT</option>
                                             </select>
                                         </p>
                                     </div>
@@ -2916,7 +3073,7 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="vbucks.jpeg" alt="" />
                                     <div className="content">
-                                        <span>13k V-BUCKS ACCOUNT</span>
+                                        <span>13k V-BUCKS</span>
                                         <h6 className="SocialInfos">( PRIVATE + MAIL ACCESS )</h6>
                                         <p>
                                             <select name id="GrapplingClaw3">
@@ -3035,7 +3192,7 @@ class Table extends Component {
                                 </div>
                             </div>
                             {/*STEAM services*/}
-                            <p className="titleProduct steam">OUR STEAM <span>SERVICES</span></p>
+                            <p className="titleProduct steam">OUR PC <span>GAMES</span></p>
 
                             <div className="container10">
 
@@ -3271,7 +3428,7 @@ class Table extends Component {
                                 </div>
                             </div>
                             {/*morocco services*/}
-                            <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span>(Achat f compte dialk)</p>
+                            <p className="titleProduct psPlusSlide">OUR <span>PS PLUS SERVICES </span></p>
                             <div className="container10 " id='container10'>
                                 <div className="wrapper">
                                     <img src="psPlus1Months.jpeg" alt="" />
@@ -3372,6 +3529,87 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>✅ Ps+ Subscription on your account, After buying you will just need to send us via WhatsApp the email and password of your psn account <br /> More info CONTACT US +212 637976257</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper">
+                                    <img src="eaplayPlaystation.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>EA Play - 1 Month</span>
+                                    </div>
+                                    <div className="row">
+                                        <div className="price">PRICE : $16.86</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyea1Monthps}>BUY</button>
+                                            {/*PSN5EU  */}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                1. Power on your PlayStation console and ensure it's connected to the internet. <br />
+                                                2. Go to the PlayStation Store and select your Avatar at the top of the screen. <br />
+                                                3. Choose "Redeem Codes" from the drop-down menu. <br />
+                                                4. Enter the provided code carefully and select "Redeem". <br />
+                                                5. The credit or content associated with the code will be applied to your account. <br />
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper">
+                                    <img src="eaplayPlaystation.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>EA Play - 6 Months</span>
+                                    </div>
+                                    <div className="row">
+                                        <div className="price">PRICE : $26.46</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyea6Monthsps}>BUY</button>
+                                            {/*PSN10EU  */}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                1. Power on your PlayStation console and ensure it's connected to the internet. <br />
+                                                2. Go to the PlayStation Store and select your Avatar at the top of the screen. <br />
+                                                3. Choose "Redeem Codes" from the drop-down menu. <br />
+                                                4. Enter the provided code carefully and select "Redeem". <br />
+                                                5. The credit or content associated with the code will be applied to your account. <br />
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="wrapper">
+                                    <img src="eaplayPlaystation.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>EA Play - 12 Months</span>
+                                    </div>
+                                    <div className="row">
+                                        <div className="price">PRICE : $32.43</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyea12Monthsps}>BUY</button>
+                                            {/*PSN20EU  */}
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>
+                                                1. Power on your PlayStation console and ensure it's connected to the internet. <br />
+                                                2. Go to the PlayStation Store and select your Avatar at the top of the screen. <br />
+                                                3. Choose "Redeem Codes" from the drop-down menu. <br />
+                                                4. Enter the provided code carefully and select "Redeem". <br />
+                                                5. The credit or content associated with the code will be applied to your account. <br />
+                                            </p>
+
                                         </div>
                                     </div>
                                 </div>
@@ -3483,9 +3721,9 @@ class Table extends Component {
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="f1Plateforme">
                                             <option value="-">Choose</option>
                                             <option value="290 $ " disabled>PS4 Primary</option>
-                                            <option value="17 $ ">PS4 Secondary</option>
+                                            <option value="18.46 $ ">PS4 Secondary</option>
                                             <option value="300 $" disabled>PS5 Primary</option>
-                                            <option value="19 $ ">PS5 Secondary</option>
+                                            <option value="20.76 $ ">PS5 Secondary</option>
                                         </select>
                                         <div className="buttons">
                                             <div id="f1Price" className="price">PRICE :</div>
@@ -3511,7 +3749,7 @@ class Table extends Component {
                                     <div className="row">
                                         <select style={{ borderRadius: '12px', padding: '1px', color: '#000000', fontWeight: 'bold', fontSize: '11px' }} id="gtaPlateforme">
                                             <option value="-">Choose</option>
-                                            <option value="23.39 $ ">PS4 Compte kaml</option>
+                                            <option value="23.39 $ ">PS4 Full Access</option>
 
                                         </select>
                                         <div className="buttons">
@@ -3646,205 +3884,122 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <p className="titleProduct giftCardsAndAccount">OUR <span>WINDOWS KEY </span>/<span> ACCOUNT</span> / <span> GAMEPASS</span> </p>
-                            <div className="container4">
-                                <div className="wrapper">
-                                    <img src="psn5euro.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>PSN 5€ - France</span>
-                                    </div>
-                                    <div className="row">
-                                        <div className="price">PRICE : Unavailable</div>
-                                        <div className="buttons">
-                                            <button /* onClick={this.buyPsn5euro} */>BUY</button>
-                                            {/*PSN5EU  */}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                PSN GIFT CARD <br /> How to redeem it ? <br />  1- Go to PlayStation Store and click on your Avatar at the top of the screen.<br />
-                                                2- Select Redeem Codes from the drop-down menu.<br />
-                                                3- Carefully enter the code and select Redeem.<br />
-                                                4- The credit or content is now applied to your account
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="psn10euro.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>PSN 10€ - France</span>
-                                    </div>
-                                    <div className="row">
-                                    <div className="price">PRICE : Unavailable</div>
-                                        <div className="buttons">
-                                            <button /* onClick={this.buyPsn10euro} */>BUY</button>
-                                            {/*PSN10EU  */}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                PSN GIFT CARD <br /> How to redeem it ? <br />  1- Go to PlayStation Store and click on your Avatar at the top of the screen.<br />
-                                                2- Select Redeem Codes from the drop-down menu.<br />
-                                                3- Carefully enter the code and select Redeem.<br />
-                                                4- The credit or content is now applied to your account
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="wrapper">
-                                    <img src="psn20euro.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>PSN 20€ - France</span>
-                                    </div>
-                                    <div className="row">
-                                    <div className="price">PRICE : Unavailable</div>
-                                        <div className="buttons">
-                                            <button /* onClick={this.buyPsn20euro} */>BUY</button>
-                                            {/*PSN20EU  */}
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p>
-                                                PSN GIFT CARD <br /> How to redeem it ? <br />  1- Go to PlayStation Store and click on your Avatar at the top of the screen.<br />
-                                                2- Select Redeem Codes from the drop-down menu.<br />
-                                                3- Carefully enter the code and select Redeem.<br />
-                                                4- The credit or content is now applied to your account
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <h4 style={{ fontWeight: 'bold' }} className="containerText3" onClick={() => { // Use onClick instead of onclick
-                                document.querySelector('.container5').style.display = 'flex';
-                                document.querySelector('.containerText2').style.display = 'none';
-                                document.querySelector('.containerText3').style.display = 'none';
-                                document.querySelector('.containerText4').style.display = 'block';
-                            }}>
-                                SHOW MORE
-                            </h4>
-                            {/*Voir plus gift cardes */}
-                            <div className="container5">
-                                <div className="wrapper">
-                                    <img src="PSplusAccount.jpeg" alt="" />
-                                    <div className="content">
-                                        <span>PSN ACCOUNT </span>
-                                        <p>
-                                            <select name id="psnAccountService">
-                                                <option value="-" >Choose</option>
-                                                <option disabled value={34}>Not available</option>
+                            <p className="titleProduct ">YOUR DESIRED <span>PS GAME </span> </p>
 
-                                            </select>
-                                        </p>
+                            <div className="input-block" style={{ margin: '5px' }}>
+                                <input type="text" name="input-text" id="input-text-ps" required spellCheck="false" placeholder='Smit lgame likhasak'/* onChange={this.handleInputChange} */ />
+                                <div style={{ color: 'red', fontWeight: 'bold', marginTop: '8px' }}> {this.state.message}</div>
+                                <div className="button-containerr">
+                                    <button type="submit" onClick={this.buyPsGameDesired}>
+                                        <FontAwesomeIcon icon={faSearch} /> ORDER THIS
+                                    </button>
+                                    <button type="reset" onClick={() => document.getElementById('input-text-ps').value = ''}>
+                                        <FontAwesomeIcon icon={faTimes} /> RESET
+                                    </button>
+
+                                </div>
+                            </div>
+                            <p className="titleProduct ">XBOX <span>GAMES </span> </p>
+
+                            <div className="container2">
+                                <div className="wrapper2">
+                                    <img src="fifa23Banner.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>FIFA 23</span>
                                     </div>
                                     <div className="row">
-                                        <div id="psnAccount" className="price">PRICE :</div>
+
                                         <div className="buttons">
-                                            <button style={{ cursor: 'not-allowed' }}>BUY</button>
+                                            <div id="f1Price" className="price">PRICE : $27.46</div>
+                                        </div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyFifa23xbox}>BUY</button>
+                                            {/*F1*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>...</p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="psPlus.jpeg" alt="" />
+                                <div className="wrapper2">
+                                    <img src="gta5Games.png" alt="" />
                                     <div className="content">
-                                        <span>PSN GIFT CARD</span>
-                                        <p>
-                                            <select name id="psnService">
-                                                <option value="-" >Choose</option>
-                                                <option value={4} disabled>Not available</option>
-                                            </select>
-                                        </p>
+                                        <span>GTA 5</span>
                                     </div>
                                     <div className="row">
-                                        <div id="psn" className="price">PRICE :</div>
+
                                         <div className="buttons">
-                                            <button style={{ cursor: 'not-allowed' }}>BUY</button>
+                                            <div id="gtaPrice" className="price">PRICE : $17.46</div>
+                                        </div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyGta5xbox}>BUY</button>
+                                            {/*GTA 5*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                PSN GIFT CARD <br /> How to redeem it ? <br />  1- Go to PlayStation Store and click on your Avatar at the top of the screen.<br />
-                                                2- Select Redeem Codes from the drop-down menu.<br />
-                                                3- Carefully enter the code and select Redeem.<br />
-                                                4- The credit or content is now applied to your account
-                                            </p>
+                                            <p>Compte kaml t9dr tbdl Email / Pass</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="valoCard.jpeg" alt="" />
+                                <div className="wrapper2">
+                                    <img src="minecraft.jpeg" alt="" />
                                     <div className="content">
-                                        <span>VALORANT </span>
-                                        <p>
-                                            <select name id="valoService">
-                                                <option value="-">Choose</option>
-                                                <option value={18}>1000 PTS</option>
-                                            </select>
-                                        </p>
+                                        <span>MINECRAFT</span>
                                     </div>
                                     <div className="row">
-                                        <div id="valo" className="price">PRICE :</div>
+
                                         <div className="buttons">
-                                            <button onClick={this.buyValoService}>BUY</button>
+                                            <div id="ragnarokPrice" className="price">PRICE : $12.46</div>
+                                        </div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyMinecraftxbox}>BUY</button>
+                                            {/*RAGNAROK*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>Valorant Redeem Card <br />
-                                                How to redeem it ?<br />
-                                                1- Log into the VALORANT game client.<br />
-                                                2- Click on the VALORANT icon located to the right of the Store tab.<br />
-                                                3- Select Prepaid Cards and Codes.<br />
-                                                4- Input the code provided for your card.<br />
-                                                5- Press Submit.<br />
-                                                Enjoy your VALORANT Points!<br />
-                                            </p>
+                                            <p>There is no Description for this product</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <h4 style={{ fontWeight: 'bold' }} className="containerText4" onClick={() => {
-                                document.querySelector('.container6').style.display = 'flex';
-                                document.querySelector('.containerText2').style.display = 'none';
-                                document.querySelector('.containerText3').style.display = 'block';
-                                document.querySelector('.containerText4').style.display = 'none';
-                                document.querySelector('.containerText5').style.display = 'block';
-                            }}>
-                                SHOW MORE
-                            </h4>
-                            {/* 2EME Voir plus gift cardes */}
-                            <div className="container6">
+                            <p className="titleProduct ">YOUR DESIRED <span>XBOX GAME </span> </p>
+
+                            <div className="input-block" style={{ margin: '5px' }}>
+                                <input type="text" name="input-text" id="input-text-xbox" required spellCheck="false" placeholder='Smit lgame likhasak'/* onChange={this.handleInputChange} */ />
+                                <div style={{ color: 'red', fontWeight: 'bold', marginTop: '8px' }}> {this.state.message}</div>
+                                <div className="button-containerr">
+                                    <button type="submit" onClick={this.buyXboxGameDesired}>
+                                        <FontAwesomeIcon icon={faSearch} /> ORDER THIS
+                                    </button>
+                                    <button type="reset" onClick={() => document.getElementById('input-text-xbox').value = ''}>
+                                        <FontAwesomeIcon icon={faTimes} /> RESET
+                                    </button>
+
+                                </div>
+                            </div>
+
+                            <p className="titleProduct giftCardsAndAccount">XBOX <span>SERVICES </span> </p>
+                            <div className="container10">
                                 <div className="wrapper">
-                                    <img src="Social_1920x1080.jpeg" alt="" />
+                                    <img src="xboxlivegold.jpeg" alt="" />
                                     <div className="content">
                                         <span>XBOX LIVE GOLD</span>
                                         <p>
                                             <select name id="goldService">
                                                 <option value="-">Choose</option>
-                                                <option value={34} disabled>1 MONTHS</option>
-                                                <option value={26}>3 MONTHS</option>
-                                                <option value={68}>12 MONTHS</option>
+                                                <option value={34} disabled>1 MONTH</option>
+                                                <option value={'22 $'}>3 MONTHS</option>
+                                                <option value={'45.23 $'}>12 MONTHS</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3872,46 +4027,22 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div className="wrapper">
-                                    <img src="06cKTfUyIqRfNTFQseP6AUC-1..v1569486124.png" alt="" />
-                                    <div className="content">
-                                        <span>ITUNES</span>
-                                        <p>
-                                            <select name id="itunesService">
-                                                <option value="-">Choose</option>
 
-
-                                            </select>
-                                        </p>
-                                    </div>
-                                    <div className="row">
-                                        <div id="itunes" className="price">PRICE :</div>
-                                        <div className="buttons">
-                                            <button style={{ cursor: 'not-allowed' }} onClick={this.buyItunes}>BUY</button>
-                                            <button className="info-btn">INFOS</button>
-                                        </div>
-                                    </div>
-                                    <div className="modal">
-                                        <div className="modal-content">
-                                            <span className="close-btn">×</span>
-                                            <p></p>
-                                        </div>
-                                    </div>
-                                </div>
                                 <div className="wrapper">
-                                    <img src="GWhZq4.jpeg" alt="" />
+                                    <img src="gamepass.jpeg" alt="" />
                                     <div className="content">
                                         <span>XBOX GAME PASS </span>
                                         <p>
                                             <select name id="gamepassService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">--Xbox & Pc--</option>
-                                                <option value={9}>2 Months</option>
-                                                <option value={16}>4 Months</option>
+                                                <option disabled value={'9.97 $'}>2 Months</option>
                                                 <option disabled value="-">--Only Pc--</option>
-                                                <option value={8}>3 Months</option>
-                                                <option disabled value="-">--Top Up--</option>
-                                                <option value={34}>10 Months</option>
+                                                <option value={'17.23 $'}>3 Months</option>
+                                                <option disabled value="-">--Only Console--</option>
+                                                <option value={'22 $'}>3 Months</option>
+                                                
+                                                
 
 
 
@@ -3943,26 +4074,114 @@ class Table extends Component {
                                     </div>
                                 </div>
                             </div>
-                            <h4 style={{ fontWeight: 'bold' }} class="containerText5" onClick={() => {
-                                document.querySelector('.container7').style.display = 'flex';
-                                document.querySelector('.containerText2').style.display = 'none';
-                                document.querySelector('.containerText3').style.display = 'none';
-                                document.querySelector('.containerText4').style.display = 'none';
-                                document.querySelector('.containerText5').style.display = 'none';
-                            }}>
-                                SHOW MORE
-                            </h4>
-                            {/* TROISIEME Voir plus gift cardes */}
-                            <div className="container7">
+
+
+
+                            <p className="titleProduct giftCardsAndAccount">OTHER <span>SERVICES </span> </p>
+
+                            <div className="container10">
+
                                 <div className="wrapper">
-                                    <img src="steam.png" alt="" />
+                                    <img src="valorant.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>VALORANT </span>
+                                        <p>
+                                            <select name id="valoService">
+                                                <option value="-">Choose</option>
+                                                <option disabled value={160}>Out of stock</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="valo" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyValoService}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>Valorant Redeem Card <br />
+                                                How to redeem it ?<br />
+                                                1- Log into the VALORANT game client.<br />
+                                                2- Click on the VALORANT icon located to the right of the Store tab.<br />
+                                                3- Select Prepaid Cards and Codes.<br />
+                                                4- Input the code provided for your card.<br />
+                                                5- Press Submit.<br />
+                                                Enjoy your VALORANT Points!<br />
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="office.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>OFFICE </span>
+                                        <p>
+                                            <select name id="officeService">
+                                                <option value="-">Choose</option>
+                                                <option disabled value="-">-- PRIVATE ACCOUNT --</option>
+                                              
+                                                <option value="11.47 $"> OFFICE 2019 LIFETIME</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="office" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyOffice}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>There is no Description for this product</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="windows.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>WINDOWS KEY </span>
+                                        <p>
+                                            <select name id="windowsService">
+                                                <option value="-">Choose</option>
+                                                <option disabled value="-">--LIFETIME KEY--</option>
+                                                <option value="9.56 $">WINDOWS 10 Official </option>
+                                                <option value="11.51 $">WINDOWS 11 Official</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="windows" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyWindows}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                            <p>There is no Description for this product</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div className="wrapper">
+                                    <img src="steam.jpeg" alt="" />
                                     <div className="content">
                                         <span>STEAM CARDS</span>
                                         <p>
                                             <select name id="steamService">
                                                 <option value="-">Choose</option>
-                                                <option value={18}>10 Euro</option>
-                                                <option value={31}>20 Euro</option>
+                                                <option  disabled value={'160 $'}>Out of stock</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3988,74 +4207,151 @@ class Table extends Component {
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="wrapper">
-                                    <img src="ROBLOX.JPEG" alt="" />
+                                    <img src="cvDesign.jpeg" alt="" />
                                     <div className="content">
-                                        <span>ROBLOX</span>
+                                        <span>CV Design</span>
                                         <p>
-                                            <select name id="robloxService">
+                                            <select name id="cvdesignService">
                                                 <option value="-">Choose</option>
-                                                <option disabled value="-">-ROBUX + PREMIUM-</option>
-                                                <option value="13 $">1k RBX + 1 Month </option>
-                                                <option value="23 $">2k RBX + 1 Month </option>
-                                                <option disabled value="-">--ONLY ROBUX--</option>
-                                                <option value="13.76 $">800 RBX </option>
-                                                <option value="16.65 $">1200 RBX </option>
-                                                <option value="23.43 $">1700 RBX </option>
-                                                <option value="26.53 $">2000 RBX </option>
-                                                <option value="52 $">4500 RBX </option>
+                                                <option value={'3.57 $'}>1 CV</option>
+                                                <option value={'6.76 $'}>2 CV</option>
+                                               
                                             </select>
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="roblox" className="price">PRICE :</div>
+                                        <div id="cvdesign" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyRoblox}>BUY</button>
+                                            <button onClick={this.buyCvDesign}>BUY</button>
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p>
-                                                <span style={{ fontWeight: 'bold' }}>How to redeem it ?</span> <br />
-
-                                                STEP 1: Use a browser to access your Roblox account.<br />
-                                                STEP 2: Navigate to the Code Redeem Page www.roblox.com /redeem.<br />
-                                                STEP 3: Fill in the blanks with your code.<br />
-                                                STEP 4: Click the Redeem button.<br />
+                                            <p> <span style={{ fontWeight: 'bold' }}>How it works ?</span> <br />
+                                                1- ALL THI STEPS ARE AFTER BUYING.<br />
+                                                2- WE WILL SEND YOU SOME DESIGN TO CHOOSE YOUR DESIRED.<br />
+                                                3- YOU WILL GIVE US THE WHOLE INFORMATION YOU WANT ON YOUR CV.<br />
+                                                4- WHEN IT IS DONE, WE WILL SEND IT TO YOU IMMEDIATELY TO GIVE AN OPINION. <br />
+                                               
                                             </p>
                                         </div>
                                     </div>
                                 </div>
+
                                 <div className="wrapper">
-                                    <img src="windows.png" alt="" />
+                                    <img src="adobeCreative.jpeg" alt="" />
                                     <div className="content">
-                                        <span>LIFETIME KEY </span>
+                                        <span>ADOBE CREATIVE CLOUD</span>
                                         <p>
-                                            <select name id="officeService">
+                                            <select name id="adobeService">
                                                 <option value="-">Choose</option>
-                                                <option disabled value="-">--LIFETIME KEY--</option>
-                                                <option value="10 $">WINDOWS 10 PRO</option>
-                                                <option value="11.86 $">WINDOWS 11 PRO</option>
-                                                <option value="13.89 $"> OFFICE</option>
+                                                <option value={'9.57 $'}>1 MOIS</option>
+                                                <option value={'20 $'}>3 MOIS</option>
                                             </select>
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="office" className="price">PRICE :</div>
+                                        <div id="adobe" className="price">PRICE :</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyOffice}>BUY</button>
+                                            <button onClick={this.buyAdobe}>BUY</button>
                                             <button className="info-btn">INFOS</button>
                                         </div>
                                     </div>
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                            <p></p>
+                                                                                        <p>There is no Description for this product</p>
+
                                         </div>
                                     </div>
                                 </div>
+
+                                <div className="wrapper">
+                                    <img src="chatGpt.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>CHAT GPT</span>
+                                        <p>
+                                            <select name id="gptService">
+                                                <option value="-">Choose</option>
+                                                <option value={'3.34 $'}>GPT DEVELOPPER MODE</option>
+                                                <option value={'6.43 $'}>GPT PLUS </option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="gpt" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyGpt}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                                                                        <p>The developper mode will allow GPT to answer all type of questions without any restriction (Like giving an opinion or saying a bad words) </p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="apex.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>APEX LEGENDS</span>
+                                        <p>
+                                            <select name id="apexService">
+                                                <option value="-">Choose</option>
+                                                <option value={'Contact Us'}> HEIRLOOM</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="apex" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyApex}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                                                                        <p>There is no Description for this product</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="wrapper">
+                                    <img src="avakinLife.jpeg" alt="" />
+                                    <div className="content">
+                                        <span>AVAKIN LIFE</span>
+                                        <p>
+                                            <select name id="avakinService">
+                                                <option value="-">Choose</option>
+                                                <option value={'28.23 $'}>60 000 AVACOINS</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                    <div className="row">
+                                        <div id="avakin" className="price">PRICE :</div>
+                                        <div className="buttons">
+                                            <button onClick={this.buyAvakin}>BUY</button>
+                                            <button className="info-btn">INFOS</button>
+                                        </div>
+                                    </div>
+                                    <div className="modal">
+                                        <div className="modal-content">
+                                            <span className="close-btn">×</span>
+                                                                                        <p>There is no Description for this product</p>
+
+                                        </div>
+                                    </div>
+                                </div>
+
                             </div>
                             {/*benefits*/}
                             <p className="benefitQuestion">WHY <span> CHOOSE</span> US ? </p>
@@ -4086,7 +4382,6 @@ class Table extends Component {
                             {/*reviews*/}
                             <p className="benefitQuestion">OUR <span> SATISFIED</span> CUSTOMERS </p><br />
 
-                            order by numType DSC limits 1
 
                             <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
 

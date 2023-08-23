@@ -107,9 +107,9 @@ const ReportForm = () => {
                 <div className="bottom-details">
                     <div className="bottom_text">
                         <span className="copyright_text">Copyright © 2023. All rights reserved </span>
-                        <span class="policy_terms">
+                        {/* <span class="policy_terms">
                             <a href>Privacy policy</a>
-                        </span>
+                        </span> */}
                         <span style={{ fontSize: '12px' }}>Powered By Digital Store</span>
                         
                     </div>

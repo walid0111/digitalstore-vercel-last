@@ -732,12 +732,13 @@ div.input-block {
 div.input-block input {
     font-weight: 500;
     font-size: 1rem;
-    color: #495055;
-    width: 350px;
+    color: #000000;
+    width: 75%;
     padding: 15px 15px;
     border-radius: 1rem;
     border: 2px solid #000000;
     outline: none;
+    background-color: rgb(236, 234, 234);
 }
 
 div.input-block span.placeholder {

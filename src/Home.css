@@ -694,9 +694,8 @@ header {
     border: solid 1px black;
 }
 
-.container6 .wrapper {
-    border: solid 1px black;
-}
+
+
 
 .container7 .wrapper {
     border: solid 1px black;
@@ -796,9 +795,7 @@ header {
     border: solid 1px white;
 }
 
-.container6 .wrapper {
-    border: solid 1px white;
-}
+
 
 .container7 .wrapper {
     border: solid 1px white;
@@ -1522,14 +1519,14 @@ header {
     }
 
     .buttons button:last-child {
-        background: #0584d8;
+        background: #008507;
         color: rgb(255, 253, 253);
         margin-left: 10px;
         border-radius: 13px;
     }
 
     .buttons button:first-child:hover {
-        background: #008507;
+        background: #02b00b;
         color: #fff;
     }
 
@@ -1652,27 +1649,6 @@ header {
             align-items: center;
         } */
 
-.container6 {
-    margin-top: 20px;
-    max-width: 1130px;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-
-}
-
-.container6 .wrapper {
-
-    width: calc(33% - 13px);
-    border-radius: 30px;
-    background: rgb(0, 0, 0);
-    transition: all 0.3s ease;
-
-
-}
 
 
 
@@ -1689,9 +1665,7 @@ header {
         width: calc(33% - 20px);
     }
 
-    .container6 .wrapper {
-        width: calc(33% - 20px);
-    }
+    
 }
 
 @media (max-width: 680px) {
@@ -1723,9 +1697,7 @@ header {
         padding: 5px 10px 5px 10px;
     }
 
-    .container6 .wrapper .content {
-        padding: 5px 10px 5px 10px;
-    }
+   
 
 
 
@@ -1757,20 +1729,7 @@ header {
         align-items: center;
     }
 
-    .container6 .wrapper img {
-        padding: 5px;
-        width: 100%;
-        height: 128px;
-        border-radius: 25px 25px 0 0;
-        border-rdius: 3px;
-
-        margin-left: auto;
-        margin-right: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
+   
     .container7 .wrapper img {
         padding-top: 3px;
         width: 98%;
@@ -1849,68 +1808,17 @@ header {
     }
 }
 
-.containerText4 {
-    text-align: center;
-    display: none;
-    cursor: pointer;
-    margin-top: 10px;
-    animation: slidein infinite 1s;
-}
+
 
 /*     <!--second Show more gift cardes-->
  */
-.container6 {
-    margin-top: 20px;
-    max-width: 1130px;
-    display: none;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    margin-left: auto;
-    margin-right: auto;
-    display: none;
-
-}
-
-.container6 .wrapper {
-
-    width: calc(33% - 13px);
-    border-radius: 30px;
-    background: rgb(0, 0, 0);
-    transition: all 0.3s ease;
 
 
-}
 
-.container6 .wrapper img {
-    padding-top: 3px;
-    width: 98%;
-    height: 150px;
-    border-radius: 25px 25px 0 0;
 
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-.container6 .wrapper .content {
-    padding: 10px 20px 10px 20px;
-}
 
-@media (max-width: 1080px) {
-    .container6 .wrapper {
-        width: calc(33% - 20px);
-    }
-}
 
-@media (max-width: 680px) {
-    .container6 .wrapper {
-        width: 48%;
-        margin-bottom: 20px;
-    }
-}
 
 @keyframes slidein {
     from {
@@ -1925,7 +1833,6 @@ header {
 .containerText5 {
     text-align: center;
 
-    display: none;
     cursor: pointer;
     margin-top: 10px;
     animation: slidein infinite 1s;
@@ -1938,13 +1845,11 @@ header {
 .container7 {
     margin-top: 20px;
     max-width: 1130px;
-    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
-    display: none;
 
 }
 
@@ -2032,7 +1937,6 @@ header {
 .container15 {
     margin-top: 20px;
     max-width: 1130px;
-    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -2092,7 +1996,6 @@ header {
 .container9 {
     margin-top: 20px;
     max-width: 1130px;
-    display: none;
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
@@ -2151,10 +2054,9 @@ header {
 .container10 {
     margin-top: 20px;
     max-width: 1130px;
-    display: none;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     display: flex;

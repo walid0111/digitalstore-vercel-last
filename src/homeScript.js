@@ -61,7 +61,7 @@ export default function setupMenu() {
 
         if (profileSelect.value != '-' && standardSelect.value != '-' && accountTypSelect.value != '-') {
             const totalPrice = standardValue + profileValue + typeValue;
-            netflixPriceSpan.innerHTML = "PRICE : " + totalPrice + ' MAD';
+            netflixPriceSpan.innerHTML = "PRICE : " + totalPrice + ' ';
         }
     }
 
@@ -112,7 +112,7 @@ export default function setupMenu() {
 
         if (profilePrivateSelect.value != '-' && standardPrivateSelect.value != '-' && accountPrivateTypSelect.value != '-') {
             const totalPrivatePrice = standardPrivateValue + profilePrivateValue + typePrivateValue;
-            netflixPrivatePriceSpan.innerHTML = "PRICE : " + totalPrivatePrice + ' MAD';
+            netflixPrivatePriceSpan.innerHTML = "PRICE : " + totalPrivatePrice + ' ';
         }
     }
 
@@ -139,7 +139,7 @@ export default function setupMenu() {
 
         if (DisneyProfile.value != '-' && DisneyMonths.value != '-') {
             const totalDisneyPrice = profileDisneyValue + typeDisneyValue;
-            DisneyPriceSpan.innerHTML = "PRICE : " + totalDisneyPrice + ' MAD';
+            DisneyPriceSpan.innerHTML = "PRICE : " + totalDisneyPrice + ' ';
         }
     }
 
@@ -163,7 +163,7 @@ export default function setupMenu() {
 
         if (nitroSelect.value != '-' && typeNitroSelect.value != '-' && accountTypeSelect.value != '-') {
             const totalDiscordPrice = typeNitroSelectValue + nitroSelectValue + accountTypeSelectValue;
-            DiscordPriceSpan.innerHTML = "PRICE : " + totalDiscordPrice + ' MAD';
+            DiscordPriceSpan.innerHTML = "PRICE : " + totalDiscordPrice + ' ';
         }
     }
 
@@ -191,33 +191,15 @@ export default function setupMenu() {
         const shahidProfileValue = parseInt(shahidProfileSelect.value);
         const shahidTypeValue = parseInt(shahidType.value);
 
-        if (shahidProfileSelect.value != '-' && shahidType.value != '-') {
+        if (shahidProfileSelect.value != '-') {
             const totalShahidPrice = shahidProfileValue + shahidTypeValue;
-            shahidPriceSpan.innerHTML = "PRICE : " + totalShahidPrice;
+            shahidPriceSpan.innerHTML = "PRICE : " + totalShahidPrice +' '
         }
     }
 
     shahidProfileSelect.addEventListener('change', calculateShahidPrice);
     shahidType.addEventListener('change', calculateShahidPrice);
 
-    //hbo script
-    const hboProfileSelect = document.getElementById('hboProfile');
-    const hboType = document.getElementById('hboMonths');
-
-    const hboPriceSpan = document.getElementById('hboPrice');
-
-    function calculateShahidPrice() {
-        const hboProfileValue = parseInt(hboProfileSelect.value);
-        const hboTypeValue = parseInt(hboType.value);
-
-        if (hboProfileSelect.value != '-' && hboType.value != '-') {
-            const totalhboPrice = hboProfileValue + hboTypeValue;
-            hboPriceSpan.innerHTML = "PRICE : " + totalhboPrice;
-        }
-    }
-
-    shahidProfileSelect.addEventListener('change', calculateShahidPrice);
-    shahidType.addEventListener('change', calculateShahidPrice);
     // canva script
 
     const selectCanva = document.getElementById("canvaMonths");
@@ -435,36 +417,16 @@ export default function setupMenu() {
     selectUfcFight.addEventListener("change", function () {
         spanUfcFight.innerText = "PRICE : " + selectUfcFight.value;
     });
-    // itunes script
 
-    const selectItunes = document.getElementById("itunesService");
-    const spanItunes = document.getElementById("itunes");
-    selectItunes.addEventListener("change", function () {
-        spanItunes.innerText = "PRICE : " + selectItunes.value + " MAD";
-    });
 
-    // psn gift card script
 
-    const selectPsn = document.getElementById("psnService");
-    const spanPsn = document.getElementById("psn");
-    selectPsn.addEventListener("change", function () {
-        spanPsn.innerText = "PRICE : " + selectPsn.value;
-    });
-
-    // psn account script
-
-    const selectPsnAccount = document.getElementById("psnAccountService");
-    const spanPsnAccount = document.getElementById("psnAccount");
-    selectPsnAccount.addEventListener("change", function () {
-        spanPsnAccount.innerText = "PRICE : " + selectPsnAccount.value + " MAD";
-    });
 
     // valorant script
 
     const selectValo = document.getElementById("valoService");
     const spanValo = document.getElementById("valo");
     selectValo.addEventListener("change", function () {
-        spanValo.innerText = "PRICE : " + selectValo.value + " MAD";
+        spanValo.innerText = "PRICE : " + selectValo.value + " ";
     });
 
     // gamepass script
@@ -472,7 +434,7 @@ export default function setupMenu() {
     const selectGamepass = document.getElementById("gamepassService");
     const spanGamepass = document.getElementById("gamepass");
     selectGamepass.addEventListener("change", function () {
-        spanGamepass.innerText = "PRICE : " + selectGamepass.value + " MAD";
+        spanGamepass.innerText = "PRICE : " + selectGamepass.value + " ";
     });
 
     // xbox live script
@@ -480,7 +442,7 @@ export default function setupMenu() {
     const selectgold = document.getElementById("goldService");
     const spangold = document.getElementById("gold");
     selectgold.addEventListener("change", function () {
-        spangold.innerText = "PRICE : " + selectgold.value + " MAD";
+        spangold.innerText = "PRICE : " + selectgold.value + " ";
     });
 
     // steam script
@@ -488,16 +450,10 @@ export default function setupMenu() {
     const selectSteam = document.getElementById("steamService");
     const spanSteam = document.getElementById("steam");
     selectSteam.addEventListener("change", function () {
-        spanSteam.innerText = "PRICE : " + selectSteam.value + " MAD";
+        spanSteam.innerText = "PRICE : " + selectSteam.value + " ";
     });
 
-    // roblox script
 
-    const selectRoblox = document.getElementById("robloxService");
-    const spanRoblox = document.getElementById("roblox");
-    selectRoblox.addEventListener("change", function () {
-        spanRoblox.innerText = "PRICE : " + selectRoblox.value;
-    });
 
     // office script
 
@@ -506,7 +462,49 @@ export default function setupMenu() {
     selectOffice.addEventListener("change", function () {
         spanOffice.innerText = "PRICE : " + selectOffice.value;
     });
+    // windows key script
 
+    const selectWindows = document.getElementById("windowsService");
+    const spanWindows = document.getElementById("windows");
+    selectWindows.addEventListener("change", function () {
+        spanWindows.innerText = "PRICE : " + selectWindows.value;
+    });
+    // CV DESIGN script
+
+    const selectCvdesign = document.getElementById("cvdesignService");
+    const spanCvdesign = document.getElementById("cvdesign");
+    selectCvdesign.addEventListener("change", function () {
+        spanCvdesign.innerText = "PRICE : " + selectCvdesign.value;
+    });
+    // adobe script
+
+    const selectAdobe = document.getElementById("adobeService");
+    const spanAdobe = document.getElementById("adobe");
+    selectAdobe.addEventListener("change", function () {
+        spanAdobe.innerText = "PRICE : " + selectAdobe.value;
+    });
+    // gpt script
+
+    const selectGpt = document.getElementById("gptService");
+    const spanGpt = document.getElementById("gpt");
+    selectGpt.addEventListener("change", function () {
+        spanGpt.innerText = "PRICE : " + selectGpt.value;
+    });
+     // avakin script
+
+     const selectAvakin = document.getElementById("avakinService");
+     const spanAvakin = document.getElementById("avakin");
+     selectAvakin.addEventListener("change", function () {
+         spanAvakin.innerText = "PRICE : " + selectAvakin.value;
+     }); 
+     
+    // apex script
+
+    const selectApex = document.getElementById("apexService");
+    const spanApex = document.getElementById("apex");
+    selectApex.addEventListener("change", function () {
+        spanApex.innerText = "PRICE : " + selectApex.value;
+    });
 
     // grapplingClaw1 script
 
@@ -589,7 +587,7 @@ export default function setupMenu() {
 
 
 
-                                
+
 
 
 
