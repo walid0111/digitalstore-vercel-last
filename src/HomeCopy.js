@@ -68,7 +68,7 @@ class Table extends Component {
                 document.getElementsByTagName("head")[0].appendChild(script);
 
                         Swal.fire({
-                            title: 'LIMITED PROMOTION !!',
+                            title: 'PROMOTION !!',
                             text: 'Up to 65% Off',
                             icon: 'warning',
                             confirmButtonText: 'Ok',
@@ -4246,7 +4246,7 @@ class Table extends Component {
                                 <div className="wrapper">
                                     <img src="adobeCreative.jpeg" alt="" />
                                     <div className="content">
-                                        <span>ADOBE CREATIVE CLOUD</span>
+                                        <span>ADOBE CREATIVE </span>
                                         <p>
                                             <select name id="adobeService">
                                                 <option value="-">Choose</option>

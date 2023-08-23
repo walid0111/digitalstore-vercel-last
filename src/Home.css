@@ -1005,7 +1005,7 @@ header {
     display: none;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -1150,7 +1150,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
 
@@ -1204,7 +1204,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     display: none;
@@ -1585,7 +1585,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
 
@@ -1620,7 +1620,7 @@ header {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
 
@@ -1761,7 +1761,7 @@ header {
     display: none;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     display: none;
@@ -1847,7 +1847,7 @@ header {
     max-width: 1130px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
 
@@ -1939,7 +1939,7 @@ header {
     max-width: 1130px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     display: flex;
@@ -1998,7 +1998,7 @@ header {
     max-width: 1130px;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     margin-left: auto;
     margin-right: auto;
     display: flex;
