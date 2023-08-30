@@ -1321,7 +1321,7 @@ class Table extends Component {
  */}
 
                             <div name="currency" style={{ backgroundColor: 'black', color: 'white', border: 'none', cursor: 'pointer', paddingLeft: '8px' }}>
-                                <Link to="/$"><FontAwesomeIcon icon={faExchangeAlt} /> $ 🇲🇦</Link>
+                                <Link to="/$"><FontAwesomeIcon icon={faExchangeAlt} /> MAD 🇲🇦</Link>
                             </div>
                             <i id="darkLightMode" style={{ padding: '5px', marginLeft: '40px', cursor: 'pointer', color: 'white' }} className="fas fa-sun" onClick={this.changeMode} />
 
@@ -4041,7 +4041,7 @@ class Table extends Component {
                                                 <option disabled value="-">--Only Pc--</option>
                                                 <option value={'17.23 $'}>3 Months</option>
                                                 <option disabled value="-">--Only Console--</option>
-                                                <option value={'22 $'}>3 Months</option>
+                                                <option value={'27 $'}>3 Months</option>
                                                 
                                                 
 

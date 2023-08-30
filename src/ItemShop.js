@@ -60,7 +60,7 @@ const FortniteItemShop = () => {
                     Ajouter hada 3ndk f les amis Epic :{' '}
                 </p>{' '}
                 <br />{' '}
-                <Typewriter text="DigitalStore_08        " delay={150} />
+                <Typewriter text="DigitalStore_09        " delay={150} />
             </div>
 
             <h1

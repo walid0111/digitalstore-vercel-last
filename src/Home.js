@@ -2055,7 +2055,7 @@ class Table extends Component {
                                                                 <select name id="type" className='select-style notThisSelect' onChange={this.calculateNetflixPrice}>
                                                                     <option value="-">Choose</option>
                                                                     <option value={10}>PREMIUM</option>
-                                                                    <option value={0}>STANDARD</option>
+                                                                    <option value={0} disabled>STANDARD</option>
                                                                 </select>
                                                                 <select name id="standard" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
                                                                     <option value="-">Choose</option>
@@ -4409,7 +4409,7 @@ class Table extends Component {
                                                 <option disabled value="-">--Only Pc--</option>
                                                 <option value={'150 MAD'}>3 Months</option>
                                                 <option disabled value="-">--Only Console--</option>
-                                                <option value={'200 MAD'}>3 Months</option>
+                                                <option value={'250 MAD'}>3 Months</option>
                                                 
 
 
