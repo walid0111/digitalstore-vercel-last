@@ -2946,7 +2946,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="secondUsaService">
                                                 <option value="-">Choose</option>
-                                                <option value="71 $">TRAVIS + TRILLOGY + 46 SKINS</option>
+                                                <option value="80 $">TRAVIS + TRILLOGY + 46 SKINS</option>
                                             </select>
                                         </p>
                                     </div>

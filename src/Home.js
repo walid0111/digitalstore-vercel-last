@@ -3057,10 +3057,7 @@ class Table extends Component {
                                             <span className="close-btn">×</span>
                                             <p>1 Account is available with a reasonable price </p>
                                             <p>This is a Full access Account. means you can change email and password </p> <br/>
-                                            <div>
-                                                <img src ="8BALL.JPEG" width={'100%'}/>
-                                                <img src ="8BALL.JPEG" width='100%'/>
-                                            </div>
+                                            
                                         </div>
                                     </div>
                                 </div>
