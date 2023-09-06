@@ -22,7 +22,6 @@ const RegionSelector = () => {
 
   return (
     <div className="region-selector">
-
       <head>
         <meta
           name="trustpilot-one-time-domain-verification-id"

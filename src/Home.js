@@ -16,6 +16,7 @@ import { faYoutube } from '@fortawesome/free-brands-svg-icons';
 import Design from "./components/Design";
 import Particles from 'react-tsparticles';
 import { faSearch, faTimes } from "@fortawesome/free-solid-svg-icons";
+import Toast from './Toastify';
 
 
 
@@ -3549,18 +3550,18 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                            <select name id="firstMoroccoService">
+                                          <select name id="firstMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="60 MAD">ESSENTIALS</option>
+                                               {/*  <option value="60 MAD">Not Available</option>
                                                 <option value="80 MAD">EXTRA</option>
-                                                <option value="100 MAD">DELUXE</option>
-                                            </select>
+                                                <option value="100 MAD">DELUXE</option> */}
+                                            </select> 
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstMoroccoPrice" className="price">PRICE :</div>
+                                        <div id="firstMoroccoPrice" className="price">PRICE : Not Available</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyPsPlus}>BUY</button>
+                                            <button /* onClick={this.buyPsPlus} */>BUY</button>
                                             {/*PS PLUS musicva*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
@@ -3583,18 +3584,18 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                            <select name id="secondMoroccoService">
+                                             <select name id="secondMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="120 MAD">ESSENTIALS</option>
+                                                {/* <option value="120 MAD">Not Available</option>
                                                 <option value="190 MAD">EXTRA</option>
-                                                <option value="210 MAD">DELUXE</option>
-                                            </select>
+                                                <option value="210 MAD">DELUXE</option> */}
+                                            </select> 
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="secondMoroccoPrice" className="price">PRICE :</div>
+                                        <div id="secondMoroccoPrice" className="price">PRICE : Not Available</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyPsPlus2}>BUY</button>
+                                            <button /* onClick={this.buyPsPlus2} */>BUY</button>
                                             {/*PS PLUS */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
@@ -3617,18 +3618,18 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                            <select name id="thirdMoroccoService">
+                                             <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
-                                                <option value="250 MAD">ESSENTIALS</option>
+                                                {/* <option value="250 MAD">Not Available</option>
                                                 <option value="380 MAD">EXTRA</option>
-                                                <option value="420 MAD">DELUXE</option>
-                                            </select>
+                                                <option value="420 MAD">DELUXE</option> */}
+                                            </select> 
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="thirdMoroccoPrice" className="price">PRICE :</div>
+                                        <div id="thirdMoroccoPrice" className="price">PRICE : Not Available</div>
                                         <div className="buttons">
-                                            <button onClick={this.buyPsPlus3}>BUY</button>
+                                            <button /* onClick={this.buyPsPlus3} */>BUY</button>
                                             {/*PS PLUS */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
