@@ -4,7 +4,7 @@ import Typewriter from "./typeWritter";
 import Loading from "./LoadingScreen";
 
 const FortniteItemShop = () => {
-    const [loading, setLoading] = useState(true);
+    const [loading, setLoading] = useState(false);
     const [daily, setDaily] = useState([]);
     const [featured, setFeatured] = useState([]);
     const [specialFeatured, setSpecialFeatured] = useState([]);
@@ -13,8 +13,8 @@ const FortniteItemShop = () => {
         fetch('https://fortnite-api.com/v2/shop/br')
             .then((res) => res.json())
             .then((data) => {
-                setDaily(data.data.daily.entries);
                 setFeatured(data.data.featured.entries);
+                setDaily(data.data.daily.entries);
                 setSpecialFeatured(data.data.specialFeatured.entries);
                 setLoading(false)
             });

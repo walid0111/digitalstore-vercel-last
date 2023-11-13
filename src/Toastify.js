@@ -10,22 +10,20 @@ export default function App() {
     const randomNumber = getRandomNumber(13, 76);
 
     useEffect(() => {
-        notify();
-
-         const refreshInterval = setInterval(() => {
-            window.location.reload();
+        const intervalId = setInterval(() => {
+            notify();
         }, 13000);
 
-        return () => clearInterval(refreshInterval);
+        return () => clearInterval(intervalId);
     }, []);
     
     const randomMessages = [
         {
-            text: <><strong>1 Client</strong> chra 1 netflix private <strong>2 Min Ago</strong></>,
+            text: <><strong>1 Client</strong> chra netflix private <strong>2 Min Ago</strong></>,
             type: 'success',
         },
         {
-            text: <><strong>3 Clients</strong> chraw Ea play 1 Month <strong>21h Ago</strong></>,
+            text: <><strong>3 Clients</strong> chra Ea play 1 Month <strong>21h Ago</strong></>,
             type: 'success',
         },
         {
@@ -53,15 +51,15 @@ export default function App() {
             type: 'success',
         },
         {
-            text: `${randomNumber} wa7d dakhl site daba`,
+            text: `${randomNumber} are visiting the website`,
             type: 'info',
         },
         {
-            text: `${randomNumber} wa7d dakhl site daba`,
+            text: `${randomNumber} are visiting the website`,
             type: 'info',
         },
         {
-            text: `${randomNumber} wa7d dakhl site daba`,
+            text: `${randomNumber} are visiting the website`,
             type: 'info',
         },
         {

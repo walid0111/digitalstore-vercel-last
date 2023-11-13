@@ -7,7 +7,7 @@ class MessageDisplay extends Component {
     super(props);
     this.state = {
       messages: [
-        { text: "someone just bought fif23", image: "fif23-image-url" },
+        { text: "someone just bought fifa23", image: "fif23-image-url" },
         { text: "someone just bought forza", image: "forza-image-url" }
       ],
       currentMessageIndex: 0

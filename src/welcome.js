@@ -103,7 +103,7 @@ const RegionSelector = () => {
                 GO Shopping
               </Link>
 
-              {selectedRegion === "Morocco" && (
+              {/* {selectedRegion === "Morocco" && (
                 <div className="get-started-button" style={{margin:'5px 0 5px 0'}}>
                   <div
                     className="btn-cta-orange"
@@ -112,7 +112,7 @@ const RegionSelector = () => {
                     Kifach nkhls b Orange ?
                   </div>
                 </div>
-              )}
+              )} */}
 
 
             </div>

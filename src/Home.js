@@ -71,15 +71,13 @@ class Table extends Component {
 
 
                 Swal.fire({
-                    /* text:'( wla jib carte 50Dh ra khdama oghadi n7tafdo lik blfr9 dial taman la commande jaya )!',*/
-                    text: `UPDATE ORANGE 🍊, ghadi ykhsk tmchi 3nd l7anot otgolih isift le montant libghiti lhad nmra Orange 0660074477 ( solde 3adi bla maydir njma 👍)! ( wla jib carte 50Dh ra khdama oghadi n7tafdo lik blfr9 dial taman la commande jaya ✅ )!`, 
-
-/*                     title:'ORANGE UPDATE  : Paiement Express/Rapide wla Les Cartes 50Dh / 100Dh ra khdamin',
- */                    imageHeight: 390, // Set the desired height for the image
+                    text: `⚠️ *INWi* les cartes mn 50Dh lfo9 khdamin \n
+                           ⚠️ *Les cartes orange*🍊 kamlin mab9awch khdamin, libgha chi 7aja imchi 3nd l7anot oygolih isift l montant libgha lhad nmra orange 0660074477 bla njma bach twslna solde 3adi ( ila siftiha ra ghadi n3rfok donc makayn lach tkhaf anana ngolo lik la makhlstich )`, 
+                    imageHeight: 390, // Set the desired height for the image
                     imageWidth: '90%', // Set the desired width for the image
                     confirmButtonText: `J'accepte`,
-
-                }).then((result) => { // Added missing `(` before `(result)`
+                })
+                .then((result) => { // Added missing `(` before `(result)`
                     if (result.isConfirmed) {
 
                         Swal.fire({
@@ -1440,7 +1438,7 @@ class Table extends Component {
 
                     {/*-------------------------Mad------------------------*/}
                     <div style={{ display: 'block', position: 'relative' }}>
-
+<Toast/>
 
                         {/*Body slide show*/}
                         <div className="slideAlign">
