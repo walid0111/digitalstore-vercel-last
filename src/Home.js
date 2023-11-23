@@ -71,7 +71,7 @@ class Table extends Component {
 
 
                 Swal.fire({
-                    text: `⚠️ *INWi* les cartes mn 50Dh lfo9 khdamin \n
+                    text: `
                            ⚠️ *Les cartes orange*🍊 kamlin mab9awch khdamin, libgha chi 7aja imchi 3nd l7anot oygolih isift l montant libgha lhad nmra orange 0660074477 bla njma bach twslna solde 3adi ( ila siftiha ra ghadi n3rfok donc makayn lach tkhaf anana ngolo lik la makhlstich )`, 
                     imageHeight: 390, // Set the desired height for the image
                     imageWidth: '90%', // Set the desired width for the image
