@@ -802,7 +802,7 @@ header {
 }
 
 .bodyClass {
-    background-color: #050505;
+    background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: dark;

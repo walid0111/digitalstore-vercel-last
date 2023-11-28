@@ -1368,11 +1368,16 @@ class Table extends Component {
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
                                         <h2 style={{ textAlign: 'center', fontWeight: 'bold', margin: '5px', borderBottom: '1px' }}>SPECIAL GIVEAWAY </h2>
-                                        <p style={{ color: 'green', margin: '4px' }}>AT : 18/07/2023</p>
-                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 9 DAYS </p>
-                                        <p>EMAIL : digitalstoredelux0012@gmail.com <br />
-                                            PASS : digitalstore2022 <br />
-                                            BACKUP CODES :  RGgTlI / hBttPQ
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 29/11/2023</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 13 DAYS </p>
+                                        <p>EMAIL : digitalstoredelux00198@gmail.com <br />
+                                            PASS : digitalstore2023 <br />
+                                            BACKUP CODES :  RNLipI / jkliKQ
+                                        </p>
+
+                                        <p style={{ color: 'red', margin: '4px' }}>SPOTIFY 22 DAYS </p>
+                                        <p>EMAIL : digitalstoredspotify43@gmail.com <br />
+                                            PASS : digitalstore2023 <br />
                                         </p>
                                         <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AND DISABLE 2FA AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
                                         <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR ANOTHER GIVEAWAY ------</p>

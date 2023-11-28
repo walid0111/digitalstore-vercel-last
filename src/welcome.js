@@ -79,7 +79,7 @@ const RegionSelector = () => {
                   {selectedRegion === "Morocco" ? (
                     <span>
                       <span style={{ fontWeight: "bold", color: "green", textAlign: 'center' }}>
-                        Orange, CIH Bank, PayPal, CashPlus
+                        Orange, Inwi, Bank, PayPal, CashPlus
                       </span> <br /><br />
                       {/* <span style={{ color: "red", textAlign: 'center',  padding: '10px' }}>
                         jib ay carte orange bghiti ghi matkounch carte dial  <span style={{ fontWeight: "bold", color: "red" }}> 30dh</span> 
