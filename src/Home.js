@@ -3550,16 +3550,18 @@ class Table extends Component {
                                         </h6>                                         <p>
                                           <select name id="firstMoroccoService">
                                                 <option value="-">Choose</option>
-                                               {/*  <option value="60 MAD">Not Available</option>
-                                                <option value="80 MAD">EXTRA</option>
-                                                <option value="100 MAD">DELUXE</option> */}
+                                                <option value="110 MAD">ESSENTIAL</option>
+                                                <option value="150 MAD">EXTRA</option>
+                                                <option value="200 MAD">DELUXE</option> 
+
+            
                                             </select> 
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="firstMoroccoPrice" className="price">PRICE : Not Available</div>
+                                        <div id="firstMoroccoPrice" className="price">PRICE : </div>
                                         <div className="buttons">
-                                            <button /* onClick={this.buyPsPlus} */>BUY</button>
+                                            <button onClick={this.buyPsPlus}>BUY</button>
                                             {/*PS PLUS musicva*/}
                                             <button className="info-btn">INFOS</button>
                                         </div>
@@ -3584,16 +3586,16 @@ class Table extends Component {
                                         </h6>                                         <p>
                                              <select name id="secondMoroccoService">
                                                 <option value="-">Choose</option>
-                                                {/* <option value="120 MAD">Not Available</option>
-                                                <option value="190 MAD">EXTRA</option>
-                                                <option value="210 MAD">DELUXE</option> */}
+                                               <option value="240 MAD">ESSENTIAL</option>
+                                                <option value="380 MAD">EXTRA</option>
+                                                <option value="420 MAD">DELUXE</option> 
                                             </select> 
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="secondMoroccoPrice" className="price">PRICE : Not Available</div>
+                                        <div id="secondMoroccoPrice" className="price">PRICE : </div>
                                         <div className="buttons">
-                                            <button /* onClick={this.buyPsPlus2} */>BUY</button>
+                                            <button onClick={this.buyPsPlus2}>BUY</button>
                                             {/*PS PLUS */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
@@ -3618,16 +3620,15 @@ class Table extends Component {
                                         </h6>                                         <p>
                                              <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
-                                                {/* <option value="250 MAD">Not Available</option>
-                                                <option value="380 MAD">EXTRA</option>
-                                                <option value="420 MAD">DELUXE</option> */}
+                                                <option value="680 MAD">ESSENTIAL</option>
+                                               
                                             </select> 
                                         </p>
                                     </div>
                                     <div className="row">
-                                        <div id="thirdMoroccoPrice" className="price">PRICE : Not Available</div>
+                                        <div id="thirdMoroccoPrice" className="price">PRICE : </div>
                                         <div className="buttons">
-                                            <button /* onClick={this.buyPsPlus3} */>BUY</button>
+                                            <button  onClick={this.buyPsPlus3} >BUY</button>
                                             {/*PS PLUS */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
