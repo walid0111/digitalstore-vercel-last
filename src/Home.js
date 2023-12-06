@@ -20,6 +20,7 @@ import Toast from './Toastify';
 
 
 
+
 class Table extends Component {
 
     //---------------the button that show the navbar in phone----------------------
@@ -72,22 +73,34 @@ class Table extends Component {
 
                 Swal.fire({
                     text: `
-                           ⚠️ *Les cartes orange*🍊 kamlin mab9awch khdamin, libgha chi 7aja imchi 3nd l7anot oygolih isift l montant libgha lhad nmra orange 0660074477 bla njma bach twslna solde 3adi ( ila siftiha ra ghadi n3rfok donc makayn lach tkhaf anana ngolo lik la makhlstich )`, 
-                    imageHeight: 390, // Set the desired height for the image
-                    imageWidth: '90%', // Set the desired width for the image
+                           ⚠️ Les cartes orange 🍊 kamlin mab9awch khdamin, libgha chi 7aja imchi 3nd l7anot oygolih isift l montant libgha lhad nmra orange 0660074477 bla njma bach twslna solde 3adi ( ila siftiha ra ghadi n3rfok donc makayn lach tkhaf anana ngolo lik la makhlstich )`,
+
                     confirmButtonText: `J'accepte`,
                 })
-                .then((result) => { // Added missing `(` before `(result)`
+                .then((result) => {
                     if (result.isConfirmed) {
-
-                        Swal.fire({
-                            title: 'PROMOTION !!',
-                            text: 'Up to 65% Off',
-                            icon: 'warning',
-                            confirmButtonText: 'Ok',
-                        })
+                      Swal.fire({
+                        imageUrl: '/blackfriday1.jpeg',
+                        imageHeight: '90%',
+                        imageWidth: '90%',
+                      }).then(() => {
+                        return Swal.fire({
+                          imageUrl: '/blackfriday2.jpeg',
+                          imageHeight: '90%',
+                          imageWidth: '90%',
+                        });
+                      }).then(() => {
+                        return Swal.fire({
+                          imageUrl: '/blackfriday3.jpeg',
+                          imageHeight: '90%',
+                          imageWidth: '90%',
+                        });
+                      });
                     }
-                });
+                  });
+                  
+
+
 
 
 
@@ -331,8 +344,8 @@ class Table extends Component {
             window.location.href = url;
         }
     }
-     //buy gpt
-     buyGpt() {
+    //buy gpt
+    buyGpt() {
         if (document.querySelector('#gptService').value == '-') {
             alert('Error : Please select an option before clicking buy..');
         } else {
@@ -1027,19 +1040,19 @@ class Table extends Component {
             window.location.href = url;
         }
     }
- //buy desired game
- buyGameDesired() {
-    const games = document.getElementById('input-text-shopping').value;
-    if (games == '') {
-        alert('Error : Please write a game name before ordering..');
+    //buy desired game
+    buyGameDesired() {
+        const games = document.getElementById('input-text-shopping').value;
+        if (games == '') {
+            alert('Error : Please write a game name before ordering..');
+        }
+        else {
+            const message = `Salam *Digital Store* bghit \n *--- ${games} ---* \n *⇾ QUANTITY :* 1  \n *⇾ PLATEFORM :*    `;
+            const encodedMessage = encodeURIComponent(message);
+            const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
+            window.location.href = url;
+        }
     }
-    else {
-        const message = `Salam *Digital Store* bghit \n *--- ${games} ---* \n *⇾ QUANTITY :* 1  \n *⇾ PLATEFORM :*    `;
-        const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/+212637976257?text=${encodedMessage}`;
-        window.location.href = url;
-    }
-}
 
     //buy psn 5 euro
     buyPsn5euro() {
@@ -1349,7 +1362,12 @@ class Table extends Component {
                     <title>Document</title>
                     <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 
+
                     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" charset="utf-8"></script>
+                    {/*                     whatsapp logo*/}
+                    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+                    {/* end whatsapp logo*/}
+
                     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
                 </head>
 
@@ -1428,22 +1446,23 @@ class Table extends Component {
                     <Particles
                         id="tsparticles"
                         options={{
-                            // Configuration des options des particules
                             particles: {
                                 number: {
-                                    value: 80,
+                                    value: 40, // Réduire le nombre de particules
                                 },
-                                // ... autres options de configuration
-                            },
+
+                            }
+
                         }}
                     />
+
                     <div className="w-full h-screen absolute">
                         <Design />
                     </div>
 
                     {/*-------------------------Mad------------------------*/}
                     <div style={{ display: 'block', position: 'relative' }}>
-<Toast/>
+                        <Toast />
 
                         {/*Body slide show*/}
                         <div className="slideAlign">
@@ -2219,13 +2238,13 @@ class Table extends Component {
                                                                 <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
                                                                 <select name className='notThisSelect' id="ShahidProfile">
                                                                     <option value="-">Choose</option>
-                                                                    <option value={30 }>VIP</option>
-                                                                    <option value={70 }>VIP SPORT</option>
+                                                                    <option value={30}>VIP</option>
+                                                                    <option value={70}>VIP SPORT</option>
                                                                 </select>
                                                                 <select name className='notThisSelect' id="shahidType">
                                                                     <option value="-">Choose</option>
                                                                     <option value={0}>1 MONTH</option>
-                                                                  
+
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -3060,8 +3079,8 @@ class Table extends Component {
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
                                             <p>1 Account is available with a reasonable price </p>
-                                            <p>This is a Full access Account. means you can change email and password </p> <br/>
-                                            
+                                            <p>This is a Full access Account. means you can change email and password </p> <br />
+
                                         </div>
                                     </div>
                                 </div>
@@ -3178,7 +3197,7 @@ class Table extends Component {
                                         <p>
                                             <select name id="GrapplingClaw3">
                                                 <option value="-">Choose</option>
-                                                <option value="340 MAD">NEW ACCOUNT</option>
+                                                <option value="380 MAD">NEW ACCOUNT</option>
                                             </select>
                                         </p>
                                     </div>
@@ -3291,19 +3310,19 @@ class Table extends Component {
                                 </div>
                             </div><p className="titleProduct "> SHOPPING <span>SERVICE </span> </p>
 
-<div className="input-block" style={{ margin: '5px' }}>
-    <input type="text" name="input-text" id="input-text-shopping" required spellCheck="false" placeholder='Smit lgame libghiti tshopi fiha'/* onChange={this.handleInputChange} */ />
-    <div style={{ color: 'red', fontWeight: 'bold', marginTop: '8px' }}> {this.state.message}</div>
-    <div className="button-containerr">
-        <button type="submit" onClick={this.buyGameDesired}>
-            <FontAwesomeIcon icon={faSearch} /> SHOPI LIA 
-        </button>
-        <button type="reset" onClick={() => document.getElementById('input-text-shopping').value = ''}>
-            <FontAwesomeIcon icon={faTimes} /> RESET
-        </button>
+                            <div className="input-block" style={{ margin: '5px' }}>
+                                <input type="text" name="input-text" id="input-text-shopping" required spellCheck="false" placeholder='Smit lgame libghiti tshopi fiha'/* onChange={this.handleInputChange} */ />
+                                <div style={{ color: 'red', fontWeight: 'bold', marginTop: '8px' }}> {this.state.message}</div>
+                                <div className="button-containerr">
+                                    <button type="submit" onClick={this.buyGameDesired}>
+                                        <FontAwesomeIcon icon={faSearch} /> SHOPI LIA
+                                    </button>
+                                    <button type="reset" onClick={() => document.getElementById('input-text-shopping').value = ''}>
+                                        <FontAwesomeIcon icon={faTimes} /> RESET
+                                    </button>
 
-    </div>
-</div>
+                                </div>
+                            </div>
                             <p className="titleProduct steam">OUR PC <span>GAMES</span></p>
 
                             <div className="container10">
@@ -3553,14 +3572,14 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                          <select name id="firstMoroccoService">
+                                            <select name id="firstMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="110 MAD">ESSENTIAL</option>
                                                 <option value="150 MAD">EXTRA</option>
-                                                <option value="200 MAD">DELUXE</option> 
+                                                <option value="200 MAD">DELUXE</option>
 
-            
-                                            </select> 
+
+                                            </select>
                                         </p>
                                     </div>
                                     <div className="row">
@@ -3589,12 +3608,12 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                             <select name id="secondMoroccoService">
+                                            <select name id="secondMoroccoService">
                                                 <option value="-">Choose</option>
-                                               <option value="240 MAD">ESSENTIAL</option>
+                                                <option value="240 MAD">ESSENTIAL</option>
                                                 <option value="380 MAD">EXTRA</option>
-                                                <option value="420 MAD">DELUXE</option> 
-                                            </select> 
+                                                <option value="420 MAD">DELUXE</option>
+                                            </select>
                                         </p>
                                     </div>
                                     <div className="row">
@@ -3623,17 +3642,17 @@ class Table extends Component {
                                                 {seconds.toString().padStart(2, '0')}
                                             </span>
                                         </h6>                                         <p>
-                                             <select name id="thirdMoroccoService">
+                                            <select name id="thirdMoroccoService">
                                                 <option value="-">Choose</option>
                                                 <option value="680 MAD">ESSENTIAL</option>
-                                               
-                                            </select> 
+
+                                            </select>
                                         </p>
                                     </div>
                                     <div className="row">
                                         <div id="thirdMoroccoPrice" className="price">PRICE : </div>
                                         <div className="buttons">
-                                            <button  onClick={this.buyPsPlus3} >BUY</button>
+                                            <button onClick={this.buyPsPlus3} >BUY</button>
                                             {/*PS PLUS */}
                                             <button className="info-btn">INFOS</button>
                                         </div>
@@ -4416,7 +4435,7 @@ class Table extends Component {
                                                 <option value={'150 MAD'}>3 Months</option>
                                                 <option disabled value="-">--Only Console--</option>
                                                 <option value={'250 MAD'}>3 Months</option>
-                                                
+
 
 
                                             </select>
@@ -4497,7 +4516,7 @@ class Table extends Component {
                                             <select name id="officeService">
                                                 <option value="-">Choose</option>
                                                 <option disabled value="-">-- PRIVATE ACCOUNT --</option>
-                                              
+
                                                 <option value="100 MAD"> OFFICE 2019 LIFETIME</option>
                                             </select>
                                         </p>
@@ -4611,7 +4630,7 @@ class Table extends Component {
                                                 2- WE WILL SEND YOU SOME DESIGN TO CHOOSE YOUR DESIRED.<br />
                                                 3- YOU WILL GIVE US THE WHOLE INFORMATION YOU WANT ON YOUR CV.<br />
                                                 4- WHEN IT IS DONE, WE WILL SEND IT TO YOU IMMEDIATELY TO GIVE AN OPINION. <br />
-                                               
+
                                             </p>
                                         </div>
                                     </div>
@@ -4639,7 +4658,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                                                                        <p>There is no Description for this product</p>
+                                            <p>There is no Description for this product</p>
 
                                         </div>
                                     </div>
@@ -4667,7 +4686,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                                                                        <p>The developper mode will allow GPT to answer all type of questions without any restriction (Like giving an opinion or saying a bad words) </p>
+                                            <p>The developper mode will allow GPT to answer all type of questions without any restriction (Like giving an opinion or saying a bad words) </p>
 
                                         </div>
                                     </div>
@@ -4694,7 +4713,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                                                                        <p>There is no Description for this product</p>
+                                            <p>There is no Description for this product</p>
 
                                         </div>
                                     </div>
@@ -4721,7 +4740,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
-                                                                                        <p>There is no Description for this product</p>
+                                            <p>There is no Description for this product</p>
 
                                         </div>
                                     </div>
@@ -4760,6 +4779,10 @@ class Table extends Component {
 
                             <p style={{ backgroundColor: 'black', paddingTop: '20px' }}> < Trustpilot /></p>
 
+                            {/*                             whatsapp logo */}
+                            <a href="https://api.whatsapp.com/send?phone=+212637976257&text=Salam bghit nswl 3la :" class="float" target="_blank">
+                                <i className="fab fa-whatsapp"></i>
+                            </a>
                         </div>
 
                         <Footer />

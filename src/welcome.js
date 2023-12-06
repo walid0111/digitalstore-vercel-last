@@ -58,8 +58,13 @@ const RegionSelector = () => {
         </button>
         <button className='region-option'>
           <Link to={'/Fortnite'} target="_blank">
-            Fortnite
+            Fortnite Gifts
           </Link>
+        </button>
+        <button className='region-option'>
+        <a href="https://api.whatsapp.com/send?phone=+212637976257&text=Salam bghit nswl 3la :">
+            WhatsApp
+          </a>
         </button>
 
 
