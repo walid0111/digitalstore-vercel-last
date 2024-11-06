@@ -154,6 +154,9 @@ const FortniteItemShop = () => {
                         case 2800:
                             total = '105 DH';
                             break;
+                            case 3000:
+                            total = '120 DH';
+                            break;
                         default:
                             total = '';
                             break;
