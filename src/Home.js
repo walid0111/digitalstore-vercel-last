@@ -77,34 +77,35 @@ class Table extends Component {
 
                     confirmButtonText: `J'accepte`,
                 })
-                .then((result) => {
-                    if (result.isConfirmed) {
-                      Swal.fire({
-                        imageUrl: '/blackfriday1.jpeg',
-                        imageHeight: '90%',
-                        imageWidth: '90%',
-                      }).then(() => {
-                        return Swal.fire({
-                          imageUrl: '/blackfriday2.jpeg',
-                          imageHeight: '90%',
-                          imageWidth: '90%',
-                        });
-                      }).then(() => {
-                        return Swal.fire({
-                          imageUrl: '/blackfriday3.jpeg',
-                          imageHeight: '90%',
-                          imageWidth: '90%',
-                        });
-                      });
-                    }
-                  });
-                  
-
-
-
-
-
+                
+          
             }, 10000);
+
+            setTimeout(() => {
+                Swal.fire({
+                  imageUrl: '/mikeAndPaul.png',
+                  imageHeight: '90%',
+                  imageWidth: '90%',
+                }).then(() => {
+                  return Swal.fire({
+                    imageUrl: '/blackfriday1.jpeg',
+                    imageHeight: '90%',
+                    imageWidth: '90%',
+                })
+                  }).then(() => {
+                    return Swal.fire({
+                      imageUrl: '/blackfriday2.jpeg',
+                      imageHeight: '90%',
+                      imageWidth: '90%',
+                    });
+                }).then(() => {
+                  return Swal.fire({
+                    imageUrl: '/blackfriday3.jpeg',
+                    imageHeight: '90%',
+                    imageWidth: '90%',
+                  });
+                })
+              }, 30000); // 10 saniye (milisaniye cinsinden)
 
 
         });
@@ -1386,16 +1387,16 @@ class Table extends Component {
                                     <div className="modal-content" style={{ textAlign: 'center' }}>
                                         <span className="close-btn">×</span>
                                         <h2 style={{ textAlign: 'center', fontWeight: 'bold', margin: '5px', borderBottom: '1px' }}>SPECIAL GIVEAWAY </h2>
-                                        <p style={{ color: 'green', margin: '4px' }}>AT : 29/11/2023</p>
-                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 13 DAYS </p>
-                                        <p>EMAIL : digitalstoredelux00198@gmail.com <br />
-                                            PASS : digitalstore2023 <br />
-                                            BACKUP CODES :  RNLipI / jkliKQ
+                                        <p style={{ color: 'green', margin: '4px' }}>AT : 13/11/2024</p>
+                                        <p style={{ color: 'red', margin: '4px' }}>PS PLUS DELUX 19 DAYS </p>
+                                        <p>EMAIL : digitalstoredddlux9@gmail.com <br />
+                                            PASS : digital2024 <br />
+                                            BACKUP CODES :  JGp95K / NGguo9
                                         </p>
 
-                                        <p style={{ color: 'red', margin: '4px' }}>SPOTIFY 22 DAYS </p>
-                                        <p>EMAIL : digitalstoredspotify43@gmail.com <br />
-                                            PASS : digitalstore2023 <br />
+                                        <p style={{ color: 'red', margin: '4px' }}>SPOTIFY 27 DAYS </p>
+                                        <p>EMAIL : digitalstoredspotify4399@gmail.com <br />
+                                            PASS : digital992023 <br />
                                         </p>
                                         <p style={{ color: 'red', margin: '12px' }}>PLEASE CHANGE THE CREDENTIALS AND DISABLE 2FA AFTER GETTING LOGGED IN THE ACCOUNT</p> <br />
                                         <p style={{ color: 'red', margin: '4px', fontWeight: 'bold' }}>------ STAY TUNED FOR ANOTHER GIVEAWAY ------</p>
@@ -1829,13 +1830,13 @@ class Table extends Component {
                                                                 <select name id="SpotifyMonths" style={{ border: '1px solid black', margin: '10px', borderRadius: '8px' }} className="form-select mb-3">
                                                                     <option value="-">Choose</option>
                                                                     <option disabled value="0 MAD">---NEW ACCOUNT---</option>
-                                                                    <option value="20 MAD">1 Month NEW</option>
-                                                                    <option value="30 MAD">2 Months NEW</option>
-                                                                    <option value="50 MAD">4 Months NEW</option>
+                                                                    <option value="25 MAD">1 Month NEW</option>
+                                                                    <option value="35 MAD">2 Months NEW</option>
+                                                                    <option value="50 MAD">3 Months NEW</option>
                                                                     <option disabled value="0 MAD">---UPGRADE (COMPTE DIALK)---</option>
                                                                     <option value="30 MAD">1 Month UPGRADE</option>
                                                                     <option value="40 MAD">2 Months UPGRADE</option>
-                                                                    <option value="65 MAD">4 Months UPGRADE</option>
+                                                                    <option value="55 MAD">3 Months UPGRADE</option>
                                                                 </select>
                                                             </div>
                                                             <div style={{ width: '100%', padding: '10px' }}>
@@ -1986,7 +1987,7 @@ class Table extends Component {
                                                                 <p className="card-text" style={{ fontWeight: 'bold' }}>Choose your offer</p>
                                                                 <select name id="typePrivate" className='select-style notThisSelect' onChange={this.calculateNetflixPrivatePrice}>
                                                                     <option value="-">Choose</option>
-                                                                    <option value={55}>PREMIUM</option>
+                                                                    <option value={45}>PREMIUM</option>
                                                                     <option disabled value={0}>STANDARD</option>
                                                                 </select>
                                                                 <select name id="standardPrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
@@ -1999,7 +2000,7 @@ class Table extends Component {
                                                                 <select name id="profilePrivate" className="select-style notThisSelect" onChange={this.calculateNetflixPrivatePrice}>
                                                                     <option value="-"> Choose</option>
                                                                     <option value={0}>1 Profile</option>
-                                                                    <option value={20}>2 Profiles</option>
+                                                                    <option value={15}>2 Profiles</option>
                                                                     <option disabled value={0}>3 Profiles</option>
                                                                     <option disabled value={0}>4 Profiles</option>
                                                                     <option disabled value={0}>5 Profiles</option>
@@ -2024,6 +2025,14 @@ class Table extends Component {
                                             <span className="close-btn">×</span>
                                             <p>
                                                 🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
+
+                                                ✅ Lofre private taykoun 3ndk profile bl pin libghiti <br />
+                                                ✅ t9dr telechager <br />
+                                                ✅ ajouter a la liste <br />
+                                                ✅ tbdl langue dial profile <br />
+                                                ✅ tbdl langue dial serie  <br />
+                                                ✅ tbdl smit profile <br /> <br/>
+
                                                 ✅ Works on any device. <br />
                                                 ✅ You can Download and Add to My List. <br />
                                                 ✅ You can change profile Name / Language / PIN. <br />
@@ -2085,12 +2094,14 @@ class Table extends Component {
                                                                     <option value={25}>1 Month </option>
                                                                     <option value={50}>2 Months</option>
                                                                     <option value={75}>3 Months</option>
+                                                                    <option value={110}>4 Months</option>
+                                                                    <option value={140}>5 Months</option>
                                                                 </select>
                                                                 <select name id="profile" className="select-style notThisSelect" onChange={this.calculateNetflixPrice}>
                                                                     <option value="-"> Choose</option>
                                                                     <option value={0}>1 Profile</option>
                                                                     <option value={10}>2 Profiles</option>
-                                                                    <option disabled value={0}>3 Profiles</option>
+                                                                    <option disabled value={10}>3 Profiles</option>
                                                                     <option disabled value={0}>4 Profiles</option>
                                                                     <option disabled value={0}>5 Profiles</option>
 
@@ -2115,11 +2126,21 @@ class Table extends Component {
                                                 🟥 PREMIUM SUBSCRIPTION HAS A 4K Resolution<br />
                                                 🟥 STANDARD SUBSCRIPTION HAS A FULL HD Resolution<br />
 
+                                                ✅ Loffre shared 4K  <br />
+                                                ✅ t9dr telechager <br />
+                                                🟥 mat9drch t ajouter a la liste <br />
+                                                🟥 mat9drch tbdl langue dial profile <br />
+                                                ✅ t9dr tbdl langue dial serie likatfrj fiha  <br />
+                                                🟥 mat9drch tbdl smit profile <br />
+
+
                                                 ✅ Works on any device. <br />
                                                 ✅ Contact us for any issue<br />
                                                 ✅ Safety Account Warranty 100%<br />
 
-                                                🟥 There are some rules for the account, you will get it after you buy
+                                                
+
+
                                                 🟥 No warranty will be given if you change any information in the accounts.<br />
                                         --> NEED MORE MONTHS OR PROFILES ? CONTACT US VIA WHATSAPP 0637976257
                                             </p>
@@ -2500,7 +2521,7 @@ class Table extends Component {
                                                         <div className="card text-center" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexDirection: 'row', flexWrap: 'wrap' }}>
                                                             <div style={{ width: '100%', padding: '10px' }}>
                                                                 <h5 className="card-title" style={{ fontWeight: 'bold', margin: '6px' }}>Prime Video</h5>
-                                                                <p className="card-text">Experience unparalleled streaming with Netflix Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
+                                                                <p className="card-text">Experience unparalleled streaming with Premium. Enjoy an impressive collection of movies, series, and documentaries without any ads. Watch your favorite shows through seamless streaming or download them for offline viewing. Immerse yourself in a vast catalog of high-quality content, all without any interruptions. Subscribe to Netflix Premium for a complete immersion into the world of entertainment.</p>
                                                             </div>
                                                             <hr />
                                                             <div style={{ width: '100%', padding: '10px' }}>
