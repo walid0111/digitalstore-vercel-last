@@ -4703,7 +4703,7 @@ class Table extends Component {
                                             <select name id="gptService">
                                                 <option value="-">Choose</option>
                                                 <option value={'25 MAD'}>GPT DEVELOPPER MODE</option>
-                                                <option value={'50 MAD'}>GPT PLUS </option>
+                                                <option value={'39 MAD'}>GPT PLUS </option>
                                             </select>
                                         </p>
                                     </div>
@@ -4717,6 +4717,8 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
+                                            <p>1 Purchase = 1 Use Device =</p>
+
                                             <p>The developper mode will allow GPT to answer all type of questions without any restriction (Like giving an opinion or saying a bad words) </p>
 
                                         </div>
