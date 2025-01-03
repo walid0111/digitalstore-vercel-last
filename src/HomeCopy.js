@@ -4295,6 +4295,7 @@ class Table extends Component {
                                     <div className="modal">
                                         <div className="modal-content">
                                             <span className="close-btn">×</span>
+                                            <p>1 Purchase = 1 Use Device =</p>
                                                                                         <p>The developper mode will allow GPT to answer all type of questions without any restriction (Like giving an opinion or saying a bad words) </p>
 
                                         </div>
